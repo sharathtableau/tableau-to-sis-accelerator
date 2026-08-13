@@ -1,0 +1,3 @@
+level,dashboard,chart,status,failed_cells
+dashboard,Shipment Trends,,FAIL,
+chart,Shipment Trends,On-Time Trend,BLOCKED,0

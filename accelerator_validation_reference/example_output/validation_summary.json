@@ -1,0 +1,2139 @@
+{
+  "workbook": "Superstore.twb",
+  "run_id": "VAL-EXAMPLE-001",
+  "environment": "UAT",
+  "generated_at": "2026-08-05T21:20:36+05:30",
+  "dashboards": [
+    {
+      "id": "customer-analysis",
+      "name": "Customer Analysis",
+      "visual": {
+        "tableau_screenshot": "C:\\Users\\SharathKumarKammari\\Downloads\\Tableau to SiS_Cowork - Cortex\\accelerator_validation_reference\\example_assets\\customer-tableau.svg",
+        "streamlit_screenshot": "C:\\Users\\SharathKumarKammari\\Downloads\\Tableau to SiS_Cowork - Cortex\\accelerator_validation_reference\\example_assets\\customer-streamlit.svg",
+        "similarity": 0.981,
+        "threshold": 0.95,
+        "checks": [
+          {
+            "name": "Components",
+            "observed": "4 KPIs and 2 charts matched",
+            "threshold": "Exact",
+            "status": "PASS"
+          },
+          {
+            "name": "Layout",
+            "observed": "Maximum shift 4 px",
+            "threshold": "<= 8 px",
+            "status": "PASS"
+          },
+          {
+            "name": "Marks",
+            "observed": "Bar and line mark counts matched",
+            "threshold": "Exact",
+            "status": "PASS"
+          }
+        ]
+      },
+      "charts": [
+        {
+          "id": "sales-by-region",
+          "title": "Sales by Region",
+          "chart_type": "Bar chart",
+          "grain": [
+            "Region"
+          ],
+          "measures": [
+            {
+              "name": "Sales",
+              "kind": "currency",
+              "display_decimals": 0
+            },
+            {
+              "name": "Profit",
+              "kind": "currency",
+              "display_decimals": 0
+            }
+          ],
+          "tableau_rows": [
+            {
+              "Region": "Central",
+              "Sales": 503171,
+              "Profit": 39706
+            },
+            {
+              "Region": "East",
+              "Sales": 691828,
+              "Profit": 91523
+            },
+            {
+              "Region": "South",
+              "Sales": 391722,
+              "Profit": 46749
+            },
+            {
+              "Region": "West",
+              "Sales": 739814,
+              "Profit": 108419
+            }
+          ],
+          "streamlit_rows": [
+            {
+              "Region": "Central",
+              "Sales": 503170.67,
+              "Profit": 39706.31
+            },
+            {
+              "Region": "East",
+              "Sales": 691828.17,
+              "Profit": 91522.78
+            },
+            {
+              "Region": "South",
+              "Sales": 391721.91,
+              "Profit": 46749.11
+            },
+            {
+              "Region": "West",
+              "Sales": 739813.61,
+              "Profit": 108418.82
+            }
+          ],
+          "backend_rows": [
+            {
+              "Region": "Central",
+              "Sales": 503170.67,
+              "Profit": 39706.31
+            },
+            {
+              "Region": "East",
+              "Sales": 691828.17,
+              "Profit": 91522.78
+            },
+            {
+              "Region": "South",
+              "Sales": 391721.91,
+              "Profit": 46749.11
+            },
+            {
+              "Region": "West",
+              "Sales": 739813.61,
+              "Profit": 108418.82
+            }
+          ],
+          "formulas": [
+            {
+              "id": "sales",
+              "metric": "Sales",
+              "tableau": "SUM([Sales])",
+              "streamlit": "SUM(SALES)",
+              "classification": "EXACT",
+              "impact": "None"
+            },
+            {
+              "id": "profit",
+              "metric": "Profit",
+              "tableau": "SUM([Profit])",
+              "streamlit": "SUM(PROFIT)",
+              "classification": "EXACT",
+              "impact": "None"
+            }
+          ],
+          "interactions": [
+            {
+              "name": "Region = West",
+              "tableau": "West bar remains; $739,814 displayed",
+              "streamlit": "West bar remains; $739,814 displayed",
+              "proof": "Filtered comparison CSV and screenshot",
+              "status": "PASS"
+            }
+          ],
+          "source_counts": {
+            "tableau": 4,
+            "streamlit": 4,
+            "backend": 4
+          },
+          "duplicates": {
+            "tableau": [],
+            "streamlit": [],
+            "backend": []
+          },
+          "null_keys": {
+            "tableau": [],
+            "streamlit": [],
+            "backend": []
+          },
+          "key_set_match": true,
+          "order_match": true,
+          "comparison_rows": [
+            {
+              "key": {
+                "Region": "Central"
+              },
+              "key_tuple": [
+                "Central"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 503171,
+                    "streamlit": 503170.67,
+                    "backend": 503170.67
+                  },
+                  "formatted": {
+                    "tableau": "$503,171",
+                    "streamlit": "$503,171",
+                    "backend": "$503,171"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.33",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.33"
+                  },
+                  "max_difference": "0.33",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                },
+                {
+                  "name": "Profit",
+                  "field": "Profit",
+                  "definition": {
+                    "name": "Profit",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 39706,
+                    "streamlit": 39706.31,
+                    "backend": 39706.31
+                  },
+                  "formatted": {
+                    "tableau": "$39,706",
+                    "streamlit": "$39,706",
+                    "backend": "$39,706"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.31",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.31"
+                  },
+                  "max_difference": "0.31",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Region": "East"
+              },
+              "key_tuple": [
+                "East"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 691828,
+                    "streamlit": 691828.17,
+                    "backend": 691828.17
+                  },
+                  "formatted": {
+                    "tableau": "$691,828",
+                    "streamlit": "$691,828",
+                    "backend": "$691,828"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.17",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.17"
+                  },
+                  "max_difference": "0.17",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                },
+                {
+                  "name": "Profit",
+                  "field": "Profit",
+                  "definition": {
+                    "name": "Profit",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 91523,
+                    "streamlit": 91522.78,
+                    "backend": 91522.78
+                  },
+                  "formatted": {
+                    "tableau": "$91,523",
+                    "streamlit": "$91,523",
+                    "backend": "$91,523"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.22",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.22"
+                  },
+                  "max_difference": "0.22",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Region": "South"
+              },
+              "key_tuple": [
+                "South"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 391722,
+                    "streamlit": 391721.91,
+                    "backend": 391721.91
+                  },
+                  "formatted": {
+                    "tableau": "$391,722",
+                    "streamlit": "$391,722",
+                    "backend": "$391,722"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.09",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.09"
+                  },
+                  "max_difference": "0.09",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                },
+                {
+                  "name": "Profit",
+                  "field": "Profit",
+                  "definition": {
+                    "name": "Profit",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 46749,
+                    "streamlit": 46749.11,
+                    "backend": 46749.11
+                  },
+                  "formatted": {
+                    "tableau": "$46,749",
+                    "streamlit": "$46,749",
+                    "backend": "$46,749"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.11",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.11"
+                  },
+                  "max_difference": "0.11",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Region": "West"
+              },
+              "key_tuple": [
+                "West"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 739814,
+                    "streamlit": 739813.61,
+                    "backend": 739813.61
+                  },
+                  "formatted": {
+                    "tableau": "$739,814",
+                    "streamlit": "$739,814",
+                    "backend": "$739,814"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.39",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.39"
+                  },
+                  "max_difference": "0.39",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                },
+                {
+                  "name": "Profit",
+                  "field": "Profit",
+                  "definition": {
+                    "name": "Profit",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 108419,
+                    "streamlit": 108418.82,
+                    "backend": 108418.82
+                  },
+                  "formatted": {
+                    "tableau": "$108,419",
+                    "streamlit": "$108,419",
+                    "backend": "$108,419"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.18",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.18"
+                  },
+                  "max_difference": "0.18",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            }
+          ],
+          "formula_results": [
+            {
+              "id": "sales",
+              "metric": "Sales",
+              "tableau": "SUM([Sales])",
+              "streamlit": "SUM(SALES)",
+              "classification": "EXACT",
+              "impact": "None",
+              "status": "PASS"
+            },
+            {
+              "id": "profit",
+              "metric": "Profit",
+              "tableau": "SUM([Profit])",
+              "streamlit": "SUM(PROFIT)",
+              "classification": "EXACT",
+              "impact": "None",
+              "status": "PASS"
+            }
+          ],
+          "interaction_results": [
+            {
+              "name": "Region = West",
+              "tableau": "West bar remains; $739,814 displayed",
+              "streamlit": "West bar remains; $739,814 displayed",
+              "proof": "Filtered comparison CSV and screenshot",
+              "status": "PASS"
+            }
+          ],
+          "failed_cells": 0,
+          "max_difference": "0.39",
+          "evidence_complete": true,
+          "status": "PASS",
+          "comparison_csv": "evidence/customer-analysis/charts/sales-by-region/comparison.csv"
+        },
+        {
+          "id": "monthly-sales",
+          "title": "Monthly Customer Sales",
+          "chart_type": "Line chart",
+          "grain": [
+            "Order Month"
+          ],
+          "measures": [
+            {
+              "name": "Sales",
+              "kind": "currency",
+              "display_decimals": 0
+            }
+          ],
+          "tableau_rows": [
+            {
+              "Order Month": "2024-01",
+              "Sales": 50000
+            },
+            {
+              "Order Month": "2024-02",
+              "Sales": 58056
+            },
+            {
+              "Order Month": "2024-03",
+              "Sales": 66112
+            },
+            {
+              "Order Month": "2024-04",
+              "Sales": 74169
+            },
+            {
+              "Order Month": "2024-05",
+              "Sales": 81676
+            },
+            {
+              "Order Month": "2024-06",
+              "Sales": 89732
+            },
+            {
+              "Order Month": "2024-07",
+              "Sales": 97788
+            },
+            {
+              "Order Month": "2024-08",
+              "Sales": 105845
+            },
+            {
+              "Order Month": "2024-09",
+              "Sales": 51352
+            },
+            {
+              "Order Month": "2024-10",
+              "Sales": 59408
+            },
+            {
+              "Order Month": "2024-11",
+              "Sales": 67464
+            },
+            {
+              "Order Month": "2024-12",
+              "Sales": 75521
+            },
+            {
+              "Order Month": "2025-01",
+              "Sales": 83028
+            },
+            {
+              "Order Month": "2025-02",
+              "Sales": 91084
+            },
+            {
+              "Order Month": "2025-03",
+              "Sales": 99140
+            },
+            {
+              "Order Month": "2025-04",
+              "Sales": 107197
+            },
+            {
+              "Order Month": "2025-05",
+              "Sales": 52704
+            },
+            {
+              "Order Month": "2025-06",
+              "Sales": 60760
+            },
+            {
+              "Order Month": "2025-07",
+              "Sales": 68816
+            },
+            {
+              "Order Month": "2025-08",
+              "Sales": 76873
+            },
+            {
+              "Order Month": "2025-09",
+              "Sales": 84380
+            },
+            {
+              "Order Month": "2025-10",
+              "Sales": 92436
+            },
+            {
+              "Order Month": "2025-11",
+              "Sales": 100492
+            },
+            {
+              "Order Month": "2025-12",
+              "Sales": 108549
+            }
+          ],
+          "streamlit_rows": [
+            {
+              "Order Month": "2024-01",
+              "Sales": 50000.0
+            },
+            {
+              "Order Month": "2024-02",
+              "Sales": 58056.23
+            },
+            {
+              "Order Month": "2024-03",
+              "Sales": 66112.46
+            },
+            {
+              "Order Month": "2024-04",
+              "Sales": 74168.69
+            },
+            {
+              "Order Month": "2024-05",
+              "Sales": 81676.0
+            },
+            {
+              "Order Month": "2024-06",
+              "Sales": 89732.23
+            },
+            {
+              "Order Month": "2024-07",
+              "Sales": 97788.46
+            },
+            {
+              "Order Month": "2024-08",
+              "Sales": 105844.69
+            },
+            {
+              "Order Month": "2024-09",
+              "Sales": 51352.0
+            },
+            {
+              "Order Month": "2024-10",
+              "Sales": 59408.23
+            },
+            {
+              "Order Month": "2024-11",
+              "Sales": 67464.46
+            },
+            {
+              "Order Month": "2024-12",
+              "Sales": 75520.69
+            },
+            {
+              "Order Month": "2025-01",
+              "Sales": 83028.0
+            },
+            {
+              "Order Month": "2025-02",
+              "Sales": 91084.23
+            },
+            {
+              "Order Month": "2025-03",
+              "Sales": 99140.46
+            },
+            {
+              "Order Month": "2025-04",
+              "Sales": 107196.69
+            },
+            {
+              "Order Month": "2025-05",
+              "Sales": 52704.0
+            },
+            {
+              "Order Month": "2025-06",
+              "Sales": 60760.23
+            },
+            {
+              "Order Month": "2025-07",
+              "Sales": 68816.46
+            },
+            {
+              "Order Month": "2025-08",
+              "Sales": 76872.69
+            },
+            {
+              "Order Month": "2025-09",
+              "Sales": 84380.0
+            },
+            {
+              "Order Month": "2025-10",
+              "Sales": 92436.23
+            },
+            {
+              "Order Month": "2025-11",
+              "Sales": 100492.46
+            },
+            {
+              "Order Month": "2025-12",
+              "Sales": 108548.69
+            }
+          ],
+          "backend_rows": [
+            {
+              "Order Month": "2024-01",
+              "Sales": 50000.0
+            },
+            {
+              "Order Month": "2024-02",
+              "Sales": 58056.23
+            },
+            {
+              "Order Month": "2024-03",
+              "Sales": 66112.46
+            },
+            {
+              "Order Month": "2024-04",
+              "Sales": 74168.69
+            },
+            {
+              "Order Month": "2024-05",
+              "Sales": 81676.0
+            },
+            {
+              "Order Month": "2024-06",
+              "Sales": 89732.23
+            },
+            {
+              "Order Month": "2024-07",
+              "Sales": 97788.46
+            },
+            {
+              "Order Month": "2024-08",
+              "Sales": 105844.69
+            },
+            {
+              "Order Month": "2024-09",
+              "Sales": 51352.0
+            },
+            {
+              "Order Month": "2024-10",
+              "Sales": 59408.23
+            },
+            {
+              "Order Month": "2024-11",
+              "Sales": 67464.46
+            },
+            {
+              "Order Month": "2024-12",
+              "Sales": 75520.69
+            },
+            {
+              "Order Month": "2025-01",
+              "Sales": 83028.0
+            },
+            {
+              "Order Month": "2025-02",
+              "Sales": 91084.23
+            },
+            {
+              "Order Month": "2025-03",
+              "Sales": 99140.46
+            },
+            {
+              "Order Month": "2025-04",
+              "Sales": 107196.69
+            },
+            {
+              "Order Month": "2025-05",
+              "Sales": 52704.0
+            },
+            {
+              "Order Month": "2025-06",
+              "Sales": 60760.23
+            },
+            {
+              "Order Month": "2025-07",
+              "Sales": 68816.46
+            },
+            {
+              "Order Month": "2025-08",
+              "Sales": 76872.69
+            },
+            {
+              "Order Month": "2025-09",
+              "Sales": 84380.0
+            },
+            {
+              "Order Month": "2025-10",
+              "Sales": 92436.23
+            },
+            {
+              "Order Month": "2025-11",
+              "Sales": 100492.46
+            },
+            {
+              "Order Month": "2025-12",
+              "Sales": 108548.69
+            }
+          ],
+          "formulas": [
+            {
+              "id": "sales",
+              "metric": "Sales",
+              "tableau": "SUM([Sales])",
+              "streamlit": "SUM(SALES)",
+              "classification": "EXACT",
+              "impact": "None"
+            }
+          ],
+          "interactions": [
+            {
+              "name": "Date range = 2025",
+              "tableau": "12 month points",
+              "streamlit": "12 month points",
+              "proof": "12 chart-grain comparison rows",
+              "status": "PASS"
+            }
+          ],
+          "source_counts": {
+            "tableau": 24,
+            "streamlit": 24,
+            "backend": 24
+          },
+          "duplicates": {
+            "tableau": [],
+            "streamlit": [],
+            "backend": []
+          },
+          "null_keys": {
+            "tableau": [],
+            "streamlit": [],
+            "backend": []
+          },
+          "key_set_match": true,
+          "order_match": true,
+          "comparison_rows": [
+            {
+              "key": {
+                "Order Month": "2024-01"
+              },
+              "key_tuple": [
+                "2024-01"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 50000,
+                    "streamlit": 50000.0,
+                    "backend": 50000.0
+                  },
+                  "formatted": {
+                    "tableau": "$50,000",
+                    "streamlit": "$50,000",
+                    "backend": "$50,000"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.0",
+                    "streamlit_backend": "0.0",
+                    "tableau_backend": "0.0"
+                  },
+                  "max_difference": "0.0",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2024-02"
+              },
+              "key_tuple": [
+                "2024-02"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 58056,
+                    "streamlit": 58056.23,
+                    "backend": 58056.23
+                  },
+                  "formatted": {
+                    "tableau": "$58,056",
+                    "streamlit": "$58,056",
+                    "backend": "$58,056"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.23",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.23"
+                  },
+                  "max_difference": "0.23",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2024-03"
+              },
+              "key_tuple": [
+                "2024-03"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 66112,
+                    "streamlit": 66112.46,
+                    "backend": 66112.46
+                  },
+                  "formatted": {
+                    "tableau": "$66,112",
+                    "streamlit": "$66,112",
+                    "backend": "$66,112"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.46",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.46"
+                  },
+                  "max_difference": "0.46",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2024-04"
+              },
+              "key_tuple": [
+                "2024-04"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 74169,
+                    "streamlit": 74168.69,
+                    "backend": 74168.69
+                  },
+                  "formatted": {
+                    "tableau": "$74,169",
+                    "streamlit": "$74,169",
+                    "backend": "$74,169"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.31",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.31"
+                  },
+                  "max_difference": "0.31",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2024-05"
+              },
+              "key_tuple": [
+                "2024-05"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 81676,
+                    "streamlit": 81676.0,
+                    "backend": 81676.0
+                  },
+                  "formatted": {
+                    "tableau": "$81,676",
+                    "streamlit": "$81,676",
+                    "backend": "$81,676"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.0",
+                    "streamlit_backend": "0.0",
+                    "tableau_backend": "0.0"
+                  },
+                  "max_difference": "0.0",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2024-06"
+              },
+              "key_tuple": [
+                "2024-06"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 89732,
+                    "streamlit": 89732.23,
+                    "backend": 89732.23
+                  },
+                  "formatted": {
+                    "tableau": "$89,732",
+                    "streamlit": "$89,732",
+                    "backend": "$89,732"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.23",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.23"
+                  },
+                  "max_difference": "0.23",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2024-07"
+              },
+              "key_tuple": [
+                "2024-07"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 97788,
+                    "streamlit": 97788.46,
+                    "backend": 97788.46
+                  },
+                  "formatted": {
+                    "tableau": "$97,788",
+                    "streamlit": "$97,788",
+                    "backend": "$97,788"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.46",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.46"
+                  },
+                  "max_difference": "0.46",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2024-08"
+              },
+              "key_tuple": [
+                "2024-08"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 105845,
+                    "streamlit": 105844.69,
+                    "backend": 105844.69
+                  },
+                  "formatted": {
+                    "tableau": "$105,845",
+                    "streamlit": "$105,845",
+                    "backend": "$105,845"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.31",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.31"
+                  },
+                  "max_difference": "0.31",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2024-09"
+              },
+              "key_tuple": [
+                "2024-09"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 51352,
+                    "streamlit": 51352.0,
+                    "backend": 51352.0
+                  },
+                  "formatted": {
+                    "tableau": "$51,352",
+                    "streamlit": "$51,352",
+                    "backend": "$51,352"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.0",
+                    "streamlit_backend": "0.0",
+                    "tableau_backend": "0.0"
+                  },
+                  "max_difference": "0.0",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2024-10"
+              },
+              "key_tuple": [
+                "2024-10"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 59408,
+                    "streamlit": 59408.23,
+                    "backend": 59408.23
+                  },
+                  "formatted": {
+                    "tableau": "$59,408",
+                    "streamlit": "$59,408",
+                    "backend": "$59,408"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.23",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.23"
+                  },
+                  "max_difference": "0.23",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2024-11"
+              },
+              "key_tuple": [
+                "2024-11"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 67464,
+                    "streamlit": 67464.46,
+                    "backend": 67464.46
+                  },
+                  "formatted": {
+                    "tableau": "$67,464",
+                    "streamlit": "$67,464",
+                    "backend": "$67,464"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.46",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.46"
+                  },
+                  "max_difference": "0.46",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2024-12"
+              },
+              "key_tuple": [
+                "2024-12"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 75521,
+                    "streamlit": 75520.69,
+                    "backend": 75520.69
+                  },
+                  "formatted": {
+                    "tableau": "$75,521",
+                    "streamlit": "$75,521",
+                    "backend": "$75,521"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.31",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.31"
+                  },
+                  "max_difference": "0.31",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2025-01"
+              },
+              "key_tuple": [
+                "2025-01"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 83028,
+                    "streamlit": 83028.0,
+                    "backend": 83028.0
+                  },
+                  "formatted": {
+                    "tableau": "$83,028",
+                    "streamlit": "$83,028",
+                    "backend": "$83,028"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.0",
+                    "streamlit_backend": "0.0",
+                    "tableau_backend": "0.0"
+                  },
+                  "max_difference": "0.0",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2025-02"
+              },
+              "key_tuple": [
+                "2025-02"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 91084,
+                    "streamlit": 91084.23,
+                    "backend": 91084.23
+                  },
+                  "formatted": {
+                    "tableau": "$91,084",
+                    "streamlit": "$91,084",
+                    "backend": "$91,084"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.23",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.23"
+                  },
+                  "max_difference": "0.23",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2025-03"
+              },
+              "key_tuple": [
+                "2025-03"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 99140,
+                    "streamlit": 99140.46,
+                    "backend": 99140.46
+                  },
+                  "formatted": {
+                    "tableau": "$99,140",
+                    "streamlit": "$99,140",
+                    "backend": "$99,140"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.46",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.46"
+                  },
+                  "max_difference": "0.46",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2025-04"
+              },
+              "key_tuple": [
+                "2025-04"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 107197,
+                    "streamlit": 107196.69,
+                    "backend": 107196.69
+                  },
+                  "formatted": {
+                    "tableau": "$107,197",
+                    "streamlit": "$107,197",
+                    "backend": "$107,197"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.31",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.31"
+                  },
+                  "max_difference": "0.31",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2025-05"
+              },
+              "key_tuple": [
+                "2025-05"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 52704,
+                    "streamlit": 52704.0,
+                    "backend": 52704.0
+                  },
+                  "formatted": {
+                    "tableau": "$52,704",
+                    "streamlit": "$52,704",
+                    "backend": "$52,704"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.0",
+                    "streamlit_backend": "0.0",
+                    "tableau_backend": "0.0"
+                  },
+                  "max_difference": "0.0",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2025-06"
+              },
+              "key_tuple": [
+                "2025-06"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 60760,
+                    "streamlit": 60760.23,
+                    "backend": 60760.23
+                  },
+                  "formatted": {
+                    "tableau": "$60,760",
+                    "streamlit": "$60,760",
+                    "backend": "$60,760"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.23",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.23"
+                  },
+                  "max_difference": "0.23",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2025-07"
+              },
+              "key_tuple": [
+                "2025-07"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 68816,
+                    "streamlit": 68816.46,
+                    "backend": 68816.46
+                  },
+                  "formatted": {
+                    "tableau": "$68,816",
+                    "streamlit": "$68,816",
+                    "backend": "$68,816"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.46",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.46"
+                  },
+                  "max_difference": "0.46",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2025-08"
+              },
+              "key_tuple": [
+                "2025-08"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 76873,
+                    "streamlit": 76872.69,
+                    "backend": 76872.69
+                  },
+                  "formatted": {
+                    "tableau": "$76,873",
+                    "streamlit": "$76,873",
+                    "backend": "$76,873"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.31",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.31"
+                  },
+                  "max_difference": "0.31",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2025-09"
+              },
+              "key_tuple": [
+                "2025-09"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 84380,
+                    "streamlit": 84380.0,
+                    "backend": 84380.0
+                  },
+                  "formatted": {
+                    "tableau": "$84,380",
+                    "streamlit": "$84,380",
+                    "backend": "$84,380"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.0",
+                    "streamlit_backend": "0.0",
+                    "tableau_backend": "0.0"
+                  },
+                  "max_difference": "0.0",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2025-10"
+              },
+              "key_tuple": [
+                "2025-10"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 92436,
+                    "streamlit": 92436.23,
+                    "backend": 92436.23
+                  },
+                  "formatted": {
+                    "tableau": "$92,436",
+                    "streamlit": "$92,436",
+                    "backend": "$92,436"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.23",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.23"
+                  },
+                  "max_difference": "0.23",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2025-11"
+              },
+              "key_tuple": [
+                "2025-11"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 100492,
+                    "streamlit": 100492.46,
+                    "backend": 100492.46
+                  },
+                  "formatted": {
+                    "tableau": "$100,492",
+                    "streamlit": "$100,492",
+                    "backend": "$100,492"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.46",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.46"
+                  },
+                  "max_difference": "0.46",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            },
+            {
+              "key": {
+                "Order Month": "2025-12"
+              },
+              "key_tuple": [
+                "2025-12"
+              ],
+              "measures": [
+                {
+                  "name": "Sales",
+                  "field": "Sales",
+                  "definition": {
+                    "name": "Sales",
+                    "kind": "currency",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 108549,
+                    "streamlit": 108548.69,
+                    "backend": 108548.69
+                  },
+                  "formatted": {
+                    "tableau": "$108,549",
+                    "streamlit": "$108,549",
+                    "backend": "$108,549"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0.31",
+                    "streamlit_backend": "0.00",
+                    "tableau_backend": "0.31"
+                  },
+                  "max_difference": "0.31",
+                  "formatted_difference": "$0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "$0.50",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            }
+          ],
+          "formula_results": [
+            {
+              "id": "sales",
+              "metric": "Sales",
+              "tableau": "SUM([Sales])",
+              "streamlit": "SUM(SALES)",
+              "classification": "EXACT",
+              "impact": "None",
+              "status": "PASS"
+            }
+          ],
+          "interaction_results": [
+            {
+              "name": "Date range = 2025",
+              "tableau": "12 month points",
+              "streamlit": "12 month points",
+              "proof": "12 chart-grain comparison rows",
+              "status": "PASS"
+            }
+          ],
+          "failed_cells": 0,
+          "max_difference": "0.46",
+          "evidence_complete": true,
+          "status": "PASS",
+          "comparison_csv": "evidence/customer-analysis/charts/monthly-sales/comparison.csv"
+        },
+        {
+          "id": "customer-kpis",
+          "title": "Customer KPIs",
+          "chart_type": "KPI group",
+          "grain": [
+            "KPI"
+          ],
+          "measures": [
+            {
+              "name": "Value",
+              "kind": "number",
+              "display_decimals": 0
+            }
+          ],
+          "tableau_rows": [
+            {
+              "KPI": "Customers",
+              "Value": 793
+            }
+          ],
+          "streamlit_rows": [
+            {
+              "KPI": "Customers",
+              "Value": 793
+            }
+          ],
+          "backend_rows": [
+            {
+              "KPI": "Customers",
+              "Value": 793
+            }
+          ],
+          "formulas": [
+            {
+              "id": "distinct_customers",
+              "metric": "Distinct Customers",
+              "tableau": "COUNTD([Customer ID])",
+              "streamlit": "COUNT(DISTINCT CUSTOMER_ID)",
+              "classification": "SEMANTICALLY_EQUIVALENT",
+              "impact": "None"
+            }
+          ],
+          "interactions": [],
+          "source_counts": {
+            "tableau": 1,
+            "streamlit": 1,
+            "backend": 1
+          },
+          "duplicates": {
+            "tableau": [],
+            "streamlit": [],
+            "backend": []
+          },
+          "null_keys": {
+            "tableau": [],
+            "streamlit": [],
+            "backend": []
+          },
+          "key_set_match": true,
+          "order_match": true,
+          "comparison_rows": [
+            {
+              "key": {
+                "KPI": "Customers"
+              },
+              "key_tuple": [
+                "Customers"
+              ],
+              "measures": [
+                {
+                  "name": "Value",
+                  "field": "Value",
+                  "definition": {
+                    "name": "Value",
+                    "kind": "number",
+                    "display_decimals": 0
+                  },
+                  "values": {
+                    "tableau": 793,
+                    "streamlit": 793,
+                    "backend": 793
+                  },
+                  "formatted": {
+                    "tableau": "793",
+                    "streamlit": "793",
+                    "backend": "793"
+                  },
+                  "pair_diffs": {
+                    "tableau_streamlit": "0",
+                    "streamlit_backend": "0",
+                    "tableau_backend": "0"
+                  },
+                  "max_difference": "0",
+                  "formatted_difference": "0",
+                  "tolerance": "0.5",
+                  "formatted_tolerance": "0.500",
+                  "status": "PASS"
+                }
+              ],
+              "status": "PASS"
+            }
+          ],
+          "formula_results": [
+            {
+              "id": "distinct_customers",
+              "metric": "Distinct Customers",
+              "tableau": "COUNTD([Customer ID])",
+              "streamlit": "COUNT(DISTINCT CUSTOMER_ID)",
+              "classification": "SEMANTICALLY_EQUIVALENT",
+              "impact": "None",
+              "status": "PASS"
+            }
+          ],
+          "interaction_results": [],
+          "failed_cells": 0,
+          "max_difference": "0",
+          "evidence_complete": true,
+          "status": "PASS",
+          "comparison_csv": "evidence/customer-analysis/charts/customer-kpis/comparison.csv"
+        }
+      ],
+      "position": 1,
+      "images": {
+        "tableau": "evidence/customer-analysis/tableau.svg",
+        "streamlit": "evidence/customer-analysis/streamlit.svg",
+        "diff": null
+      },
+      "visual_status": "PASS",
+      "formulas": [
+        {
+          "id": "sales",
+          "metric": "Sales",
+          "tableau": "SUM([Sales])",
+          "streamlit": "SUM(SALES)",
+          "classification": "EXACT",
+          "impact": "None",
+          "status": "PASS",
+          "used_by": [
+            "Sales by Region",
+            "Monthly Customer Sales"
+          ]
+        },
+        {
+          "id": "profit",
+          "metric": "Profit",
+          "tableau": "SUM([Profit])",
+          "streamlit": "SUM(PROFIT)",
+          "classification": "EXACT",
+          "impact": "None",
+          "status": "PASS",
+          "used_by": [
+            "Sales by Region"
+          ]
+        },
+        {
+          "id": "distinct_customers",
+          "metric": "Distinct Customers",
+          "tableau": "COUNTD([Customer ID])",
+          "streamlit": "COUNT(DISTINCT CUSTOMER_ID)",
+          "classification": "SEMANTICALLY_EQUIVALENT",
+          "impact": "None",
+          "status": "PASS",
+          "used_by": [
+            "Customer KPIs"
+          ]
+        }
+      ],
+      "interactions": [
+        {
+          "name": "Region = West",
+          "tableau": "West bar remains; $739,814 displayed",
+          "streamlit": "West bar remains; $739,814 displayed",
+          "proof": "Filtered comparison CSV and screenshot",
+          "status": "PASS"
+        },
+        {
+          "name": "Date range = 2025",
+          "tableau": "12 month points",
+          "streamlit": "12 month points",
+          "proof": "12 chart-grain comparison rows",
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS",
+      "proof_complete": true
+    },
+    {
+      "id": "shipment-trends",
+      "name": "Shipment Trends",
+      "visual": {
+        "tableau_screenshot": "C:\\Users\\SharathKumarKammari\\Downloads\\Tableau to SiS_Cowork - Cortex\\accelerator_validation_reference\\example_assets\\shipment-tableau.svg",
+        "streamlit_screenshot": "C:\\Users\\SharathKumarKammari\\Downloads\\Tableau to SiS_Cowork - Cortex\\accelerator_validation_reference\\example_assets\\shipment-streamlit.svg",
+        "similarity": 0.72,
+        "threshold": 0.95,
+        "checks": [
+          {
+            "name": "Components",
+            "observed": "On-Time Trend missing",
+            "threshold": "Exact",
+            "status": "FAIL"
+          }
+        ]
+      },
+      "charts": [
+        {
+          "id": "on-time-trend",
+          "title": "On-Time Trend",
+          "chart_type": "Line chart",
+          "grain": [
+            "Ship Month"
+          ],
+          "measures": [
+            {
+              "name": "On-Time Rate",
+              "kind": "percent",
+              "display_decimals": 1,
+              "value_scale": "fraction"
+            }
+          ],
+          "tableau_rows": [],
+          "streamlit_rows": [],
+          "backend_rows": [],
+          "formulas": [
+            {
+              "id": "on_time_rate",
+              "metric": "On-Time Rate",
+              "tableau": "SUM(IIF([Shipment Status]='On Time',1,0)) / COUNT([Order ID])",
+              "streamlit": "Not generated: Shipment Status unresolved",
+              "classification": "NOT_VALIDATED",
+              "impact": "Blocks chart and workbook sign-off"
+            }
+          ],
+          "interactions": [
+            {
+              "name": "Ship Mode filter",
+              "tableau": "Updates the trend",
+              "streamlit": "Trend unavailable",
+              "proof": "No chart-grain output",
+              "status": "BLOCKED"
+            }
+          ],
+          "source_counts": {
+            "tableau": 0,
+            "streamlit": 0,
+            "backend": 0
+          },
+          "duplicates": {
+            "tableau": [],
+            "streamlit": [],
+            "backend": []
+          },
+          "null_keys": {
+            "tableau": [],
+            "streamlit": [],
+            "backend": []
+          },
+          "key_set_match": true,
+          "order_match": true,
+          "comparison_rows": [],
+          "formula_results": [
+            {
+              "id": "on_time_rate",
+              "metric": "On-Time Rate",
+              "tableau": "SUM(IIF([Shipment Status]='On Time',1,0)) / COUNT([Order ID])",
+              "streamlit": "Not generated: Shipment Status unresolved",
+              "classification": "NOT_VALIDATED",
+              "impact": "Blocks chart and workbook sign-off",
+              "status": "BLOCKED"
+            }
+          ],
+          "interaction_results": [
+            {
+              "name": "Ship Mode filter",
+              "tableau": "Updates the trend",
+              "streamlit": "Trend unavailable",
+              "proof": "No chart-grain output",
+              "status": "BLOCKED"
+            }
+          ],
+          "failed_cells": 0,
+          "max_difference": "0",
+          "evidence_complete": true,
+          "status": "BLOCKED",
+          "comparison_csv": "evidence/shipment-trends/charts/on-time-trend/comparison.csv"
+        }
+      ],
+      "position": 2,
+      "images": {
+        "tableau": "evidence/shipment-trends/tableau.svg",
+        "streamlit": "evidence/shipment-trends/streamlit.svg",
+        "diff": null
+      },
+      "visual_status": "FAIL",
+      "formulas": [
+        {
+          "id": "on_time_rate",
+          "metric": "On-Time Rate",
+          "tableau": "SUM(IIF([Shipment Status]='On Time',1,0)) / COUNT([Order ID])",
+          "streamlit": "Not generated: Shipment Status unresolved",
+          "classification": "NOT_VALIDATED",
+          "impact": "Blocks chart and workbook sign-off",
+          "status": "BLOCKED",
+          "used_by": [
+            "On-Time Trend"
+          ]
+        }
+      ],
+      "interactions": [
+        {
+          "name": "Ship Mode filter",
+          "tableau": "Updates the trend",
+          "streamlit": "Trend unavailable",
+          "proof": "No chart-grain output",
+          "status": "BLOCKED"
+        }
+      ],
+      "status": "FAIL",
+      "proof_complete": true
+    }
+  ],
+  "status": "FAIL",
+  "summary": {
+    "dashboards": 2,
+    "passed": 1,
+    "review": 0,
+    "failed_or_blocked": 1,
+    "charts": 4
+  }
+}

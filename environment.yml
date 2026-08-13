@@ -1,0 +1,44 @@
+# Packages for Streamlit in Snowflake (Snowflake Anaconda channel only).
+# PIN streamlit: without this SiS falls back to a very old default (pre-1.23)
+# that lacks hide_index=, st.container(height=/key=), and deep column
+# nesting -- the deployed app then diverges from local. 1.52.2 is the newest
+# the snowflake channel offers and supports every feature the engine uses,
+# so the deployed app renders like local preview.
+name: sf_env
+channels:
+  - snowflake
+dependencies:
+  - streamlit=1.52.2
+  - altair
+  - pandas
+  - plotly
+  # Excel readers: the staged converter loads a workbook's OWN bundled data
+  # files, which include Excel -- openpyxl for .xlsx (e.g. Superstore's
+  # 'Sales Target.xlsx'), xlrd for legacy .xls ('Sample - Superstore.xls').
+  # Both confirmed on the snowflake conda channel (openpyxl 3.1.5, xlrd 2.0.2).
+  - openpyxl
+  - xlrd
+  # PDF writer for the downloadable migration report (import name: `fpdf`).
+  # Pure-Python -- no system libs, unlike weasyprint (cairo/pango), which
+  # would not load in the SiS sandbox. Confirmed on the snowflake conda
+  # channel (fpdf2 2.8.7) via INFORMATION_SCHEMA.PACKAGES.
+  - fpdf2
+  # R1 (2026-07-28): Tableau Server/Cloud REST client (tableau_server.py) uses
+  # `requests` for sign-in/download. CONFIRMED PRESENT on the snowflake conda
+  # channel 2026-07-30 via INFORMATION_SCHEMA.PACKAGES (requests 2.34.2).
+  - requests
+  # R8 (2026-07-28): headless_render.py converts the SAME Altair chart object
+  # engine.py builds to a real PNG via vl-convert-python (Rust-backed, no
+  # browser) -- the alternative to screenshotting the SSO-gated deployed app
+  # (rejected, see NEW_CHAT.md's R8 redesign entry). CONFIRMED PRESENT on the
+  # snowflake conda channel 2026-07-30 via INFORMATION_SCHEMA.PACKAGES on
+  # wb19670-c2gpartners: vl-convert-python 1.9.0.post1. This had been flagged
+  # since 2026-07-28 as the highest-risk dependency here (a compiled Rust
+  # binary wheel, not pure Python) -- that risk is now closed by a real query,
+  # not an assumption. `requests` confirmed in the same query (2.34.2).
+  - vl-convert-python
+  # Pillow composites per-sheet PNGs into one per-dashboard image
+  # (render_dashboard_to_png). Very likely already present as a transitive
+  # dependency of streamlit itself, but pinned explicitly now that this
+  # project takes a direct, load-bearing dependency on it.
+  - pillow

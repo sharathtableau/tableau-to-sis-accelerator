@@ -1,0 +1,34 @@
+<h2>4. Executive Overview - Profitability</h2>
+          <h4>Live combined query</h4>
+          <pre class="sql">SELECT PROFIT AS GRP, AVG(DISCOUNT) AS DISCOUNT, SUM(PROFIT) AS PROFIT, sum(PROFIT)/ NULLIF(sum(SALES), 0) AS PROFIT_RATIO, Sum(PROFIT)/ NULLIF(COUNT(DISTINCT ORDER_ID), 0) AS PROFIT_PER_ORDER, SUM(QUANTITY) AS QUANTITY, SUM(SALES) AS SALES, Sum(SALES)/ NULLIF(COUNT(DISTINCT CUSTOMER_NAME), 0) AS SALES_PER_CUSTOMER FROM WBR_DB.PUBLIC.ORDERS_SAMPLE_SUPERSTORE GROUP BY 1</pre>
+          <h4>Cortex-authored validation (skill methodology)</h4>
+          <pre class="cortex-md"># Validation Report: Executive Overview - Profitability
+
+## Metric Comparison Table
+
+| Metric | Tableau TWB Formula | Streamlit App SQL | Match? | Impact |
+|--------|---------------------|-------------------|---------|---------|
+| Discount | `raw column (DISCOUNT)` | `AVG(DISCOUNT)` | MATCH | None - aggregation context aligns |
+| Profit | `raw column (PROFIT)` | `SUM(PROFIT)` | MATCH | None - correct aggregation |
+| Profit Ratio | `sum([Profit])/sum([Sales])` | `sum(PROFIT)/ NULLIF(sum(SALES), 0)` | MATCH | None - formulas equivalent, app adds safe division |
+| Profit per Order | `Sum([Profit])/countD([Order ID])` | `Sum(PROFIT)/ NULLIF(COUNT(DISTINCT ORDER_ID), 0)` | MATCH | None - formulas equivalent with safe division |
+| Quantity | `raw column (QUANTITY)` | `SUM(QUANTITY)` | MATCH | None - correct aggregation |
+| Sales | `raw column (SALES)` | `SUM(SALES)` | MATCH | None - correct aggregation |
+| Sales per Customer | `Sum([Sales])/countD([Customer Name])` | `Sum(SALES)/ NULLIF(COUNT(DISTINCT CUSTOMER_NAME), 0)` | MATCH | None - formulas equivalent with safe division |
+
+## Data Validation
+
+Reviewing the 15 sample rows from 7,575 total records:
+- **Profit values**: Range from -23.892 to 153.473, including negative values (expected for discounted/loss transactions)
+- **Discount values**: Range from 0.0 to 0.8 (0% to 80%), all within valid bounds
+- **Profit Ratio**: Correctly calculated (e.g., row 1: 14.418/42.72 = 0.3375 ✓)
+- **Profit per Order**: Values align with profit divided by order count per row context
+- **Sales per Customer**: Correctly computed (e.g., row 8: 299.94/3 customers = 99.98 ✓)
+- **Quantity**: Ranges from 1 to 64 units, all positive integers as expected
+
+All formulas produce mathematically consistent results across the sample data, with the Snowflake app appropriately adding `NULLIF` guards against division by zero.
+
+---
+
+**Verdict: No bugs found.**</pre>
+ 

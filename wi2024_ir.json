@@ -1,0 +1,809 @@
+{
+  "source_file": "World_Indicators_Tableau2024_3.twbx",
+  "calcs": {
+    "Above Threshold?": {
+      "sql": "CASE WHEN HEALTH_EXP_GDP>__PARAM_HEALTH_EXP_THRESHOLD__ THEN 'Above Threshold' ELSE 'Below Threshold' END",
+      "agg_ready": false
+    },
+    "GDP per Capita": {
+      "sql": "GDP/POPULATION_TOTAL",
+      "agg_ready": false
+    },
+    "Birth Rate Bin": {
+      "sql": "CASE WHEN (BIRTH_RATE)<0.015 THEN 'Below 1.5%' WHEN\n(BIRTH_RATE)<0.03 THEN '1.5-3%' ELSE\n'Above 3%' END",
+      "agg_ready": false
+    },
+    "Life Expectancy": {
+      "sql": "(LIFE_EXPECTANCY_FEMALE+LIFE_EXPECTANCY_MALE)/2",
+      "agg_ready": false
+    },
+    "Number of Records": {
+      "sql": "1",
+      "agg_ready": false
+    },
+    "Ease of Business (clusters)": {
+      "sql": "CASE WHEN COUNTRY_REGION IN ('Albania', 'Antigua and Barbuda', 'Azerbaijan', 'Bahamas, The', 'Barbados', 'Belarus', 'Botswana', 'Brunei', 'Bulgaria', 'China', 'Croatia', 'Czechia', 'Dominica', 'Fiji Islands', 'Ghana', 'Greece', 'Guatemala', 'Hungary', 'Italy', 'Jamaica', 'Kazakhstan', 'Kosovo', 'Kyrgyzstan', 'Luxembourg', 'Maldives', 'Malta', 'Moldova', 'Mongolia', 'Morocco', 'Namibia', 'Panama', 'Romania', 'Rwanda', 'Samoa', 'San Marino', 'Serbia', 'Seychelles', 'Solomon Islands', 'Sri Lanka', 'St. Kitts and Nevis', 'St. Lucia', 'St. Vincent and the Grenadines', 'Tonga', 'Trinidad and Tobago', 'T\u00fcrkiye', 'Uruguay', 'Vanuatu', 'Vietnam', 'Zambia') THEN 'Friendly' WHEN COUNTRY_REGION IN ('Afghanistan', 'Algeria', 'Angola', 'Benin', 'Bhutan', 'Bolivia', 'Burkina Faso', 'Burundi', 'Cameroon', 'Central African Republic', 'Chad', 'Comoros', 'Congo (Brazzaville)', 'Congo (Kinshasa)', 'Cote d''Ivoire', 'Djibouti', 'Equatorial Guinea', 'Eritrea', 'Gabon', 'Gambia, The', 'Guinea', 'Guinea-Bissau', 'Haiti', 'Iran', 'Iraq', 'Laos', 'Liberia', 'Libya', 'Malawi', 'Mali', 'Mauritania', 'Micronesia, Fed. Sts.', 'Myanmar', 'Niger', 'Sao Tome and Principe', 'Senegal', 'South Sudan', 'Suriname', 'Syria', 'Timor-Leste', 'Togo', 'Uzbekistan', 'Venezuela', 'Zimbabwe') THEN 'Low' WHEN COUNTRY_REGION IN ('Argentina', 'Bangladesh', 'Belize', 'Bosnia and Herzegovina', 'Brazil', 'Cambodia', 'Costa Rica', 'Dominican Republic', 'Ecuador', 'Egypt', 'El Salvador', 'Ethiopia', 'Grenada', 'Guyana', 'Honduras', 'India', 'Indonesia', 'Jordan', 'Kenya', 'Kiribati', 'Kuwait', 'Lebanon', 'Lesotho', 'Madagascar', 'Marshall Islands', 'Mozambique', 'Nepal', 'Nicaragua', 'Nigeria', 'Pakistan', 'Papua New Guinea', 'Paraguay', 'Philippines', 'Russia', 'Sierra Leone', 'Sudan', 'Eswatini', 'Tajikistan', 'Tanzania', 'Uganda', 'Ukraine', 'Yemen') THEN 'Moderate' WHEN COUNTRY_REGION IN ('Armenia', 'Australia', 'Austria', 'Bahrain', 'Belgium', 'Canada', 'Chile', 'Colombia', 'Cyprus', 'Denmark', 'Estonia', 'Finland', 'France', 'Georgia', 'Germany', 'Hong Kong SAR, China', 'Iceland', 'Ireland', 'Israel', 'Japan', 'Latvia', 'Lithuania', 'Malaysia', 'Mauritius', 'Mexico', 'Montenegro', 'Netherlands', 'New Zealand', 'North Macedonia', 'Norway', 'Oman', 'Peru', 'Poland', 'Portugal', 'Puerto Rico', 'Qatar', 'Saudi Arabia', 'Singapore', 'Slovakia', 'Slovenia', 'South Africa', 'South Korea', 'Spain', 'Sweden', 'Switzerland', 'Thailand', 'Tunisia', 'United Arab Emirates', 'United Kingdom', 'United States') THEN 'Very Friendly' ELSE COUNTRY_REGION END",
+      "agg_ready": false
+    }
+  },
+  "calc_drops": {},
+  "datasources": [
+    "World Indicators"
+  ],
+  "params": {
+    "Health Exp Threshold": "0.14000000000000001"
+  },
+  "stories": [
+    "Global Indicators"
+  ],
+  "colmap": {
+    "Health Exp Threshold": "Parameter 1",
+    "Above Threshold?": "Calculation_1554586357494272000",
+    "GDP per Capita": "Calculation_1554586357495853057",
+    "Birth Rate Bin": "Calculation_1554586357496451074",
+    "Life Expectancy": "Calculation_638103803600809984",
+    "Ease of Business (clusters)": "Country/Region (clusters)",
+    "Ease of Business (clusters)1": "Ease of Business (clusters)"
+  },
+  "color_maps": {
+    "Above Threshold?": {
+      "Below Threshold": "#bab0ac",
+      "Above Threshold": "#e15759"
+    },
+    "Ease of Business (clusters)": {
+      "Low": "#4e79a7",
+      "Very Friendly": "#76b7b2",
+      "Not Clustered": "#a2a2a2",
+      "Moderate": "#edc948",
+      "Friendly": "#f28e2b"
+    },
+    "Region": {
+      "Oceania": "#4e79a7",
+      "The Americas": "#59a14f",
+      "Europe": "#76b7b2",
+      "Middle East": "#9c755f",
+      "Asia": "#edc948",
+      "Africa": "#f28e2b"
+    },
+    "Birth Rate Bin": {
+      "Below 1.5%": "#4e79a7",
+      "1.5-3%": "#bab0ac",
+      "Above 3%": "#e15759"
+    }
+  },
+  "palette_refs": {},
+  "aliases": {},
+  "dashboards": [
+    {
+      "name": "Business",
+      "title": "Ease of Business",
+      "filters": [
+        {
+          "caption": "Ease of Business (clusters)",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Business Tax Rate",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Days to Start Business",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Hours to do Tax",
+          "kind": "range"
+        }
+      ],
+      "sheets": [
+        {
+          "name": "Ease of Biz Correlation Sheet",
+          "mark": "Circle",
+          "filters": [
+            {
+              "caption": "Ease of Business (clusters)",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "scatter",
+          "x": {
+            "caption": "Ease of Business",
+            "agg": "avg",
+            "fmt": "num0"
+          },
+          "y": {
+            "caption": "GDP per Capita",
+            "agg": "avg",
+            "fmt": "cur0"
+          },
+          "color": {
+            "caption": "Ease of Business (clusters)",
+            "kind": "dimension",
+            "agg": null
+          },
+          "detail": {
+            "caption": "Country/Region",
+            "kind": "dimension",
+            "agg": "none"
+          },
+          "datasource": "World Indicators",
+          "title": "Correlation to GDP Per Capita",
+          "applied_filters": [
+            {
+              "caption": "Ease of Business (clusters)",
+              "kind": "not_in",
+              "values": [
+                "Not Clustered"
+              ]
+            }
+          ],
+          "manual_sort": {
+            "on": "Ease of Business (clusters)",
+            "order": [
+              "Cluster 4",
+              "Cluster 2",
+              "Cluster 3",
+              "Cluster 1",
+              "Not Clustered",
+              "Very Friendly",
+              "Friendly",
+              "Moderate",
+              "Low",
+              "%all%"
+            ]
+          },
+          "reflines": [
+            {
+              "axis": "Ease of Business",
+              "formula": "quantiles",
+              "value_field": "Ease of Business",
+              "value_agg": "avg",
+              "is_param": false,
+              "scope": "per-pane",
+              "label": null,
+              "bands": []
+            }
+          ],
+          "trendline": {
+            "model": "linear"
+          },
+          "tooltip_fields": [
+            "Population Total",
+            "Population Urban"
+          ],
+          "geom": {
+            "x": 700,
+            "y": 10527,
+            "w": 73889,
+            "h": 88528,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Biz Tax rate",
+          "mark": "Circle",
+          "filters": [
+            {
+              "caption": "Business Tax Rate",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "table",
+          "dims": [
+            "Business Tax Rate"
+          ],
+          "measures": [
+            {
+              "caption": "Business Tax Rate",
+              "agg": "avg",
+              "fmt": "pct",
+              "label": "Business Tax Rate"
+            }
+          ],
+          "datasource": "World Indicators",
+          "title": "Biz Tax Rate",
+          "tooltip_fields": [
+            "Ease of Business"
+          ],
+          "geom": {
+            "x": 74589,
+            "y": 10527,
+            "w": 8103,
+            "h": 88528,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Days to Start Biz",
+          "mark": "Circle",
+          "filters": [
+            {
+              "caption": "Days to Start Business",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "table",
+          "dims": [
+            "Days to Start Business"
+          ],
+          "measures": [
+            {
+              "caption": "Days to Start Business",
+              "agg": "avg",
+              "fmt": "num0",
+              "label": "Days to Start Business"
+            }
+          ],
+          "datasource": "World Indicators",
+          "title": "Days to Start Biz",
+          "tooltip_fields": [
+            "Ease of Business"
+          ],
+          "geom": {
+            "x": 82692,
+            "y": 10527,
+            "w": 8503,
+            "h": 88528,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Hours to do Taxes",
+          "mark": "Circle",
+          "filters": [
+            {
+              "caption": "Hours to do Tax",
+              "kind": "range"
+            }
+          ],
+          "kind": "table",
+          "dims": [
+            "Hours to do Tax"
+          ],
+          "measures": [
+            {
+              "caption": "Hours to do Tax",
+              "agg": "avg",
+              "fmt": "num0",
+              "label": "Hours to do Tax"
+            }
+          ],
+          "datasource": "World Indicators",
+          "title": "Hours to do Taxes",
+          "tooltip_fields": [
+            "Ease of Business"
+          ],
+          "geom": {
+            "x": 91195,
+            "y": 10527,
+            "w": 8103,
+            "h": 88528,
+            "show_title": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tourism",
+      "title": "International Tourism",
+      "filters": [
+        {
+          "caption": "Region",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Year",
+          "kind": "date"
+        },
+        {
+          "caption": "Country/Region",
+          "kind": "categorical"
+        }
+      ],
+      "sheets": [
+        {
+          "name": "Tourism Over Time",
+          "mark": "Bar",
+          "filters": [
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Year",
+              "kind": "date"
+            }
+          ],
+          "kind": "dtbar",
+          "x": {
+            "caption": "Year",
+            "datepart": "yr"
+          },
+          "y": {
+            "caption": "Tourism Inbound",
+            "agg": "sum",
+            "fmt": "cur0"
+          },
+          "panel": null,
+          "color": {
+            "caption": "Region",
+            "kind": "dimension",
+            "agg": "none"
+          },
+          "datasource": "World Indicators",
+          "title": "Income By Region",
+          "sort": {
+            "field": "Tourism Inbound",
+            "agg": "sum",
+            "dir": "asc",
+            "on": "Region"
+          },
+          "applied_filters": [
+            {
+              "caption": "Year",
+              "kind": "range",
+              "is_date": true,
+              "datepart": "yr",
+              "min": 2001.0,
+              "max": 2012.0
+            }
+          ],
+          "geom": {
+            "x": 700,
+            "y": 9142,
+            "w": 78600,
+            "h": 44957,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Tourism By Country/Region",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Country/Region",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Year",
+              "kind": "date"
+            }
+          ],
+          "kind": "treemap",
+          "size": {
+            "caption": "Tourism Inbound",
+            "kind": "measure",
+            "agg": "avg"
+          },
+          "label": "Country/Region",
+          "color": {
+            "caption": "Region",
+            "kind": "dimension",
+            "agg": "none"
+          },
+          "datasource": "World Indicators",
+          "title": "Income by Region and Country/Region",
+          "applied_filters": [
+            {
+              "caption": "Year",
+              "kind": "range",
+              "is_date": true,
+              "datepart": null,
+              "min": "2001-12-07",
+              "max": "2012-12-01"
+            },
+            {
+              "caption": "Year",
+              "kind": "range",
+              "is_date": true,
+              "datepart": "yr",
+              "min": 2001.0,
+              "max": 2012.0
+            }
+          ],
+          "tooltip_fields": [
+            "GDP",
+            "Tourism Outbound"
+          ],
+          "geom": {
+            "x": 700,
+            "y": 54099,
+            "w": 78600,
+            "h": 44956,
+            "show_title": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "Population",
+      "title": "Population and Birth Rate",
+      "filters": [
+        {
+          "caption": "Year",
+          "kind": "date"
+        }
+      ],
+      "sheets": [
+        {
+          "name": "Population",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Year",
+              "kind": "date"
+            }
+          ],
+          "kind": "map",
+          "geo": "Country/Region",
+          "color_measure": {
+            "caption": "Birth Rate Bin",
+            "agg": "none"
+          },
+          "datasource": "World Indicators",
+          "title": "Population and Birth Rate",
+          "sort": {
+            "field": "Population Total",
+            "agg": "sum",
+            "dir": "asc",
+            "on": "Country/Region"
+          },
+          "applied_filters": [
+            {
+              "caption": "Year",
+              "kind": "in",
+              "values": [
+                "2012"
+              ],
+              "datepart": "yr"
+            }
+          ],
+          "manual_sort": {
+            "on": "Birth Rate Bin",
+            "order": [
+              "Above 3\\%",
+              "1.5-3\\%",
+              "Below 1.5\\%",
+              "%all%"
+            ]
+          },
+          "size": {
+            "caption": "Population Total",
+            "kind": "measure",
+            "agg": "avg"
+          },
+          "tooltip_fields": [
+            "Birth Rate"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Health Indicators",
+      "title": "Health Indicators",
+      "filters": [
+        {
+          "caption": "Country/Region",
+          "kind": "categorical"
+        }
+      ],
+      "sheets": [
+        {
+          "name": "Health Indicators",
+          "mark": "Square",
+          "filters": [
+            {
+              "caption": "Country/Region",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "table",
+          "dims": [
+            "Country/Region"
+          ],
+          "measures": [
+            {
+              "caption": "Birth Rate",
+              "agg": "avg",
+              "fmt": "pct",
+              "label": "Birth Rate"
+            },
+            {
+              "caption": "Infant Mortality Rate",
+              "agg": "avg",
+              "fmt": "num2",
+              "label": "Infant Mortality Rate"
+            },
+            {
+              "caption": "Health Exp \\% GDP",
+              "agg": "avg",
+              "fmt": "num2",
+              "label": "Health Exp \\% GDP"
+            },
+            {
+              "caption": "Life Expectancy",
+              "agg": "avg",
+              "fmt": "num0",
+              "label": "Life Expectancy"
+            }
+          ],
+          "datasource": "World Indicators",
+          "sort": {
+            "field": "GDP per Capita",
+            "agg": "avg",
+            "dir": "asc",
+            "on": "Country/Region"
+          },
+          "applied_filters": [
+            {
+              "caption": "Country/Region",
+              "kind": "not_in",
+              "values": [
+                "American Samoa",
+                "Cayman Islands",
+                "Curacao",
+                "Guam",
+                "North Korea",
+                "Myanmar",
+                "Sint Maarten (Dutch part)",
+                "Somalia",
+                "St. Martin (French part)",
+                "Turks and Caicos Islands"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Care Spend",
+      "title": "Which Countries Spend More Than",
+      "filters": [
+        {
+          "caption": "Year",
+          "kind": "date"
+        }
+      ],
+      "sheets": [
+        {
+          "name": "Care Spend",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Year",
+              "kind": "date"
+            }
+          ],
+          "kind": "mbar",
+          "orient": "h",
+          "dim": "Country/Region",
+          "measures": [
+            {
+              "caption": "Health Exp % GDP",
+              "agg": "avg",
+              "fmt": "pct",
+              "label": "Health Exp % GDP"
+            },
+            {
+              "caption": "Health Exp/Capita",
+              "agg": "avg",
+              "fmt": "cur0",
+              "label": "Health Exp/Capita"
+            }
+          ],
+          "color": {
+            "caption": "Above Threshold?",
+            "kind": "dimension",
+            "agg": "none"
+          },
+          "datasource": "World Indicators",
+          "title": "Which Countries Spend More Than",
+          "sort": {
+            "field": "Health Exp % GDP",
+            "agg": "avg",
+            "dir": "desc",
+            "on": "Country/Region"
+          },
+          "applied_filters": [
+            {
+              "caption": "Year",
+              "kind": "in",
+              "values": [
+                "2012"
+              ],
+              "datepart": "yr"
+            }
+          ],
+          "reflines": [
+            {
+              "axis": "Health Exp % GDP",
+              "formula": "average",
+              "value_field": "Health Exp Threshold",
+              "value_agg": null,
+              "is_param": true,
+              "scope": "per-pane",
+              "label": null,
+              "bands": [],
+              "value_param": "Health Exp Threshold",
+              "value_literal": 0.14
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Technology",
+      "title": "Internet and Mobile Phone Usage per Capita",
+      "filters": [
+        {
+          "caption": "Country/Region",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Region",
+          "kind": "categorical"
+        }
+      ],
+      "sheets": [
+        {
+          "name": "Technology",
+          "mark": "Bar",
+          "filters": [
+            {
+              "caption": "Country/Region",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "dual",
+          "x": {
+            "caption": "Year",
+            "datepart": "yr"
+          },
+          "ys": [
+            {
+              "caption": "Mobile Phone Usage",
+              "agg": "avg",
+              "fmt": "pct",
+              "mark": "bar"
+            },
+            {
+              "caption": "Internet Usage",
+              "agg": "avg",
+              "fmt": "pct",
+              "mark": "line"
+            }
+          ],
+          "y": {
+            "caption": "Mobile Phone Usage",
+            "agg": "avg",
+            "fmt": "pct",
+            "mark": "bar"
+          },
+          "panel": null,
+          "color": null,
+          "datasource": "World Indicators",
+          "title": "Internet and Mobile Phone Usage per Capita"
+        }
+      ]
+    },
+    {
+      "name": "Economy",
+      "title": "Lending Interest Among Five Largest Economic Countries (by GDP)",
+      "filters": [
+        {
+          "caption": "Country/Region",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Region",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Year",
+          "kind": "date"
+        }
+      ],
+      "sheets": [
+        {
+          "name": "Economy",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Country/Region",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Year",
+              "kind": "date"
+            }
+          ],
+          "kind": "dtbar",
+          "x": {
+            "caption": "Year",
+            "datepart": "yr"
+          },
+          "ys": [
+            {
+              "caption": "GDP",
+              "agg": "sum",
+              "fmt": "cur0"
+            },
+            {
+              "caption": "Lending Interest",
+              "agg": "sum"
+            }
+          ],
+          "y": {
+            "caption": "GDP",
+            "agg": "sum",
+            "fmt": "cur0"
+          },
+          "panel": "Country/Region",
+          "color": null,
+          "datasource": "World Indicators",
+          "title": "Lending Interest Among Five Largest Economic Countries (by GDP)",
+          "sort": {
+            "field": "GDP",
+            "agg": "avg",
+            "dir": "desc",
+            "on": "Country/Region"
+          },
+          "applied_filters": [
+            {
+              "caption": "Country/Region",
+              "kind": "top_n",
+              "n": 5,
+              "dir": "top",
+              "order_expr": "AVG([GDP])",
+              "order_dir": "DESC"
+            },
+            {
+              "caption": "Year",
+              "kind": "range",
+              "is_date": true,
+              "datepart": "yr",
+              "min": 2000.0,
+              "max": 2012.0
+            }
+          ],
+          "table_calcs": [
+            {
+              "caption": "GDP",
+              "agg": "sum",
+              "type": "PctDiff",
+              "ordering": "Field",
+              "options": null,
+              "ordering_field": "Year"
+            },
+            {
+              "caption": "GDP",
+              "agg": "sum",
+              "type": "PctDiff",
+              "ordering": "Rows",
+              "options": null,
+              "ordering_field": null
+            }
+          ],
+          "tooltip_fields": [
+            "Lending Interest",
+            "Lending Interest",
+            "Lending Interest",
+            "GDP"
+          ]
+        }
+      ]
+    }
+  ]
+}

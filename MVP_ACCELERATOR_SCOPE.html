@@ -1,0 +1,131 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>MVP + Full Scope — Tableau→SiS Accelerator</title><style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#1f2937;background:#f1f5f9}
+.wrap{max-width:1180px;margin:0 auto;padding:26px}
+.hd{background:#0f172a;color:#fff;border-radius:14px;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.hd h1{margin:0 0 4px;font-size:21px} .hd .sub{font-size:12px;opacity:.8}
+.badges{display:flex;gap:10px}
+.badge{text-align:center;padding:10px 16px;border-radius:12px;min-width:110px}
+.badge.mvp{background:#2563eb} .badge.all{background:#334155}
+.badge .s{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em} .badge .p{font-size:22px;font-weight:800;line-height:1.2}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+.kpi{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:12px 14px}
+.kpi .v{font-size:22px;font-weight:800} .kpi .l{font-size:11.5px;color:#64748b}
+.sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#475569;margin:22px 0 10px;display:flex;align-items:center;gap:8px}
+.sec .tag{font-size:10px;padding:2px 8px;border-radius:10px;letter-spacing:0}
+.sec .tag.mvp{background:#dbeafe;color:#1d4ed8}
+.sec .tag.rem{background:#e2e8f0;color:#475569}
+.note{background:#fff7ed;border:1px solid #fdba74;border-radius:10px;padding:12px 16px;font-size:12px;color:#7c2d12;margin-bottom:10px;line-height:1.5}
+.note b{color:#c2410c}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;font-size:12.5px}
+th{background:#f8fafc;text-align:left;padding:9px 11px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:#475569;border-bottom:1px solid #e2e8f0}
+td{padding:9px 11px;border-bottom:1px solid #eef2f7;vertical-align:middle}
+.mid{font-weight:800;color:#2563eb;width:30px} .mn{font-weight:700} .mreason{color:#64748b;font-size:11.5px}
+.est{font-weight:800;white-space:nowrap;text-align:center;width:120px}
+.na{color:#94a3b8;font-weight:700;font-style:italic}
+.status{font-size:11px;font-weight:700;white-space:nowrap;text-align:center;width:110px}
+.done{color:#15803d} .pending{color:#94a3b8}
+tr.total td{background:#0f172a;color:#fff;font-weight:800}
+tr.total2 td{background:#334155;color:#fff;font-weight:800}
+.summary{background:#0f172a;color:#e2e8f0;border-radius:12px;padding:16px 20px;font-size:13px;line-height:1.5;margin-top:20px}
+.summary b{color:#fff}
+@media print{body{background:#fff} .wrap{padding:0}}
+</style></head><body><div class='wrap'>
+
+<div class='hd'>
+ <div><h1>Tableau → Streamlit-in-Snowflake Accelerator — MVP + Full Scope</h1>
+ <div class='sub'>Prepared: 21 Jul 2026 &nbsp;·&nbsp; Progress updated: 28 Jul 2026 &nbsp;·&nbsp; Prepared by: Sharath Kumar</div></div>
+ <div class='badges'>
+  <div class='badge mvp'><div class='s'>MVP left</div><div class='p'>~0.5 day</div></div>
+  <div class='badge all'><div class='s'>Everything left</div><div class='p'>~29.5–31.5d</div></div>
+ </div>
+</div>
+
+<div class='note'><b>Note:</b> this HTML was last regenerated 22 Jul 2026 and had drifted out of sync with
+MVP_ACCELERATOR_SCOPE.md since (R1/R3/R4/R5/R6/R7/R9/R10 all shipped in the meantime) — regenerated
+28 Jul 2026 to match. Treat the .md as the source of truth going forward; this file is a
+manually-refreshed visual mirror of it.</div>
+
+<div class='kpis'>
+ <div class='kpi'><div class='v'>5 / 6</div><div class='l'>MVP items done</div></div>
+ <div class='kpi'><div class='v'>0</div><div class='l'>MVP dev items left</div></div>
+ <div class='kpi'><div class='v'>~25d</div><div class='l'>Post-MVP backlog</div></div>
+ <div class='kpi'><div class='v'>~4–6d</div><div class='l'>Newly-requested roadmap remaining (R2, R8)</div></div>
+</div>
+
+<div class='sec'><span class='tag mvp'>MVP</span>Blocks demo-ready</div>
+<table>
+<tr><th>#</th><th>Item</th><th>Why it's MVP-blocking</th><th>Est.</th><th>Status</th></tr>
+<tr><td class='mid'>1</td><td class='mn'>Custom SQL datasource execution</td><td class='mreason'>Named demo scenario — today only reported, never actually run</td><td class='est'>1 day</td><td class='status done'>DONE 21 Jul</td></tr>
+<tr><td class='mid'>2</td><td class='mn'>Live connection support</td><td class='mreason'>Named demo scenario — currently falls back to a stand-in table silently</td><td class='est'>0.5–1 day</td><td class='status done'>DONE 21 Jul</td></tr>
+<tr><td class='mid'>3</td><td class='mn'>Union support</td><td class='mreason'>Named demo scenario — zero code path exists today</td><td class='est'>1 day</td><td class='status done'>DONE 22 Jul</td></tr>
+<tr><td class='mid'>4</td><td class='mn'>Per-workbook profile + datasource routing fix</td><td class='mreason'>Correctness/trust bug — a foreign workbook can silently render someone else's data on caption collision</td><td class='est'>~1 day</td><td class='status done'>DONE 21 Jul</td></tr>
+<tr><td class='mid'>5</td><td class='mn'>Assess 1 untested corpus workbook (Superstore_TopN_MeasureSwap)</td><td class='mreason'>Unknown defect risk until audited</td><td class='est'>0.5–1 day</td><td class='status done'>DONE 22 Jul</td></tr>
+<tr><td class='mid'>6</td><td class='mn'>User's own visual confirmation in Snowsight</td><td class='mreason'>Sign-off checkpoint, not dev effort</td><td class='est'>—</td><td class='status' style='color:#b45309'>In progress</td></tr>
+<tr><td class='mid'>—</td><td class='mn'>Live-deploy bugfix buffer</td><td class='mreason'>~6 real bugs already found + fixed via live Snowsight testing (deploy-artifact, region-filter blanking, param/filter bleed, bar gaps, top-N-vs-context, stale-filter-at-All)</td><td class='est'>~0.5 day left</td><td class='status' style='color:#15803d'>Mostly spent</td></tr>
+<tr class='total'><td></td><td>MVP TOTAL — ~0.5 dev day left (of ~6–9)</td><td>All engineering complete; only #6 your Snowsight sign-off remains</td><td class='est'>~0.5 day</td><td class='status'>5 of 6 done</td></tr>
+</table>
+<p style='font-size:11px;color:#94a3b8;margin-top:6px'>EMEA DTC Performance KPIs.twbx removed from scope — not required for this MVP.</p>
+
+<div class='sec'><span class='tag rem' style='background:#dcfce7;color:#15803d'>DONE</span>Newly-requested roadmap — shipped &amp; live-verified since 21/22 Jul</div>
+<table>
+<tr><th>#</th><th>Item</th><th>What shipped</th><th>Status</th></tr>
+<tr><td class='mid'>R1</td><td class='mn'>Pull a workbook from Tableau Server/Cloud by link</td><td class='mreason'>Vendored <code>tableau_server.py</code>; a project/workbook browse UI with search (Connect → pick project → pick workbook → Fetch) replaced the need to paste a link. Live-verified through the actual deployed Snowsight app: PAT sign-in, SiS Secret + External Access Integration wiring, and a real end-to-end conversion whose numbers matched Tableau's own ground truth exactly.</td><td class='status done'>DONE 28 Jul</td></tr>
+<tr><td class='mid'>R3</td><td class='mn'>Auto-point to an existing Snowflake table from the data model</td><td class='mreason'>An extract-based workbook whose upstream table already lives in the account binds directly to it — no decode, no copy. The guard (column-cover check) is the feature.</td><td class='status done'>DONE 26 Jul</td></tr>
+<tr><td class='mid'>R4</td><td class='mn'>Snowsight staged-app UX — impactful per-stage progress + Discovery calc pass/fail</td><td class='mreason'>Branded 5-stage rail, <code>st.balloons()</code> removed, calc pass/fail tally moved up front. Folded into the Blend console reskin.</td><td class='status done'>DONE 26 Jul</td></tr>
+<tr><td class='mid'>R5</td><td class='mn'>Human-gated in-app Deploy button <span style='color:#b45309;font-weight:700'>(user-emphasized)</span></td><td class='mreason'>Ships the generated app through the Snowpark session (<code>session.file.put</code> → <code>CREATE OR REPLACE STREAMLIT</code>), no CLI needed.</td><td class='status done'>DONE 25 Jul</td></tr>
+<tr><td class='mid'>R6</td><td class='mn'>In-app Cortex Analyst chat ("ask your data")</td><td class='mreason'>User-confirmed working live against the deployed semantic view.</td><td class='status done'>DONE 25 Jul</td></tr>
+<tr><td class='mid'>R7</td><td class='mn'>Non-star joins + blend link extraction</td><td class='mreason'>Snowflake-schema join chains now auto-model; blend link fields read from the workbook's own XML. Blend auto-materialization deliberately left open (guidance + reviewable remodel SQL only).</td><td class='status done'>Joins DONE 26 Jul</td></tr>
+<tr><td class='mid'>R9</td><td class='mn'>Live connection with a multi-table join</td><td class='mreason'>Found and fixed a worse silent-wrong-answer bug along the way (was dropping the second table, not honestly refusing). Live-verified against the real account.</td><td class='status done'>DONE 26 Jul</td></tr>
+<tr><td class='mid'>R10</td><td class='mn'>Multi-table extract auto-bind to pre-existing separate tables</td><td class='mreason'>Root-caused a connection-detection bug shared with R9; live-verified in Snowsight, including a second real sequencing bug found + fixed live.</td><td class='status done'>DONE 26 Jul</td></tr>
+</table>
+
+<div class='sec'><span class='tag rem' style='background:#fef3c7;color:#b45309'>REMAINING</span>Newly-requested roadmap — not yet done</div>
+<table>
+<tr><th>#</th><th>Item</th><th>Est.</th></tr>
+<tr><td class='mid'>R2</td><td class='mn'><b>Per-section end-to-end validation via Cortex</b> — Cortex reads the complete <code>.twbx</code> and compares Tableau vs the Streamlit app <b>section by section</b>, extending <code>parity.py</code> Stage 5 beyond grand-total + calc spot checks. <b style='color:#b45309'>Guardrail:</b> Cortex is comparison/narrative only — never the source of truth, output stays execution-gated + human-reviewed. TWB-formula version already built; now unblocked to start on REAL Tableau per-section values since R1 landed.</td><td class='est'>2–3 days</td></tr>
+<tr><td class='mid'>R8</td><td class='mn'><b>Cortex vision screenshot validation + real AI-token metering</b> — upload Tableau dashboard screenshots → <code>AI_COMPLETE</code> (vision) extracts each dashboard's KPI values → diff against the app's real SQL-computed values → pass/fail per KPI, execution-gated. Real token counts replace today's mocked-zero panels. Blocking first step needs a live-session probe (verify vision input works on the account) — cannot be built or estimated more precisely offline.</td><td class='est'>2–3 days</td></tr>
+<tr class='total2'><td></td><td>NEWLY-REQUESTED REMAINING TOTAL</td><td class='est'>~4–6 days</td></tr>
+</table>
+
+<div class='sec'><span class='tag rem'>REMAINING</span>Post-MVP backlog — real, tracked, NOT required to ship MVP</div>
+<table>
+<tr><th>#</th><th>Item</th><th>Est.</th></tr>
+<tr><td class='mid'>1</td><td class='mn'>Bins (197× in corpus — top gap by occurrence)</td><td class='est'>1.5 days</td></tr>
+<tr><td class='mid'>2</td><td class='mn'>Histogram (depends on bins)</td><td class='est'>1 day</td></tr>
+<tr><td class='mid'>3</td><td class='mn'>Box-whisker chart</td><td class='est'>1 day</td></tr>
+<tr><td class='mid'>4</td><td class='mn'>Bullet chart</td><td class='est'>1 day</td></tr>
+<tr><td class='mid'>5</td><td class='mn'>True matrix / pivot table</td><td class='est'>2 days</td></tr>
+<tr><td class='mid'>6</td><td class='mn'>Parameter-driven measure swap ("Metric Selector") — <b style='color:#15803d'>calc-based form DONE 22 Jul</b> (verified on Superstore_TopN_MeasureSwap); remaining: native no-calc Measure Names/Values selector</td><td class='est'>1 day</td></tr>
+<tr><td class='mid'>7</td><td class='mn'>Table calcs RUNNING_*/LOOKUP/TOTAL/FIRST/LAST</td><td class='est'>2 days</td></tr>
+<tr><td class='mid'>8</td><td class='mn'>Dashboard actions / cross-highlighting / stories</td><td class='est'><span class='na'>N/A — by design</span></td></tr>
+<tr><td class='mid'>9</td><td class='mn'>Rich hover tooltips (basic only today)</td><td class='est'>1 day</td></tr>
+<tr><td class='mid'>10</td><td class='mn'>Non-star join → Snowflake views — <b style='color:#15803d'>DONE 26 Jul via R7</b></td><td class='est'><span class='na'>0 — done</span></td></tr>
+<tr><td class='mid'>11</td><td class='mn'>Reserved-word risk at the column level</td><td class='est'>0.5 day</td></tr>
+<tr><td class='mid'>12</td><td class='mn'>Map/choropleth blank in SiS sandbox (fallback)</td><td class='est'>1 day</td></tr>
+<tr><td class='mid'>13</td><td class='mn'>Data blends — link fields extracted <b style='color:#15803d'>DONE 26 Jul via R7</b>; auto-materialization as a deployed join still guidance-only by design</td><td class='est'>1–1.5 days</td></tr>
+<tr><td class='mid'>14</td><td class='mn'>Context / data-source filters — <b style='color:#15803d'>DONE 22 Jul</b> for categorical/range/date-part (context filters inject into top-N ranking; dashboard filters scope to bound sheets). Remaining: data-source-level filters</td><td class='est'>0.5 day</td></tr>
+<tr><td class='mid'>15</td><td class='mn'>Pixel-exact layout cosmetics</td><td class='est'>1 day</td></tr>
+<tr><td class='mid'>16</td><td class='mn'>Live-source migration kit (SQL-Server-style external live sources)</td><td class='est'>2.5 days</td></tr>
+<tr><td class='mid'>17</td><td class='mn'>Cortex: run calc fallback across rest of corpus (22 drops)</td><td class='est'>1 day</td></tr>
+<tr><td class='mid'>18</td><td class='mn'>Cortex: deploy E-Commerce semantic view + align YAML emitter</td><td class='est'>1 day</td></tr>
+<tr><td class='mid'>19</td><td class='mn'>Cortex: extract blend linking fields from XML — <b style='color:#15803d'>DONE 26 Jul via R7</b></td><td class='est'><span class='na'>0 — done</span></td></tr>
+<tr><td class='mid'>20</td><td class='mn'>Cortex: wire calc fallback into pipeline_app.py Stage 5</td><td class='est'>0.5 day</td></tr>
+<tr><td class='mid'>21</td><td class='mn'>convert.py --deploy full automation</td><td class='est'>1 day</td></tr>
+<tr><td class='mid'>22</td><td class='mn'>"Drill: Product" invented control</td><td class='est'><span class='na'>0 — product decision</span></td></tr>
+<tr><td class='mid'>23</td><td class='mn'><b>FIXED LOD ignores dimension filters (order-of-ops)</b> — a {FIXED} LOD wrongly sees dimension filters (Tableau computes them before dimension filters). <b style='color:#b45309'>DEFERRED</b> — no corpus workbook exercises FIXED-LOD + dimension-filter yet; build against a real test workbook, don't rewrite the regression-locked LOD path blind. Context filters (the companion case) already handled.</td><td class='est'>2 days</td></tr>
+<tr class='total2'><td></td><td>REMAINING TOTAL</td><td class='est'>~25 days<br><span style='font-weight:400;font-size:10px;color:#94a3b8'>(2 items closed since 22 Jul — #10 and #19 — the figure was never broken out per-item precisely enough to net those out exactly; treat as a slight overstatement)</span></td></tr>
+</table>
+
+<div class='summary'><b>Grand total:</b> MVP is <b>5 of 6 done — all engineering complete</b>, ~0.5 dev day
+left (of the original ~6–9), which is just your Snowsight sign-off. Of the newly-requested roadmap,
+<b>R1/R3/R4/R5/R6/R7-joins/R9/R10 have all shipped and live-verified</b> — R1 closed <b>28 Jul</b>,
+live-verified end to end through the actual deployed Snowsight app (a project/workbook browse UI with
+search, not just a pasted link). Only <b>R2</b> (Cortex per-section validation, ~2–3 days — now unblocked
+to use real Tableau values since R1 landed) and <b>R8</b> (Cortex vision screenshot validation, ~2–3 days
+— needs a live-session probe first) remain, ~4–6 days total. The post-MVP backlog (chart types,
+table-calc edge cases, the FIXED-LOD order-of-ops case, Cortex scale-out, deploy automation, cosmetics)
+is another ~25 days (a slight overstatement — 2 sub-items closed via R7 since this figure was last
+computed precisely) —
+<b>~29.5–31.5 days pending in total</b>, all real and roadmapped, none of it blocks the MVP date.</div>
+
+</div></body></html>

@@ -1,0 +1,9 @@
+Region,measure,tableau,streamlit,backend,tableau_streamlit_diff,streamlit_backend_diff,tableau_backend_diff,tolerance,status
+Central,Sales,503171,503170.67,503170.67,0.33,0.00,0.33,0.5,PASS
+Central,Profit,39706,39706.31,39706.31,0.31,0.00,0.31,0.5,PASS
+East,Sales,691828,691828.17,691828.17,0.17,0.00,0.17,0.5,PASS
+East,Profit,91523,91522.78,91522.78,0.22,0.00,0.22,0.5,PASS
+South,Sales,391722,391721.91,391721.91,0.09,0.00,0.09,0.5,PASS
+South,Profit,46749,46749.11,46749.11,0.11,0.00,0.11,0.5,PASS
+West,Sales,739814,739813.61,739813.61,0.39,0.00,0.39,0.5,PASS
+West,Profit,108419,108418.82,108418.82,0.18,0.00,0.18,0.5,PASS

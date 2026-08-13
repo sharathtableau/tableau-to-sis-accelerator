@@ -1,0 +1,100 @@
+# Snowflake CLI project definition -- deploys the generated app to
+# Streamlit in Snowflake.   Usage:  snow streamlit deploy --replace
+#
+# datasources.deploy.json (WBR_DB targets, written by load_snowflake.py
+# --database) is staged AS datasources.json so config.py picks up the
+# Snowflake table locations; the local dev mapping stays untouched.
+definition_version: 2
+entities:
+  tableau_migration_app:
+    type: streamlit
+    identifier: TABLEAU_TO_SIS_ECOMMERCE
+    stage: STREAMLIT_STAGE
+    query_warehouse: POWERHOUSE
+    main_file: app_ecommerce.py
+    title: "Tableau -> Streamlit (E-Commerce)"
+    artifacts:
+      - app_ecommerce.py
+      - engine.py
+      - backend.py
+      - config.py
+      - calc_translator.py
+      - findings.py
+      - profile_superstore.py
+      - profile_default.py
+      - environment.yml
+      - src: datasources.deploy.json
+        dest: datasources.json
+
+  # A STANDALONE CONVERTED DASHBOARD, deployed as its own app tile (like the
+  # E-Commerce one) -- the migrated Superstore workbook. datasources.deploy.json
+  # is staged AS datasources.json; config.py now lets that WIN in Snowflake, so
+  # Superstore's captions ('Sample - Superstore' etc., which collide with the
+  # dev built-ins) route to WBR_DB.PUBLIC.* instead of the phantom local
+  # SUPERSTORE db. app_superstore.py embeds the IR + calls engine.run(IR).
+  superstore_app:
+    type: streamlit
+    identifier: TABLEAU_TO_SIS_SUPERSTORE
+    stage: STREAMLIT_STAGE
+    query_warehouse: POWERHOUSE
+    main_file: app_superstore.py
+    title: "Tableau -> Streamlit (Superstore)"
+    artifacts:
+      - app_superstore.py
+      - engine.py
+      - backend.py
+      - config.py
+      - calc_translator.py
+      - findings.py
+      - profile_superstore.py
+      - profile_default.py
+      - environment.yml
+      - src: datasources.deploy.json
+        dest: datasources.json
+
+  # THE STAGED DEMO -- upload any .twb/.twbx, watch Discovery -> Parsing ->
+  # Semantic Model (Cortex) -> App Creation -> Validation run live, in Snowflake.
+  # No pre-seeded datasources.json: config.py's DATASOURCES starts at the
+  # Superstore dev built-ins and pipeline.configure_datasources() repoints it
+  # per upload, so this app is workbook-agnostic (deploy once, demo any book).
+  # .hyper extracts need a one-time local `python init_workbook.py Book.twbx`
+  # first (tableauhyperapi is not on Snowflake's Anaconda channel); CSV/Excel
+  # extracts and live-Snowflake-connected workbooks convert fully in-platform.
+  pipeline_demo:
+    type: streamlit
+    identifier: TABLEAU_TO_SIS_PIPELINE_DEMO
+    stage: STREAMLIT_STAGE
+    query_warehouse: POWERHOUSE
+    main_file: pipeline_app.py
+    title: "Tableau -> SiS Accelerator (staged demo)"
+    artifacts:
+      - pipeline_app.py
+      - deep_validation.py       # V2: Cortex section/vision validation, dashboard
+                                 # validation report, R12 pack, migration report PDF
+      - pipeline.py
+      - parity.py
+      - validation_report.py    # R12: proof-first comparison engine (vendored, dependency-free)
+      - validation_adapter.py   # R12: Tableau/Streamlit/backend adapters for it
+      - validation_evidence_bridge.py  # R12: real screenshot/crosstab evidence + explicit
+                                 # per-chart REGISTRY (map/treemap/table/rank-table capture)
+      - validation_report_dashboard.py # client-facing per-dashboard report renderer
+                                 # (A/B/C/D chapters, chart data contract, sign-off)
+      - cortex_semantic.py
+      - semantic_layer.py        # Stage 3a data-model view (pipeline.data_model_report)
+      - gen_platform_architecture.py  # Overview tab's inlined system-architecture board
+      - tableau_parser.py
+      - tableau_server.py        # R1: pull a workbook from Tableau Server/Cloud by link
+      - headless_render.py       # R8: render the app's own charts to PNG (no browser/SSO)
+      - app_screenshot.py        # real screenshot of the generated app (playwright import is
+                                  # lazy -- available() reports unavailable in the SSO-gated
+                                  # SiS sandbox at runtime, never at import time)
+      - init_workbook.py
+      - calc_translator.py
+      - codegen.py
+      - engine.py
+      - backend.py
+      - config.py
+      - findings.py
+      - profile_superstore.py
+      - profile_default.py
+      - environment.yml

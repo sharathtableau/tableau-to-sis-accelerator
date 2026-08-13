@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tableau → Streamlit-in-Snowflake Accelerator</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#111d38;--bg2:#162040;--bg3:#1c2a50;--bg4:#223060;
+  --cyan:#00d4d4;--cyan-dim:rgba(0,212,212,0.12);
+  --coral:#e05a4e;--gold:#f0b429;--purple:#8b7cf8;--green:#34d399;
+  --text:#ffffff;--muted:rgba(255,255,255,0.55);--dimmer:rgba(255,255,255,0.25);
+  --border:rgba(255,255,255,0.08);
+  --font:'Plus Jakarta Sans',sans-serif;
+  --sz-title:clamp(2.2rem,6.5vw,5.5rem);
+  --sz-h2:clamp(1.5rem,4vw,3.2rem);
+  --sz-body:clamp(0.75rem,1.35vw,1rem);
+  --sz-label:clamp(0.58rem,0.8vw,0.72rem);
+  --pad:clamp(1.8rem,4.5vw,4.5rem);
+  --gap:clamp(0.7rem,1.8vh,1.8rem);
+  --gap-sm:clamp(0.28rem,0.7vh,0.6rem);
+  --ease:cubic-bezier(0.16,1,0.3,1);--dur:0.55s;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;overflow-x:hidden;background:var(--bg);font-family:var(--font);}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth;}
+body{color:var(--text);}
+.slide{width:100vw;height:100vh;height:100dvh;overflow:hidden;scroll-snap-align:start;
+  display:flex;flex-direction:column;position:relative;background:var(--bg);}
+.slide.alt{background:var(--bg2);}
+
+@media (max-height:830px){:root{--pad:clamp(1rem,3.1vw,2.6rem);--gap:clamp(0.45rem,1.35vh,1.05rem);
+  --sz-h2:clamp(1.25rem,3.2vw,2.2rem);}}
+@media (max-height:700px){:root{--pad:clamp(0.75rem,3vw,2rem);--gap:clamp(0.35rem,1.2vw,0.9rem);
+  --sz-title:clamp(1.5rem,4.5vw,3rem);--sz-h2:clamp(1.1rem,3vw,2rem);}}
+@media (max-height:600px){:root{--pad:clamp(0.5rem,2.5vw,1.5rem);--gap:clamp(0.25rem,1vw,0.6rem);
+  --sz-title:clamp(1.2rem,4vw,2rem);--sz-body:clamp(0.68rem,1.1vw,0.85rem);}
+  .nav-dots,.keyboard-hint{display:none;}}
+@media (max-width:600px){:root{--sz-title:clamp(1.5rem,8.5vw,3rem);}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms !important;
+  transition-duration:0.2s !important;}html{scroll-behavior:auto;}}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity var(--dur) var(--ease),transform var(--dur) var(--ease);}
+.slide.visible .reveal{opacity:1;transform:translateY(0);}
+.reveal-scale{opacity:0;transform:scale(0.88);transition:opacity var(--dur) var(--ease),transform var(--dur) var(--ease);}
+.slide.visible .reveal-scale{opacity:1;transform:scale(1);}
+.d1{transition-delay:.05s}.d2{transition-delay:.14s}.d3{transition-delay:.23s}.d4{transition-delay:.32s}
+.d5{transition-delay:.41s}.d6{transition-delay:.50s}.d7{transition-delay:.59s}.d8{transition-delay:.68s}
+
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--cyan),rgba(0,212,212,0.4));
+  width:0%;z-index:1000;transition:width .35s var(--ease);pointer-events:none;}
+.nav-dots{position:fixed;right:clamp(0.6rem,1.2vw,1rem);top:50%;transform:translateY(-50%);
+  display:flex;flex-direction:column;gap:7px;z-index:999;}
+.nav-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.18);cursor:pointer;
+  border:none;transition:background .3s,transform .3s;}
+.nav-dot.active{background:var(--cyan);transform:scale(1.6);}
+.fixed-brand{position:fixed;top:0.85rem;right:clamp(1rem,2vw,1.8rem);font-size:clamp(0.62rem,0.9vw,0.78rem);
+  font-weight:800;letter-spacing:0.3em;text-transform:uppercase;color:var(--cyan);z-index:998;
+  pointer-events:none;user-select:none;}
+.keyboard-hint{position:fixed;bottom:0.9rem;right:0.9rem;font-size:clamp(0.52rem,0.75vw,0.65rem);
+  color:var(--dimmer);letter-spacing:0.1em;z-index:900;}
+.fs-btn{position:fixed;bottom:0.9rem;left:0.9rem;display:flex;align-items:center;gap:0.4rem;
+  background:rgba(0,212,212,0.1);border:1px solid rgba(0,212,212,0.28);color:var(--cyan);
+  font-family:var(--font);font-weight:600;font-size:clamp(0.52rem,0.75vw,0.65rem);letter-spacing:0.1em;
+  text-transform:uppercase;padding:0.35em 0.8em;border-radius:3px;cursor:pointer;z-index:900;
+  transition:background .2s,border-color .2s;}
+.fs-btn:hover{background:rgba(0,212,212,0.2);border-color:rgba(0,212,212,0.5);}
+.brand{font-size:var(--sz-label);font-weight:800;letter-spacing:0.28em;text-transform:uppercase;color:var(--cyan);}
+
+.chip{display:inline-flex;align-items:center;background:rgba(0,212,212,0.1);border:1px solid rgba(0,212,212,0.28);
+  color:var(--cyan);font-size:var(--sz-label);font-weight:700;text-transform:uppercase;letter-spacing:0.25em;
+  padding:0.28em 0.85em;border-radius:2px;flex-shrink:0;}
+.chip.red{background:rgba(224,90,78,0.1);border-color:rgba(224,90,78,0.28);color:var(--coral);}
+.chip.purple{background:rgba(139,124,248,0.1);border-color:rgba(139,124,248,0.28);color:var(--purple);}
+.chip.green{background:rgba(52,211,153,0.1);border-color:rgba(52,211,153,0.28);color:var(--green);}
+
+.slide-header{display:flex;align-items:center;justify-content:space-between;flex-shrink:0;margin-bottom:var(--gap);gap:1rem;}
+.slide-num{font-size:var(--sz-label);color:var(--dimmer);letter-spacing:0.14em;font-weight:500;white-space:nowrap;}
+
+.metric-card{background:var(--bg3);border:1px solid var(--border);border-top:2.5px solid var(--cyan);
+  border-radius:5px;padding:clamp(0.7rem,1.6vw,1.2rem);display:flex;flex-direction:column;gap:0.2rem;}
+.metric-card .mnum{font-size:clamp(1.4rem,3.2vw,2.6rem);font-weight:800;color:var(--cyan);line-height:1;}
+.metric-card .mnum.coral{color:var(--coral)}.metric-card .mnum.gold{color:var(--gold)}
+.metric-card .mnum.green{color:var(--green)}.metric-card .mnum.purple{color:var(--purple)}
+.metric-card .mlabel{font-size:clamp(0.56rem,0.82vw,0.71rem);color:var(--muted);line-height:1.3;}
+
+.cost-card{background:var(--bg3);border:1px solid var(--border);border-radius:5px;
+  padding:clamp(0.7rem,1.5vw,1.1rem);display:flex;flex-direction:column;gap:0.3rem;transition:border-color .2s;}
+.cost-card:hover{border-color:rgba(0,212,212,0.35);}
+.cost-card .cico{font-size:clamp(1.1rem,2vw,1.5rem);}
+.cost-card h5{font-size:clamp(0.68rem,1.1vw,0.92rem);font-weight:700;color:var(--text);}
+.cost-card p{font-size:clamp(0.59rem,0.88vw,0.75rem);color:var(--muted);line-height:1.45;}
+
+.flow-step{flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:7px;
+  padding:clamp(0.8rem,1.9vw,1.4rem);text-align:center;display:flex;flex-direction:column;
+  align-items:center;gap:var(--gap-sm);transition:border-color .22s,transform .22s;}
+.flow-step:hover{border-color:rgba(0,212,212,0.45);transform:translateY(-5px);}
+.flow-step .fsico{font-size:clamp(1.4rem,2.8vw,2.4rem);}
+.flow-step h4{font-size:clamp(0.78rem,1.35vw,1.05rem);font-weight:700;color:var(--cyan);}
+.flow-step p{font-size:clamp(0.58rem,0.92vw,0.76rem);color:var(--muted);line-height:1.5;}
+.flow-arrow{font-size:clamp(0.9rem,1.8vw,1.4rem);color:var(--cyan);opacity:0.4;flex-shrink:0;align-self:center;}
+
+.step-item{display:flex;gap:0.75rem;align-items:flex-start;}
+.step-num{width:clamp(1.4rem,2.2vw,1.85rem);height:clamp(1.4rem,2.2vw,1.85rem);border-radius:50%;
+  background:var(--cyan-dim);border:1.5px solid rgba(0,212,212,0.5);display:flex;align-items:center;
+  justify-content:center;font-size:clamp(0.58rem,0.88vw,0.73rem);font-weight:800;color:var(--cyan);flex-shrink:0;}
+.step-txt h5{font-size:clamp(0.68rem,1.08vw,0.9rem);font-weight:700;color:var(--text);margin-bottom:0.14rem;}
+.step-txt p{font-size:clamp(0.58rem,0.86vw,0.73rem);color:var(--muted);line-height:1.42;}
+
+.ba-table{width:100%;border-collapse:collapse;}
+.ba-table th{padding:0.42em 0.68em;font-weight:700;font-size:clamp(0.55rem,0.8vw,0.7rem);
+  text-transform:uppercase;letter-spacing:0.16em;border-bottom:1.5px solid var(--border);text-align:left;}
+.ba-table th.bc{color:var(--coral)}.ba-table th.ac{color:var(--cyan)}
+.ba-table td{padding:0.46em 0.68em;font-size:clamp(0.6rem,0.9vw,0.78rem);color:var(--muted);
+  border-bottom:1px solid rgba(255,255,255,0.04);vertical-align:middle;}
+.ba-table td.bc{color:rgba(224,90,78,0.85)}
+.ba-table td.ac{color:rgba(0,212,212,0.9);font-weight:600}
+.ba-table td.gc{color:rgba(52,211,153,0.9);font-weight:600}
+.ba-table tr td:first-child{color:var(--text);font-weight:600;}
+
+.cta-btn{display:inline-flex;align-items:center;gap:0.45rem;background:var(--cyan);color:var(--bg);
+  font-family:var(--font);font-weight:800;font-size:clamp(0.7rem,1.2vw,0.95rem);padding:0.8em 1.9em;
+  border-radius:3px;border:none;cursor:pointer;letter-spacing:0.04em;align-self:flex-start;
+  transition:transform .2s,box-shadow .2s;}
+.cta-btn:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,212,212,0.32);}
+
+.codepill{display:inline-block;background:var(--bg4);border:1px solid var(--border);border-radius:4px;
+  padding:0.4em 0.8em;font-family:'Courier New',monospace;font-size:clamp(0.55rem,0.9vw,0.74rem);
+  color:var(--green);}
+
+.watch-item{display:flex;gap:0.8rem;align-items:flex-start;background:rgba(0,212,212,0.05);
+  border:1px solid rgba(0,212,212,0.2);border-radius:6px;padding:clamp(0.65rem,1.4vw,1rem);}
+.watch-item .wico{font-size:clamp(1rem,1.8vw,1.35rem);flex-shrink:0;}
+.watch-item h5{font-size:clamp(0.68rem,1.1vw,0.9rem);font-weight:700;color:var(--text);margin-bottom:0.15rem;}
+.watch-item p{font-size:clamp(0.58rem,0.88vw,0.74rem);color:var(--muted);line-height:1.45;}
+
+.edit-hotzone{position:fixed;top:0;left:0;width:80px;height:80px;z-index:10000;cursor:pointer;}
+.edit-toggle{position:fixed;top:0.9rem;left:0.9rem;width:36px;height:36px;border-radius:50%;
+  background:var(--cyan);color:var(--bg);font-size:0.88rem;border:none;cursor:pointer;z-index:10001;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;
+  transition:opacity .3s,transform .2s;}
+.edit-toggle.show,.edit-toggle.active{opacity:1;pointer-events:auto;}
+.edit-toggle:hover{transform:scale(1.1);}
+.edit-banner{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);background:rgba(0,212,212,0.14);
+  border:1px solid rgba(0,212,212,0.32);backdrop-filter:blur(8px);border-radius:3px;padding:0.38em 1.2em;
+  font-size:clamp(0.58rem,0.85vw,0.73rem);color:var(--cyan);font-weight:600;letter-spacing:0.1em;
+  z-index:10000;opacity:0;pointer-events:none;transition:opacity .3s;}
+.edit-banner.active{opacity:1;pointer-events:auto;}
+body.edit-active [contenteditable="true"]{outline:1px dashed rgba(0,212,212,0.38);outline-offset:2px;
+  border-radius:2px;cursor:text;}
+</style>
+</head>
+<body>
+
+<div class="fixed-brand">BLEND360</div>
+<div class="progress-bar" id="progressBar"></div>
+<nav class="nav-dots" id="navDots"></nav>
+<div class="keyboard-hint">↑↓ / Space to navigate</div>
+<button class="fs-btn" id="fsBtn"><svg viewBox="0 0 14 14" style="width:11px;height:11px;fill:none;stroke:var(--cyan);stroke-width:2;stroke-linecap:round"><polyline points="1,5 1,1 5,1"/><polyline points="9,1 13,1 13,5"/><polyline points="13,9 13,13 9,13"/><polyline points="5,13 1,13 1,9"/></svg> Fullscreen</button>
+
+<div class="edit-hotzone" id="editHotzone"></div>
+<button class="edit-toggle" id="editToggle">✏️</button>
+<div class="edit-banner" id="editBanner">EDIT MODE — click text to change it — Ctrl+S to save</div>
+
+<!-- ===== 01 TITLE ===== -->
+<section class="slide" id="s1">
+  <div style="height:100%;display:flex;flex-direction:column;padding:var(--pad);position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-25%;right:-18%;width:clamp(300px,65vw,750px);height:clamp(300px,65vw,750px);
+      background:radial-gradient(ellipse,rgba(0,212,212,0.1) 0%,transparent 68%);border-radius:50%;pointer-events:none;"></div>
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.016) 1px,transparent 1px);background-size:clamp(32px,5vw,64px) clamp(32px,5vh,64px);pointer-events:none;"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;flex-shrink:0;margin-bottom:var(--gap);">
+      <div class="brand reveal d1">BLEND360</div>
+      <div class="reveal d1" style="font-size:var(--sz-label);color:var(--muted);letter-spacing:0.18em;text-transform:uppercase;font-weight:600;">Data &amp; Analytics · 2026</div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;gap:var(--gap);">
+      <div style="display:flex;flex-direction:column;gap:var(--gap-sm);">
+        <div class="chip reveal d2">Analytics Platform Modernization</div>
+        <h1 style="font-size:var(--sz-title);font-weight:800;line-height:0.95;letter-spacing:-0.035em;" class="reveal d3">
+          Tableau → Streamlit<br>in <span style="color:var(--cyan);">Snowflake</span>
+        </h1>
+        <p style="font-size:clamp(0.85rem,1.65vw,1.15rem);color:var(--muted);line-height:1.55;max-width:56ch;" class="reveal d4">
+          Convert Tableau dashboards into governed Streamlit apps that run inside Snowflake — with the numbers proven, not promised.
+        </p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(0.5rem,1.2vw,0.9rem);max-width:min(100%,860px);" class="reveal d5">
+        <div class="metric-card"><div class="mnum">12</div><div class="mlabel">real workbooks converted &amp; verified</div></div>
+        <div class="metric-card" style="border-top-color:var(--green);"><div class="mnum green">0</div><div class="mlabel">AI tokens to convert a workbook</div></div>
+        <div class="metric-card" style="border-top-color:var(--gold);"><div class="mnum gold">72</div><div class="mlabel">regression gates, all green</div></div>
+        <div class="metric-card" style="border-top-color:var(--purple);"><div class="mnum purple">Live</div><div class="mlabel">running in Snowsight today</div></div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1;flex-shrink:0;margin-top:auto;padding-top:var(--gap-sm);border-top:1px solid var(--border);">
+      <div style="font-size:var(--sz-label);color:var(--dimmer);letter-spacing:0.18em;text-transform:uppercase;">Snowflake · Leadership · BI Team</div>
+      <div class="slide-num">01 / 10</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 02 WHY ===== -->
+<section class="slide alt" id="s2">
+  <div style="height:100%;display:flex;flex-direction:column;padding:var(--pad);">
+    <div class="slide-header">
+      <div class="chip reveal d1">Why We're Doing This</div>
+      <div class="slide-num reveal d1">02 / 10</div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:var(--gap);max-width:88ch;">
+      <h2 class="reveal d2" style="font-size:var(--sz-h2);font-weight:800;line-height:1.12;letter-spacing:-0.02em;">
+        A new metric, and two teams waiting on each other
+      </h2>
+      <p class="reveal d3" style="font-size:clamp(0.82rem,1.35vw,1rem);color:var(--muted);line-height:1.62;">
+        A retail client, real engagement. The ELT team adds a new metric to the Snowflake tables — their cycle
+        completes, the data is live. But nobody in the business can see it yet. It still needs a Tableau developer
+        to build it into the dashboard and push it through Tableau's own deployment cycle. A second cycle, stacked
+        on the first, on its own clock and its own queue.
+      </p>
+      <p class="reveal d4" style="font-size:clamp(0.85rem,1.4vw,1.05rem);color:var(--text);line-height:1.55;font-weight:600;">
+        Leadership didn't ask us to make the Tableau cycle faster. They asked why there was a second cycle at all.
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);margin-top:var(--gap-sm);" class="reveal d5">
+        <div class="cost-card"><div class="cico">🔀</div><h5>Two cycles, one deliverable</h5><p>ELT ships the metric to the table. The BI layer then needs its own build-and-deploy pass before anyone sees it.</p></div>
+        <div class="cost-card"><div class="cico">⏳</div><h5>Data ready ≠ data visible</h5><p>A metric sits fully loaded in the warehouse while it waits in the BI queue. The lag is organizational, not technical.</p></div>
+        <div class="cost-card"><div class="cico">🎯</div><h5>The ask was structural</h5><p>Not a faster intermediate layer — no intermediate layer. If it's in the table, it should be in the dashboard.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03 WHAT IT COSTS ===== -->
+<section class="slide" id="s3">
+  <div style="height:100%;display:flex;flex-direction:column;padding:var(--pad);">
+    <div class="slide-header">
+      <div class="chip red reveal d1">What The Current Stack Costs</div>
+      <div class="slide-num reveal d1">03 / 10</div>
+    </div>
+    <h2 class="reveal d2" style="font-size:clamp(1.3rem,3.1vw,2.2rem);font-weight:800;margin-bottom:calc(var(--gap)*0.6);letter-spacing:-0.02em;max-width:46ch;">
+      The dashboards were never the problem — the platform underneath them was
+    </h2>
+    <div class="reveal d3" style="flex:1;display:flex;flex-direction:column;justify-content:center;overflow:hidden;">
+      <table class="ba-table" style="table-layout:fixed;">
+        <thead><tr>
+          <th style="color:var(--text);width:31%;">The recurring cost</th>
+          <th class="bc" style="width:31%;">What teams usually do</th>
+          <th class="ac" style="width:38%;">Tableau → Streamlit in Snowflake</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td>Licences on top of Snowflake<br><span style="color:var(--muted);font-weight:400;font-size:0.9em;">Creator and viewer seats billed per user, every year, for a presentation layer sitting on data Snowflake already holds.</span></td>
+            <td class="bc">Renew, and keep paying<br><span style="color:rgba(224,90,78,0.65);font-size:0.9em;">Cost grows with every viewer added.</span></td>
+            <td class="ac">Dashboards move to what you already own<br><span style="color:rgba(0,212,212,0.7);font-weight:400;font-size:0.9em;">Streamlit is part of Snowflake — no BI licence underneath it.</span></td>
+          </tr>
+          <tr>
+            <td>A specialist skill to hire for<br><span style="color:var(--muted);font-weight:400;font-size:0.9em;">Tableau development is its own discipline — its own hiring line, and a handoff on every model change.</span></td>
+            <td class="bc">Hire or contract more of it<br><span style="color:rgba(224,90,78,0.65);font-size:0.9em;">The dependency deepens with every new dashboard.</span></td>
+            <td class="ac">Your data team already has the skill<br><span style="color:rgba(0,212,212,0.7);font-weight:400;font-size:0.9em;">Streamlit is Python. The same engineers own table through dashboard.</span></td>
+          </tr>
+          <tr>
+            <td>A separate platform to run<br><span style="color:var(--muted);font-weight:400;font-size:0.9em;">Another environment to host, upgrade and support — with access rules re-implemented away from the data.</span></td>
+            <td class="bc">Maintain both, indefinitely<br><span style="color:rgba(224,90,78,0.65);font-size:0.9em;">Two platforms, two governance models, two support lines.</span></td>
+            <td class="ac">One platform, one set of roles<br><span style="color:rgba(0,212,212,0.7);font-weight:400;font-size:0.9em;">Serverless inside Snowflake, governed by the roles already managed there.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="reveal d4" style="margin-top:var(--gap-sm);font-size:clamp(0.6rem,0.88vw,0.76rem);color:var(--dimmer);max-width:96ch;">
+      Renewing, hiring more and maintaining both doesn't remove the cost — it moves it. Only the third column removes it.
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04 ARCHITECTURE ===== -->
+<section class="slide alt" id="s4">
+  <div style="height:100%;display:flex;flex-direction:column;padding:var(--pad);">
+    <div class="slide-header">
+      <div class="chip reveal d1">How It's Built</div>
+      <div class="slide-num reveal d1">04 / 10</div>
+    </div>
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:calc(var(--gap)*0.4);flex-wrap:wrap;">
+      <h2 class="reveal d2" style="font-size:clamp(1.15rem,2.8vw,1.95rem);font-weight:800;letter-spacing:-0.02em;max-width:44ch;">
+        One deterministic pipeline. Cortex is a branch off it, never a dependency in it.
+      </h2>
+      <div class="reveal d2" style="display:flex;gap:1.1rem;font-size:clamp(0.54rem,0.78vw,0.66rem);color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">
+        <span><span style="display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--cyan);margin-right:0.35em;vertical-align:middle;"></span>Deterministic core</span>
+        <span><span style="display:inline-block;width:9px;height:9px;border-radius:2px;border:1.5px dashed var(--purple);margin-right:0.35em;vertical-align:middle;"></span>Cortex — opt-in</span>
+      </div>
+    </div>
+    <div class="reveal-scale d3" style="flex:1;min-height:0;">
+      <svg viewBox="0 0 1200 580" style="width:100%;height:100%;font-family:var(--font);" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <marker id="aC" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00d4d4"/></marker>
+          <marker id="aP" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8b7cf8"/></marker>
+        </defs>
+        <rect x="430" y="12" width="340" height="52" rx="7" fill="#1c2a50" stroke="rgba(255,255,255,0.08)"/>
+        <text x="600" y="34" text-anchor="middle" fill="#ffffff" font-weight="800" font-size="15">TABLEAU WORKBOOK</text>
+        <text x="600" y="52" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="11">uploaded, or pulled straight from Tableau Server</text>
+        <line x1="600" y1="64" x2="600" y2="96" stroke="#00d4d4" stroke-width="2" marker-end="url(#aC)"/>
+
+        <rect x="40" y="100" width="340" height="78" rx="7" fill="#1c2a50" stroke="rgba(0,212,212,0.35)" stroke-width="1.4"/>
+        <text x="210" y="128" text-anchor="middle" fill="#00d4d4" font-weight="800" font-size="14">1 · PARSE</text>
+        <text x="210" y="147" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10.5">every sheet, calc, filter, colour, layout</text>
+        <text x="210" y="163" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10.5">→ one JSON model of the workbook</text>
+        <line x1="380" y1="139" x2="426" y2="139" stroke="#00d4d4" stroke-width="2" marker-end="url(#aC)"/>
+
+        <rect x="430" y="100" width="340" height="78" rx="7" fill="#1c2a50" stroke="rgba(0,212,212,0.35)" stroke-width="1.4"/>
+        <text x="600" y="128" text-anchor="middle" fill="#00d4d4" font-weight="800" font-size="14">2 · TRANSLATE</text>
+        <text x="600" y="147" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10.5">Tableau formulas → Snowflake SQL</text>
+        <text x="600" y="163" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10.5">~97% by rule — exact, free, instant</text>
+        <line x1="770" y1="139" x2="816" y2="139" stroke="#00d4d4" stroke-width="2" marker-end="url(#aC)"/>
+
+        <rect x="820" y="100" width="340" height="78" rx="7" fill="#1c2a50" stroke="rgba(0,212,212,0.35)" stroke-width="1.4"/>
+        <text x="990" y="128" text-anchor="middle" fill="#00d4d4" font-weight="800" font-size="14">3 · GENERATE</text>
+        <text x="990" y="147" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10.5">builds the Streamlit app</text>
+        <text x="990" y="163" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10.5">and verifies its own output first</text>
+
+        <path d="M990,178 L990,204 L600,204 L600,230" fill="none" stroke="#00d4d4" stroke-width="2" marker-end="url(#aC)"/>
+
+        <rect x="390" y="234" width="420" height="62" rx="7" fill="#223060" stroke="#00d4d4" stroke-width="1.6"/>
+        <text x="600" y="258" text-anchor="middle" fill="#ffffff" font-weight="800" font-size="14">RENDERING ENGINE</text>
+        <text x="600" y="277" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10.5">19 chart types · dashboard layout · filters · live parameters</text>
+
+        <path d="M600,296 L600,320 L230,320 L230,350" fill="none" stroke="#00d4d4" stroke-width="2" marker-end="url(#aC)"/>
+        <path d="M600,296 L600,320 L970,320 L970,350" fill="none" stroke="#00d4d4" stroke-width="2" marker-end="url(#aC)"/>
+
+        <rect x="60" y="354" width="340" height="70" rx="7" fill="#1c2a50" stroke="rgba(255,255,255,0.08)"/>
+        <text x="230" y="380" text-anchor="middle" fill="#ffffff" font-weight="800" font-size="14">LOCAL · DUCKDB</text>
+        <text x="230" y="399" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10.5">identical SQL, for build and testing</text>
+
+        <rect x="800" y="354" width="340" height="70" rx="7" fill="#1c2a50" stroke="rgba(0,212,212,0.45)" stroke-width="1.4"/>
+        <text x="970" y="380" text-anchor="middle" fill="#ffffff" font-weight="800" font-size="14">SNOWFLAKE · SiS</text>
+        <text x="970" y="399" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10.5">identical SQL, inside the account,</text>
+        <text x="970" y="414" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10.5">governed by the app's own role</text>
+
+        <path d="M770,139 L1172,139 L1172,518 L972,518" fill="none" stroke="#8b7cf8" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#aP)"/>
+        <text x="1186" y="330" fill="#8b7cf8" font-size="9.5" transform="rotate(90,1186,330)" text-anchor="middle">only the ~3% the rules refuse</text>
+        <path d="M776,518 L964,518" fill="none" stroke="#8b7cf8" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#aP)"/>
+
+        <rect x="446" y="486" width="330" height="64" rx="7" fill="#1c2a50" stroke="#8b7cf8" stroke-width="1.4" stroke-dasharray="5,4"/>
+        <text x="611" y="510" text-anchor="middle" fill="#8b7cf8" font-weight="800" font-size="13">CORTEX AI · OPT-IN</text>
+        <text x="611" y="528" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">hard calcs · semantic view · ask-your-data</text>
+        <text x="611" y="543" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">always execution-tested, then human-reviewed</text>
+      </svg>
+    </div>
+    <div class="reveal d4" style="margin-top:calc(var(--gap)*0.35);font-size:clamp(0.59rem,0.87vw,0.74rem);color:var(--dimmer);max-width:98ch;">
+      Because no AI writes the app, the same workbook produces the same result every run — which is what makes the 72 regression gates meaningful.
+    </div>
+  </div>
+</section>
+
+<!-- ===== 05 THE FIVE STAGES ===== -->
+<section class="slide" id="s5">
+  <div style="height:100%;display:flex;flex-direction:column;padding:var(--pad);">
+    <div class="slide-header">
+      <div class="chip reveal d1">What You're About To See</div>
+      <div class="slide-num reveal d1">05 / 10</div>
+    </div>
+    <h2 class="reveal d2" style="font-size:clamp(1.3rem,3.1vw,2.2rem);font-weight:800;margin-bottom:calc(var(--gap)*0.4);letter-spacing:-0.02em;max-width:40ch;">
+      Upload a workbook. Five stages run live.
+    </h2>
+    <p class="reveal d2" style="font-size:clamp(0.66rem,1vw,0.84rem);color:var(--dimmer);margin-bottom:var(--gap);max-width:82ch;">
+      Each stage reports its own result as it finishes — nothing batches to the end, and nothing is hidden if it fails.
+    </p>
+    <div style="flex:1;display:flex;align-items:center;gap:clamp(0.35rem,1vw,0.7rem);">
+      <div class="flow-step reveal-scale d3"><div class="fsico">🔍</div><h4>1 · Discovery</h4><p>Datasources resolved, data extracted, tables created and loaded in Snowflake.</p></div>
+      <div class="flow-arrow reveal d3">→</div>
+      <div class="flow-step reveal-scale d4"><div class="fsico">📐</div><h4>2 · Parsing</h4><p>The workbook is read into a model — sheets, charts, calculations, filters, layout.</p></div>
+      <div class="flow-arrow reveal d4">→</div>
+      <div class="flow-step reveal-scale d5"><div class="fsico">🗺️</div><h4>3 · Data Model</h4><p>The join graph becomes a real Snowflake view — plus a native semantic view for Cortex.</p></div>
+      <div class="flow-arrow reveal d5">→</div>
+      <div class="flow-step reveal-scale d6"><div class="fsico">🏗️</div><h4>4 · App Creation</h4><p>The dashboard is generated and rendered live — then deployed on a button.</p></div>
+      <div class="flow-arrow reveal d6">→</div>
+      <div class="flow-step reveal-scale d7" style="border-color:rgba(52,211,153,0.4);"><div class="fsico">✅</div><h4 style="color:var(--green);">5 · Validation</h4><p>Every measure proven two independent ways, ending in a downloadable report.</p></div>
+    </div>
+    <div class="reveal d8" style="margin-top:var(--gap);font-size:clamp(0.59rem,0.87vw,0.74rem);color:var(--dimmer);max-width:96ch;">
+      All five stages execute on Snowflake compute. Stage 3 doesn't just display SQL — it actually creates the view in your account.
+    </div>
+  </div>
+</section>
+
+<!-- ===== 06 LIVE DEMO ===== -->
+<section class="slide alt" id="s6">
+  <div style="height:100%;display:flex;flex-direction:column;padding:var(--pad);position:relative;overflow:hidden;">
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(400px,80vw,900px);height:clamp(400px,80vw,900px);
+      background:radial-gradient(ellipse,rgba(0,212,212,0.09) 0%,transparent 65%);border-radius:50%;pointer-events:none;"></div>
+    <div class="slide-header" style="position:relative;z-index:1;">
+      <div class="chip green reveal d1">Live Demo · ~15 Minutes</div>
+      <div class="slide-num reveal d1">06 / 10</div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:var(--gap);position:relative;z-index:1;">
+      <h2 class="reveal d2" style="font-size:clamp(1.7rem,4.2vw,3.2rem);font-weight:800;letter-spacing:-0.03em;line-height:1.05;max-width:26ch;">
+        Let's run it — <span style="color:var(--cyan);">in Snowsight, right now</span>
+      </h2>
+      <p class="reveal d3" style="font-size:clamp(0.78rem,1.28vw,0.96rem);color:var(--muted);line-height:1.6;max-width:74ch;">
+        Nothing here is pre-baked or recorded. This is the accelerator running as a Streamlit app inside the
+        Snowflake account — the only thing on my laptop is a browser tab.
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap);max-width:min(100%,1020px);" class="reveal d4">
+        <div class="watch-item"><div class="wico">👀</div><div><h5>Watch the stages report themselves</h5><p>Each one shows what it found and what it did — including anything it couldn't convert.</p></div></div>
+        <div class="watch-item"><div class="wico">🗺️</div><div><h5>Stage 3 creates a real view</h5><p>The semantic view is genuinely deployed to the account, not just printed as DDL.</p></div></div>
+        <div class="watch-item"><div class="wico">✅</div><div><h5>Stage 5 is the payoff</h5><p>Every measure checked two ways, with a downloadable report you can hand to anyone.</p></div></div>
+        <div class="watch-item"><div class="wico">🔍</div><div><h5>Then verify me</h5><p>Open Query History alongside it — every query and Cortex call, with real timestamps and credits.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 07 PROOF ===== -->
+<section class="slide" id="s7">
+  <div style="height:100%;display:flex;flex-direction:column;padding:var(--pad);">
+    <div class="slide-header">
+      <div class="chip green reveal d1">This Isn't A One-Off</div>
+      <div class="slide-num reveal d1">07 / 10</div>
+    </div>
+    <h2 class="reveal d2" style="font-size:clamp(1.3rem,3.1vw,2.2rem);font-weight:800;margin-bottom:calc(var(--gap)*0.5);letter-spacing:-0.02em;max-width:46ch;">
+      Twelve real workbooks — including ones we had never seen
+    </h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(0.5rem,1.2vw,0.9rem);margin-bottom:var(--gap);" class="reveal d3">
+      <div class="metric-card" style="border-top-color:var(--green);"><div class="mnum green">13/13</div><div class="mlabel">Superstore measures pass</div></div>
+      <div class="metric-card" style="border-top-color:var(--green);"><div class="mnum green">10/10</div><div class="mlabel">E-Commerce measures pass</div></div>
+      <div class="metric-card" style="border-top-color:var(--green);"><div class="mnum green">8/8</div><div class="mlabel">Regional Analysis measures pass</div></div>
+      <div class="metric-card" style="border-top-color:var(--green);"><div class="mnum green">12/12</div><div class="mlabel">World Indicators measures pass</div></div>
+    </div>
+    <div class="reveal d4" style="flex:1;display:flex;flex-direction:column;justify-content:center;overflow:hidden;">
+      <table class="ba-table" style="table-layout:fixed;">
+        <thead><tr>
+          <th class="ac" style="width:26%;">Workbook</th><th style="width:10%;">Sheets</th>
+          <th class="ac" style="width:12%;">Fidelity</th><th style="width:52%;">Why it matters</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>World Indicators</td><td>9</td><td class="gc">99%</td><td>Downloaded from Tableau Public — never seen during development. Maps, date-part filters, a storyboard.</td></tr>
+          <tr><td>E-Commerce #VOTD</td><td>50</td><td class="gc">97%</td><td>The hardest one: 88 calculations, advanced table calcs. Went 46% → 97% as each fix became a permanent rule. <strong style="color:var(--green);">Deployed live.</strong></td></tr>
+          <tr><td>Superstore</td><td>20</td><td class="ac">96%</td><td>Multi-datasource with what-if parameters. Sales, Profit and Quantity all match Tableau exactly.</td></tr>
+          <tr><td>Regional Analysis</td><td>6</td><td class="gc">100%</td><td>Three-table relationship model. Zero fix rounds — the assessment caught everything before anyone saw it.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="reveal d5" style="margin-top:var(--gap-sm);font-size:clamp(0.59rem,0.87vw,0.74rem);color:var(--dimmer);max-width:98ch;">
+      Every fix made for one workbook is inherited free by every workbook after it — that's why coverage compounds instead of resetting each time.
+    </div>
+  </div>
+</section>
+
+<!-- ===== 08 HONEST LIMITS ===== -->
+<section class="slide alt" id="s8">
+  <div style="height:100%;display:flex;flex-direction:column;padding:var(--pad);">
+    <div class="slide-header">
+      <div class="chip red reveal d1">What It Doesn't Do</div>
+      <div class="slide-num reveal d1">08 / 10</div>
+    </div>
+    <h2 class="reveal d2" style="font-size:clamp(1.3rem,3.1vw,2.2rem);font-weight:800;margin-bottom:calc(var(--gap)*0.4);letter-spacing:-0.02em;max-width:44ch;">
+      Stated up front, not discovered in month three
+    </h2>
+    <p class="reveal d2" style="font-size:clamp(0.66rem,1vw,0.84rem);color:var(--dimmer);margin-bottom:var(--gap);max-width:84ch;">
+      Every one of these is detected and reported in the assessment before any work starts. Nothing is ever silently dropped.
+    </p>
+    <div class="reveal d3" style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+      <table class="ba-table" style="table-layout:fixed;">
+        <thead><tr><th class="bc" style="width:31%;">Not converted</th><th style="width:41%;">Why</th><th class="ac" style="width:28%;">Status</th></tr></thead>
+        <tbody>
+          <tr><td>Bins &amp; histograms</td><td>The most common gap across our corpus</td><td class="ac">Roadmapped · ~2.5 days</td></tr>
+          <tr><td>Some advanced table calcs<br><span style="color:var(--muted);font-weight:400;font-size:0.9em;">running totals, lookups, first/last</span></td><td>They need view-layout ordering we refuse to guess at</td><td class="ac">Roadmapped · ~2 days</td></tr>
+          <tr><td>Dashboard actions &amp; cross-highlighting</td><td>Streamlit's interaction model genuinely differs — we position this honestly rather than promise it</td><td class="bc">Out of scope by design</td></tr>
+          <tr><td>Pixel-exact layout</td><td>We match structure and numbers, not pixels. That's the deliberate goal.</td><td class="bc">By design</td></tr>
+          <tr><td>Tableau extracts decoded inside Snowflake</td><td>Tableau's extract engine doesn't exist in the Snowflake sandbox and can't be installed — a hard platform limit</td><td class="ac">One-time load, then reused</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="reveal d4" style="margin-top:var(--gap-sm);font-size:clamp(0.59rem,0.87vw,0.74rem);color:var(--dimmer);max-width:98ch;">
+      A workbook that can't fully convert is flagged on day one with a reason — so the risk lands in the assessment, not in delivery.
+    </div>
+  </div>
+</section>
+
+<!-- ===== 09 CORTEX + VALUE ===== -->
+<section class="slide" id="s9">
+  <div style="height:100%;display:flex;flex-direction:column;padding:var(--pad);">
+    <div class="slide-header">
+      <div class="chip purple reveal d1">Where Cortex Fits</div>
+      <div class="slide-num reveal d1">09 / 10</div>
+    </div>
+    <h2 class="reveal d2" style="font-size:clamp(1.3rem,3.1vw,2.2rem);font-weight:800;margin-bottom:var(--gap);letter-spacing:-0.02em;max-width:44ch;">
+      Three jobs, all in your account — none with the final say
+    </h2>
+    <div style="display:flex;gap:var(--gap);margin-bottom:var(--gap);" class="reveal d3">
+      <div class="cost-card" style="flex:1;"><div class="cico">🧩</div><h5>The hard calculations</h5><p>The ~3% our rules refuse. Cortex proposes SQL, it must execute against the real table, then a person reviews it. Nothing auto-applies.</p></div>
+      <div class="cost-card" style="flex:1;"><div class="cico">🗺️</div><h5>The semantic layer</h5><p>Tableau measures become a native Snowflake semantic view — the governed model of your migrated estate.</p></div>
+      <div class="cost-card" style="flex:1;"><div class="cico">💬</div><h5>Ask your data</h5><p>Cortex Analyst answers plain-English questions over that same model, using the exact definitions your dashboards use.</p></div>
+    </div>
+    <div style="flex:1;display:flex;gap:clamp(1.2rem,3vw,2.4rem);min-height:0;">
+      <div class="reveal d4" style="flex:1;display:flex;flex-direction:column;gap:calc(var(--gap)*0.7);">
+        <div class="chip" style="align-self:flex-start;">What the business gets</div>
+        <div class="step-item"><div class="step-num">1</div><div class="step-txt"><h5>Dashboards in days, not development cycles</h5></div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-txt"><h5>One team owns table through dashboard</h5><p>No specialist queue, no second platform.</p></div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-txt"><h5>Governance stays with the data</h5><p>Access rules inherited from Snowflake, never rebuilt.</p></div></div>
+      </div>
+      <div class="reveal d5" style="flex:1;display:flex;flex-direction:column;gap:calc(var(--gap)*0.7);">
+        <div class="chip purple" style="align-self:flex-start;">What Snowflake gets</div>
+        <div class="step-item"><div class="step-num" style="background:rgba(139,124,248,0.14);border-color:rgba(139,124,248,0.5);color:var(--purple);">1</div><div class="step-txt"><h5>Warehouse compute on every dashboard view</h5><p>A Tableau extract sends Snowflake no query workload at all.</p></div></div>
+        <div class="step-item"><div class="step-num" style="background:rgba(139,124,248,0.14);border-color:rgba(139,124,248,0.5);color:var(--purple);">2</div><div class="step-txt"><h5>Cortex consumption per workbook migrated</h5></div></div>
+        <div class="step-item"><div class="step-num" style="background:rgba(139,124,248,0.14);border-color:rgba(139,124,248,0.5);color:var(--purple);">3</div><div class="step-txt"><h5>The semantic layer becomes the governed model</h5><p>Feeding Cortex Analyst and Snowflake Intelligence.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 10 NEXT STEPS ===== -->
+<section class="slide alt" id="s10">
+  <div style="height:100%;display:flex;flex-direction:column;padding:var(--pad);position:relative;overflow:hidden;">
+    <div style="position:absolute;bottom:-25%;left:-15%;width:clamp(300px,60vw,700px);height:clamp(300px,60vw,700px);
+      background:radial-gradient(ellipse,rgba(0,212,212,0.09) 0%,transparent 68%);border-radius:50%;pointer-events:none;"></div>
+    <div class="slide-header" style="position:relative;z-index:1;">
+      <div class="chip reveal d1">Next Steps</div>
+      <div class="slide-num reveal d1">10 / 10</div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:var(--gap);position:relative;z-index:1;">
+      <h2 class="reveal d2" style="font-size:clamp(1.5rem,3.6vw,2.7rem);font-weight:800;letter-spacing:-0.025em;max-width:30ch;line-height:1.1;">
+        Give us a workbook we've <span style="color:var(--cyan);">never seen</span>
+      </h2>
+      <p class="reveal d3" style="font-size:clamp(0.78rem,1.28vw,0.96rem);color:var(--muted);line-height:1.6;max-width:74ch;">
+        That's exactly how World Indicators and the official Tableau samples were proven. We run the assessment
+        first, so you see what converts before anything gets built.
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);max-width:min(100%,940px);" class="reveal d4">
+        <div class="metric-card" style="border-top-color:var(--green);"><div class="mnum green">8/10</div><div class="mlabel">roadmap items shipped and live-verified</div></div>
+        <div class="metric-card"><div class="mnum">~0.5</div><div class="mlabel">dev days left to MVP sign-off</div></div>
+        <div class="metric-card" style="border-top-color:var(--gold);"><div class="mnum gold">~30</div><div class="mlabel">days for the entire remaining backlog</div></div>
+      </div>
+      <div class="reveal d5" style="display:flex;align-items:center;gap:clamp(0.8rem,2vw,1.6rem);flex-wrap:wrap;margin-top:var(--gap-sm);">
+        <button class="cta-btn">Pick a workbook →</button>
+        <div style="font-size:clamp(0.62rem,0.94vw,0.8rem);color:var(--muted);max-width:46ch;line-height:1.5;">
+          And we'd value your view: which Snowflake capabilities are worth leaning on harder, and where this would land best with your customers.
+        </div>
+      </div>
+    </div>
+    <div class="reveal d6" style="position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;margin-top:auto;padding-top:var(--gap-sm);border-top:1px solid var(--border);gap:1rem;flex-wrap:wrap;">
+      <div style="font-size:clamp(0.56rem,0.84vw,0.72rem);color:var(--dimmer);">Streamlit in Snowflake · Cortex AI · Cortex Analyst · Native Semantic Views · Snowpark</div>
+      <div class="brand">BLEND360</div>
+    </div>
+  </div>
+</section>
+
+<script>
+class SlidePresentation{
+  constructor(){
+    this.slides=Array.from(document.querySelectorAll('.slide'));
+    this.currentSlide=0;
+    this.progressBar=document.getElementById('progressBar');
+    this.navDotsEl=document.getElementById('navDots');
+    this.setupIntersectionObserver();this.setupKeyboardNav();this.setupTouchNav();
+    this.setupMouseWheel();this.setupNavDots();this.updateProgress(0);
+  }
+  setupIntersectionObserver(){
+    const obs=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          this.currentSlide=this.slides.indexOf(entry.target);
+          this.updateProgress(this.currentSlide);
+          this.updateNavDots(this.currentSlide);
+        }
+      });
+    },{threshold:0.5});
+    this.slides.forEach(s=>obs.observe(s));
+  }
+  goToSlide(index){
+    if(index<0||index>=this.slides.length)return;
+    this.slides[index].scrollIntoView({behavior:'smooth'});
+  }
+  setupKeyboardNav(){
+    document.addEventListener('keydown',(e)=>{
+      if(e.target.getAttribute&&e.target.getAttribute('contenteditable'))return;
+      const delta={'ArrowDown':1,'ArrowRight':1,' ':1,'PageDown':1,'ArrowUp':-1,'ArrowLeft':-1,'PageUp':-1}[e.key];
+      if(delta!==undefined){e.preventDefault();this.goToSlide(this.currentSlide+delta);}
+    });
+  }
+  setupTouchNav(){
+    let startY=0;
+    document.addEventListener('touchstart',e=>{startY=e.touches[0].clientY;},{passive:true});
+    document.addEventListener('touchend',e=>{
+      const dy=startY-e.changedTouches[0].clientY;
+      if(Math.abs(dy)>48)this.goToSlide(this.currentSlide+(dy>0?1:-1));
+    },{passive:true});
+  }
+  setupMouseWheel(){
+    let lastWheel=0;
+    document.addEventListener('wheel',(e)=>{
+      const now=Date.now();
+      if(now-lastWheel<800)return;
+      lastWheel=now;e.preventDefault();
+      this.goToSlide(this.currentSlide+(e.deltaY>0?1:-1));
+    },{passive:false});
+  }
+  setupNavDots(){
+    this.navDotsEl.innerHTML='';
+    this.slides.forEach((_,i)=>{
+      const btn=document.createElement('button');
+      btn.className='nav-dot'+(i===0?' active':'');
+      btn.setAttribute('aria-label',`Go to slide ${i+1}`);
+      btn.addEventListener('click',()=>this.goToSlide(i));
+      this.navDotsEl.appendChild(btn);
+    });
+  }
+  updateNavDots(index){
+    this.navDotsEl.querySelectorAll('.nav-dot').forEach((dot,i)=>{
+      dot.classList.toggle('active',i===index);
+    });
+  }
+  updateProgress(index){
+    const pct=this.slides.length>1?(index/(this.slides.length-1))*100:100;
+    this.progressBar.style.width=pct+'%';
+  }
+}
+
+class InlineEditor{
+  constructor(){
+    this.isActive=false;
+    this.toggle=document.getElementById('editToggle');
+    this.banner=document.getElementById('editBanner');
+    this.hotzone=document.getElementById('editHotzone');
+    this.hideTimer=null;
+    this.toggle.addEventListener('click',()=>this.toggleEditMode());
+    this.hotzone.addEventListener('click',()=>this.toggleEditMode());
+    this.setupHotzoneHover();this.setupKeyboard();
+  }
+  toggleEditMode(){
+    this.isActive=!this.isActive;
+    document.body.classList.toggle('edit-active',this.isActive);
+    this.toggle.classList.toggle('active',this.isActive);
+    this.banner.classList.toggle('active',this.isActive);
+    this.toggle.textContent=this.isActive?'✓':'✏️';
+    const sel='.slide h1,.slide h2,.slide h3,.slide h4,.slide h5,.slide p,.slide td,.slide th,'
+            +'.slide .mnum,.slide .mlabel,.slide button';
+    document.querySelectorAll(sel).forEach(el=>{
+      this.isActive?el.setAttribute('contenteditable','true'):el.removeAttribute('contenteditable');
+    });
+    this.isActive
+      ?document.addEventListener('keydown',this._saveHandler)
+      :document.removeEventListener('keydown',this._saveHandler);
+  }
+  _saveHandler=(e)=>{
+    if((e.ctrlKey||e.metaKey)&&e.key==='s'){e.preventDefault();this.exportFile();}
+  };
+  exportFile(){
+    const editables=Array.from(document.querySelectorAll('[contenteditable]'));
+    editables.forEach(el=>el.removeAttribute('contenteditable'));
+    document.body.classList.remove('edit-active');
+    this.toggle.classList.remove('active','show');
+    this.banner.classList.remove('active','show');
+    this.toggle.textContent='✏️';
+    const html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    document.body.classList.add('edit-active');
+    editables.forEach(el=>el.setAttribute('contenteditable','true'));
+    this.toggle.classList.add('active');
+    this.banner.classList.add('active');
+    this.toggle.textContent='✓';
+    const blob=new Blob([html],{type:'text/html'});
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download='tableau-to-sis-accelerator-demo-blend360.html';
+    a.click();URL.revokeObjectURL(a.href);
+  }
+  setupHotzoneHover(){
+    const show=()=>{clearTimeout(this.hideTimer);this.toggle.classList.add('show');};
+    const hide=()=>{this.hideTimer=setTimeout(()=>{if(!this.isActive)this.toggle.classList.remove('show');},400);};
+    this.hotzone.addEventListener('mouseenter',show);
+    this.hotzone.addEventListener('mouseleave',hide);
+    this.toggle.addEventListener('mouseenter',show);
+    this.toggle.addEventListener('mouseleave',hide);
+  }
+  setupKeyboard(){
+    document.addEventListener('keydown',(e)=>{
+      if((e.key==='e'||e.key==='E')&&!e.target.getAttribute('contenteditable'))this.toggleEditMode();
+    });
+  }
+}
+
+const fsBtn=document.getElementById('fsBtn');
+function toggleFullscreen(){
+  if(!document.fullscreenElement){document.documentElement.requestFullscreen().catch(()=>{});}
+  else{document.exitFullscreen();}
+}
+fsBtn.addEventListener('click',toggleFullscreen);
+document.addEventListener('keydown',(e)=>{
+  if((e.key==='f'||e.key==='F')&&!e.target.getAttribute('contenteditable'))toggleFullscreen();
+});
+document.addEventListener('fullscreenchange',()=>{
+  const inFs=!!document.fullscreenElement;
+  fsBtn.innerHTML=inFs
+    ?`<svg viewBox="0 0 14 14" style="width:11px;height:11px;fill:none;stroke:var(--cyan);stroke-width:2;stroke-linecap:round"><polyline points="5,1 1,1 1,5"/><polyline points="13,5 13,1 9,1"/><polyline points="9,13 13,13 13,9"/><polyline points="1,9 1,13 5,13"/></svg> Exit`
+    :`<svg viewBox="0 0 14 14" style="width:11px;height:11px;fill:none;stroke:var(--cyan);stroke-width:2;stroke-linecap:round"><polyline points="1,5 1,1 5,1"/><polyline points="9,1 13,1 13,5"/><polyline points="13,9 13,13 9,13"/><polyline points="5,13 1,13 1,9"/></svg> Fullscreen`;
+});
+
+const presentation=new SlidePresentation();
+const editor=new InlineEditor();
+window.presentation=presentation;
+</script>
+
+</body>
+</html>

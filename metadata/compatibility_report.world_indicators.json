@@ -1,0 +1,244 @@
+{
+  "generated": "2026-07-06T00:44:44",
+  "source_workbook": "World Indicators.twbx",
+  "overall_estimated_fidelity": 0.99,
+  "datasources": [
+    "World Indicators"
+  ],
+  "calculations": {
+    "total": 5,
+    "translated": 5,
+    "untranslated": []
+  },
+  "totals": {
+    "dashboards": 6,
+    "worksheets": 9,
+    "converted": 1,
+    "partial": 8,
+    "failed": 0
+  },
+  "dashboards": [
+    {
+      "dashboard": "Business",
+      "title": "Ease of Business",
+      "fidelity": 1.0,
+      "sheets": [
+        {
+          "sheet": "Ease of Biz Correlation Sheet",
+          "title": "Correlation Between Ease of Business and GDP Per Capita",
+          "chart_kind": "scatter",
+          "datasource": "World Indicators",
+          "renderer": "altair",
+          "status": "partial",
+          "fidelity": 1.0,
+          "findings": [
+            {
+              "severity": "COSMETIC",
+              "sheet": "Ease of Biz Correlation Sheet",
+              "code": "parser-gap",
+              "message": "custom tooltip"
+            }
+          ],
+          "errors": []
+        },
+        {
+          "sheet": "Ease of Biz Factors Sheet",
+          "title": "Ease of Business Factors",
+          "chart_kind": "table",
+          "datasource": "World Indicators",
+          "renderer": "streamlit-native",
+          "status": "partial",
+          "fidelity": 1.0,
+          "findings": [
+            {
+              "severity": "COSMETIC",
+              "sheet": "Ease of Biz Factors Sheet",
+              "code": "parser-gap",
+              "message": "custom tooltip"
+            }
+          ],
+          "errors": []
+        },
+        {
+          "sheet": "Ease of Biz Index",
+          "title": "Ease of Biz Index",
+          "chart_kind": "table",
+          "datasource": "World Indicators",
+          "renderer": "streamlit-native",
+          "status": "partial",
+          "fidelity": 1.0,
+          "findings": [
+            {
+              "severity": "COSMETIC",
+              "sheet": "Ease of Biz Index",
+              "code": "parser-gap",
+              "message": "custom tooltip"
+            }
+          ],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "dashboard": "Tourism",
+      "title": "International Tourism",
+      "fidelity": 1.0,
+      "sheets": [
+        {
+          "sheet": "TourismOverTime",
+          "title": "Tourism Income by Region",
+          "chart_kind": "line",
+          "datasource": "World Indicators",
+          "renderer": "altair",
+          "status": "partial",
+          "fidelity": 1.0,
+          "findings": [
+            {
+              "severity": "COSMETIC",
+              "sheet": "TourismOverTime",
+              "code": "parser-gap",
+              "message": "custom tooltip"
+            }
+          ],
+          "errors": []
+        },
+        {
+          "sheet": "TourismByCountry",
+          "title": "Tourism Income by Region and Country",
+          "chart_kind": "kpi",
+          "datasource": "World Indicators",
+          "renderer": "streamlit-native",
+          "status": "partial",
+          "fidelity": 1.0,
+          "findings": [
+            {
+              "severity": "COSMETIC",
+              "sheet": "TourismByCountry",
+              "code": "parser-gap",
+              "message": "custom tooltip"
+            }
+          ],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "dashboard": "Population",
+      "title": "Population and Birth Rate",
+      "fidelity": 1.0,
+      "sheets": [
+        {
+          "sheet": "Population",
+          "title": "Population and Birth Rate",
+          "chart_kind": "map",
+          "datasource": "World Indicators",
+          "renderer": "plotly",
+          "status": "converted",
+          "fidelity": 1.0,
+          "findings": [],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "dashboard": "Health",
+      "title": "Which countries spend more than",
+      "fidelity": 1.0,
+      "sheets": [
+        {
+          "sheet": "Health",
+          "title": "Which countries spend more than",
+          "chart_kind": "bar",
+          "datasource": "World Indicators",
+          "renderer": "altair",
+          "status": "partial",
+          "fidelity": 1.0,
+          "findings": [
+            {
+              "severity": "APPEARANCE",
+              "sheet": "Health",
+              "code": "parser-gap",
+              "message": "multiple measures on one shelf (dual / compound axis)"
+            },
+            {
+              "severity": "COSMETIC",
+              "sheet": "Health",
+              "code": "parser-gap",
+              "message": "custom tooltip"
+            }
+          ],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "dashboard": "Technology",
+      "title": "Internet and mobile phone usage per capita",
+      "fidelity": 1.0,
+      "sheets": [
+        {
+          "sheet": "Technology",
+          "title": "Internet and mobile phone usage per capita",
+          "chart_kind": "line",
+          "datasource": "World Indicators",
+          "renderer": "altair",
+          "status": "partial",
+          "fidelity": 1.0,
+          "findings": [
+            {
+              "severity": "APPEARANCE",
+              "sheet": "Technology",
+              "code": "parser-gap",
+              "message": "multiple measures on one shelf (dual / compound axis)"
+            },
+            {
+              "severity": "COSMETIC",
+              "sheet": "Technology",
+              "code": "parser-gap",
+              "message": "custom tooltip"
+            }
+          ],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "dashboard": "Economy",
+      "title": "GDP and GDP per Capita",
+      "fidelity": 0.95,
+      "sheets": [
+        {
+          "sheet": "Economy",
+          "title": "GDP and GDP per Capita",
+          "chart_kind": "line",
+          "datasource": "World Indicators",
+          "renderer": "altair",
+          "status": "partial",
+          "fidelity": 0.95,
+          "findings": [
+            {
+              "severity": "INFO",
+              "sheet": "Economy",
+              "code": "panel-as-color",
+              "message": "45 'Country' panels drawn as one multi-line chart (Tableau shows a scrollable wall)."
+            },
+            {
+              "severity": "APPEARANCE",
+              "sheet": "Economy",
+              "code": "parser-gap",
+              "message": "multiple measures on one shelf (dual / compound axis)"
+            },
+            {
+              "severity": "COSMETIC",
+              "sheet": "Economy",
+              "code": "parser-gap",
+              "message": "custom tooltip"
+            }
+          ],
+          "errors": []
+        }
+      ]
+    }
+  ],
+  "non_dashboard_worksheet_gaps": {}
+}

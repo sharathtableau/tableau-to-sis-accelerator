@@ -1,0 +1,117 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ecommerce-app",
+      "autoPort": false,
+      "runtimeExecutable": "streamlit",
+      "runtimeArgs": [
+        "run",
+        "app_ecommerce.py",
+        "--server.port",
+        "8516",
+        "--server.headless",
+        "true"
+      ],
+      "port": 8516
+    },
+    {
+      "name": "filtest-app",
+      "autoPort": false,
+      "runtimeExecutable": "streamlit",
+      "runtimeArgs": [
+        "run",
+        "app_fil_test.py",
+        "--server.port",
+        "8517",
+        "--server.headless",
+        "true"
+      ],
+      "port": 8517
+    },
+    {
+      "name": "ecom-votd-app",
+      "autoPort": false,
+      "runtimeExecutable": "streamlit",
+      "runtimeArgs": [
+        "run",
+        "app_e_commerce_software_sales_dashboard_votd.py",
+        "--server.port",
+        "8520",
+        "--server.headless",
+        "true"
+      ],
+      "port": 8520
+    },
+    {
+      "name": "regional-app",
+      "autoPort": false,
+      "runtimeExecutable": "streamlit",
+      "runtimeArgs": [
+        "run",
+        "app_regional_analysis.py",
+        "--server.port",
+        "8521",
+        "--server.headless",
+        "true"
+      ],
+      "port": 8521
+    },
+    {
+      "name": "superstore-app",
+      "autoPort": false,
+      "runtimeExecutable": "streamlit",
+      "runtimeArgs": [
+        "run",
+        "app_superstore.py",
+        "--server.port",
+        "8522",
+        "--server.headless",
+        "true"
+      ],
+      "port": 8522
+    },
+    {
+      "name": "kpi-param-app",
+      "autoPort": false,
+      "runtimeExecutable": "streamlit",
+      "runtimeArgs": [
+        "run",
+        "app_superstore_kpi_parameter_dashboard.py",
+        "--server.port",
+        "8523",
+        "--server.headless",
+        "true"
+      ],
+      "port": 8523
+    },
+    {
+      "name": "pipeline-ui",
+      "autoPort": false,
+      "runtimeExecutable": "streamlit",
+      "runtimeArgs": [
+        "run",
+        "pipeline_app.py",
+        "--server.port",
+        "8510",
+        "--server.headless",
+        "true"
+      ],
+      "port": 8510
+    },
+    {
+      "name": "workbench-v2",
+      "autoPort": false,
+      "runtimeExecutable": "streamlit",
+      "runtimeArgs": [
+        "run",
+        "pipeline_workbench.py",
+        "--server.port",
+        "8531",
+        "--server.headless",
+        "true"
+      ],
+      "port": 8531
+    }
+  ]
+}

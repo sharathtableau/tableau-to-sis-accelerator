@@ -1,0 +1,103 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Work Plan — Completed & Remaining — Tableau→SiS Accelerator</title><style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#1f2937;background:#f1f5f9}
+.wrap{max-width:1100px;margin:0 auto;padding:26px}
+.hd{background:#0f172a;color:#fff;border-radius:14px;padding:20px 24px}
+.hd h1{margin:0 0 4px;font-size:22px} .hd .sub{font-size:12.5px;opacity:.85}
+.done{background:#dcfce7;border:1px solid #86efac;border-radius:12px;padding:16px 20px;margin:16px 0;font-size:13.5px;line-height:1.6;color:#14532d}
+.done b{color:#15803d}
+.done ul{margin:8px 0 0;padding-left:20px} .done li{margin:2px 0}
+.done2{background:#eef9ff;border:1px solid #93cdfb;border-radius:12px;padding:16px 20px;margin:16px 0;font-size:13px;line-height:1.6;color:#0c4a6e}
+.done2 b{color:#0369a1}
+.done2 ul{margin:8px 0 0;padding-left:20px} .done2 li{margin:3px 0}
+.sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#475569;margin:24px 0 10px}
+.cap{background:#eef2ff;border:1px solid #c7d2fe;border-radius:10px;padding:12px 16px;font-size:12.5px;color:#1e293b;margin-bottom:10px;line-height:1.5}
+.cap b{color:#1d4ed8}
+.note{background:#fff7ed;border:1px solid #fdba74;border-radius:10px;padding:12px 16px;font-size:12px;color:#7c2d12;margin-bottom:10px;line-height:1.5}
+.note b{color:#c2410c}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;font-size:12.5px}
+th{background:#f8fafc;text-align:left;padding:9px 11px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:#475569;border-bottom:1px solid #e2e8f0}
+td{padding:10px 11px;border-bottom:1px solid #eef2f7;vertical-align:top}
+.pkg{font-weight:800;color:#0f172a} .what{color:#64748b;font-size:11.5px}
+.done-tag{color:#15803d;font-weight:700}
+.strike{text-decoration:line-through;color:#94a3b8}
+.days{font-weight:800;white-space:nowrap;text-align:center}
+.owner{font-weight:700;white-space:nowrap} .owner.a{color:#2563eb} .owner.b{color:#059669} .owner.both{color:#7c3aed} .owner.none{color:#94a3b8}
+tr.total td{background:#0f172a;color:#fff;font-weight:800}
+.foot{background:#0f172a;color:#e2e8f0;border-radius:12px;padding:16px 20px;font-size:13.5px;margin-top:18px;line-height:1.55}
+.foot b{color:#fff}
+.milestone{background:#fef3c7;border:1px solid #fcd34d;border-radius:10px;padding:12px 16px;font-size:13px;color:#78350f;margin-top:14px;line-height:1.5}
+.milestone b{color:#b45309}
+@media print{body{background:#fff} .wrap{padding:0}}
+</style></head><body><div class='wrap'>
+
+<div class='hd'>
+ <h1>Work Plan — Completed &amp; Remaining</h1>
+ <div class='sub'>Tableau → Streamlit-in-Snowflake Accelerator &nbsp;·&nbsp; prepared 21 Jul 2026, refocused 22 Jul, updated 28 Jul 2026 &nbsp;·&nbsp; 2 people · Person A 3 hrs/day + Person B 2 hrs/day</div>
+</div>
+
+<div class='note'><b>Note:</b> this HTML was last regenerated 22 Jul 2026 and had drifted out of sync with
+MVP_PARALLEL_WORK_PLAN.md since — regenerated 28 Jul 2026 to match. Treat the .md as the source of truth
+going forward; this file is a manually-refreshed visual mirror of it.</div>
+
+<div class='done'>
+<b>Completed — MVP engineering done (5 of 6).</b> No hours claimed; these are simply done,
+verified by a 63-gate regression suite + numeric harness and deployed live to Snowsight:
+<ul>
+ <li>✅ Data-routing correctness fix (the "open landmine")</li>
+ <li>✅ Custom SQL execution</li>
+ <li>✅ Union support</li>
+ <li>✅ Live connection support — proven live on Snowflake</li>
+ <li>✅ Superstore Measure-Swap workbook assessed — numerically exact</li>
+ <li>✅ ~6 real bugs found + fixed on live Snowsight testing</li>
+</ul>
+The only remaining MVP item is your own <b>Snowsight sign-off</b> — a review, not development.
+</div>
+
+<div class='done2'>
+<b>Completed since this plan was written (25/26/28 Jul) — newly-requested roadmap.</b>
+None of this was in scope when the plan below was originally written:
+<ul>
+ <li>✅ <b>R3</b> — auto-point an extract-based workbook at its already-existing Snowflake table (no decode, no copy); live-verified on a real Snowsight upload</li>
+ <li>✅ <b>R4</b> — Snowsight staged-app UX polish (branded 5-stage rail, calc pass/fail tally, balloons removed)</li>
+ <li>✅ <b>R5</b> — human-gated in-app Deploy button (ships the generated app through the Snowpark session, no CLI)</li>
+ <li>✅ <b>R6</b> — in-app Cortex Analyst chat ("ask your data"), user-confirmed working live</li>
+ <li>✅ <b>R7 (non-star joins half)</b> — snowflake-schema join chains + blend link-field extraction; blend auto-materialization deliberately left open (a query-time link, not a SQL join)</li>
+ <li>✅ <b>R9</b> — a live connection joining multiple tables; found and fixed a worse silent-wrong-answer bug along the way; live-verified against the real account</li>
+ <li>✅ <b>R10</b> — multi-table extract auto-bind to pre-existing separate Snowflake tables; live-verified in Snowsight, incl. a second real sequencing bug found + fixed live</li>
+ <li>✅ <b>R1</b> — pull a workbook from Tableau Server/Cloud, closed <b>28 Jul</b>, live-verified through the actual deployed Snowsight app: PAT sign-in, a project/workbook browse UI with search, SiS Secret + External Access Integration wiring, and a real end-to-end conversion whose numbers matched Tableau's own ground truth exactly</li>
+</ul>
+</div>
+
+<div class='sec'>Remaining work — estimated at our pace</div>
+<div class='cap'><b>Resources:</b> Person A <b>3 hrs/day</b> + Person B <b>2 hrs/day</b> =
+<b>5 hrs/day combined.</b> A "day" below = one working day of focused output (~5 combined hours).
+Splitting the two people across independent packages keeps both busy and avoids editing the same
+files — it does not exceed 5 hrs/day combined, so the calendar is driven by total effort.</div>
+<table>
+<tr><th>#</th><th>Work package</th><th>What's in it</th><th>Est. days</th><th>Suggested owner</th></tr>
+<tr><td class='days'>1</td><td class='pkg'>Cortex arc <span style='font-weight:600;color:#7c3aed'>(the differentiator)</span></td><td class='what'>run calc-fallback across the corpus, deploy E-Commerce semantic view + align YAML, extract blend linking-fields (now DONE via R7 — reduces this package slightly), wire fallback into the demo's Stage 5</td><td class='days'>~3.5</td><td class='owner a'>Person A</td></tr>
+<tr><td class='days'>2</td><td class='pkg'>Chart types</td><td class='what'>bins, histogram, box-whisker, bullet, true matrix/pivot</td><td class='days'>~6.5</td><td class='owner both'>split A/B</td></tr>
+<tr><td class='days'>3</td><td class='pkg'>Table-calc &amp; LOD edge cases</td><td class='what'>native Measure Names/Values swap, RUNNING/LOOKUP/TOTAL/FIRST/LAST, FIXED-LOD-ignores-dimension-filters</td><td class='days'>~5</td><td class='owner a'>Person A</td></tr>
+<tr><td class='days'>4</td><td class='pkg'>Data-model completeness</td><td class='what'><span class='strike'>non-star join → Snowflake views</span> <span class='done-tag'>DONE via R7</span>, <span class='strike'>blend link-extraction</span> <span class='done-tag'>DONE via R7</span>, blend auto-materialization (~1–1.5d remaining, deliberately guidance-only so far), data-source-level filters (not started), external live-source migration kit (not started)</td><td class='days'>~5<br><span style='font-weight:400;font-size:10px;color:#b45309'>(stale upper bound — 2 of 4 sub-items done, true remainder likely less)</span></td><td class='owner b'>Person B</td></tr>
+<tr><td class='days'>5</td><td class='pkg'>Polish &amp; automation</td><td class='what'>rich tooltips, reserved-word column risk, map/choropleth fallback, layout cosmetics, convert.py --deploy</td><td class='days'>~4.5</td><td class='owner b'>Person B</td></tr>
+<tr><td class='days'>6</td><td class='pkg'>Tableau-integration &amp; validation deepening</td><td class='what'><span class='strike'>R1 pull-a-workbook-from-Tableau-Server/Cloud-by-link</span> <span class='done-tag'>DONE 28 Jul, live-verified through the deployed Snowsight app</span>, <span class='strike'>R3 auto-point to an existing Snowflake table</span> <span class='done-tag'>DONE 26 Jul</span>. <b>Remaining:</b> R2 Cortex per-section end-to-end Tableau-vs-Streamlit validation (extends parity.py Stage 5; Cortex is comparison-only, gated, never source of truth) — now unblocked to start on real Tableau values since R1 landed</td><td class='days'>~2–3<br><span style='font-weight:400;font-size:10px;color:#64748b'>(R2 only — was ~3.5–5)</span></td><td class='owner a'>Person A</td></tr>
+<tr><td class='days'>7</td><td class='pkg'>Semantic layer + ask-your-data + Snowsight UX</td><td class='what'>honest Stage 3, data-model view, R5 Deploy button, R6 Cortex Analyst chat, R4 UX polish, R7 non-star joins — <b>ALL DONE</b> (blend auto-materialization counted under package 4 to avoid double-counting)</td><td class='days'><span class='done-tag'>0 — fully done</span><br><span style='font-weight:400;font-size:10px;color:#64748b'>(was ~3–4)</span></td><td class='owner none'>—</td></tr>
+<tr><td class='days'>8</td><td class='pkg'>Cortex vision screenshot validation <span style='font-weight:600;color:#b45309'>(new, 26 Jul — not in original plan)</span></td><td class='what'>upload Tableau dashboard screenshots → AI_COMPLETE (vision) extracts KPI values → diff against the app's real SQL-computed values → pass/fail per KPI, execution-gated. Real token counts replace today's mocked-zero panels. Blocking first step needs a live-session probe. Not started.</td><td class='days'>~2–3</td><td class='owner both'>A or B</td></tr>
+<tr class='total'><td></td><td>TOTAL REMAINING</td><td>~147.5–160 combined hours (backlog packages 1/2/3/5 + likely-overstated part of 4: ~24.5–26 d; newly-requested: R2 ~2–3 d + R8 ~2–3 d)</td><td class='days'>~29.5–32</td><td>~6 weeks</td></tr>
+</table>
+<div style='font-size:11.5px;color:#64748b;margin-top:8px'>Out of scope, not counted: dashboard actions / cross-highlighting / stories; the "Drill: Product" invented control is a product decision.</div>
+
+<div class='milestone'><b>Recommended first milestone:</b> doing just the <b>Cortex arc (package 1, ~3.5 days)</b>
+completes this folder's distinctive value — the AI-assist layer proven end-to-end across the corpus and
+wired into the live demo — without waiting on the full backlog.</div>
+
+<div class='foot'><b>Bottom line:</b> MVP engineering is done (5 of 6; only your sign-off left). Of the
+newly-requested roadmap, R1/R3/R4/R5/R6/R7-joins/R9/R10 have <b>all shipped and live-verified</b> —
+only <b>R2</b> (~2–3 d, unblocked now that R1 feeds it real Tableau values) and <b>R8</b> (~2–3 d, Cortex
+vision, needs a live-session probe first) remain. Everything else pending is <b>~29.5–32 days of
+effort ≈ ~147.5–160 combined hours ≈ ~6 working weeks</b> at our 2-person pace (3 + 2 hrs/day).
+Split Person A on the Cortex/table-calc packages + R2 + R8, and Person B on data-model
+completeness (mostly just blend auto-materialization + data-source filters + the live-source kit
+now) + polish/automation.</div>
+
+</div></body></html>

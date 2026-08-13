@@ -1,0 +1,35 @@
+# Normalize line endings so a Windows and a Mac/Linux contributor don't show
+# every line of a file as changed. Text is stored LF in the repo and checked
+# out native; binaries are never touched.
+* text=auto
+
+# Explicitly text
+*.py    text diff=python
+*.md    text
+*.json  text
+*.yml   text
+*.yaml  text
+*.sql   text
+*.csv   text
+*.txt   text
+*.html  text
+*.sh    text eol=lf
+*.ps1   text eol=crlf
+
+# Tableau + Office + media: binary, never diffed or line-ending-converted
+*.twb   binary
+*.twbx  binary
+*.tds   binary
+*.tdsx  binary
+*.hyper binary
+*.xlsx  binary
+*.xls   binary
+*.pptx  binary
+*.docx  binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.pdf   binary
+*.zip   binary
+*.skill binary

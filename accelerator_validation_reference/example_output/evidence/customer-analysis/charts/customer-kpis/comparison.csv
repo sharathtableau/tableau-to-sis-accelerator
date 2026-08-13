@@ -1,0 +1,2 @@
+KPI,measure,tableau,streamlit,backend,tableau_streamlit_diff,streamlit_backend_diff,tableau_backend_diff,tolerance,status
+Customers,Value,793,793,793,0,0,0,0.5,PASS
