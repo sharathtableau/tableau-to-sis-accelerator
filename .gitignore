@@ -55,8 +55,14 @@ _tmp_hyper/
 screenshots/
 metadata/compatibility_report.json
 
-# --- Generated app + SQL (codegen.py / report.py rebuild these)
+# --- Generated app + SQL (codegen.py / report.py rebuild these).
+# --- NOTE the exception: app_screenshot.py is REAL SOURCE (the Playwright
+# --- capture module, ARCHITECTURE.md section 18) and is listed in
+# --- snowflake.yml's artifacts -- it only happens to share the app_ prefix.
+# --- Excluding it broke a fresh clone with
+# --- "ModuleNotFoundError: No module named 'app_screenshot'".
 app_*.py
+!app_screenshot.py
 sql/generated_views.sql
 sql/semantic_views.sql
 
