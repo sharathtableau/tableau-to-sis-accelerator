@@ -18,40 +18,43 @@ repo contents rather than assumed:
 | **2 — ONE-TIME UNBLOCK** | Needs ONE thing from you, once — then fully offline. Either a 2-minute decision (D1/D2/D3) or a single exported sample file. | ~30 min total |
 | **3 — NEEDS YOUR ACCOUNT** | Genuinely needs Snowflake/Snowsight and can't be delegated without credentials. This is about **diagnosis** — *deploying* a finished fix also needs Snowflake, but that batches: both resources build and gate-lock offline, you deploy in one pass. | account access |
 
-**Summary: 11 of 18 tasks are tier 1.** Resource 1 has **10.5 of its 12.5
-days** fully independent (only A8 needs your account). **Resource 2 is the one
-that needs you** — only B2/B7/B8 are immediately independent, but making
-decisions **D1 + D2** and exporting **two sample crosstabs** converts four more
-tasks to fully independent, leaving only B5 account-bound. That is the
-highest-leverage 30 minutes available on this handoff.
+**Summary (updated 2026-08-13, after D1/D2 were decided): 15 of 18 tasks are
+now tier 1.** Resource 1 has **10.5 of its 12.5 days** fully independent (only
+A8 needs the Snowflake account). Resource 2 now has **B1, B2, B6, B7, B8**
+all unblocked — only **B3/B4** still wait on the two crosstab exports (E1/E2)
+and **B5** needs Snowflake.
+
+**Both resources can start immediately.**
 
 ---
 
-## ⚠️ THREE DECISIONS ONLY YOU CAN MAKE — make these before day one
+## ✅ DECISIONS — MADE 2026-08-13. B1 and B6 are unblocked.
 
-These block or mis-shape real tickets. None is an engineering call; each
-changes numbers or verdicts the client sees.
-
-| # | Decision | Why it can't be delegated | Blocks |
+| # | Decision | **Sharath's ruling** | Unblocked |
 |---|---|---|---|
-| **D1** | **`order_match`**: should an exact row-ORDER mismatch fail a chart that isn't a ranked list? Today it does — so on Regional Analysis, two charts read chart-level **FAIL while every single cell passes**. *Recommended: order is semantic only for ranked/top-N charts; elsewhere demote to an informational flag.* | Changes the vendored comparison engine's strictness — i.e. changes what "validated" means in a client deliverable | **B1** |
-| **D2** | **`Discount` = AVG or SUM?** `profile_superstore.py:20` curates `"Discount": AVG(DISCOUNT)`, which silently overrides the workbook's own declared `agg=sum`. Validation caught this live and **Tableau itself settled it via REST: Tableau 0.2/0.8/0.4, app 0.1/0.2/0.1, backend 0.2/0.8/0.4 — the migrated app is wrong.** Not fixed, because AVG is legitimately correct on *other* sheets. | The fix changes numbers the **deployed** app renders | **B6** |
-| **D3** | **Is the Track A backlog still the priority order you want?** The list below follows `MVP_ACCELERATOR_SCOPE.md`. Rich tooltips (A9) is marked "user deprioritized" — confirm it stays last. | Sequencing/business call | A-track ordering |
+| **D1** | `order_match`: should a row-ORDER mismatch fail a chart that isn't a ranked list? | **Order is a structural failure ONLY for ranked / top-N charts.** Everywhere else it becomes an informational flag. Do not delete the check; do not weaken it for ranked lists. Gate must prove both directions. | **B1 → READY** |
+| **D2** | `Discount` = AVG or SUM? (`profile_superstore.py:20` overrides the workbook's declared `agg=sum`; Tableau REST proves the app is wrong — Tableau 0.2/0.8/0.4 vs app 0.1/0.2/0.1) | **Respect the workbook's declared aggregation.** A curated profile entry applies only where the workbook declares that same agg; otherwise the workbook wins. Structural fix, not a one-line swap — it kills the whole bug class. | **B6 → READY** |
+| **D3** | Is the Track A backlog order still right? | Not formally answered; the `MVP_ACCELERATOR_SCOPE.md` order stands. A9 (tooltips) remains last. Resource 1 is unaffected — A1 was never blocked. | A-track order stands |
 
-### Plus two file exports — ~15 minutes, unblocks two more tasks
+Full rationale for D1/D2 is written into `HANDOFF_TRACK_B_VALIDATION.md`
+(items 1 and 5b) — Resource 2 should read it there, not re-derive it.
 
-Neither is a decision; both are artifacts that simply don't exist locally.
-I checked `tests/fixtures/` and every `reports/` pack: **no live Tableau
+### Still outstanding from Sharath — two file exports (~15 min)
+
+Neither is a decision; both are artifacts that simply don't exist locally. I
+searched `tests/fixtures/` and every `reports/` pack: **no live Tableau
 crosstab CSV is saved anywhere in the repo**, and there is **no fixture for
-the pivoted shape at all**. Without these, B3/B4 can't be worked offline.
+the pivoted shape at all**. Without these, B3/B4 cannot be worked offline.
 
 | # | Export | Unblocks |
 |---|---|---|
 | **E1** | One Tableau crosstab CSV in the **pivoted / long shape** (`Measure Names` / `Measure Values` columns) | **B3** |
 | **E2** | One Tableau crosstab CSV whose header carries a **date-part grouping** (e.g. "Month of Order Date") | **B4** |
 
-Drop both into `tests/fixtures/` and they become permanent regression
-fixtures, not just a one-time unblock.
+**How:** open the dashboard in Tableau, pick the worksheet, then
+`Worksheet → Export → Data` (or Download → Crosstab → CSV in Tableau
+Cloud/Server). Save both into `tests/fixtures/` and commit — they then become
+permanent regression fixtures, not just a one-time unblock.
 
 ---
 
@@ -81,18 +84,18 @@ your account is A8.
 ---
 
 ## RESOURCE 2 → Track B: Validation & Data-Model Correctness
-**Start on B2 — it is tier 1 and needs nothing from you.** B1/B6 open the
-moment D1/D2 land; B3/B4 open as soon as you export two sample crosstabs.
+**B1, B2, B6, B7, B8 are ALL unblocked** (D1/D2 decided 2026-08-13). Only
+B3/B4 still wait on two crosstab exports, and B5 needs Snowflake.
 Primary files: `validation_report.py`, `validation_adapter.py`, `deep_validation.py`, `app_screenshot.py`
 
 | ID | Task | Pri | Est | Dep | Tier | Needs you? | Done when |
 |---|---|---|---|---|---|---|---|
-| **B1** | **`order_match` semantics** (`validation_report.py:198`) — implement D1's decision | **P0** | small | **D1** | 🟡 2 | **Decision D1** (~2 min) — work is fully offline | Gate proves BOTH sides: ranked list still fails on wrong order, grouped bar no longer does. **Do not just delete the check** |
+| **B1** | **`order_match` semantics** (`validation_report.py:198`) — implement D1's ruling: structural FAIL only for ranked/top-N charts | **P0** | small | — | 🟢 1 | **No — D1 DECIDED** | Gate proves BOTH sides: ranked list still fails on wrong order, grouped bar no longer does. **Do not just delete the check** |
 | **B2** | **Global Sales Dashboard View2 crash** — crashed the capture during 08-11/12 testing, **never root-caused**. First question: does it still reproduce under `app_screenshot.capture_app`, or was it specific to the retired `headless_render` path? | **P0** | unscoped | — | 🟢 1 | **No** — `Globalsalesdashboard.twbx` is in `Workbooks/`, IR already parsed; reproduces locally | Either fixed, or proven moot w/ evidence. This is the **3rd corpus workbook** — highest-value generalization proof available |
 | **B3** | **Pivoted/long crosstab alignment** — Tableau REST sometimes returns `Measure Names`/`Measure Values` shape the aligner can't reshape | **P1** | unscoped | — | 🟡 2 | **ONE sample CSV.** Confirmed: no saved live crosstab and **no fixture for the pivoted shape** exists anywhere (checked `tests/fixtures/` + every `reports/` pack) | Reshape works AND `_assign_dashboard_csv_by_header` (`deep_validation.py:96`) still resolves uniquely — subset matching was proven ambiguous live, don't regress that |
 | **B4** | **Date-part column aliasing** — "Month of Order Date" doesn't alias to the chart's own "Order Date" grain | **P1** | unscoped | — | 🟡 2 | **ONE sample CSV** with a date-part header. None saved locally | Verified against a real pulled crosstab, not an assumed header format |
 | **B5** | **Two unresolved backend measures** — `Days to Ship Scheduled`, `Sales Forecast` don't resolve against the backend table | **P1** | unscoped | — | 🔴 3 | **Snowflake** — can't be determined from workbook XML alone | Diagnose which of three causes (calc gap / column-mapping gap / absent from table) — each has a different fix |
-| **B6** | **`Discount` AVG-vs-SUM app bug** (`profile_superstore.py:20`) — implement D2's decision | **P1** | small | **D2** | 🟡 2 | **Decision D2** (~2 min) — numbers already proven live; fix is local (deploy later needs Snowflake) | Numbers match Tableau's REST-confirmed 0.2/0.8/0.4, without breaking sheets where AVG is correct |
+| **B6** | **`Discount` AVG-vs-SUM app bug** (`profile_superstore.py:20`) — implement D2's ruling: curated entry applies only where the workbook declares that agg | **P1** | small | — | 🟢 1 | **No — D2 DECIDED** (deploy later needs Snowflake) | Numbers match Tableau's REST-confirmed 0.2/0.8/0.4, without breaking sheets where AVG is correct |
 | **B7** | **`source_tables()` legacy-join misreport** — reports a single legacy-joined object as a "3-table data model". **Reason string only; behavior is already correct** | P2 | small | — | 🟢 1 | **No** — pure XML parsing, no runtime or data | Skip relations nested in another relation's `<clause>` subtree |
 | **B8** | **Multi-fact/cyclic refusal proof** — logic is built, only ever proven on synthetic fixtures. Build a real workbook via `tests/make_datamodel_workbooks.py` | P2 | small | — | 🟢 1 | **No** — generator script is local, refusal path is offline logic | Refusal fires correctly on real XML. Expected outcome: a passing proof, **not** a fix |
 

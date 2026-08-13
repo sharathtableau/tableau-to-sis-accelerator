@@ -40,7 +40,17 @@ The validation system proves a migrated dashboard is faithful by comparing
 
 ## Priority-ordered task list
 
-### 1. `order_match` chart-level FAIL — **DECISION NEEDED FIRST, don't code yet**
+### 1. `order_match` chart-level FAIL — **DECIDED 2026-08-13, ready to build**
+
+> **SHARATH'S RULING (D1): order is a structural failure ONLY for charts where
+> display order carries meaning — rank tables and top-N. Everywhere else it
+> becomes an informational flag, not a FAIL.**
+>
+> Implement exactly that. Do **not** delete the check, and do **not** weaken it
+> for ranked lists: a genuinely mis-ordered top-10 must still fail. Your gate
+> must prove BOTH directions — a ranked chart with shuffled rows still FAILs,
+> a grouped bar chart with different row order does not.
+
 `validation_report.py:198` — `order_match = sources["tableau"].order ==
 sources["streamlit"].order`, and line 206 makes it a `structural_failure`.
 Live on Regional Analysis, **both fully-evidenced charts read chart-level FAIL
@@ -98,6 +108,37 @@ to the chart's own `Order Date` grain, so those columns never compare.
 backend table, so their charts can't complete the backend leg. Diagnose
 whether these are calc-translation gaps, column-mapping gaps, or genuinely
 absent from the loaded table — the three have very different fixes.
+
+### 5b. `Discount` AVG-vs-SUM — a REAL bug in the shipped app — **DECIDED 2026-08-13**
+
+`profile_superstore.py:20` curates `"Discount": {"sql": "AVG(DISCOUNT)"}`.
+Because `Discount` is a **raw column**, that curated AVG silently overrides the
+workbook's own declared `agg=sum`. The validation pack caught it and Tableau
+itself settled it via REST:
+
+| | Tableau | App | Backend |
+|---|---|---|---|
+| Product Detail Sheet `Discount` | 0.2 / 0.8 / 0.4 | **0.1 / 0.2 / 0.1** | 0.2 / 0.8 / 0.4 |
+
+Tableau and the backend agree; **the migrated app is wrong.** It went unfixed
+because AVG is legitimately correct on *other* sheets, so a blind swap to SUM
+trades one wrong number for another.
+
+> **SHARATH'S RULING (D2): respect the workbook's declared aggregation.** A
+> curated profile entry applies only where the workbook itself declares that
+> same aggregation; otherwise the workbook's declared agg wins.
+
+This is deliberately the structural fix, not a one-line swap — it prevents the
+whole bug class (any curated entry silently overriding a raw column's declared
+agg) rather than just this measure.
+
+- **File:** `profile_superstore.py`, plus wherever the profile curation is
+  applied (`engine.py`'s measure resolution — `resolve_measure` /
+  `_resolve_measure`, `engine.py:218-255`).
+- **Done when:** Product Detail Sheet's Discount matches Tableau's
+  0.2/0.8/0.4, **and** the sheets where AVG is correct still read AVG, with a
+  gate covering both. Note this changes numbers the DEPLOYED app renders, so
+  it needs a redeploy and a mention in the tracker.
 
 ### 6. `source_tables()` misreports a legacy-joined object — parser accuracy, low urgency
 `DATA_MODEL_STATUS.md` §3.7. `tableau_parser.source_tables()` uses
