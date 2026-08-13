@@ -1,6 +1,13 @@
 # Handoff Brief — Track B: Validation & Data-Model Correctness
 
+> ### 👉 New to this project? Read `START_HERE.md` first.
+> It explains in plain English what this project does, how the pipeline
+> works, and what the vocabulary means (*IR*, *gate*, *pill*, *extract*,
+> *BLOCKED vs FAIL*). This brief assumes all of it. Fifteen minutes there
+> saves an afternoon of guessing here.
+
 *(Prepared 2026-08-13 for onboarding a new engineering resource. Scope: the
+
 open items from the 2026-08-07 → 2026-08-12 validation arc plus the residual
 data-model parser gap. These are correctness/trust items, not new features —
 they live in a different set of files from Track A and can run fully in

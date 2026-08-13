@@ -1,8 +1,15 @@
-# Onboarding — start here
+# Onboarding — setup steps
 
-*(For the two engineers joining this project, 2026-08-13. Read this first, then
-your own track brief. Everything here was verified by actually cloning the repo
-fresh and running the suite — not assumed.)*
+> ### 👉 Read `START_HERE.md` FIRST.
+> This file is **setup mechanics only** — clone, install, build, run the tests.
+> It assumes you already know what the project does and what words like *IR*,
+> *gate*, *sheet* and *extract* mean. `START_HERE.md` explains all of that in
+> plain English in about 15 minutes. Don't skip it; nothing below will make
+> much sense otherwise.
+
+*(For the two engineers joining this project, 2026-08-13. Everything here was
+verified by actually cloning the repo fresh and running the suite — not
+assumed.)*
 
 ---
 

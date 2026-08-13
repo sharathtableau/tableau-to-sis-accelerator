@@ -1,5 +1,11 @@
 # Handoff Brief — Track A: Chart & Calc Engine Backlog
 
+> ### 👉 New to this project? Read `START_HERE.md` first.
+> It explains in plain English what this project does, how the pipeline
+> works, and what the vocabulary means (*IR*, *gate*, *pill*, *extract*,
+> *BLOCKED vs FAIL*). This brief assumes all of it. Fifteen minutes there
+> saves an afternoon of guessing here.
+
 *(Prepared 2026-08-13 for onboarding a new engineering resource. Scope: the
 post-MVP chart-type and table-calc backlog from `MVP_ACCELERATOR_SCOPE.md`'s
 "Remaining" section, filtered to the items that are purely additive engine
