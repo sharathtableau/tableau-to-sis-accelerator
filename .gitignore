@@ -60,6 +60,11 @@ app_*.py
 sql/generated_views.sql
 sql/semantic_views.sql
 
+# --- Presentation decks (11.4 MB, 25 files). Deliverables/history, not code
+# --- the accelerator needs -- removed from git 2026-08-13. Local copies kept.
+*.pptx
+*.potx
+
 # --- Editor / OS cruft
 .~lock.*#
 ~$*
