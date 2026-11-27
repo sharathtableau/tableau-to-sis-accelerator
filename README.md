@@ -34,6 +34,13 @@ python codegen.py workbook_ir.json -o app.py
 streamlit run app.py
 ```
 
+## Power BI (Phase 1)
+
+`python pbi_convert.py Report.pbip -o out/` converts a Power BI project (PBIR
+report + TMDL model) into a Streamlit-in-Snowflake app plus a conversion
+report. Architecture, the supported DAX subset, the support matrix and what is
+verified vs untested: [docs/POWERBI_CONVERTER.md](docs/POWERBI_CONVERTER.md).
+
 ## Files
 
 | File | Role |
