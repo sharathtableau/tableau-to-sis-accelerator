@@ -162,7 +162,8 @@ Not verified:
 ## Not in Phase 1
 
 Cortex translation of held measures, the numeric proof against the published
-report (Power BI Execute Queries API), the repair agent, automatic RLS,
-Native App packaging, and bringing V3 into the repo. The uploaded V3 is
-missing modules it imports: `v3_sheet_plan`, `v3_semantic`,
-`v3_model_binding`, `v3_data_entities`, `dashboard_actions` and its tests.
+report (Power BI Execute Queries API), the repair agent, automatic RLS and
+Native App packaging. V3 now lives in `v3/` with the same two fixes applied
+(per-session cache key for unknown viewers, runtime pin on deploy). The Power
+BI path does not use V3 code yet; reusing V3's Cortex and validation pieces is
+Phase 2 work.

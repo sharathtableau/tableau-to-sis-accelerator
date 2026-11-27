@@ -42,7 +42,22 @@ class CacheIdentity(unittest.TestCase):
         self.assertIsNone(engine.viewer_key())
         with patch('backend._active_session', return_value=object()), \
                 patch.object(engine.st, 'user', {}):
-            self.assertEqual(engine.viewer_key(), 'anonymous')
+            self.assertTrue(engine.viewer_key().startswith('anonymous:'))
+
+    def test_unknown_viewers_never_share_a_cache_entry(self):
+        # Hosted, no identity: each browser session gets its own key, so one session's rows are never served to
+        # another on a runtime that shares a process between viewers.
+        calls = []
+        with patch.object(engine, 'run_sql', side_effect=lambda sql: calls.append(sql) or [1]), \
+                patch('backend._active_session', return_value=object()), \
+                patch.object(engine.st, 'user', {}):
+            with patch.object(engine.st, 'session_state', {}, create=True):
+                engine._q_exec('SELECT 2 AS A')
+                engine._q_exec('SELECT 2 AS A')
+            self.assertEqual(len(calls), 1)                 # same session reuses its own result
+            with patch.object(engine.st, 'session_state', {}, create=True):   # a new browser session
+                engine._q_exec('SELECT 2 AS A')
+            self.assertEqual(len(calls), 2)
 
     def test_clear_still_works(self):
         self.assertTrue(callable(engine._q_exec.clear))

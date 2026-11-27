@@ -1144,6 +1144,32 @@ def _create_streamlit_ddl(db, schema, identifier, stage, stem, main_file,
             f"  TITLE = '{t}'")
 
 
+WAREHOUSE_RUNTIME = "SYSTEM$WAREHOUSE_RUNTIME"
+CONTAINER_RUNTIME = "SYSTEM$ST_CONTAINER_RUNTIME_PY3_11"
+
+
+def _resolve_runtime_name(runtime_name=None):
+    """The Streamlit runtime to pin. Default: the warehouse runtime.
+
+    Configurable via the argument or env SIS_RUNTIME_NAME. Only the warehouse
+    runtime is accepted: Snowflake documents that ROOT_LOCATION (the shape this
+    deploy uses) is not supported on container runtimes. Moving to the
+    container runtime needs a FROM-based deploy and a COMPUTE_POOL."""
+    rt = (runtime_name or os.environ.get("SIS_RUNTIME_NAME")
+          or WAREHOUSE_RUNTIME).strip().upper()
+    if rt != WAREHOUSE_RUNTIME:
+        raise RuntimeError(
+            f"Unsupported Streamlit runtime {rt!r} for this deploy path. Only "
+            f"{WAREHOUSE_RUNTIME} works with ROOT_LOCATION deploys; "
+            f"{CONTAINER_RUNTIME} needs a FROM-based deploy and a compute pool.")
+    return rt
+
+
+def _pin_runtime_ddl(db, schema, identifier, runtime_name):
+    return (f'ALTER STREAMLIT "{db}"."{schema}"."{identifier}" '
+            f"SET RUNTIME_NAME = '{runtime_name}'")
+
+
 def _snowsight_url(session, db, schema, identifier):
     """Best-effort Snowsight deep link to the deployed app. Returns None if the
     org/account can't be resolved (the UI then shows the nav path instead of a
@@ -1163,7 +1189,7 @@ def _snowsight_url(session, db, schema, identifier):
 def deploy_streamlit_app(session, stem, app_file, *, db=LOAD_DB, schema=LOAD_SCHEMA,
                          stage=DEPLOY_STAGE, identifier=None, warehouse=None,
                          datasources=None, title=None, runtime_modules=None,
-                         root_dir=None):
+                         root_dir=None, runtime_name=None):
     """Deploy a generated standalone app_<stem>.py to Streamlit-in-Snowflake
     through the Snowpark `session` (no CLI). Stages the app + its runtime
     modules (APP_RUNTIME_MODULES) + a per-deploy datasources.json pointing at
@@ -1189,6 +1215,7 @@ def deploy_streamlit_app(session, stem, app_file, *, db=LOAD_DB, schema=LOAD_SCH
     main_file = os.path.basename(app_file)
     runtime_modules = list(runtime_modules if runtime_modules is not None
                            else APP_RUNTIME_MODULES)
+    runtime_name = _resolve_runtime_name(runtime_name)   # refuse an unsupported runtime before any change
 
     # A Streamlit object needs a query warehouse. Read the session's current one
     # (strip the quotes get_current_warehouse returns); never `USE` it.
@@ -1247,8 +1274,14 @@ def deploy_streamlit_app(session, stem, app_file, *, db=LOAD_DB, schema=LOAD_SCH
     ddl = _create_streamlit_ddl(db, schema, identifier, stage, stem, main_file,
                                 warehouse, title)
     session.sql(ddl).collect()
+    # Pin the runtime explicitly instead of inheriting the account default
+    # (BCR-2342 moves new Streamlits to the container runtime, which shares a
+    # process between viewers and does not support ROOT_LOCATION deploys).
+    runtime_ddl = _pin_runtime_ddl(db, schema, identifier, runtime_name)
+    session.sql(runtime_ddl).collect()
 
     return {"identifier": f"{db}.{schema}.{identifier}",
             "url": _snowsight_url(session, db, schema, identifier),
             "root_location": root_location, "warehouse": warehouse,
-            "files": [os.path.basename(p) for p in staged], "ddl": ddl}
+            "files": [os.path.basename(p) for p in staged], "ddl": ddl,
+            "runtime_name": runtime_name, "runtime_ddl": runtime_ddl}

@@ -41,6 +41,14 @@ report + TMDL model) into a Streamlit-in-Snowflake app plus a conversion
 report. Architecture, the supported DAX subset, the support matrix and what is
 verified vs untested: [docs/POWERBI_CONVERTER.md](docs/POWERBI_CONVERTER.md).
 
+## V3 Cortex accelerator (`v3/`)
+
+`v3/` holds the V3 Cortex lab: the later Tableau accelerator with Cortex
+proposals, source binding, validation and the portal. It is self-contained and
+runs from its own folder (`cd v3`, then see `v3/V3_START_HERE.md` and
+`v3/AGENTS.md`). The original accelerator at the repo root and the Power BI
+converter do not import from `v3/`.
+
 ## Files
 
 | File | Role |

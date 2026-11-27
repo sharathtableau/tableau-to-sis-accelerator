@@ -520,7 +520,22 @@ def viewer_key():
                 return str(value)
     except Exception:
         pass
-    return 'anonymous'
+    return _anonymous_session_key()
+
+
+def _anonymous_session_key():
+    """No viewer identity in a hosted session: key the cache on THIS browser session, never on one shared
+    'anonymous' bucket. On a runtime that shares one process between viewers (container runtime), a shared bucket
+    would hand one person's rows to another. Without session state, a fresh key per call (no reuse, no leak)."""
+    import uuid
+    try:
+        key = st.session_state.get('_v3_cache_session')
+        if not key:
+            key = uuid.uuid4().hex
+            st.session_state['_v3_cache_session'] = key
+        return 'anonymous:' + key
+    except Exception:
+        return 'anonymous:' + uuid.uuid4().hex
 
 
 @st.cache_data(ttl=600)
