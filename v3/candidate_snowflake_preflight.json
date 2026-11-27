@@ -1,0 +1,128 @@
+{
+  "deployed": false,
+  "checks": {
+    "context": {
+      "status": "READ",
+      "rows": [
+        {
+          "ROLE": "WBR_OWNER",
+          "WAREHOUSE": "POWERHOUSE"
+        }
+      ]
+    },
+    "packages": {
+      "status": "READ",
+      "streamlit_1_52_2_available": true,
+      "available_packages": [
+        "altair",
+        "openpyxl",
+        "pandas",
+        "pillow",
+        "plotly",
+        "python",
+        "requests",
+        "snowflake-snowpark-python",
+        "streamlit",
+        "vl-convert-python",
+        "xlrd"
+      ],
+      "python_3_11_available": true
+    },
+    "streamlits": {
+      "status": "READ",
+      "rows": [
+        {
+          "name": "TABLEAU_SIS_ACCELERATOR_GOWRI",
+          "database_name": "WBR_DB",
+          "schema_name": "PIPELINE_DEMO"
+        },
+        {
+          "name": "TABLEAU_TO_SIS_PIPELINE_DEMO",
+          "database_name": "WBR_DB",
+          "schema_name": "PIPELINE_DEMO"
+        },
+        {
+          "name": "TABLEAU_TO_SIS_R1_TEST_UPLOAD_SUPERSTORE",
+          "database_name": "WBR_DB",
+          "schema_name": "PIPELINE_DEMO"
+        },
+        {
+          "name": "TABLEAU_TO_SIS_R1_TEST_UPLOAD_SUPERSTORE_V2",
+          "database_name": "WBR_DB",
+          "schema_name": "PIPELINE_DEMO"
+        },
+        {
+          "name": "TABLEAU_TO_SIS_SALES_DASHBOARD_VER_01",
+          "database_name": "WBR_DB",
+          "schema_name": "PIPELINE_DEMO"
+        },
+        {
+          "name": "TABLEAU_TO_SIS_SUPERSTORE_TABLEAU2024_3",
+          "database_name": "WBR_DB",
+          "schema_name": "PIPELINE_DEMO"
+        },
+        {
+          "name": "TABLEAU_MIGRATOR",
+          "database_name": "WBR_DB",
+          "schema_name": "PUBLIC"
+        },
+        {
+          "name": "TABLEAU_TO_SIS_DASHBOARD",
+          "database_name": "WBR_DB",
+          "schema_name": "PUBLIC"
+        },
+        {
+          "name": "TABLEAU_TO_SIS_ECOMMERCE",
+          "database_name": "WBR_DB",
+          "schema_name": "PUBLIC"
+        },
+        {
+          "name": "TABLEAU_TO_SIS_PIPELINE_DEMO",
+          "database_name": "WBR_DB",
+          "schema_name": "PUBLIC"
+        },
+        {
+          "name": "TABLEAU_TO_SIS_SALES_DASHBOARD",
+          "database_name": "WBR_DB",
+          "schema_name": "PUBLIC"
+        },
+        {
+          "name": "TABLEAU_TO_SIS_SUPERSTORE",
+          "database_name": "WBR_DB",
+          "schema_name": "PUBLIC"
+        },
+        {
+          "name": "TABLEAU_TO_SIS_AI_ACCELERATOR_DEMO",
+          "database_name": "WBR_DB",
+          "schema_name": "TABLEAU_ACCELERATOR_V2"
+        }
+      ]
+    },
+    "integration": {
+      "status": "READ",
+      "rows": [
+        {
+          "name": "TABLEAU_ACCESS_INTEGRATION",
+          "type": "EXTERNAL_ACCESS",
+          "enabled": "true"
+        }
+      ]
+    },
+    "secret": {
+      "status": "READ",
+      "rows": [
+        {
+          "name": "TABLEAU_PAT_SECRET",
+          "schema_name": "PUBLIC",
+          "database_name": "WBR_DB"
+        }
+      ]
+    },
+    "schema": {
+      "status": "READ",
+      "rows": []
+    }
+  },
+  "connection": "CONNECTED",
+  "current_check": "schema"
+}

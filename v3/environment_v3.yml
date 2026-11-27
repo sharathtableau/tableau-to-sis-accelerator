@@ -1,0 +1,14 @@
+name: v3_candidate
+channels:
+  - snowflake
+dependencies:
+  - snowflake-snowpark-python
+  - streamlit=1.52.2
+  - altair
+  - pandas
+  - plotly
+  - requests
+  - openpyxl
+  - xlrd
+  - pillow
+  - vl-convert-python

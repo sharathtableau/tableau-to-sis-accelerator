@@ -1,0 +1,3052 @@
+[
+  {
+    "file": "_ecom.twb",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Dashboard",
+        "sheet": "info",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue %",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity %",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd Purch.%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd Purchase",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue by Channels",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue by Pay. method",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue by Country",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity by Channels",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity by Pay. Method",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity by Country",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV by Channels",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV by Payment Method",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV by Country",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd by Channel",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd by Payment",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd by Country",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Gross%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Net%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Gross vs. Net",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue vs. Customers",
+        "kind": "scatter",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Order vs. Invoice",
+        "kind": "pie",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Order vs. Invoice (2)",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Details",
+        "sheet": "info",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Details",
+        "sheet": "Detail",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "info",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Select Products",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Metric Selector",
+        "kind": "strips",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Show",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Customer%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Refund Rate",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Repeat Purchase Rate",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod.Qty %",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Qty",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Revenue%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Revenue",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "CLV%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "CLV",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Country",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Age Band",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Channel",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Segment",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Payment Method",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Hide",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Product img",
+        "kind": "strips",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Customer Details",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "_filtest.twb",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Dashboard 1",
+        "sheet": "Sheet 1",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard 1",
+        "sheet": "Sheet 2",
+        "kind": "line",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard 1",
+        "sheet": "Sheet 3",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard 1",
+        "sheet": "Sheet 4",
+        "kind": "line",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard 1",
+        "sheet": "Sheet 5",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "_ss2024.twb",
+    "version": "3.0-boundary-1",
+    "state": "BLOCKED",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Commission Model",
+        "sheet": "QuotaAttainment",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Commission Model",
+        "sheet": "CommissionProjection",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Commission Model",
+        "sheet": "Sales",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Commission Model",
+        "sheet": "OTE",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Customers",
+        "sheet": "CustomerScatter",
+        "kind": "scatter",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Customers",
+        "sheet": "CustomerRank",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Customers",
+        "sheet": "CustomerOverview",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Order Details",
+        "sheet": "Product Detail Sheet",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Total Sales",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Sale Map",
+        "kind": "map",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Sales by Segment",
+        "kind": "area",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Sales by Product",
+        "kind": "area",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "ProductView",
+        "kind": "heatmap",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "ProductDetails",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Shipping",
+        "sheet": "ShipSummary",
+        "kind": "pctbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Shipping",
+        "sheet": "ShippingTrend",
+        "kind": "area",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Shipping",
+        "sheet": "DaystoShip",
+        "kind": "gantt",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Performance",
+        "sheet": "Performance",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Forecast",
+        "sheet": "Forecast",
+        "kind": "line",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "What If Forecast",
+        "sheet": "What If Forecast",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [
+      "Sales above Target?",
+      "SUM([Sales])-SUM([Sales Target].[Sales Target])"
+    ],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "_wi2024.twb",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Business",
+        "sheet": "Ease of Biz Correlation Sheet",
+        "kind": "scatter",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Business",
+        "sheet": "Biz Tax rate",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Business",
+        "sheet": "Days to Start Biz",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Business",
+        "sheet": "Hours to do Taxes",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Tourism",
+        "sheet": "Tourism Over Time",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Tourism",
+        "sheet": "Tourism By Country/Region",
+        "kind": "treemap",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Population",
+        "sheet": "Population",
+        "kind": "map",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Health Indicators",
+        "sheet": "Health Indicators",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Care Spend",
+        "sheet": "Care Spend",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Technology",
+        "sheet": "Technology",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Economy",
+        "sheet": "Economy",
+        "kind": "line",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Superstore.twb",
+    "version": "3.0-boundary-1",
+    "state": "BLOCKED",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Commission Model",
+        "sheet": "QuotaAttainment",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Commission Model",
+        "sheet": "CommissionProjection",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Commission Model",
+        "sheet": "Sales",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Commission Model",
+        "sheet": "OTE",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Customers",
+        "sheet": "CustomerScatter",
+        "kind": "scatter",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Customers",
+        "sheet": "CustomerRank",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Customers",
+        "sheet": "CustomerOverview",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Order Details",
+        "sheet": "Product Detail Sheet",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Total Sales",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Sale Map",
+        "kind": "map",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Sales by Segment",
+        "kind": "area",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Sales by Product",
+        "kind": "area",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "ProductView",
+        "kind": "heatmap",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "ProductDetails",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Shipping",
+        "sheet": "ShipSummary",
+        "kind": "pctbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Shipping",
+        "sheet": "ShippingTrend",
+        "kind": "area",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Shipping",
+        "sheet": "DaystoShip",
+        "kind": "gantt",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Performance",
+        "sheet": "Performance",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Forecast",
+        "sheet": "Forecast",
+        "kind": "line",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "What If Forecast",
+        "sheet": "What If Forecast",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [
+      "Sales above Target?",
+      "SUM([Sales])-SUM([Sales Target].[Sales Target])"
+    ],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Superstore_TopN_MeasureSwap.twbx",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Superstore Dashboard",
+        "sheet": "Top N Products",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Superstore Dashboard",
+        "sheet": "Measure by Region",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Superstore Dashboard",
+        "sheet": "Measure Trend",
+        "kind": "line",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\DataModel_MultiFact_And_Cyclic_Refusal.twb",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\E-Commerce (Software) Sales Dashboard VOTD.twbx",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Dashboard",
+        "sheet": "info",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue %",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity %",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd Purch.%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd Purchase",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue by Channels",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue by Pay. method",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue by Country",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity by Channels",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity by Pay. Method",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity by Country",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV by Channels",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV by Payment Method",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV by Country",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd by Channel",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd by Payment",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd by Country",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Gross%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Net%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Gross vs. Net",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue vs. Customers",
+        "kind": "scatter",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Order vs. Invoice",
+        "kind": "pie",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Order vs. Invoice (2)",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Details",
+        "sheet": "info",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Details",
+        "sheet": "Detail",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "info",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Select Products",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Metric Selector",
+        "kind": "strips",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Show",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Customer%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Refund Rate",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Repeat Purchase Rate",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod.Qty %",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Qty",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Revenue%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Revenue",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "CLV%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "CLV",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Country",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Age Band",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Channel",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Segment",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Payment Method",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Hide",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Product img",
+        "kind": "strips",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Customer Details",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\ECommerce_Live_Join_Events_Customers_Products.twbx",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Dashboard",
+        "sheet": "info",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue %",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity %",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd Purch.%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd Purchase",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue by Channels",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue by Pay. method",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue by Country",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity by Channels",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity by Pay. Method",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity by Country",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV by Channels",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV by Payment Method",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV by Country",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd by Channel",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd by Payment",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd by Country",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Gross%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Net%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Gross vs. Net",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue vs. Customers",
+        "kind": "scatter",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Order vs. Invoice",
+        "kind": "pie",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Order vs. Invoice (2)",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Details",
+        "sheet": "info",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Details",
+        "sheet": "Detail",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "info",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Select Products",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Metric Selector",
+        "kind": "strips",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Show",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Customer%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Refund Rate",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Repeat Purchase Rate",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod.Qty %",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Qty",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Revenue%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Revenue",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "CLV%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "CLV",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Country",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Age Band",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Channel",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Segment",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Payment Method",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Hide",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Product img",
+        "kind": "strips",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Customer Details",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\ECommerce_Live_Relationship_Events_Customers_Products.twbx",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Dashboard",
+        "sheet": "info",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue %",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity %",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd Purch.%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd Purchase",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue by Channels",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue by Pay. method",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue by Country",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity by Channels",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity by Pay. Method",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Quantity by Country",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV by Channels",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV by Payment Method",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "AOV by Country",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd by Channel",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd by Payment",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Avg. Days to 2nd by Country",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Gross%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Net%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Gross vs. Net",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Revenue vs. Customers",
+        "kind": "scatter",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Order vs. Invoice",
+        "kind": "pie",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Dashboard",
+        "sheet": "Order vs. Invoice (2)",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Details",
+        "sheet": "info",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Details",
+        "sheet": "Detail",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "info",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Select Products",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Metric Selector",
+        "kind": "strips",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Show",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Customer%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Refund Rate",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Repeat Purchase Rate",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod.Qty %",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Qty",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Revenue%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Prod. Revenue",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "CLV%",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "CLV",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Country",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Age Band",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Channel",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Segment",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Payment Method",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Hide",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Product img",
+        "kind": "strips",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "Customer Details",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\Globalsalesdashboard.twbx",
+    "version": "3.0-boundary-1",
+    "state": "BLOCKED",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "View1",
+        "sheet": "Sales by Category",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View1",
+        "sheet": "Sum of SALES",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View1",
+        "sheet": "Sum of PROFIT",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View1",
+        "sheet": "Sum of QUANTITY",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View1",
+        "sheet": "Profit Ratio by Segment",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View1",
+        "sheet": "Sales by Region",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View2",
+        "sheet": "Sum of SALES",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View2",
+        "sheet": "MTD Sales",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View2",
+        "sheet": "YTD SALES",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View2",
+        "sheet": "Sum of PROFIT",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View2",
+        "sheet": "Sum of QUANTITY",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View2",
+        "sheet": "Sales by Category Region Split",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View2",
+        "sheet": "Profit by Segment",
+        "kind": "pie",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View2",
+        "sheet": "Details Standard Class",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View2",
+        "sheet": "Profit Trend",
+        "kind": "line",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [
+      "AVG_SALES_REGION",
+      "% Diff"
+    ],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\R10_Chain_Over_Existing_Tables.twbx",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "R10 Dashboard",
+        "sheet": "Sales by Category",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "R10 Dashboard",
+        "sheet": "Sales by Sub-Category",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "R10 Dashboard",
+        "sheet": "Product Detail",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\R1_Test_Upload_-_Superstore.twbx",
+    "version": "3.0-boundary-1",
+    "state": "BLOCKED",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Commission Model",
+        "sheet": "QuotaAttainment",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Commission Model",
+        "sheet": "CommissionProjection",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Commission Model",
+        "sheet": "Sales",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Commission Model",
+        "sheet": "OTE",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Customers",
+        "sheet": "CustomerScatter",
+        "kind": "scatter",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Customers",
+        "sheet": "CustomerRank",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Customers",
+        "sheet": "CustomerOverview",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Order Details",
+        "sheet": "Product Detail Sheet",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Total Sales",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Sale Map",
+        "kind": "map",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Sales by Segment",
+        "kind": "area",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Sales by Product",
+        "kind": "area",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "ProductView",
+        "kind": "heatmap",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "ProductDetails",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Shipping",
+        "sheet": "ShipSummary",
+        "kind": "pctbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Shipping",
+        "sheet": "ShippingTrend",
+        "kind": "area",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Shipping",
+        "sheet": "DaystoShip",
+        "kind": "gantt",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Performance",
+        "sheet": "Performance",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Forecast",
+        "sheet": "Forecast",
+        "kind": "line",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "What If Forecast",
+        "sheet": "What If Forecast",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [
+      "Sales above Target?",
+      "SUM([Sales])-SUM([Sales Target].[Sales Target])"
+    ],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\R3_Extract_Over_Existing_Table.twbx",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Sales KPI Parameter Dashboard",
+        "sheet": "Top Customers",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Sales KPI Parameter Dashboard",
+        "sheet": "KPI Summary",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Sales KPI Parameter Dashboard",
+        "sheet": "Region Parameter Measure Swap",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Sales KPI Parameter Dashboard",
+        "sheet": "Selected Measure Trend",
+        "kind": "line",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\R7_Chain_Orders_Product_Category.twbx",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Chain Dashboard",
+        "sheet": "Sales by Category",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Chain Dashboard",
+        "sheet": "Sales by Sub-Category",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Chain Dashboard",
+        "sheet": "Product Detail",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\R9_Live_Join_Orders_Product_Category.twb",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "R9 Dashboard",
+        "sheet": "Sales by Category",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "R9 Dashboard",
+        "sheet": "Sales by Sub-Category",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "R9 Dashboard",
+        "sheet": "Product Detail",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\Regional Analysis.twbx",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "View1",
+        "sheet": "Category wise Sales by Region",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View1",
+        "sheet": "Segment wise Profit by Region",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View1",
+        "sheet": "Quantity by Ship Mode Region Split",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View2",
+        "sheet": "Sales Trend by Month",
+        "kind": "line",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View2",
+        "sheet": "Region level Sales",
+        "kind": "pie",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "View2",
+        "sheet": "Profit by Category",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\Sales Dashboard Ver 01.twbx",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "SALES",
+        "sheet": "Ctry_KPI",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "SALES",
+        "sheet": "Categ_KPI",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "SALES",
+        "sheet": "Paym_KPI",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "SALES",
+        "sheet": "Review_KPI",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "SALES",
+        "sheet": "Ship_KPI",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "SALES",
+        "sheet": "Monthly",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "SALES",
+        "sheet": "Scater",
+        "kind": "scatter",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "SALES",
+        "sheet": "TableC",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "SALES",
+        "sheet": "Table",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\Superstore.twbx",
+    "version": "3.0-boundary-1",
+    "state": "BLOCKED",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Commission Model",
+        "sheet": "QuotaAttainment",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Commission Model",
+        "sheet": "CommissionProjection",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Commission Model",
+        "sheet": "Sales",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Commission Model",
+        "sheet": "OTE",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Customers",
+        "sheet": "CustomerScatter",
+        "kind": "scatter",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Customers",
+        "sheet": "CustomerRank",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Customers",
+        "sheet": "CustomerOverview",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Order Details",
+        "sheet": "Product Detail Sheet",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Total Sales",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Sale Map",
+        "kind": "map",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Sales by Segment",
+        "kind": "area",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Sales by Product",
+        "kind": "area",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "ProductView",
+        "kind": "heatmap",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "ProductDetails",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Shipping",
+        "sheet": "ShipSummary",
+        "kind": "pctbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Shipping",
+        "sheet": "ShippingTrend",
+        "kind": "area",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Shipping",
+        "sheet": "DaystoShip",
+        "kind": "gantt",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Performance",
+        "sheet": "Performance",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Forecast",
+        "sheet": "Forecast",
+        "kind": "line",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "What If Forecast",
+        "sheet": "What If Forecast",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [
+      "Sales above Target?",
+      "SUM([Sales])-SUM([Sales Target].[Sales Target])"
+    ],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\Superstore_KPI_Parameter_Dashboard.twbx",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Sales KPI Parameter Dashboard",
+        "sheet": "Top N Customers by Sales",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Sales KPI Parameter Dashboard",
+        "sheet": "KPI Summary",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Sales KPI Parameter Dashboard",
+        "sheet": "Region Parameter Measure Swap",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Sales KPI Parameter Dashboard",
+        "sheet": "Selected Measure Trend",
+        "kind": "line",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\Superstore_KPI_Parameter_Dashboard_Live.twbx",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Sales KPI Parameter Dashboard",
+        "sheet": "Top Customers",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Sales KPI Parameter Dashboard",
+        "sheet": "KPI Summary",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Sales KPI Parameter Dashboard",
+        "sheet": "Region Parameter Measure Swap",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Sales KPI Parameter Dashboard",
+        "sheet": "Selected Measure Trend",
+        "kind": "line",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\Superstore_MeasureSelector_Native.twbx",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Superstore Dashboard",
+        "sheet": "Top N Products",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Superstore Dashboard",
+        "sheet": "Measure by Region",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Superstore Dashboard",
+        "sheet": "Measure Trend",
+        "kind": "line",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Native Measure Selector",
+        "sheet": "Native Measure Selector",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\Superstore_Tableau2024_3.twbx",
+    "version": "3.0-boundary-1",
+    "state": "BLOCKED",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Commission Model",
+        "sheet": "QuotaAttainment",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Commission Model",
+        "sheet": "CommissionProjection",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Commission Model",
+        "sheet": "Sales",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Commission Model",
+        "sheet": "OTE",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Customers",
+        "sheet": "CustomerScatter",
+        "kind": "scatter",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Customers",
+        "sheet": "CustomerRank",
+        "kind": "bar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Customers",
+        "sheet": "CustomerOverview",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Order Details",
+        "sheet": "Product Detail Sheet",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Total Sales",
+        "kind": "kpi",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Sale Map",
+        "kind": "map",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Sales by Segment",
+        "kind": "area",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Overview",
+        "sheet": "Sales by Product",
+        "kind": "area",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "ProductView",
+        "kind": "heatmap",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Product",
+        "sheet": "ProductDetails",
+        "kind": "circle",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Shipping",
+        "sheet": "ShipSummary",
+        "kind": "pctbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Shipping",
+        "sheet": "ShippingTrend",
+        "kind": "area",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Shipping",
+        "sheet": "DaystoShip",
+        "kind": "gantt",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Performance",
+        "sheet": "Performance",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Forecast",
+        "sheet": "Forecast",
+        "kind": "line",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "What If Forecast",
+        "sheet": "What If Forecast",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [
+      "Sales above Target?",
+      "SUM([Sales])-SUM([Sales Target].[Sales Target])"
+    ],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\World Indicators.twbx",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Business",
+        "sheet": "Ease of Biz Correlation Sheet",
+        "kind": "scatter",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Business",
+        "sheet": "Ease of Biz Factors Sheet",
+        "kind": "strips",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Business",
+        "sheet": "Ease of Biz Index",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Tourism",
+        "sheet": "TourismOverTime",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Tourism",
+        "sheet": "TourismByCountry",
+        "kind": "treemap",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Population",
+        "sheet": "Population",
+        "kind": "map",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Health",
+        "sheet": "Health",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Technology",
+        "sheet": "Technology",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Economy",
+        "sheet": "Economy",
+        "kind": "line",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  },
+  {
+    "file": "Workbooks\\World_Indicators_Tableau2024_3.twbx",
+    "version": "3.0-boundary-1",
+    "state": "NEEDS_REVIEW",
+    "issues": [],
+    "sheets": [
+      {
+        "dashboard": "Business",
+        "sheet": "Ease of Biz Correlation Sheet",
+        "kind": "scatter",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Business",
+        "sheet": "Biz Tax rate",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Business",
+        "sheet": "Days to Start Biz",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Business",
+        "sheet": "Hours to do Taxes",
+        "kind": "table",
+        "state": "PARTIAL",
+        "reason": "No exact chart mapping selected; table approximation"
+      },
+      {
+        "dashboard": "Tourism",
+        "sheet": "Tourism Over Time",
+        "kind": "dtbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Tourism",
+        "sheet": "Tourism By Country/Region",
+        "kind": "treemap",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Population",
+        "sheet": "Population",
+        "kind": "map",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Health Indicators",
+        "sheet": "Health Indicators",
+        "kind": "table",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Care Spend",
+        "sheet": "Care Spend",
+        "kind": "mbar",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Technology",
+        "sheet": "Technology",
+        "kind": "dual",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      },
+      {
+        "dashboard": "Economy",
+        "sheet": "Economy",
+        "kind": "line",
+        "state": "UNVERIFIED",
+        "reason": "Semantics and fidelity require validation"
+      }
+    ],
+    "untranslated_calculations": [],
+    "data_verified": false,
+    "visual_verified": false
+  }
+]

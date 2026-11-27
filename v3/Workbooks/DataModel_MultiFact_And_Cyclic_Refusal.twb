@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<workbook source-build='2024.3' source-platform='win' version='18.1'>
+  <datasources>
+    <datasource caption='Multi-Fact Model' inline='true' name='federated.multifact01' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection name='textscan.multifact01' caption='multifact'>
+            <connection class='hyper' dbname='multifact.hyper' schema='Extract' />
+          </named-connection>
+        </named-connections>
+      </connection>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Orders' id='Orders_71EBC6F7970C45608D905649E191E3A2'>
+            <properties context=''>
+              <relation connection='textscan.multifact01' name='Orders' table='[Orders]' type='table'>
+                <columns header='yes'>
+                  <column datatype='string' name='PRODUCT_ID' ordinal='0' />
+                  <column datatype='real' name='SALES' ordinal='0' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='Returns' id='Returns_9F3E2CE5EC0846DBAA4B8CF8B92E2E60'>
+            <properties context=''>
+              <relation connection='textscan.multifact01' name='Returns' table='[Returns]' type='table'>
+                <columns header='yes'>
+                  <column datatype='string' name='PRODUCT_ID' ordinal='0' />
+                  <column datatype='integer' name='QUANTITY' ordinal='0' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='Product' id='Product_DF41D68BF351497A847B175ADD7DE8C9'>
+            <properties context=''>
+              <relation connection='textscan.multifact01' name='Product' table='[Product]' type='table'>
+                <columns header='yes'>
+                  <column datatype='string' name='PRODUCT_ID' ordinal='0' />
+                  <column datatype='string' name='PRODUCT_NAME' ordinal='0' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[PRODUCT_ID]' />
+              <expression op='[PRODUCT_ID (Product)]' />
+            </expression>
+            <first-end-point object-id='Orders_71EBC6F7970C45608D905649E191E3A2' />
+            <second-end-point object-id='Product_DF41D68BF351497A847B175ADD7DE8C9' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[PRODUCT_ID]' />
+              <expression op='[PRODUCT_ID (Product)]' />
+            </expression>
+            <first-end-point object-id='Returns_9F3E2CE5EC0846DBAA4B8CF8B92E2E60' />
+            <second-end-point object-id='Product_DF41D68BF351497A847B175ADD7DE8C9' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='Cyclic Model' inline='true' name='federated.cyclic01' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection name='textscan.cyclic01' caption='cyclic'>
+            <connection class='hyper' dbname='cyclic.hyper' schema='Extract' />
+          </named-connection>
+        </named-connections>
+      </connection>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='A' id='A_BD85A583CCCA49CD862A5E30D93A4A7B'>
+            <properties context=''>
+              <relation connection='textscan.cyclic01' name='A' table='[A]' type='table'>
+                <columns header='yes'>
+                  <column datatype='string' name='KEY' ordinal='0' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='B' id='B_03E7F7238BFD4536B3330ACE0D554099'>
+            <properties context=''>
+              <relation connection='textscan.cyclic01' name='B' table='[B]' type='table'>
+                <columns header='yes'>
+                  <column datatype='string' name='KEY' ordinal='0' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='C' id='C_91648EE84D16426F945F6C31AC59782E'>
+            <properties context=''>
+              <relation connection='textscan.cyclic01' name='C' table='[C]' type='table'>
+                <columns header='yes'>
+                  <column datatype='string' name='KEY' ordinal='0' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[KEY]' />
+              <expression op='[KEY (B)]' />
+            </expression>
+            <first-end-point object-id='A_BD85A583CCCA49CD862A5E30D93A4A7B' />
+            <second-end-point object-id='B_03E7F7238BFD4536B3330ACE0D554099' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[KEY]' />
+              <expression op='[KEY (C)]' />
+            </expression>
+            <first-end-point object-id='B_03E7F7238BFD4536B3330ACE0D554099' />
+            <second-end-point object-id='C_91648EE84D16426F945F6C31AC59782E' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[KEY]' />
+              <expression op='[KEY (A)]' />
+            </expression>
+            <first-end-point object-id='C_91648EE84D16426F945F6C31AC59782E' />
+            <second-end-point object-id='A_BD85A583CCCA49CD862A5E30D93A4A7B' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets />
+</workbook>

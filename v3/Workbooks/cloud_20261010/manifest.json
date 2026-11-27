@@ -1,0 +1,169 @@
+{
+  "schema": "cloud-test-set/1",
+  "frozen": true,
+  "site": "https://prod-useast-b.online.tableau.com/#/site/b360bi",
+  "project": "Tableau to Streamlit",
+  "include_subprojects": true,
+  "downloaded_at": "2026-10-09T18:38:29.066665+00:00",
+  "workbooks": [
+    {
+      "id": "bcde9989-e1f5-43dd-9de2-c24a099d3024",
+      "name": "ECommerce_Live_Relationship_Events_Customers_Products",
+      "content_url": "ECommerce_Live_Relationship_Events_Customers_Products_17891384213890",
+      "project": "Tableau to Streamlit",
+      "server_url": "https://prod-useast-b.online.tableau.com",
+      "site_content_url": "b360bi",
+      "file": "ECommerce_Live_Relationship_Events_Customers_Products.twbx",
+      "bytes": 442128,
+      "sha256": "aa9eafe90d3e84679bd2326cdcfc10abb03fa0f199aa282fec9c535d3e06f5ab",
+      "published_views": [
+        "Dashboard"
+      ]
+    },
+    {
+      "id": "cfede42e-5a46-417e-80e6-45a3a4968c87",
+      "name": "Fil Test",
+      "content_url": "FilTest",
+      "project": "Tableau to Streamlit",
+      "server_url": "https://prod-useast-b.online.tableau.com",
+      "site_content_url": "b360bi",
+      "file": "Fil_Test.twbx",
+      "bytes": 429738,
+      "sha256": "8d15a98499db95ac745ea9afd7c507c72cc611bcf5e8a683183c919f5af00b1f",
+      "published_views": [
+        "Dashboard 1"
+      ]
+    },
+    {
+      "id": "2ec76115-298c-443d-af4d-405ea25774c2",
+      "name": "Global Sales Dashboard",
+      "content_url": "GlobalSalesDashboard",
+      "project": "Tableau to Streamlit",
+      "server_url": "https://prod-useast-b.online.tableau.com",
+      "site_content_url": "b360bi",
+      "file": "Global_Sales_Dashboard.twbx",
+      "bytes": 383636,
+      "sha256": "c832fefb9dd83c92575f653ab39ec746536cdac48d28cb0a1a7c3f1427a176bd",
+      "published_views": [
+        "View1",
+        "View2"
+      ]
+    },
+    {
+      "id": "1ed9e394-40ad-44f0-b27f-d325cc5e01fa",
+      "name": "Globalsalesdashboard",
+      "content_url": "Globalsalesdashboard",
+      "project": "Tableau to Streamlit",
+      "server_url": "https://prod-useast-b.online.tableau.com",
+      "site_content_url": "b360bi",
+      "file": "Globalsalesdashboard.twbx",
+      "bytes": 840320,
+      "sha256": "bcd021569d02364efaa84f3e0f65c0ae675ecef86e31c991cfea6935d1e756b0",
+      "published_views": [
+        "View1",
+        "View2"
+      ]
+    },
+    {
+      "id": "0b53cf7f-cce2-4d1f-b74a-5339aa2916a4",
+      "name": "R1 Test Upload - Superstore",
+      "content_url": "R1TestUpload-Superstore",
+      "project": "Tableau to Streamlit",
+      "server_url": "https://prod-useast-b.online.tableau.com",
+      "site_content_url": "b360bi",
+      "file": "R1_Test_Upload_-_Superstore.twbx",
+      "bytes": 1015152,
+      "sha256": "cd7ec22965fbfe33b8fa2434c5615ca28b20d50d33ad88b2a23b487ce94f5321",
+      "published_views": [
+        "Overview",
+        "Product",
+        "Customers",
+        "Shipping",
+        "Order Details"
+      ]
+    },
+    {
+      "id": "03f989e5-e536-4316-9d78-33e9882a7acb",
+      "name": "R1 Test Upload - Superstore-V2",
+      "content_url": "R1TestUpload-Superstore-V2",
+      "project": "Tableau to Streamlit",
+      "server_url": "https://prod-useast-b.online.tableau.com",
+      "site_content_url": "b360bi",
+      "file": "R1_Test_Upload_-_Superstore-V2.twbx",
+      "bytes": 1000955,
+      "sha256": "47e5e889024cd59a575640363f6133a7ef9c55cfb3ae16a48b1073f8594e7d24",
+      "published_views": [
+        "Overview",
+        "Product",
+        "Customers",
+        "Shipping",
+        "Order Details"
+      ]
+    },
+    {
+      "id": "16a23adc-1231-4991-8827-37d75f448da4",
+      "name": "Regional Analysis",
+      "content_url": "RegionalAnalysis",
+      "project": "Tableau to Streamlit",
+      "server_url": "https://prod-useast-b.online.tableau.com",
+      "site_content_url": "b360bi",
+      "file": "Regional_Analysis.twb",
+      "bytes": 369429,
+      "sha256": "8abaf2e866f7a15b0822c1ad95b13d098aeca0000c127cc7416a83b3abdabbf9",
+      "published_views": [
+        "View1",
+        "View2"
+      ]
+    },
+    {
+      "id": "41ad0d75-84db-48af-b9cc-f07091486c16",
+      "name": "Sales Dashboard Ver 01",
+      "content_url": "SalesDashboardVer01_17910905090850",
+      "project": "Tableau to Streamlit",
+      "server_url": "https://prod-useast-b.online.tableau.com",
+      "site_content_url": "b360bi",
+      "file": "Sales_Dashboard_Ver_01.twbx",
+      "bytes": 241621,
+      "sha256": "cde25fe04df4d952e5b54bd74a2d1ca0e45717b0644a994edbfe3377d2752b2d",
+      "published_views": [
+        "SALES"
+      ]
+    },
+    {
+      "id": "d4278a03-f23f-45ec-a644-4463e6ddcde4",
+      "name": "Superstore_KPI_Parameter_Dashboard_Live",
+      "content_url": "Superstore_KPI_Parameter_Dashboard_Live",
+      "project": "Tableau to Streamlit",
+      "server_url": "https://prod-useast-b.online.tableau.com",
+      "site_content_url": "b360bi",
+      "file": "Superstore_KPI_Parameter_Dashboard_Live.twb",
+      "bytes": 79154,
+      "sha256": "8bbc5fbaad70d3c2344ef39b85670baa4a417e89a469fc585932095f2d3af6fe",
+      "published_views": [
+        "Sales KPI Parameter Dashboard"
+      ]
+    },
+    {
+      "id": "45130bf9-3e50-4b89-9ad7-1995b01d06b2",
+      "name": "Superstore_Tableau2024_3",
+      "content_url": "Superstore_Tableau2024_3",
+      "project": "Tableau to Streamlit",
+      "server_url": "https://prod-useast-b.online.tableau.com",
+      "site_content_url": "b360bi",
+      "file": "Superstore_Tableau2024_3.twbx",
+      "bytes": 1704644,
+      "sha256": "3d150408da4ab299add740f71dbebdd3cac4fe3df625c0b5ff374878193b48f3",
+      "published_views": [
+        "Overview",
+        "Product",
+        "Customers",
+        "Shipping",
+        "Performance",
+        "Commission Model",
+        "Order Details",
+        "Forecast",
+        "What If Forecast"
+      ]
+    }
+  ]
+}

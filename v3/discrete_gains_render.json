@@ -1,0 +1,50 @@
+[
+  {
+    "file": "_filtest.twb",
+    "dashboard": "Dashboard 1",
+    "sheet": "Sheet 2",
+    "workbook_sha256": "eebb35d59059a6f8a2138cc919d0b4906cd8bdfef43e1788da337e1ad1278e05",
+    "charts": 0,
+    "status": "NOT_VERIFIED",
+    "blockers": [],
+    "warnings": [],
+    "intake_errors": [],
+    "findings": [
+      {
+        "severity": "WARNING",
+        "sheet": "Sheet 2",
+        "code": "datasource-unmapped",
+        "message": "Datasource 'Sample - Superstore (2)' is not mapped to a local/Snowflake table, so this sheet is not rendered (showing its numbers would mean querying a different dataset)."
+      }
+    ],
+    "missing_datasources": [
+      "Sample - Superstore (2)"
+    ],
+    "numeric_parity": "NOT_EVALUATED",
+    "visual_parity": "NOT_EVALUATED"
+  },
+  {
+    "file": "_filtest.twb",
+    "dashboard": "Dashboard 1",
+    "sheet": "Sheet 4",
+    "workbook_sha256": "eebb35d59059a6f8a2138cc919d0b4906cd8bdfef43e1788da337e1ad1278e05",
+    "charts": 0,
+    "status": "NOT_VERIFIED",
+    "blockers": [],
+    "warnings": [],
+    "intake_errors": [],
+    "findings": [
+      {
+        "severity": "WARNING",
+        "sheet": "Sheet 4",
+        "code": "datasource-unmapped",
+        "message": "Datasource 'Sample - Superstore (2)' is not mapped to a local/Snowflake table, so this sheet is not rendered (showing its numbers would mean querying a different dataset)."
+      }
+    ],
+    "missing_datasources": [
+      "Sample - Superstore (2)"
+    ],
+    "numeric_parity": "NOT_EVALUATED",
+    "visual_parity": "NOT_EVALUATED"
+  }
+]

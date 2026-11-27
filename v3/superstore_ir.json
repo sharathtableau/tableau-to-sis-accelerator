@@ -1,0 +1,2133 @@
+{
+  "source_file": "C:\\Users\\SHARAT~1\\AppData\\Local\\Temp\\twbconv_39d4ww29\\Superstore.twbx",
+  "calcs": {
+    "Achievement (estimated)": {
+      "sql": "SALES",
+      "agg_ready": false
+    },
+    "Achieved Quota": {
+      "sql": "CASE WHEN SUM((SALES)) >= __PARAM_NEW_QUOTA__ THEN '100% +'\nWHEN SUM((SALES)) >= 0.75 * __PARAM_NEW_QUOTA__ THEN '75-100%'\nWHEN SUM((SALES)) >= 0.5 * __PARAM_NEW_QUOTA__ THEN '50-75%'\nELSE 'Below 50%' END",
+      "agg_ready": true
+    },
+    "Base (Variable)": {
+      "sql": "__PARAM_BASE_SALARY__",
+      "agg_ready": false
+    },
+    "% of quota achieved": {
+      "sql": "AVG((SALES))/__PARAM_NEW_QUOTA__",
+      "agg_ready": true
+    },
+    "Rank over 3": {
+      "sql": "ROUND(ROW_NUMBER() OVER (__WIN_ORDER__) / 3 - 0.6,0) + 1",
+      "agg_ready": true,
+      "window": true
+    },
+    "Sort by field": {
+      "sql": "CASE WHEN __PARAM_SORT_BY__='Names' THEN 0\nWHEN __PARAM_SORT_BY__='% quota descending' THEN -(AVG((SALES))/__PARAM_NEW_QUOTA__)\nELSE (AVG((SALES))/__PARAM_NEW_QUOTA__) END",
+      "agg_ready": true
+    },
+    "Commission (Variable)": {
+      "sql": "(__PARAM_COMMISSION_RATE__*SALES)/100",
+      "agg_ready": false
+    },
+    "Estimate Compensation label": {
+      "sql": "'Estimated Compensation:'",
+      "agg_ready": false
+    },
+    "OTE (Variable)": {
+      "sql": "__PARAM_BASE_SALARY__ + (__PARAM_COMMISSION_RATE__*__PARAM_NEW_QUOTA__)/100",
+      "agg_ready": false
+    },
+    "Total Compensation": {
+      "sql": "MIN((__PARAM_BASE_SALARY__)) + SUM(((__PARAM_COMMISSION_RATE__*SALES)/100))",
+      "agg_ready": true
+    },
+    "Total Sales label": {
+      "sql": "'Total Sales:'",
+      "agg_ready": false
+    },
+    "Days to Ship Actual": {
+      "sql": "DATEDIFF('day',ORDER_DATE,SHIP_DATE)",
+      "agg_ready": false
+    },
+    "Sales Forecast": {
+      "sql": "SALES*(1-__PARAM_CHURN_RATE__)*(1+__PARAM_NEW_BUSINESS_GROWTH__)",
+      "agg_ready": false
+    },
+    "Ship Status": {
+      "sql": "CASE WHEN (DATEDIFF('day',ORDER_DATE,SHIP_DATE))> (CASE  SHIP_MODE\nWHEN 'Same Day' THEN 0\nWHEN 'First Class' THEN 1\nWHEN 'Second Class' THEN 3\nWHEN 'Standard Class' THEN 6\nEND) THEN 'Shipped Late' \nWHEN (DATEDIFF('day',ORDER_DATE,SHIP_DATE))= (CASE  SHIP_MODE\nWHEN 'Same Day' THEN 0\nWHEN 'First Class' THEN 1\nWHEN 'Second Class' THEN 3\nWHEN 'Standard Class' THEN 6\nEND) THEN 'Shipped On Time'\nELSE 'Shipped Early' END",
+      "agg_ready": false
+    },
+    "Days to Ship Scheduled": {
+      "sql": "CASE  SHIP_MODE\nWHEN 'Same Day' THEN 0\nWHEN 'First Class' THEN 1\nWHEN 'Second Class' THEN 3\nWHEN 'Standard Class' THEN 6\nEND",
+      "agg_ready": false
+    },
+    "Order Profitable?": {
+      "sql": "sum(PROFIT) OVER (PARTITION BY ORDER_ID)>0",
+      "agg_ready": false
+    },
+    "Sales per Customer": {
+      "sql": "Sum(SALES)/ NULLIF(COUNT(DISTINCT CUSTOMER_NAME), 0)",
+      "agg_ready": true
+    },
+    "Profit Ratio": {
+      "sql": "sum(PROFIT)/ NULLIF(sum(SALES), 0)",
+      "agg_ready": true
+    },
+    "Units estimate": {
+      "sql": "ROUND(QUANTITY*(1-__PARAM_CHURN_RATE__)*(1+__PARAM_NEW_BUSINESS_GROWTH__),0)",
+      "agg_ready": false
+    },
+    "Profit per Order": {
+      "sql": "Sum(PROFIT)/ NULLIF(COUNT(DISTINCT ORDER_ID), 0)",
+      "agg_ready": true
+    },
+    "SUM([Sales])-SUM([Sales Forecast])": {
+      "sql": "SUM(SALES)-SUM((SALES*(1-__PARAM_CHURN_RATE__)*(1+__PARAM_NEW_BUSINESS_GROWTH__)))",
+      "agg_ready": true
+    },
+    "Achievement (copy)": {
+      "sql": "SALES",
+      "agg_ready": false
+    },
+    "Achievement (variable) (copy)": {
+      "sql": "CASE WHEN SUM((SALES)) >= __PARAM_NEW_QUOTA__ THEN '100% +'\nWHEN SUM((SALES)) >= 0.75 * __PARAM_NEW_QUOTA__ THEN '75-100%'\nWHEN SUM((SALES)) >= 0.5 * __PARAM_NEW_QUOTA__ THEN '50-75%'\nELSE 'Below 50%' END",
+      "agg_ready": true
+    },
+    "Calculation_0440925131659539": {
+      "sql": "AVG((SALES))/__PARAM_NEW_QUOTA__",
+      "agg_ready": true
+    },
+    "Calculation_4120925132203686": {
+      "sql": "ROUND(ROW_NUMBER() OVER (__WIN_ORDER__) / 3 - 0.6,0) + 1",
+      "agg_ready": true,
+      "window": true
+    },
+    "Calculation_8140925133029303": {
+      "sql": "CASE WHEN __PARAM_SORT_BY__='Names' THEN 0\nWHEN __PARAM_SORT_BY__='% quota descending' THEN -(AVG((SALES))/__PARAM_NEW_QUOTA__)\nELSE (AVG((SALES))/__PARAM_NEW_QUOTA__) END",
+      "agg_ready": true
+    },
+    "Calculation_0831103151444568": {
+      "sql": "DATEDIFF('day',ORDER_DATE,SHIP_DATE)",
+      "agg_ready": false
+    },
+    "Calculation_5421109230915137": {
+      "sql": "SALES*(1-__PARAM_CHURN_RATE__)*(1+__PARAM_NEW_BUSINESS_GROWTH__)",
+      "agg_ready": false
+    },
+    "Calculation_6401103171259723": {
+      "sql": "CASE WHEN (DATEDIFF('day',ORDER_DATE,SHIP_DATE))> (CASE  SHIP_MODE\nWHEN 'Same Day' THEN 0\nWHEN 'First Class' THEN 1\nWHEN 'Second Class' THEN 3\nWHEN 'Standard Class' THEN 6\nEND) THEN 'Shipped Late' \nWHEN (DATEDIFF('day',ORDER_DATE,SHIP_DATE))= (CASE  SHIP_MODE\nWHEN 'Same Day' THEN 0\nWHEN 'First Class' THEN 1\nWHEN 'Second Class' THEN 3\nWHEN 'Standard Class' THEN 6\nEND) THEN 'Shipped On Time'\nELSE 'Shipped Early' END",
+      "agg_ready": false
+    },
+    "Calculation_6861103170623145": {
+      "sql": "CASE  SHIP_MODE\nWHEN 'Same Day' THEN 0\nWHEN 'First Class' THEN 1\nWHEN 'Second Class' THEN 3\nWHEN 'Standard Class' THEN 6\nEND",
+      "agg_ready": false
+    },
+    "Calculation_9060122104947471": {
+      "sql": "sum(PROFIT) OVER (PARTITION BY ORDER_ID)>0",
+      "agg_ready": false
+    },
+    "Calculation_9321103144526191": {
+      "sql": "Sum(SALES)/ NULLIF(COUNT(DISTINCT CUSTOMER_NAME), 0)",
+      "agg_ready": true
+    },
+    "Calculation_9921103144103743": {
+      "sql": "sum(PROFIT)/ NULLIF(sum(SALES), 0)",
+      "agg_ready": true
+    },
+    "Sales est (copy)": {
+      "sql": "ROUND(QUANTITY*(1-__PARAM_CHURN_RATE__)*(1+__PARAM_NEW_BUSINESS_GROWTH__),0)",
+      "agg_ready": false
+    },
+    "Sales per Customer (copy)": {
+      "sql": "Sum(PROFIT)/ NULLIF(COUNT(DISTINCT ORDER_ID), 0)",
+      "agg_ready": true
+    },
+    "Calculation_9330126204734562": {
+      "sql": "SUM(SALES)-SUM((SALES*(1-__PARAM_CHURN_RATE__)*(1+__PARAM_NEW_BUSINESS_GROWTH__)))",
+      "agg_ready": true
+    }
+  },
+  "calc_drops": {
+    "Sales above Target?": "If Sum([Sales])>SUM([federated.0hgpf0j1fdpvv316shikk0mmdlec].[Sales Target]) then \"Above Target\" else \"Below Target\" end",
+    "SUM([Sales])-SUM([Sales Target].[Sales Target])": "SUM([Sales])-SUM([federated.0hgpf0j1fdpvv316shikk0mmdlec].[Sales Target])"
+  },
+  "datasources": [
+    "Orders (Sample - Superstore)",
+    "Sales Commission",
+    "Sales Target",
+    "Sample - Superstore"
+  ],
+  "params": {
+    "Base Salary": "50000",
+    "Commission Rate": "18.399999999999999",
+    "New Quota": "500000",
+    "Sort by": "\"Names\"",
+    "New Business Growth": "0.59999999999999998",
+    "Churn Rate": "0.064000000000000001"
+  },
+  "param_domains": {
+    "Sort by": [
+      "\"\\% quota ascending\"",
+      "\"\\% quota descending\"",
+      "\"Names\""
+    ]
+  },
+  "stories": [],
+  "datasource_notes": [],
+  "hierarchies": {
+    "Location": [
+      "Country/Region",
+      "Region",
+      "State/Province",
+      "City",
+      "Postal Code"
+    ],
+    "Product": [
+      "Category",
+      "Sub-Category",
+      "Product Name"
+    ]
+  },
+  "colmap": {
+    "Sort by": "Parameter 1 1",
+    "New Business Growth": "Parameter 1",
+    "Churn Rate": "Parameter 2",
+    "Achievement (estimated)": "Achievement (copy)",
+    "Achieved Quota": "Achievement (variable) (copy)",
+    "% of quota achieved": "Calculation_0440925131659539",
+    "Rank over 3": "Calculation_4120925132203686",
+    "Sort by field": "Calculation_8140925133029303",
+    "Days to Ship Actual": "Calculation_0831103151444568",
+    "Sales Forecast": "Calculation_5421109230915137",
+    "Ship Status": "Calculation_6401103171259723",
+    "Days to Ship Scheduled": "Calculation_6861103170623145",
+    "Order Profitable?": "Calculation_9060122104947471",
+    "Sales per Customer": "Calculation_9321103144526191",
+    "Profit Ratio": "Calculation_9921103144103743",
+    "Sales above Target?": "Calculation_9951107165644870",
+    "Units estimate": "Sales est (copy)",
+    "Profit per Order": "Sales per Customer (copy)",
+    "SUM([Sales])-SUM([Sales Target].[Sales Target])": "Calculation_5144658905056067585",
+    "SUM([Sales])-SUM([Sales Forecast])": "Calculation_9330126204734562"
+  },
+  "color_maps": {
+    "Achieved Quota": {
+      "50-75%": "#4e79a7",
+      "Below 50%": "#59a14f",
+      "100% +": "#76b7b2",
+      "75-100%": "#f28e2b"
+    },
+    "Sales above Target?": {
+      "Above Target": "#027b8e",
+      "Below Target": "#a39fc9"
+    },
+    "Order Profitable?": {
+      "true": "#4e79a7",
+      "false": "#f28e2b"
+    },
+    "Ship Status": {
+      "Shipped Early": "#4e79a7",
+      "Shipped Late": "#9c755f",
+      "Shipped On Time": "#bab0ac"
+    }
+  },
+  "palette_refs": {},
+  "aliases": {
+    "Estimate Compensation label": {
+      "Estimated Compensation:": "Estimated total compensation"
+    },
+    "Total Sales label": {
+      "Total Sales:": "Total"
+    },
+    "Order Profitable?": {
+      "false": "Unprofitable",
+      "true": "Profitable"
+    }
+  },
+  "dashboards": [
+    {
+      "name": "Commission Model",
+      "title": "Sales Commission Model",
+      "filters": [],
+      "sheet_filters": [],
+      "params": [
+        "New Quota",
+        "Base Salary",
+        "Sort by",
+        "Commission Rate"
+      ],
+      "sheets": [
+        {
+          "name": "QuotaAttainment",
+          "mark": "Automatic",
+          "filters": [],
+          "kind": "bar",
+          "orient": "h",
+          "y": {
+            "caption": "Sales Person"
+          },
+          "x": {
+            "caption": "Achievement (estimated)",
+            "agg": "sum",
+            "fmt": "cur0"
+          },
+          "color": {
+            "caption": "Achieved Quota",
+            "kind": "dimension",
+            "agg": "usr"
+          },
+          "labels": true,
+          "datasource": "Sales Commission",
+          "title": "Estimated Quota Attainment Results with These Assumptions",
+          "sort": {
+            "field": "Sort by field",
+            "agg": "usr",
+            "dir": "asc",
+            "on": "Sales Person"
+          },
+          "manual_sort": {
+            "on": "Achieved Quota",
+            "order": [
+              "Below 50\\%",
+              "50-75\\%",
+              "75-100\\%",
+              "100\\% +"
+            ]
+          },
+          "reflines": [
+            {
+              "axis": "Achievement (estimated)",
+              "formula": "average",
+              "value_field": "New Quota",
+              "value_agg": null,
+              "is_param": true,
+              "scope": "per-table",
+              "label": "New quota",
+              "bands": [],
+              "value_param": "New Quota",
+              "value_literal": 500000.0
+            },
+            {
+              "axis": "Achievement (estimated)",
+              "formula": "average",
+              "value_field": "New Quota",
+              "value_agg": null,
+              "is_param": true,
+              "scope": "per-cell",
+              "label": null,
+              "bands": [
+                50.0,
+                75.0,
+                100.0
+              ],
+              "value_param": "New Quota",
+              "value_literal": 500000.0
+            }
+          ],
+          "text_fields": [
+            "% of quota achieved"
+          ],
+          "geom": {
+            "x": 410,
+            "y": 14270,
+            "w": 49619,
+            "h": 65929,
+            "show_title": true
+          }
+        },
+        {
+          "name": "CommissionProjection",
+          "mark": "Automatic",
+          "filters": [],
+          "kind": "mbar",
+          "orient": "h",
+          "dim": "Sales Person",
+          "measures": [
+            {
+              "caption": "Commission (Variable)",
+              "agg": "sum",
+              "fmt": "cur0",
+              "label": "Commission (Variable)",
+              "color": "#5f9ed1"
+            },
+            {
+              "caption": "Base (Variable)",
+              "agg": "min",
+              "fmt": "cur0",
+              "label": "Base (Variable)",
+              "color": "#898989"
+            }
+          ],
+          "datasource": "Sales Commission",
+          "title": "Total Compensation with These Assumptions",
+          "sort": {
+            "field": "Sort by field",
+            "agg": "usr",
+            "dir": "asc",
+            "on": "Sales Person"
+          },
+          "manual_sort": {
+            "on": "Achieved Quota",
+            "order": [
+              "Below 50\\%",
+              "50-75\\%",
+              "75-100\\%",
+              "100\\% +"
+            ]
+          },
+          "reflines": [
+            {
+              "axis": "Multiple Values",
+              "formula": "max",
+              "value_field": "OTE (Variable)",
+              "value_agg": "max",
+              "is_param": false,
+              "scope": "per-table",
+              "label": "OTE",
+              "bands": []
+            }
+          ],
+          "geom": {
+            "x": 50029,
+            "y": 14270,
+            "w": 49561,
+            "h": 65929,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Sales",
+          "mark": "Automatic",
+          "filters": [],
+          "kind": "kpi",
+          "measures": [
+            {
+              "caption": "Sales",
+              "agg": "sum",
+              "fmt": "cur0",
+              "label": "Sales"
+            },
+            {
+              "caption": "% of quota achieved",
+              "agg": "usr",
+              "fmt": "pct",
+              "label": "% of quota achieved"
+            }
+          ],
+          "datasource": "Sales Commission",
+          "title": "Estimated Sales",
+          "text_fields": [
+            "Multiple Values"
+          ],
+          "geom": {
+            "x": 702,
+            "y": 85288,
+            "w": 49327,
+            "h": 13385,
+            "show_title": true
+          }
+        },
+        {
+          "name": "OTE",
+          "mark": "Automatic",
+          "filters": [],
+          "kind": "kpi",
+          "measures": [
+            {
+              "caption": "OTE (Variable)",
+              "agg": "sum",
+              "fmt": "cur0",
+              "label": "OTE (Variable)"
+            },
+            {
+              "caption": "OTE (Variable)",
+              "agg": "avg",
+              "fmt": "cur0",
+              "label": "OTE (Variable)"
+            }
+          ],
+          "datasource": "Sales Commission",
+          "title": "Estimated Compensation",
+          "text_fields": [
+            "Multiple Values"
+          ],
+          "geom": {
+            "x": 50029,
+            "y": 85288,
+            "w": 49269,
+            "h": 13385,
+            "show_title": true
+          }
+        }
+      ],
+      "device_layouts": [
+        "Phone",
+        "Tablet"
+      ],
+      "layout": {
+        "dir": "vert",
+        "bg": null,
+        "w": 100000,
+        "h": 100000,
+        "children": [
+          {
+            "dir": "horz",
+            "bg": null,
+            "w": 99180,
+            "h": 65931,
+            "children": [
+              {
+                "sheet": "QuotaAttainment",
+                "w": 49619,
+                "h": 65929
+              },
+              {
+                "sheet": "CommissionProjection",
+                "w": 49561,
+                "h": 65929
+              }
+            ]
+          },
+          {
+            "dir": "horz",
+            "bg": null,
+            "w": 99180,
+            "h": 14491,
+            "children": [
+              {
+                "sheet": "Sales",
+                "w": 49327,
+                "h": 13385
+              },
+              {
+                "sheet": "OTE",
+                "w": 49269,
+                "h": 13385
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Customers",
+      "title": "Customer Analysis",
+      "filters": [
+        {
+          "caption": "Order Date",
+          "datepart": "yr",
+          "kind": "date_part"
+        },
+        {
+          "caption": "Category",
+          "datepart": null,
+          "kind": "categorical"
+        },
+        {
+          "caption": "Segment",
+          "datepart": null,
+          "kind": "categorical"
+        }
+      ],
+      "sheet_filters": [
+        {
+          "caption": "Category",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Order Date",
+          "kind": "date"
+        },
+        {
+          "caption": "Region",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Segment",
+          "kind": "categorical"
+        }
+      ],
+      "params": [],
+      "sheets": [
+        {
+          "name": "CustomerScatter",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Order Date",
+              "kind": "date"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "scatter",
+          "x": {
+            "caption": "Sales",
+            "agg": "sum",
+            "fmt": "cur0"
+          },
+          "y": {
+            "caption": "Profit",
+            "agg": "sum",
+            "fmt": "cur0"
+          },
+          "color": {
+            "caption": "Profit Ratio",
+            "kind": "measure",
+            "agg": "usr",
+            "scale": {
+              "palette": "red_black_10_0",
+              "type": "interpolated",
+              "min": -0.5,
+              "max": 0.5
+            }
+          },
+          "detail": {
+            "caption": "Customer Name",
+            "kind": "dimension",
+            "agg": "none"
+          },
+          "datasource": "Sample - Superstore",
+          "title": "Sales and Profit by Customer",
+          "applied_filters": [
+            {
+              "caption": "Order Date",
+              "kind": "range",
+              "is_date": true,
+              "datepart": null,
+              "min": "2021-01-03",
+              "max": "2024-12-30"
+            }
+          ],
+          "trendline": {
+            "model": "linear"
+          },
+          "geom": {
+            "x": 422,
+            "y": 22245,
+            "w": 44177,
+            "h": 77034,
+            "show_title": true
+          }
+        },
+        {
+          "name": "CustomerRank",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Order Date",
+              "kind": "date"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "bar",
+          "orient": "h",
+          "y": {
+            "caption": "Customer Name"
+          },
+          "x": {
+            "caption": "Sales",
+            "agg": "sum",
+            "fmt": "cur0"
+          },
+          "color": {
+            "caption": "Profit Ratio",
+            "kind": "measure",
+            "agg": "usr",
+            "scale": {
+              "palette": "red_black_10_0",
+              "type": "interpolated",
+              "min": -0.5,
+              "max": 0.5
+            }
+          },
+          "datasource": "Sample - Superstore",
+          "title": "Customer Ranking",
+          "sort": {
+            "field": "Sales",
+            "agg": "sum",
+            "dir": "desc",
+            "on": "Customer Name"
+          },
+          "applied_filters": [
+            {
+              "caption": "Order Date",
+              "kind": "range",
+              "is_date": true,
+              "datepart": null,
+              "min": "2021-01-03",
+              "max": "2024-12-30"
+            }
+          ],
+          "table_calcs": [
+            {
+              "caption": "Sales",
+              "agg": "sum",
+              "type": "Rank",
+              "ordering": "Columns",
+              "options": "Competition,Descending",
+              "ordering_field": null
+            }
+          ],
+          "tooltip_fields": [
+            "Profit"
+          ],
+          "geom": {
+            "x": 44599,
+            "y": 22245,
+            "w": 44176,
+            "h": 77034,
+            "show_title": true
+          }
+        },
+        {
+          "name": "CustomerOverview",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Order Date",
+              "kind": "date"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "mbar",
+          "orient": "h",
+          "dim": "Region",
+          "measures": [
+            {
+              "caption": "Customer Name",
+              "agg": "ctd",
+              "fmt": "num0",
+              "label": "Count of Customers"
+            },
+            {
+              "caption": "Sales",
+              "agg": "sum",
+              "fmt": "cur0",
+              "label": "Sales"
+            },
+            {
+              "caption": "Quantity",
+              "agg": "sum",
+              "fmt": "num0",
+              "label": "Quantity"
+            },
+            {
+              "caption": "Sales per Customer",
+              "agg": "usr",
+              "fmt": "cur0",
+              "label": "Sales per Customer"
+            },
+            {
+              "caption": "Profit",
+              "agg": "sum",
+              "fmt": "cur0",
+              "label": "Profit"
+            },
+            {
+              "caption": "Profit Ratio",
+              "agg": "usr",
+              "fmt": "pct",
+              "label": "Profit Ratio"
+            }
+          ],
+          "mark_color": "#4a76a1",
+          "datasource": "Sample - Superstore",
+          "sort": {
+            "field": "Customer Name",
+            "agg": "ctd",
+            "dir": "desc",
+            "on": "Region"
+          },
+          "applied_filters": [
+            {
+              "caption": "Order Date",
+              "kind": "range",
+              "is_date": true,
+              "datepart": null,
+              "min": "2021-01-03",
+              "max": "2024-12-30"
+            },
+            {
+              "caption": "Order Date",
+              "kind": "ord_range",
+              "datepart": "qr",
+              "from": "1",
+              "to": "4"
+            }
+          ],
+          "geom": {
+            "x": 422,
+            "y": 7322,
+            "w": 99156,
+            "h": 14928,
+            "show_title": false
+          }
+        }
+      ],
+      "device_layouts": [
+        "Phone",
+        "Tablet"
+      ],
+      "layout": {
+        "dir": "vert",
+        "bg": null,
+        "w": 99156,
+        "h": 91957,
+        "children": [
+          {
+            "sheet": "CustomerOverview",
+            "w": 99156,
+            "h": 14928
+          },
+          {
+            "dir": "horz",
+            "bg": null,
+            "w": 88372,
+            "h": 77029,
+            "children": [
+              {
+                "sheet": "CustomerScatter",
+                "w": 44177,
+                "h": 77034
+              },
+              {
+                "sheet": "CustomerRank",
+                "w": 44176,
+                "h": 77034
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Order Details",
+      "title": "Order Details",
+      "filters": [
+        {
+          "caption": "Order Date",
+          "datepart": null,
+          "kind": "date"
+        },
+        {
+          "caption": "Region",
+          "datepart": null,
+          "kind": "categorical"
+        },
+        {
+          "caption": "State/Province",
+          "datepart": null,
+          "kind": "categorical"
+        },
+        {
+          "caption": "City",
+          "datepart": null,
+          "kind": "categorical"
+        },
+        {
+          "caption": "Category",
+          "datepart": null,
+          "kind": "categorical"
+        },
+        {
+          "caption": "Segment",
+          "datepart": null,
+          "kind": "categorical"
+        }
+      ],
+      "sheet_filters": [
+        {
+          "caption": "Category",
+          "kind": "categorical"
+        },
+        {
+          "caption": "City",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Order Date",
+          "kind": "date"
+        },
+        {
+          "caption": "Region",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Segment",
+          "kind": "categorical"
+        },
+        {
+          "caption": "State/Province",
+          "kind": "categorical"
+        }
+      ],
+      "params": [],
+      "sheets": [
+        {
+          "name": "Product Detail Sheet",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "City",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Order Date",
+              "kind": "date"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            },
+            {
+              "caption": "State/Province",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "table",
+          "dims": [
+            "Order ID",
+            "Customer Name",
+            "Ship Mode"
+          ],
+          "measures": [
+            {
+              "caption": "Sales",
+              "agg": "sum",
+              "fmt": "cur0",
+              "label": "Sales"
+            },
+            {
+              "caption": "Quantity",
+              "agg": "sum",
+              "fmt": "num0",
+              "label": "Quantity"
+            },
+            {
+              "caption": "Discount",
+              "agg": "sum",
+              "fmt": "pct",
+              "label": "Discount"
+            },
+            {
+              "caption": "Profit",
+              "agg": "sum",
+              "fmt": "cur0",
+              "label": "Profit"
+            },
+            {
+              "caption": "Profit Ratio",
+              "agg": "usr",
+              "fmt": "pct",
+              "label": "Profit Ratio"
+            },
+            {
+              "caption": "Days to Ship Scheduled",
+              "agg": "sum",
+              "fmt": "num0",
+              "label": "Days to Ship Scheduled"
+            },
+            {
+              "caption": "Days to Ship Actual",
+              "agg": "sum",
+              "fmt": "num0",
+              "label": "Days to Ship Actual"
+            }
+          ],
+          "datasource": "Sample - Superstore",
+          "applied_filters": [
+            {
+              "caption": "City",
+              "kind": "not_in",
+              "values": [
+                "%null%"
+              ]
+            },
+            {
+              "caption": "Order Date",
+              "kind": "range",
+              "is_date": true,
+              "datepart": null,
+              "min": "2021-01-03",
+              "max": "2024-12-30"
+            }
+          ],
+          "text_fields": [
+            "Multiple Values"
+          ],
+          "geom": {
+            "x": 410,
+            "y": 11614,
+            "w": 99180,
+            "h": 87612,
+            "show_title": true
+          }
+        }
+      ],
+      "device_layouts": [
+        "Phone",
+        "Tablet"
+      ],
+      "layout": {
+        "sheet": "Product Detail Sheet",
+        "w": 99180,
+        "h": 87612
+      }
+    },
+    {
+      "name": "Overview",
+      "title": "Executive Overview - Profitability",
+      "filters": [
+        {
+          "caption": "Region",
+          "datepart": null,
+          "kind": "categorical"
+        },
+        {
+          "caption": "Order Date",
+          "datepart": null,
+          "kind": "date"
+        },
+        {
+          "caption": "Profit Ratio",
+          "datepart": null,
+          "kind": "categorical"
+        }
+      ],
+      "sheet_filters": [
+        {
+          "caption": "Order Date",
+          "kind": "date"
+        },
+        {
+          "caption": "Region",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Order Profitable?",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Profit Ratio",
+          "kind": "range"
+        }
+      ],
+      "params": [],
+      "sheets": [
+        {
+          "name": "Total Sales",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Order Date",
+              "kind": "date"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "kpi",
+          "measures": [
+            {
+              "caption": "Sales",
+              "agg": "sum",
+              "fmt": "cur0",
+              "label": "Sales"
+            },
+            {
+              "caption": "Profit",
+              "agg": "sum",
+              "fmt": "cur0",
+              "label": "Profit"
+            },
+            {
+              "caption": "Profit Ratio",
+              "agg": "usr",
+              "fmt": "pct",
+              "label": "Profit Ratio"
+            },
+            {
+              "caption": "Profit per Order",
+              "agg": "usr",
+              "fmt": "cur0",
+              "label": "Profit per Order"
+            },
+            {
+              "caption": "Sales per Customer",
+              "agg": "usr",
+              "fmt": "cur0",
+              "label": "Sales per Customer"
+            },
+            {
+              "caption": "Discount",
+              "agg": "avg",
+              "fmt": "pct",
+              "label": "Discount"
+            },
+            {
+              "caption": "Quantity",
+              "agg": "sum",
+              "fmt": "num0",
+              "label": "Quantity"
+            }
+          ],
+          "datasource": "Sample - Superstore",
+          "title": "Executive Overview - Profitability",
+          "applied_filters": [
+            {
+              "caption": "Order Date",
+              "kind": "range",
+              "is_date": true,
+              "datepart": null,
+              "min": "2021-01-03",
+              "max": "2024-12-30"
+            }
+          ],
+          "text_fields": [
+            "Multiple Values"
+          ],
+          "geom": {
+            "x": 422,
+            "y": 721,
+            "w": 99156,
+            "h": 12049,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Sale Map",
+          "mark": "Multipolygon",
+          "filters": [
+            {
+              "caption": "Order Profitable?",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Order Date",
+              "kind": "date"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Profit Ratio",
+              "kind": "range"
+            }
+          ],
+          "kind": "map",
+          "geo": "State/Province",
+          "color_measure": {
+            "caption": "Profit Ratio",
+            "agg": "usr",
+            "scale": {
+              "palette": "orange_blue_diverging_10_0",
+              "type": "interpolated",
+              "min": -0.5,
+              "max": 0.5
+            }
+          },
+          "datasource": "Sample - Superstore",
+          "title": "Sales by Geography",
+          "applied_filters": [
+            {
+              "caption": "Order Profitable?",
+              "kind": "in",
+              "values": [
+                "false",
+                "true"
+              ]
+            },
+            {
+              "caption": "Order Date",
+              "kind": "range",
+              "is_date": true,
+              "datepart": null,
+              "min": "2021-01-03",
+              "max": "2024-12-30"
+            },
+            {
+              "caption": "Profit Ratio",
+              "kind": "range",
+              "is_date": false,
+              "datepart": null,
+              "min": -0.2168640535982099,
+              "max": 0.3698366154512011
+            }
+          ],
+          "viz_tooltip": [
+            "Tooltip: Profit Ratio by City"
+          ],
+          "geom": {
+            "x": 422,
+            "y": 12770,
+            "w": 88474,
+            "h": 34706,
+            "show_title": false
+          }
+        },
+        {
+          "name": "Sales by Segment",
+          "mark": "Area",
+          "filters": [
+            {
+              "caption": "Order Profitable?",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Order Date",
+              "kind": "date"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "area",
+          "x": {
+            "caption": "Order Date",
+            "datepart": "tmn"
+          },
+          "y": {
+            "caption": "Sales",
+            "agg": "sum",
+            "fmt": "cur0"
+          },
+          "panel": "Segment",
+          "color": {
+            "caption": "Order Profitable?",
+            "kind": "dimension",
+            "agg": "none"
+          },
+          "datasource": "Sample - Superstore",
+          "title": "Monthly Sales by Segment",
+          "applied_filters": [
+            {
+              "caption": "Order Profitable?",
+              "kind": "in",
+              "values": [
+                "false",
+                "true"
+              ]
+            },
+            {
+              "caption": "Order Date",
+              "kind": "range",
+              "is_date": true,
+              "datepart": null,
+              "min": "2021-01-03",
+              "max": "2024-12-30"
+            }
+          ],
+          "manual_sort": {
+            "on": "Order Profitable?",
+            "order": [
+              "true",
+              "false",
+              "%all%"
+            ]
+          },
+          "tooltip_fields": [
+            "Profit"
+          ],
+          "geom": {
+            "x": 663,
+            "y": 47888,
+            "w": 49216,
+            "h": 50979,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Sales by Product",
+          "mark": "Area",
+          "filters": [
+            {
+              "caption": "Order Profitable?",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Order Date",
+              "kind": "date"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "area",
+          "x": {
+            "caption": "Order Date",
+            "datepart": "tmn"
+          },
+          "y": {
+            "caption": "Sales",
+            "agg": "sum",
+            "fmt": "cur0"
+          },
+          "panel": "Category",
+          "color": {
+            "caption": "Order Profitable?",
+            "kind": "dimension",
+            "agg": "none"
+          },
+          "datasource": "Sample - Superstore",
+          "title": "Monthly Sales by Product Category",
+          "applied_filters": [
+            {
+              "caption": "Order Profitable?",
+              "kind": "in",
+              "values": [
+                "false",
+                "true"
+              ]
+            },
+            {
+              "caption": "Order Date",
+              "kind": "range",
+              "is_date": true,
+              "datepart": null,
+              "min": "2021-01-03",
+              "max": "2024-12-30"
+            }
+          ],
+          "manual_sort": {
+            "on": "Order Profitable?",
+            "order": [
+              "true",
+              "false",
+              "%all%"
+            ]
+          },
+          "tooltip_fields": [
+            "Profit"
+          ],
+          "geom": {
+            "x": 49879,
+            "y": 47888,
+            "w": 49457,
+            "h": 50979,
+            "show_title": true
+          }
+        }
+      ],
+      "device_layouts": [
+        "Phone",
+        "Tablet"
+      ],
+      "layout": {
+        "dir": "vert",
+        "bg": null,
+        "w": 100000,
+        "h": 100000,
+        "children": [
+          {
+            "sheet": "Total Sales",
+            "w": 99156,
+            "h": 12049
+          },
+          {
+            "sheet": "Sale Map",
+            "w": 88474,
+            "h": 34706
+          },
+          {
+            "dir": "horz",
+            "bg": null,
+            "w": 99156,
+            "h": 51803,
+            "children": [
+              {
+                "sheet": "Sales by Segment",
+                "w": 49216,
+                "h": 50979
+              },
+              {
+                "sheet": "Sales by Product",
+                "w": 49457,
+                "h": 50979
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Product",
+      "title": "Product Drilldown",
+      "filters": [
+        {
+          "caption": "Region",
+          "datepart": null,
+          "kind": "categorical"
+        }
+      ],
+      "sheet_filters": [
+        {
+          "caption": "Category",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Region",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Order Date",
+          "kind": "date"
+        }
+      ],
+      "params": [],
+      "sheets": [
+        {
+          "name": "ProductView",
+          "mark": "Square",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Order Date",
+              "kind": "date"
+            }
+          ],
+          "kind": "heatmap",
+          "x": {
+            "caption": "Order Date",
+            "datepart": "mn"
+          },
+          "y_dims": [
+            {
+              "caption": "Category",
+              "datepart": null
+            },
+            {
+              "caption": "Order Date",
+              "datepart": "yr"
+            }
+          ],
+          "color_measure": {
+            "caption": "Sales",
+            "agg": "sum",
+            "scale": {
+              "palette": "blue_10_0",
+              "type": "interpolated"
+            }
+          },
+          "text": true,
+          "datasource": "Sample - Superstore",
+          "title": "Sales by Product Category",
+          "tooltip_fields": [
+            "Profit"
+          ],
+          "text_fields": [
+            "Sales"
+          ],
+          "geom": {
+            "x": 422,
+            "y": 5458,
+            "w": 87965,
+            "h": 44519,
+            "show_title": true
+          },
+          "drill": {
+            "name": "Product",
+            "levels": [
+              "Category",
+              "Sub-Category",
+              "Product Name"
+            ],
+            "current": "Category",
+            "slot": "y_dims",
+            "slot_idx": 0
+          }
+        },
+        {
+          "name": "ProductDetails",
+          "mark": "Circle",
+          "filters": [
+            {
+              "caption": "Order Date",
+              "kind": "date"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "circle",
+          "x": {
+            "caption": "Sales",
+            "agg": "sum"
+          },
+          "y_dims": [
+            {
+              "caption": "Category",
+              "datepart": null
+            },
+            {
+              "caption": "Sub-Category",
+              "datepart": null
+            }
+          ],
+          "facet_col": "Segment",
+          "detail": "Product Name",
+          "color_measure": {
+            "caption": "Profit Ratio",
+            "agg": "usr",
+            "scale": {
+              "palette": "red_black_10_0",
+              "type": "interpolated",
+              "min": -0.5,
+              "max": 0.5
+            }
+          },
+          "datasource": "Sample - Superstore",
+          "title": "Sales and Profit by Product Names",
+          "applied_filters": [
+            {
+              "caption": "Order Date",
+              "kind": "range",
+              "is_date": true,
+              "datepart": null,
+              "min": "2021-01-03",
+              "max": "2024-12-30"
+            }
+          ],
+          "reflines": [
+            {
+              "axis": "Sales",
+              "formula": "median",
+              "value_field": "Sales",
+              "value_agg": "sum",
+              "is_param": false,
+              "scope": "per-cell",
+              "label": null,
+              "bands": []
+            }
+          ],
+          "geom": {
+            "x": 422,
+            "y": 49977,
+            "w": 99156,
+            "h": 49302,
+            "show_title": true
+          },
+          "drill": {
+            "name": "Product",
+            "levels": [
+              "Category",
+              "Sub-Category",
+              "Product Name"
+            ],
+            "current": "Sub-Category",
+            "slot": "y_dims",
+            "slot_idx": 1
+          }
+        }
+      ],
+      "device_layouts": [
+        "Phone",
+        "Tablet"
+      ],
+      "layout": {
+        "dir": "vert",
+        "bg": null,
+        "w": 99156,
+        "h": 93821,
+        "children": [
+          {
+            "sheet": "ProductView",
+            "w": 87965,
+            "h": 44519
+          },
+          {
+            "sheet": "ProductDetails",
+            "w": 99156,
+            "h": 49302
+          }
+        ]
+      }
+    },
+    {
+      "name": "Shipping",
+      "title": "On-Time Shipment Trends",
+      "filters": [
+        {
+          "caption": "Order Date",
+          "datepart": "yr",
+          "kind": "date_part"
+        },
+        {
+          "caption": "Order Date",
+          "datepart": "qr",
+          "kind": "date_part"
+        },
+        {
+          "caption": "Region",
+          "datepart": null,
+          "kind": "categorical"
+        },
+        {
+          "caption": "Ship Mode",
+          "datepart": null,
+          "kind": "categorical"
+        }
+      ],
+      "sheet_filters": [
+        {
+          "caption": "Ship Status",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Region",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Ship Mode",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Order Date",
+          "kind": "date"
+        }
+      ],
+      "params": [],
+      "sheets": [
+        {
+          "name": "ShipSummary",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Ship Status",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Ship Mode",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Order Date",
+              "kind": "date"
+            }
+          ],
+          "kind": "pctbar",
+          "measure": {
+            "caption": "Orders",
+            "agg": "cnt",
+            "fmt": "pct",
+            "label": "Count of Orders",
+            "count_records": true,
+            "pct_total": true
+          },
+          "segment": "Ship Status",
+          "orient": "h",
+          "datasource": "Sample - Superstore",
+          "applied_filters": [
+            {
+              "caption": "Order Date",
+              "kind": "in",
+              "values": [
+                "4"
+              ],
+              "datepart": "qr"
+            },
+            {
+              "caption": "Order Date",
+              "kind": "in",
+              "values": [
+                "2024"
+              ],
+              "datepart": "yr"
+            }
+          ],
+          "table_calcs": [
+            {
+              "caption": "Orders",
+              "agg": "cnt",
+              "type": "PctTotal",
+              "ordering": "Field",
+              "options": null,
+              "ordering_field": "Ship Status"
+            }
+          ],
+          "manual_sort": {
+            "on": "Ship Status",
+            "order": [
+              "Early",
+              "On Time",
+              "Delayed",
+              "%all%",
+              "Shipped Late",
+              "Shipped On Time",
+              "Shipped Early"
+            ]
+          },
+          "text_fields": [
+            "Orders",
+            "Ship Status"
+          ],
+          "geom": {
+            "x": 422,
+            "y": 8121,
+            "w": 86913,
+            "h": 6282,
+            "show_title": false
+          }
+        },
+        {
+          "name": "ShippingTrend",
+          "mark": "Area",
+          "filters": [
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Ship Mode",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Order Date",
+              "kind": "date"
+            }
+          ],
+          "kind": "area",
+          "x": {
+            "caption": "Order Date",
+            "datepart": "twk"
+          },
+          "y": {
+            "caption": "Orders",
+            "agg": "cnt",
+            "count_records": true
+          },
+          "panel": null,
+          "color": {
+            "caption": "Ship Status",
+            "kind": "dimension",
+            "agg": "none"
+          },
+          "datasource": "Sample - Superstore",
+          "title": "Shipments by Mode",
+          "applied_filters": [
+            {
+              "caption": "Order Date",
+              "kind": "in",
+              "values": [
+                "4"
+              ],
+              "datepart": "qr"
+            },
+            {
+              "caption": "Order Date",
+              "kind": "in",
+              "values": [
+                "2024"
+              ],
+              "datepart": "yr"
+            }
+          ],
+          "manual_sort": {
+            "on": "Ship Status",
+            "order": [
+              "Shipped Late",
+              "Shipped On Time",
+              "Shipped Early",
+              "%all%"
+            ]
+          },
+          "geom": {
+            "x": 422,
+            "y": 14403,
+            "w": 86913,
+            "h": 30484,
+            "show_title": false
+          }
+        },
+        {
+          "name": "DaystoShip",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Ship Status",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Ship Mode",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Order Date",
+              "kind": "date"
+            }
+          ],
+          "kind": "gantt",
+          "x": {
+            "caption": "Order Date",
+            "datepart": null
+          },
+          "y": {
+            "caption": "Product Name"
+          },
+          "color": {
+            "caption": "Ship Status",
+            "kind": "dimension",
+            "agg": "none"
+          },
+          "size": {
+            "caption": "Days to Ship Actual",
+            "kind": "measure",
+            "agg": "sum"
+          },
+          "datasource": "Sample - Superstore",
+          "title": "Days to Ship by Product",
+          "sort": {
+            "field": "Order Date",
+            "agg": "min",
+            "dir": "asc",
+            "on": "Customer Name"
+          },
+          "applied_filters": [
+            {
+              "caption": "Order Date",
+              "kind": "in",
+              "values": [
+                "4"
+              ],
+              "datepart": "qr"
+            },
+            {
+              "caption": "Order Date",
+              "kind": "in",
+              "values": [
+                "2024"
+              ],
+              "datepart": "yr"
+            }
+          ],
+          "geom": {
+            "x": 422,
+            "y": 44887,
+            "w": 86913,
+            "h": 54392,
+            "show_title": true
+          },
+          "drill": {
+            "name": "Product",
+            "levels": [
+              "Category",
+              "Sub-Category",
+              "Product Name"
+            ],
+            "current": "Product Name",
+            "slot": "y",
+            "slot_idx": null
+          }
+        }
+      ],
+      "device_layouts": [
+        "Phone",
+        "Tablet"
+      ],
+      "layout": {
+        "dir": "vert",
+        "bg": null,
+        "w": 86913,
+        "h": 91158,
+        "children": [
+          {
+            "sheet": "ShipSummary",
+            "w": 86913,
+            "h": 6282
+          },
+          {
+            "sheet": "ShippingTrend",
+            "w": 86913,
+            "h": 30484
+          },
+          {
+            "sheet": "DaystoShip",
+            "w": 86913,
+            "h": 54392
+          }
+        ]
+      }
+    },
+    {
+      "name": "Performance",
+      "title": "Sales Performance vs Target",
+      "filters": [
+        {
+          "caption": "Region",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Order Date",
+          "kind": "date"
+        }
+      ],
+      "sheets": [
+        {
+          "name": "Performance",
+          "mark": "Bar",
+          "filters": [
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Order Date",
+              "kind": "date"
+            }
+          ],
+          "kind": "dtbar",
+          "x": {
+            "caption": "Order Date",
+            "datepart": "mn"
+          },
+          "y": {
+            "caption": "Sales",
+            "agg": "sum",
+            "fmt": "cur0"
+          },
+          "panel": "Category",
+          "color": {
+            "caption": "Sales above Target?",
+            "kind": "dimension",
+            "agg": "usr"
+          },
+          "datasource": "Sample - Superstore",
+          "blend": [
+            "Sales Target",
+            "Sample - Superstore"
+          ],
+          "title": "Sales Performance vs Target",
+          "reflines": [
+            {
+              "axis": "Sales",
+              "formula": "average",
+              "value_field": "Sales Target",
+              "value_agg": "sum",
+              "is_param": false,
+              "scope": "per-cell",
+              "label": null,
+              "bands": []
+            },
+            {
+              "axis": "Sales",
+              "formula": "average",
+              "value_field": "Sales Target",
+              "value_agg": "sum",
+              "is_param": false,
+              "scope": "per-cell",
+              "label": null,
+              "bands": [
+                80.0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Forecast",
+      "title": "Sales Forecast",
+      "filters": [
+        {
+          "caption": "Order Date",
+          "kind": "date"
+        },
+        {
+          "caption": "Region",
+          "kind": "categorical"
+        }
+      ],
+      "sheets": [
+        {
+          "name": "Forecast",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Order Date",
+              "kind": "date"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "line",
+          "x": {
+            "caption": "Order Date",
+            "datepart": "tmn"
+          },
+          "y": {
+            "caption": "Sales",
+            "agg": "sum",
+            "fmt": "cur0"
+          },
+          "panel": "Segment",
+          "color": {
+            "caption": "Segment",
+            "kind": "dimension",
+            "agg": "none"
+          },
+          "datasource": "Sample - Superstore",
+          "title": "Sales Forecast",
+          "applied_filters": [
+            {
+              "caption": "Order Date",
+              "kind": "range",
+              "is_date": true,
+              "datepart": null,
+              "min": "2021-01-03",
+              "max": "2024-12-30"
+            }
+          ],
+          "forecast": {
+            "model": "custom",
+            "bands": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "What If Forecast",
+      "title": "What if Forecast Based on",
+      "filters": [
+        {
+          "caption": "Order Date",
+          "kind": "date"
+        },
+        {
+          "caption": "Region",
+          "kind": "categorical"
+        }
+      ],
+      "sheets": [
+        {
+          "name": "What If Forecast",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Order Date",
+              "kind": "date"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "table",
+          "dims": [
+            "Region",
+            "Segment"
+          ],
+          "measures": [
+            {
+              "caption": "Sales",
+              "agg": "sum",
+              "fmt": "cur0",
+              "label": "Sales"
+            },
+            {
+              "caption": "Sales Forecast",
+              "agg": "sum",
+              "fmt": "cur0",
+              "label": "Sales Forecast",
+              "color": "#1c70ae"
+            }
+          ],
+          "datasource": "Sample - Superstore",
+          "title": "What if Forecast Based on",
+          "applied_filters": [
+            {
+              "caption": "Order Date",
+              "kind": "range",
+              "is_date": true,
+              "datepart": null,
+              "min": "2021-01-03",
+              "max": "2024-12-30"
+            }
+          ],
+          "text_fields": [
+            "Multiple Values"
+          ],
+          "subtotals": true
+        }
+      ]
+    },
+    {
+      "name": "Sheet 22",
+      "title": "Sheet 22",
+      "filters": [],
+      "sheets": [
+        {
+          "name": "Sheet 22",
+          "mark": "Automatic",
+          "filters": [],
+          "kind": "table",
+          "dims": [],
+          "measures": [],
+          "non_data": true
+        }
+      ]
+    }
+  ]
+}

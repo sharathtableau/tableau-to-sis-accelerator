@@ -1,0 +1,37 @@
+[
+  [
+    {
+      "status"  :   "Statement executed successfully."
+    }
+  ],
+  [
+    {
+      "title"  :   "Tableau accelerator V3 candidate"  ,
+      "main_file"  :   "v3_sis_app.py"  ,
+      "query_warehouse"  :   "POWERHOUSE"  ,
+      "url_id"  :   "q5p7ouepmstyyqilq4qe"  ,
+      "default_packages"  :   "python==3.11.*,snowflake-snowpark-python,streamlit"  ,
+      "user_packages"  :   "snowflake-snowpark-python,streamlit==1.52.2,altair,pandas,plotly,requests,openpyxl,xlrd,pillow,vl-convert-python"  ,
+      "import_urls"  :   "[]"  ,
+      "external_access_integrations"  :   "[\"TABLEAU_ACCESS_INTEGRATION\"]"  ,
+      "external_access_secrets"  :   "{\"tableau_pat\":\"WBR_DB.PUBLIC.TABLEAU_PAT_SECRET\"}"  ,
+      "compute_pool"  :   "SYSTEM_COMPUTE_POOL_CPU"  ,
+      "runtime_name"  :   "SYSTEM$WAREHOUSE_RUNTIME"  ,
+      "name"  :   "TABLEAU_TO_SIS_V3_CANDIDATE"  ,
+      "comment"  :   null  ,
+      "default_version"  :   "LAST"  ,
+      "default_version_name"  :   "VERSION$1"  ,
+      "default_version_alias"  :   null  ,
+      "default_version_location_uri"  :   "snow://streamlit/WBR_DB.TABLEAU_ACCELERATOR_V3.TABLEAU_TO_SIS_V3_CANDIDATE/versions/version$1/"  ,
+      "default_version_source_location_uri"  :   null  ,
+      "default_version_git_commit_hash"  :   null  ,
+      "last_version_name"  :   "VERSION$1"  ,
+      "last_version_alias"  :   null  ,
+      "last_version_location_uri"  :   "snow://streamlit/WBR_DB.TABLEAU_ACCELERATOR_V3.TABLEAU_TO_SIS_V3_CANDIDATE/versions/version$1/"  ,
+      "last_version_source_location_uri"  :   null  ,
+      "last_version_git_commit_hash"  :   null  ,
+      "live_version_location_uri"  :   "snow://streamlit/WBR_DB.TABLEAU_ACCELERATOR_V3.TABLEAU_TO_SIS_V3_CANDIDATE/versions/live/"
+    }
+  ]
+]
+

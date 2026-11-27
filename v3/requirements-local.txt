@@ -1,0 +1,8 @@
+# Local testing only (Streamlit-in-Snowflake provides these in the cloud).
+streamlit>=1.30
+pandas>=1.5
+duckdb>=0.10
+altair>=5.0
+plotly>=5.18
+openpyxl>=3.1      # read .xlsx
+xlrd>=2.0          # read legacy .xls

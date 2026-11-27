@@ -1,0 +1,13 @@
+{
+  "cli_manifest": "PASS",
+  "archive_hashes": "PASS",
+  "build_sha256": "5b75d6753e0cc97e13e19684d80b4443f8a4941322504457d5d7c66b6391f30b",
+  "files": 33,
+  "archive_sha256": "d94d9960a882e3bb2963f288617663bf7463034a48f5576948427f381ba48a11",
+  "target": {
+    "database": "WBR_DB",
+    "schema": "TABLEAU_ACCELERATOR_V3",
+    "name": "TABLEAU_TO_SIS_V3_CANDIDATE"
+  },
+  "deployed": false
+}

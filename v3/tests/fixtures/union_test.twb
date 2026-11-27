@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<workbook version='18.1'>
+  <datasources>
+    <datasource caption='Sales Union' inline='true' name='federated.union01' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='union_east' name='textscan.east'>
+            <connection class='textscan' directory='tests/fixtures' filename='union_east.csv' />
+          </named-connection>
+          <named-connection caption='union_west' name='textscan.west'>
+            <connection class='textscan' directory='tests/fixtures' filename='union_west.csv' />
+          </named-connection>
+        </named-connections>
+        <relation name='Union' type='union'>
+          <relation connection='textscan.east' name='union_east.csv' table='[union_east#csv]' type='table' />
+          <relation connection='textscan.west' name='union_west.csv' table='[union_west#csv]' type='table' />
+        </relation>
+        <cols>
+          <map key='[Order ID]' value='[union_east#csv].[Order ID]' />
+          <map key='[Region]' value='[union_east#csv].[Region]' />
+          <map key='[Sales]' value='[union_east#csv].[Sales]' />
+        </cols>
+      </connection>
+      <column caption='Region' datatype='string' name='[Region]' role='dimension' type='nominal' />
+      <column caption='Sales' datatype='real' name='[Sales]' role='measure' type='quantitative' />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sales by Region'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Sales Union' name='federated.union01' />
+          </datasources>
+        </view>
+        <panes>
+          <pane>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.union01].[none:Region:nk]</rows>
+        <cols>[federated.union01].[sum:Sales:qk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+</workbook>

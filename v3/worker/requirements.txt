@@ -1,0 +1,17 @@
+# Worker runtime. Pinned deliberately: the capture must be reproducible, and
+# an unpinned Altair/Streamlit can change chart rendering, which would show up
+# as a "visual difference" that is really a dependency drift.
+streamlit==1.39.0
+altair==5.4.1
+pandas==2.2.3
+duckdb==1.1.3
+plotly==5.24.1
+vl-convert-python==1.7.0
+pillow==11.0.0
+scikit-image==0.24.0
+snowflake-snowpark-python==1.23.0
+snowflake-connector-python==3.12.3
+cryptography==43.0.3
+requests==2.32.3
+fpdf2==2.8.1
+playwright==1.47.0

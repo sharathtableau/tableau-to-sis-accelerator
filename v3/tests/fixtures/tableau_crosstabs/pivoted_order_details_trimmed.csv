@@ -1,0 +1,281 @@
+Customer Name,Measure Names,Order Date,Order ID,Ship Date,Ship Mode,Measure Values
+Aaron Bergman,Sales,2/18/2021,US-2021-152905,2/24/2021,Standard Class,12.624
+Aaron Bergman,Quantity,2/18/2021,US-2021-152905,2/24/2021,Standard Class,2
+Aaron Bergman,Discount,2/18/2021,US-2021-152905,2/24/2021,Standard Class,0.2
+Aaron Bergman,Profit,2/18/2021,US-2021-152905,2/24/2021,Standard Class,-2.5248
+Aaron Bergman,Profit Ratio,2/18/2021,US-2021-152905,2/24/2021,Standard Class,-0.2
+Aaron Bergman,Days to Ship Scheduled,2/18/2021,US-2021-152905,2/24/2021,Standard Class,6
+Aaron Bergman,Days to Ship Actual,2/18/2021,US-2021-152905,2/24/2021,Standard Class,6
+Aaron Bergman,Sales,3/7/2021,US-2021-156587,3/8/2021,First Class,309.592
+Aaron Bergman,Quantity,3/7/2021,US-2021-156587,3/8/2021,First Class,7
+Aaron Bergman,Discount,3/7/2021,US-2021-156587,3/8/2021,First Class,0.2
+Aaron Bergman,Profit,3/7/2021,US-2021-156587,3/8/2021,First Class,15.0033
+Aaron Bergman,Profit Ratio,3/7/2021,US-2021-156587,3/8/2021,First Class,0.048461524
+Aaron Bergman,Days to Ship Scheduled,3/7/2021,US-2021-156587,3/8/2021,First Class,3
+Aaron Bergman,Days to Ship Actual,3/7/2021,US-2021-156587,3/8/2021,First Class,3
+Aaron Bergman,Sales,11/10/2023,US-2023-140935,11/12/2023,First Class,563.94
+Aaron Bergman,Quantity,11/10/2023,US-2023-140935,11/12/2023,First Class,4
+Aaron Bergman,Discount,11/10/2023,US-2023-140935,11/12/2023,First Class,0
+Aaron Bergman,Profit,11/10/2023,US-2023-140935,11/12/2023,First Class,116.868
+Aaron Bergman,Profit Ratio,11/10/2023,US-2023-140935,11/12/2023,First Class,0.207234812
+Aaron Bergman,Days to Ship Scheduled,11/10/2023,US-2023-140935,11/12/2023,First Class,2
+Aaron Bergman,Days to Ship Actual,11/10/2023,US-2023-140935,11/12/2023,First Class,4
+Aaron Hawkins,Sales,4/22/2021,US-2021-122070,4/24/2021,Second Class,257.752
+Aaron Hawkins,Quantity,4/22/2021,US-2021-122070,4/24/2021,Second Class,11
+Aaron Hawkins,Discount,4/22/2021,US-2021-122070,4/24/2021,Second Class,0.2
+Aaron Hawkins,Profit,4/22/2021,US-2021-122070,4/24/2021,Second Class,124.7869
+Aaron Hawkins,Profit Ratio,4/22/2021,US-2021-122070,4/24/2021,Second Class,0.484135526
+Aaron Hawkins,Days to Ship Scheduled,4/22/2021,US-2021-122070,4/24/2021,Second Class,6
+Aaron Hawkins,Days to Ship Actual,4/22/2021,US-2021-122070,4/24/2021,Second Class,4
+Aaron Hawkins,Sales,5/13/2021,US-2021-113768,5/19/2021,Standard Class,287.456
+Aaron Hawkins,Quantity,5/13/2021,US-2021-113768,5/19/2021,Standard Class,8
+Aaron Hawkins,Discount,5/13/2021,US-2021-113768,5/19/2021,Standard Class,0.2
+Aaron Hawkins,Profit,5/13/2021,US-2021-113768,5/19/2021,Standard Class,24.7992
+Aaron Hawkins,Profit Ratio,5/13/2021,US-2021-113768,5/19/2021,Standard Class,0.086271290
+Aaron Hawkins,Days to Ship Scheduled,5/13/2021,US-2021-113768,5/19/2021,Standard Class,12
+Aaron Hawkins,Days to Ship Actual,5/13/2021,US-2021-113768,5/19/2021,Standard Class,12
+Aaron Hawkins,Sales,10/25/2021,US-2021-158400,10/28/2021,First Class,49.408
+Aaron Hawkins,Quantity,10/25/2021,US-2021-158400,10/28/2021,First Class,4
+Aaron Hawkins,Discount,10/25/2021,US-2021-158400,10/28/2021,First Class,0.2
+Aaron Hawkins,Profit,10/25/2021,US-2021-158400,10/28/2021,First Class,18.528
+Aaron Hawkins,Profit Ratio,10/25/2021,US-2021-158400,10/28/2021,First Class,0.375
+Aaron Hawkins,Days to Ship Scheduled,10/25/2021,US-2021-158400,10/28/2021,First Class,1
+Aaron Hawkins,Days to Ship Actual,10/25/2021,US-2021-158400,10/28/2021,First Class,3
+Aaron Hawkins,Sales,12/31/2021,US-2021-157644,1/1/2022,First Class,53.67
+Aaron Hawkins,Quantity,12/31/2021,US-2021-157644,1/1/2022,First Class,6
+Aaron Hawkins,Discount,12/31/2021,US-2021-157644,1/1/2022,First Class,0
+Aaron Hawkins,Profit,12/31/2021,US-2021-157644,1/1/2022,First Class,20.1681
+Aaron Hawkins,Profit Ratio,12/31/2021,US-2021-157644,1/1/2022,First Class,0.375779765
+Aaron Hawkins,Days to Ship Scheduled,12/31/2021,US-2021-157644,1/1/2022,First Class,2
+Aaron Hawkins,Days to Ship Actual,12/31/2021,US-2021-157644,1/1/2022,First Class,2
+Aaron Hawkins,Sales,12/27/2022,US-2022-130113,12/31/2022,Standard Class,991.26
+Aaron Hawkins,Quantity,12/27/2022,US-2022-130113,12/31/2022,Standard Class,11
+Aaron Hawkins,Discount,12/27/2022,US-2022-130113,12/31/2022,Standard Class,0.2
+Aaron Hawkins,Profit,12/27/2022,US-2022-130113,12/31/2022,Standard Class,136.557
+Aaron Hawkins,Profit Ratio,12/27/2022,US-2022-130113,12/31/2022,Standard Class,0.137761031
+Aaron Hawkins,Days to Ship Scheduled,12/27/2022,US-2022-130113,12/31/2022,Standard Class,12
+Aaron Hawkins,Days to Ship Actual,12/27/2022,US-2022-130113,12/31/2022,Standard Class,8
+Aaron Hawkins,Sales,3/20/2023,US-2023-162747,3/25/2023,Second Class,86.45
+Aaron Hawkins,Quantity,3/20/2023,US-2023-162747,3/25/2023,Second Class,7
+Aaron Hawkins,Discount,3/20/2023,US-2023-162747,3/25/2023,Second Class,0
+Aaron Hawkins,Profit,3/20/2023,US-2023-162747,3/25/2023,Second Class,38.038
+Aaron Hawkins,Profit Ratio,3/20/2023,US-2023-162747,3/25/2023,Second Class,0.44
+Aaron Hawkins,Days to Ship Scheduled,3/20/2023,US-2023-162747,3/25/2023,Second Class,3
+Aaron Hawkins,Days to Ship Actual,3/20/2023,US-2023-162747,3/25/2023,Second Class,5
+Aaron Hawkins,Sales,12/18/2024,US-2024-164000,12/22/2024,Standard Class,18.704
+Aaron Hawkins,Quantity,12/18/2024,US-2024-164000,12/22/2024,Standard Class,7
+Aaron Hawkins,Discount,12/18/2024,US-2024-164000,12/22/2024,Standard Class,0.2
+Aaron Hawkins,Profit,12/18/2024,US-2024-164000,12/22/2024,Standard Class,2.338
+Aaron Hawkins,Profit Ratio,12/18/2024,US-2024-164000,12/22/2024,Standard Class,0.125
+Aaron Hawkins,Days to Ship Scheduled,12/18/2024,US-2024-164000,12/22/2024,Standard Class,6
+Aaron Hawkins,Days to Ship Actual,12/18/2024,US-2024-164000,12/22/2024,Standard Class,4
+Aaron Smayling,Sales,7/27/2021,US-2021-150126,8/2/2021,Standard Class,65.78
+Aaron Smayling,Quantity,7/27/2021,US-2021-150126,8/2/2021,Standard Class,11
+Aaron Smayling,Discount,7/27/2021,US-2021-150126,8/2/2021,Standard Class,0
+Aaron Smayling,Profit,7/27/2021,US-2021-150126,8/2/2021,Standard Class,32.2322
+Aaron Smayling,Profit Ratio,7/27/2021,US-2021-150126,8/2/2021,Standard Class,0.49
+Aaron Smayling,Days to Ship Scheduled,7/27/2021,US-2021-150126,8/2/2021,Standard Class,6
+Aaron Smayling,Days to Ship Actual,7/27/2021,US-2021-150126,8/2/2021,Standard Class,6
+Aaron Smayling,Sales,3/28/2023,US-2023-162901,3/31/2023,First Class,31.4
+Aaron Smayling,Quantity,3/28/2023,US-2023-162901,3/31/2023,First Class,2
+Aaron Smayling,Discount,3/28/2023,US-2023-162901,3/31/2023,First Class,0
+Aaron Smayling,Profit,3/28/2023,US-2023-162901,3/31/2023,First Class,7.85
+Aaron Smayling,Profit Ratio,3/28/2023,US-2023-162901,3/31/2023,First Class,0.25
+Aaron Smayling,Days to Ship Scheduled,3/28/2023,US-2023-162901,3/31/2023,First Class,1
+Aaron Smayling,Days to Ship Actual,3/28/2023,US-2023-162901,3/31/2023,First Class,3
+Aaron Smayling,Sales,9/25/2023,US-2023-148747,9/27/2023,First Class,477.666
+Aaron Smayling,Quantity,9/25/2023,US-2023-148747,9/27/2023,First Class,2
+Aaron Smayling,Discount,9/25/2023,US-2023-148747,9/27/2023,First Class,0.15
+Aaron Smayling,Profit,9/25/2023,US-2023-148747,9/27/2023,First Class,84.294
+Aaron Smayling,Profit Ratio,9/25/2023,US-2023-148747,9/27/2023,First Class,0.176470588
+Aaron Smayling,Days to Ship Scheduled,9/25/2023,US-2023-148747,9/27/2023,First Class,1
+Aaron Smayling,Days to Ship Actual,9/25/2023,US-2023-148747,9/27/2023,First Class,2
+Aaron Smayling,Sales,1/2/2024,US-2024-113481,1/4/2024,First Class,740.214
+Aaron Smayling,Quantity,1/2/2024,US-2024-113481,1/4/2024,First Class,13
+Aaron Smayling,Discount,1/2/2024,US-2024-113481,1/4/2024,First Class,1.9
+Aaron Smayling,Profit,1/2/2024,US-2024-113481,1/4/2024,First Class,-61.5156
+Aaron Smayling,Profit Ratio,1/2/2024,US-2024-113481,1/4/2024,First Class,-0.083105156
+Aaron Smayling,Days to Ship Scheduled,1/2/2024,US-2024-113481,1/4/2024,First Class,3
+Aaron Smayling,Days to Ship Actual,1/2/2024,US-2024-113481,1/4/2024,First Class,6
+Aaron Smayling,Sales,8/1/2024,US-2024-162691,8/7/2024,Standard Class,"1,476.27"
+Aaron Smayling,Quantity,8/1/2024,US-2024-162691,8/7/2024,Standard Class,10
+Aaron Smayling,Discount,8/1/2024,US-2024-162691,8/7/2024,Standard Class,0.6
+Aaron Smayling,Profit,8/1/2024,US-2024-162691,8/7/2024,Standard Class,-251.2959
+Aaron Smayling,Profit Ratio,8/1/2024,US-2024-162691,8/7/2024,Standard Class,-0.170223536
+Aaron Smayling,Days to Ship Scheduled,8/1/2024,US-2024-162691,8/7/2024,Standard Class,12
+Aaron Smayling,Days to Ship Actual,8/1/2024,US-2024-162691,8/7/2024,Standard Class,12
+Aaron Smayling,Sales,9/4/2024,US-2024-147655,9/5/2024,First Class,88.074
+Aaron Smayling,Quantity,9/4/2024,US-2024-147655,9/5/2024,First Class,7
+Aaron Smayling,Discount,9/4/2024,US-2024-147655,9/5/2024,First Class,0.7
+Aaron Smayling,Profit,9/4/2024,US-2024-147655,9/5/2024,First Class,-58.716
+Aaron Smayling,Profit Ratio,9/4/2024,US-2024-147655,9/5/2024,First Class,-0.666666667
+Aaron Smayling,Days to Ship Scheduled,9/4/2024,US-2024-147655,9/5/2024,First Class,1
+Aaron Smayling,Days to Ship Actual,9/4/2024,US-2024-147655,9/5/2024,First Class,1
+Aaron Smayling,Sales,10/3/2024,US-2024-101749,10/8/2024,Standard Class,171.288
+Aaron Smayling,Quantity,10/3/2024,US-2024-101749,10/8/2024,Standard Class,3
+Aaron Smayling,Discount,10/3/2024,US-2024-101749,10/8/2024,Standard Class,0.2
+Aaron Smayling,Profit,10/3/2024,US-2024-101749,10/8/2024,Standard Class,-6.423300000
+Aaron Smayling,Profit Ratio,10/3/2024,US-2024-101749,10/8/2024,Standard Class,-0.037500000
+Aaron Smayling,Days to Ship Scheduled,10/3/2024,US-2024-101749,10/8/2024,Standard Class,6
+Aaron Smayling,Days to Ship Actual,10/3/2024,US-2024-101749,10/8/2024,Standard Class,5
+Adam Bellavance,Sales,9/18/2022,US-2022-150511,9/24/2022,Standard Class,18.54
+Adam Bellavance,Quantity,9/18/2022,US-2022-150511,9/24/2022,Standard Class,2
+Adam Bellavance,Discount,9/18/2022,US-2022-150511,9/24/2022,Standard Class,0
+Adam Bellavance,Profit,9/18/2022,US-2022-150511,9/24/2022,Standard Class,8.7138
+Adam Bellavance,Profit Ratio,9/18/2022,US-2022-150511,9/24/2022,Standard Class,0.47
+Adam Bellavance,Days to Ship Scheduled,9/18/2022,US-2022-150511,9/24/2022,Standard Class,6
+Adam Bellavance,Days to Ship Actual,9/18/2022,US-2022-150511,9/24/2022,Standard Class,6
+Adam Bellavance,Sales,3/13/2023,US-2023-108637,3/18/2023,Standard Class,334.2
+Adam Bellavance,Quantity,3/13/2023,US-2023-108637,3/18/2023,Standard Class,8
+Adam Bellavance,Discount,3/13/2023,US-2023-108637,3/18/2023,Standard Class,0
+Adam Bellavance,Profit,3/13/2023,US-2023-108637,3/18/2023,Standard Class,106.5112
+Adam Bellavance,Profit Ratio,3/13/2023,US-2023-108637,3/18/2023,Standard Class,0.318704967
+Adam Bellavance,Days to Ship Scheduled,3/13/2023,US-2023-108637,3/18/2023,Standard Class,18
+Adam Bellavance,Days to Ship Actual,3/13/2023,US-2023-108637,3/18/2023,Standard Class,15
+Adam Bellavance,Sales,8/29/2023,US-2023-161207,9/3/2023,Standard Class,27.93
+Adam Bellavance,Quantity,8/29/2023,US-2023-161207,9/3/2023,Standard Class,3
+Adam Bellavance,Discount,8/29/2023,US-2023-161207,9/3/2023,Standard Class,0
+Adam Bellavance,Profit,8/29/2023,US-2023-161207,9/3/2023,Standard Class,8.0997
+Adam Bellavance,Profit Ratio,8/29/2023,US-2023-161207,9/3/2023,Standard Class,0.29
+Adam Bellavance,Days to Ship Scheduled,8/29/2023,US-2023-161207,9/3/2023,Standard Class,6
+Adam Bellavance,Days to Ship Actual,8/29/2023,US-2023-161207,9/3/2023,Standard Class,5
+Adam Bellavance,Sales,9/1/2023,US-2023-129714,9/3/2023,First Class,"4,438.686"
+Adam Bellavance,Quantity,9/1/2023,US-2023-129714,9/3/2023,First Class,12
+Adam Bellavance,Discount,9/1/2023,US-2023-129714,9/3/2023,First Class,0.4
+Adam Bellavance,Profit,9/1/2023,US-2023-129714,9/3/2023,First Class,"1,453.4346"
+Adam Bellavance,Profit Ratio,9/1/2023,US-2023-129714,9/3/2023,First Class,0.327447042
+Adam Bellavance,Days to Ship Scheduled,9/1/2023,US-2023-129714,9/3/2023,First Class,5
+Adam Bellavance,Days to Ship Actual,9/1/2023,US-2023-129714,9/3/2023,First Class,10
+Adam Bellavance,Sales,5/7/2024,US-2024-159688,5/12/2024,Standard Class,79.99
+Adam Bellavance,Quantity,5/7/2024,US-2024-159688,5/12/2024,Standard Class,1
+Adam Bellavance,Discount,5/7/2024,US-2024-159688,5/12/2024,Standard Class,0
+Adam Bellavance,Profit,5/7/2024,US-2024-159688,5/12/2024,Standard Class,28.7964
+Adam Bellavance,Profit Ratio,5/7/2024,US-2024-159688,5/12/2024,Standard Class,0.36
+Adam Bellavance,Days to Ship Scheduled,5/7/2024,US-2024-159688,5/12/2024,Standard Class,6
+Adam Bellavance,Days to Ship Actual,5/7/2024,US-2024-159688,5/12/2024,Standard Class,5
+Adam Bellavance,Sales,9/16/2024,US-2024-134173,9/21/2024,Standard Class,20.736
+Adam Bellavance,Quantity,9/16/2024,US-2024-134173,9/21/2024,Standard Class,4
+Adam Bellavance,Discount,9/16/2024,US-2024-134173,9/21/2024,Standard Class,0.2
+Adam Bellavance,Profit,9/16/2024,US-2024-134173,9/21/2024,Standard Class,7.2576
+Adam Bellavance,Profit Ratio,9/16/2024,US-2024-134173,9/21/2024,Standard Class,0.35
+Adam Bellavance,Days to Ship Scheduled,9/16/2024,US-2024-134173,9/21/2024,Standard Class,6
+Adam Bellavance,Days to Ship Actual,9/16/2024,US-2024-134173,9/21/2024,Standard Class,5
+Adam Bellavance,Sales,11/5/2024,US-2024-118213,11/7/2024,First Class,240.15
+Adam Bellavance,Quantity,11/5/2024,US-2024-118213,11/7/2024,First Class,14
+Adam Bellavance,Discount,11/5/2024,US-2024-118213,11/7/2024,First Class,0
+Adam Bellavance,Profit,11/5/2024,US-2024-118213,11/7/2024,First Class,115.5072
+Adam Bellavance,Profit Ratio,11/5/2024,US-2024-118213,11/7/2024,First Class,0.480979388
+Adam Bellavance,Days to Ship Scheduled,11/5/2024,US-2024-118213,11/7/2024,First Class,3
+Adam Bellavance,Days to Ship Actual,11/5/2024,US-2024-118213,11/7/2024,First Class,6
+Adam Bellavance,Sales,11/6/2024,US-2024-107174,11/13/2024,Standard Class,"2,595.388"
+Adam Bellavance,Quantity,11/6/2024,US-2024-107174,11/13/2024,Standard Class,12
+Adam Bellavance,Discount,11/6/2024,US-2024-107174,11/13/2024,Standard Class,0.2
+Adam Bellavance,Profit,11/6/2024,US-2024-107174,11/13/2024,Standard Class,326.268
+Adam Bellavance,Profit Ratio,11/6/2024,US-2024-107174,11/13/2024,Standard Class,0.125710684
+Adam Bellavance,Days to Ship Scheduled,11/6/2024,US-2024-107174,11/13/2024,Standard Class,18
+Adam Bellavance,Days to Ship Actual,11/6/2024,US-2024-107174,11/13/2024,Standard Class,21
+Adam Hart,Sales,11/16/2021,US-2021-160066,11/22/2021,Standard Class,5.22
+Adam Hart,Quantity,11/16/2021,US-2021-160066,11/22/2021,Standard Class,2
+Adam Hart,Discount,11/16/2021,US-2021-160066,11/22/2021,Standard Class,0
+Adam Hart,Profit,11/16/2021,US-2021-160066,11/22/2021,Standard Class,2.4012
+Adam Hart,Profit Ratio,11/16/2021,US-2021-160066,11/22/2021,Standard Class,0.46
+Adam Hart,Days to Ship Scheduled,11/16/2021,US-2021-160066,11/22/2021,Standard Class,6
+Adam Hart,Days to Ship Actual,11/16/2021,US-2021-160066,11/22/2021,Standard Class,6
+Adam Hart,Sales,12/21/2022,US-2022-161795,12/23/2022,Second Class,3.008
+Adam Hart,Quantity,12/21/2022,US-2022-161795,12/23/2022,Second Class,2
+Adam Hart,Discount,12/21/2022,US-2022-161795,12/23/2022,Second Class,0.2
+Adam Hart,Profit,12/21/2022,US-2022-161795,12/23/2022,Second Class,0.3384
+Adam Hart,Profit Ratio,12/21/2022,US-2022-161795,12/23/2022,Second Class,0.1125
+Adam Hart,Days to Ship Scheduled,12/21/2022,US-2022-161795,12/23/2022,Second Class,3
+Adam Hart,Days to Ship Actual,12/21/2022,US-2022-161795,12/23/2022,Second Class,2
+Adam Hart,Sales,6/26/2023,US-2023-144015,6/26/2023,Same Day,262.1
+Adam Hart,Quantity,6/26/2023,US-2023-144015,6/26/2023,Same Day,9
+Adam Hart,Discount,6/26/2023,US-2023-144015,6/26/2023,Same Day,0
+Adam Hart,Profit,6/26/2023,US-2023-144015,6/26/2023,Same Day,26.152
+Adam Hart,Profit Ratio,6/26/2023,US-2023-144015,6/26/2023,Same Day,0.099778710
+Adam Hart,Days to Ship Scheduled,6/26/2023,US-2023-144015,6/26/2023,Same Day,0
+Adam Hart,Days to Ship Actual,6/26/2023,US-2023-144015,6/26/2023,Same Day,0
+Adam Hart,Sales,9/15/2023,US-2023-149797,9/20/2023,Standard Class,841.568
+Adam Hart,Quantity,9/15/2023,US-2023-149797,9/20/2023,Standard Class,2
+Adam Hart,Discount,9/15/2023,US-2023-149797,9/20/2023,Standard Class,0.2
+Adam Hart,Profit,9/15/2023,US-2023-149797,9/20/2023,Standard Class,294.5488
+Adam Hart,Profit Ratio,9/15/2023,US-2023-149797,9/20/2023,Standard Class,0.35
+Adam Hart,Days to Ship Scheduled,9/15/2023,US-2023-149797,9/20/2023,Standard Class,6
+Adam Hart,Days to Ship Actual,9/15/2023,US-2023-149797,9/20/2023,Standard Class,5
+Adam Hart,Sales,12/17/2023,US-2023-147109,12/21/2023,Standard Class,217.44
+Adam Hart,Quantity,12/17/2023,US-2023-147109,12/21/2023,Standard Class,13
+Adam Hart,Discount,12/17/2023,US-2023-147109,12/21/2023,Standard Class,0.4
+Adam Hart,Profit,12/17/2023,US-2023-147109,12/21/2023,Standard Class,11.934
+Adam Hart,Profit Ratio,12/17/2023,US-2023-147109,12/21/2023,Standard Class,0.054884106
+Adam Hart,Days to Ship Scheduled,12/17/2023,US-2023-147109,12/21/2023,Standard Class,12
+Adam Hart,Days to Ship Actual,12/17/2023,US-2023-147109,12/21/2023,Standard Class,8
+Adam Hart,Sales,4/15/2024,US-2024-118857,4/18/2024,First Class,196.45
+Adam Hart,Quantity,4/15/2024,US-2024-118857,4/18/2024,First Class,5
+Adam Hart,Discount,4/15/2024,US-2024-118857,4/18/2024,First Class,0
+Adam Hart,Profit,4/15/2024,US-2024-118857,4/18/2024,First Class,70.722
+Adam Hart,Profit Ratio,4/15/2024,US-2024-118857,4/18/2024,First Class,0.36
+Adam Hart,Days to Ship Scheduled,4/15/2024,US-2024-118857,4/18/2024,First Class,1
+Adam Hart,Days to Ship Actual,4/15/2024,US-2024-118857,4/18/2024,First Class,3
+Adam Hart,Sales,5/19/2024,US-2024-145702,5/24/2024,Second Class,342.24
+Adam Hart,Quantity,5/19/2024,US-2024-145702,5/24/2024,Second Class,10
+Adam Hart,Discount,5/19/2024,US-2024-145702,5/24/2024,Second Class,0.4
+Adam Hart,Profit,5/19/2024,US-2024-145702,5/24/2024,Second Class,-25.2552
+Adam Hart,Profit Ratio,5/19/2024,US-2024-145702,5/24/2024,Second Class,-0.073793829
+Adam Hart,Days to Ship Scheduled,5/19/2024,US-2024-145702,5/24/2024,Second Class,6
+Adam Hart,Days to Ship Actual,5/19/2024,US-2024-145702,5/24/2024,Second Class,10
+Adam Hart,Sales,9/25/2024,US-2024-112004,9/28/2024,First Class,199.491
+Adam Hart,Quantity,9/25/2024,US-2024-112004,9/28/2024,First Class,7
+Adam Hart,Discount,9/25/2024,US-2024-112004,9/28/2024,First Class,0.9
+Adam Hart,Profit,9/25/2024,US-2024-112004,9/28/2024,First Class,-49.2546
+Adam Hart,Profit Ratio,9/25/2024,US-2024-112004,9/28/2024,First Class,-0.246901364
+Adam Hart,Days to Ship Scheduled,9/25/2024,US-2024-112004,9/28/2024,First Class,2
+Adam Hart,Days to Ship Actual,9/25/2024,US-2024-112004,9/28/2024,First Class,6
+Adam Hart,Sales,10/23/2024,US-2024-125451,10/24/2024,First Class,"1,169.98"
+Adam Hart,Quantity,10/23/2024,US-2024-125451,10/24/2024,First Class,22
+Adam Hart,Discount,10/23/2024,US-2024-125451,10/24/2024,First Class,0.6
+Adam Hart,Profit,10/23/2024,US-2024-125451,10/24/2024,First Class,-54.121200000
+Adam Hart,Profit Ratio,10/23/2024,US-2024-125451,10/24/2024,First Class,-0.046258227
+Adam Hart,Days to Ship Scheduled,10/23/2024,US-2024-125451,10/24/2024,First Class,6
+Adam Hart,Days to Ship Actual,10/23/2024,US-2024-125451,10/24/2024,First Class,6
+Adam Hart,Sales,11/26/2024,US-2024-165029,11/30/2024,Standard Class,12.84
+Adam Hart,Quantity,11/26/2024,US-2024-165029,11/30/2024,Standard Class,3
+Adam Hart,Discount,11/26/2024,US-2024-165029,11/30/2024,Standard Class,0
+Adam Hart,Profit,11/26/2024,US-2024-165029,11/30/2024,Standard Class,3.7236
+Adam Hart,Profit Ratio,11/26/2024,US-2024-165029,11/30/2024,Standard Class,0.29
+Adam Hart,Days to Ship Scheduled,11/26/2024,US-2024-165029,11/30/2024,Standard Class,6
+Adam Hart,Days to Ship Actual,11/26/2024,US-2024-165029,11/30/2024,Standard Class,4
+Adam Shillingsburg,Sales,9/22/2021,US-2021-156160,9/29/2021,Standard Class,693.992
+Adam Shillingsburg,Quantity,9/22/2021,US-2021-156160,9/29/2021,Standard Class,12
+Adam Shillingsburg,Discount,9/22/2021,US-2021-156160,9/29/2021,Standard Class,0.3
+Adam Shillingsburg,Profit,9/22/2021,US-2021-156160,9/29/2021,Standard Class,125.92
+Adam Shillingsburg,Profit Ratio,9/22/2021,US-2021-156160,9/29/2021,Standard Class,0.181443014
+Adam Shillingsburg,Days to Ship Scheduled,9/22/2021,US-2021-156160,9/29/2021,Standard Class,24
+Adam Shillingsburg,Days to Ship Actual,9/22/2021,US-2021-156160,9/29/2021,Standard Class,28
+Adam Shillingsburg,Sales,12/24/2021,US-2021-132913,12/26/2021,First Class,13.97
+Adam Shillingsburg,Quantity,12/24/2021,US-2021-132913,12/26/2021,First Class,1
+Adam Shillingsburg,Discount,12/24/2021,US-2021-132913,12/26/2021,First Class,0
+Adam Shillingsburg,Profit,12/24/2021,US-2021-132913,12/26/2021,First Class,3.6322
+Adam Shillingsburg,Profit Ratio,12/24/2021,US-2021-132913,12/26/2021,First Class,0.26
+Adam Shillingsburg,Days to Ship Scheduled,12/24/2021,US-2021-132913,12/26/2021,First Class,1
+Adam Shillingsburg,Days to Ship Actual,12/24/2021,US-2021-132913,12/26/2021,First Class,2
+Adam Shillingsburg,Sales,11/9/2022,US-2022-127509,11/13/2022,Standard Class,"1,085.16"
+Adam Shillingsburg,Quantity,11/9/2022,US-2022-127509,11/13/2022,Standard Class,16
+Adam Shillingsburg,Discount,11/9/2022,US-2022-127509,11/13/2022,Standard Class,0
+Adam Shillingsburg,Profit,11/9/2022,US-2022-127509,11/13/2022,Standard Class,243.861
+Adam Shillingsburg,Profit Ratio,11/9/2022,US-2022-127509,11/13/2022,Standard Class,0.224723543
+Adam Shillingsburg,Days to Ship Scheduled,11/9/2022,US-2022-127509,11/13/2022,Standard Class,24
+Adam Shillingsburg,Days to Ship Actual,11/9/2022,US-2022-127509,11/13/2022,Standard Class,16
+Adam Shillingsburg,Sales,5/2/2023,US-2023-104311,5/6/2023,Standard Class,36.648
+Adam Shillingsburg,Quantity,5/2/2023,US-2023-104311,5/6/2023,Standard Class,8
+Adam Shillingsburg,Discount,5/2/2023,US-2023-104311,5/6/2023,Standard Class,0.6
+Adam Shillingsburg,Profit,5/2/2023,US-2023-104311,5/6/2023,Standard Class,-5.1912
+Adam Shillingsburg,Profit Ratio,5/2/2023,US-2023-104311,5/6/2023,Standard Class,-0.141650295
+Adam Shillingsburg,Days to Ship Scheduled,5/2/2023,US-2023-104311,5/6/2023,Standard Class,18
+Adam Shillingsburg,Days to Ship Actual,5/2/2023,US-2023-104311,5/6/2023,Standard Class,12
+Adam Shillingsburg,Sales,6/21/2023,US-2023-119865,6/26/2023,Standard Class,576.272
+Adam Shillingsburg,Quantity,6/21/2023,US-2023-119865,6/26/2023,Standard Class,13
+Adam Shillingsburg,Discount,6/21/2023,US-2023-119865,6/26/2023,Standard Class,0.6
+Adam Shillingsburg,Profit,6/21/2023,US-2023-119865,6/26/2023,Standard Class,29.0968
+Adam Shillingsburg,Profit Ratio,6/21/2023,US-2023-119865,6/26/2023,Standard Class,0.050491435
+Adam Shillingsburg,Days to Ship Scheduled,6/21/2023,US-2023-119865,6/26/2023,Standard Class,18
+Adam Shillingsburg,Days to Ship Actual,6/21/2023,US-2023-119865,6/26/2023,Standard Class,15

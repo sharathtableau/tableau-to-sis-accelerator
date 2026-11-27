@@ -1,0 +1,15 @@
+{
+  "parent_files": 148,
+  "parent_drift": [],
+  "installed_code_drift": [],
+  "corpus_files": 25,
+  "sheet_states": {
+    "UNSUPPORTED": 333,
+    "UNVERIFIED": 55,
+    "INVALID": 6
+  },
+  "structural_issues": 0,
+  "deployed": false,
+  "tableau_parity": "NOT_VERIFIED",
+  "new_live_snowflake_execution": false
+}

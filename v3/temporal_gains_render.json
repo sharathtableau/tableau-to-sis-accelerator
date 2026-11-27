@@ -1,0 +1,41 @@
+[
+  {
+    "file": "Superstore_TopN_MeasureSwap.twbx",
+    "dashboard": "Superstore Dashboard",
+    "sheet": "Measure Trend",
+    "workbook_sha256": "01e8bad4d72b12274cf4c4ed9312034ccc0471324453cb29d92c05c325c27b2e",
+    "charts": 1,
+    "status": "LOCAL_RENDERED",
+    "blockers": [],
+    "warnings": [],
+    "intake_errors": [],
+    "numeric_parity": "NOT_EVALUATED",
+    "visual_parity": "NOT_EVALUATED"
+  },
+  {
+    "file": "Workbooks\\Globalsalesdashboard.twbx",
+    "dashboard": "View2",
+    "sheet": "Profit Trend",
+    "workbook_sha256": "4c9148b772265361bc3bd356ac56ae28a3087636a20235a74d795bd695480bb2",
+    "charts": 1,
+    "status": "LOCAL_RENDERED",
+    "blockers": [],
+    "warnings": [],
+    "intake_errors": [],
+    "numeric_parity": "NOT_EVALUATED",
+    "visual_parity": "NOT_EVALUATED"
+  },
+  {
+    "file": "Workbooks\\Superstore_MeasureSelector_Native.twbx",
+    "dashboard": "Superstore Dashboard",
+    "sheet": "Measure Trend",
+    "workbook_sha256": "9d1348292bbd7df34c552cad3436ac7076572a55a2aab87676b6d67f8a485877",
+    "charts": 1,
+    "status": "LOCAL_RENDERED",
+    "blockers": [],
+    "warnings": [],
+    "intake_errors": [],
+    "numeric_parity": "NOT_EVALUATED",
+    "visual_parity": "NOT_EVALUATED"
+  }
+]

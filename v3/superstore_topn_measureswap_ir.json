@@ -1,0 +1,200 @@
+{
+  "source_file": "C:\\Users\\SHARAT~1\\AppData\\Local\\Temp\\twbconv_keonq8tw\\Superstore_TopN_MeasureSwap.twbx",
+  "calcs": {
+    "Selected Measure": {
+      "sql": "CASE __PARAM_SELECT_MEASURE__\nWHEN 'Sales' THEN SUM(SALES)\nWHEN 'Profit' THEN SUM(PROFIT)\nWHEN 'Quantity' THEN SUM(QUANTITY)\nEND",
+      "agg_ready": true
+    },
+    "Calculation_measureswap01": {
+      "sql": "CASE __PARAM_SELECT_MEASURE__\nWHEN 'Sales' THEN SUM(SALES)\nWHEN 'Profit' THEN SUM(PROFIT)\nWHEN 'Quantity' THEN SUM(QUANTITY)\nEND",
+      "agg_ready": true
+    }
+  },
+  "calc_drops": {},
+  "datasources": [
+    "Sample - Superstore"
+  ],
+  "params": {
+    "Top N": "10",
+    "Select Measure": "\"Sales\""
+  },
+  "param_domains": {
+    "Select Measure": [
+      "\"Sales\"",
+      "\"Profit\"",
+      "\"Quantity\""
+    ]
+  },
+  "stories": [],
+  "datasource_notes": [],
+  "hierarchies": {},
+  "colmap": {
+    "Top N": "Parameter 1",
+    "Select Measure": "Parameter 2",
+    "Selected Measure": "Calculation_measureswap01"
+  },
+  "color_maps": {},
+  "palette_refs": {},
+  "aliases": {},
+  "dashboards": [
+    {
+      "name": "Superstore Dashboard",
+      "title": "Superstore Dashboard",
+      "filters": [],
+      "sheet_filters": [
+        {
+          "caption": "Product Name",
+          "kind": "categorical"
+        }
+      ],
+      "params": [
+        "Top N",
+        "Select Measure"
+      ],
+      "sheets": [
+        {
+          "name": "Top N Products",
+          "mark": "Bar",
+          "filters": [
+            {
+              "caption": "Product Name",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "bar",
+          "orient": "h",
+          "y": {
+            "caption": "Product Name"
+          },
+          "x": {
+            "caption": "Selected Measure",
+            "agg": "usr",
+            "fmt": "num2"
+          },
+          "color": null,
+          "labels": true,
+          "datasource": "Sample - Superstore",
+          "sort": {
+            "field": "Selected Measure",
+            "agg": "usr",
+            "dir": "desc",
+            "on": "Product Name",
+            "shelf": "rows"
+          },
+          "applied_filters": [
+            {
+              "caption": "Product Name",
+              "kind": "top_n",
+              "dir": "top",
+              "order_expr": "[Calculation_measureswap01]",
+              "order_dir": "DESC",
+              "n_param": "Top N"
+            }
+          ],
+          "text_fields": [
+            "Selected Measure"
+          ],
+          "geom": {
+            "x": 0,
+            "y": 13000,
+            "w": 60000,
+            "h": 87000,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Measure by Region",
+          "mark": "Bar",
+          "filters": [],
+          "kind": "bar",
+          "orient": "v",
+          "x": {
+            "caption": "Region"
+          },
+          "y": {
+            "caption": "Selected Measure",
+            "agg": "usr",
+            "fmt": "num2"
+          },
+          "color": {
+            "caption": "Region",
+            "kind": "dimension",
+            "agg": "none"
+          },
+          "grouped": true,
+          "labels": true,
+          "datasource": "Sample - Superstore",
+          "sort": {
+            "field": "Selected Measure",
+            "agg": "usr",
+            "dir": "desc",
+            "on": "Region",
+            "shelf": "columns"
+          },
+          "text_fields": [
+            "Selected Measure"
+          ],
+          "geom": {
+            "x": 60000,
+            "y": 13000,
+            "w": 40000,
+            "h": 43500,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Measure Trend",
+          "mark": "Line",
+          "filters": [],
+          "kind": "line",
+          "x": {
+            "caption": "Order Date",
+            "datepart": "tmn"
+          },
+          "y": {
+            "caption": "Selected Measure",
+            "agg": "usr",
+            "fmt": "num2"
+          },
+          "panel": null,
+          "color": null,
+          "labels": true,
+          "datasource": "Sample - Superstore",
+          "text_fields": [
+            "Selected Measure"
+          ],
+          "geom": {
+            "x": 60000,
+            "y": 56500,
+            "w": 40000,
+            "h": 43500,
+            "show_title": true
+          }
+        }
+      ],
+      "layout": {
+        "dir": "vert",
+        "bg": null,
+        "w": 100000,
+        "h": 100000,
+        "children": [
+          {
+            "sheet": "Top N Products",
+            "w": 60000,
+            "h": 87000
+          },
+          {
+            "sheet": "Measure by Region",
+            "w": 40000,
+            "h": 43500
+          },
+          {
+            "sheet": "Measure Trend",
+            "w": 40000,
+            "h": 43500
+          }
+        ]
+      }
+    }
+  ]
+}

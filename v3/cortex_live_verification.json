@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "model": "claude-sonnet-4-5",
+  "visual_proposal": {
+    "choice": "bar",
+    "reason": "For a pie chart showing category-to-value comparisons with sum aggregation, a bar chart is the most appropriate replacement. It preserves the comparison purpose while improving readability - bar charts excel at comparing categorical values and make it easier to distinguish between similar magnitudes than pie charts. The visual presentation changes from angular segments to rectangular bars, but the underlying data values and aggregation grain remain unchanged."
+  },
+  "calculation_proposal": {
+    "choice": "use_validated_expression",
+    "expression_json": "[\"add\", [\"abs\", [\"field\", \"synthetic::Value\"]], [\"multiply\", [\"zn\", [\"field\", \"synthetic::Value\"]], [\"number\", 2]]]",
+    "reason": "The formula \"ABS([Value]) + ZN([Value]) * 2\" can be converted to the array grammar format. Following standard operator precedence (multiplication before addition), this becomes: add(abs(field), multiply(zn(field), 2)). The expression uses the field \"Value\" with id \"synthetic::Value\" and applies the abs, zn, multiply, and add operations from the provided grammar."
+  },
+  "calculation_matches_source_ast": true,
+  "scope": "synthetic metadata only",
+  "deployed": false,
+  "tableau_parity": "NOT_VERIFIED",
+  "snowflake_numeric_fixture": {
+    "status": "PASS",
+    "sql": "WITH raw AS (SELECT column1 AS CATEGORY, column2::DOUBLE AS VALUE FROM VALUES ('A',2),('A',4),('B',-3)) SELECT CATEGORY, SUM((ABS(VALUE)+(COALESCE(VALUE,0)*2))) AS RESULT FROM raw GROUP BY CATEGORY ORDER BY RESULT DESC",
+    "rows": [
+      {
+        "CATEGORY": "A",
+        "RESULT": 18.0
+      },
+      {
+        "CATEGORY": "B",
+        "RESULT": -3.0
+      }
+    ],
+    "scope": "synthetic VALUES rows; no objects created"
+  }
+}

@@ -1,0 +1,430 @@
+{
+  "source_file": "C:\\Users\\SHARAT~1\\AppData\\Local\\Temp\\twbconv_bbw3qwm5\\Superstore_KPI_Parameter_Dashboard.twbx",
+  "calcs": {
+    "Days to Ship Actual": {
+      "sql": "DATEDIFF('day',ORDER_DATE,SHIP_DATE)",
+      "agg_ready": false
+    },
+    "Ship Status": {
+      "sql": "CASE WHEN (DATEDIFF('day',ORDER_DATE,SHIP_DATE))> (CASE  SHIP_MODE\nWHEN 'Same Day' THEN 0\nWHEN 'First Class' THEN 1\nWHEN 'Second Class' THEN 3\nWHEN 'Standard Class' THEN 6\nEND) THEN 'Shipped Late' \nWHEN (DATEDIFF('day',ORDER_DATE,SHIP_DATE))= (CASE  SHIP_MODE\nWHEN 'Same Day' THEN 0\nWHEN 'First Class' THEN 1\nWHEN 'Second Class' THEN 3\nWHEN 'Standard Class' THEN 6\nEND) THEN 'Shipped On Time'\nELSE 'Shipped Early' END",
+      "agg_ready": false
+    },
+    "Days to Ship Scheduled": {
+      "sql": "CASE  SHIP_MODE\nWHEN 'Same Day' THEN 0\nWHEN 'First Class' THEN 1\nWHEN 'Second Class' THEN 3\nWHEN 'Standard Class' THEN 6\nEND",
+      "agg_ready": false
+    },
+    "Order Profitable?": {
+      "sql": "sum(PROFIT) OVER (PARTITION BY ORDER_ID)>0",
+      "agg_ready": false
+    },
+    "Sales per Customer": {
+      "sql": "Sum(SALES)/ NULLIF(COUNT(DISTINCT CUSTOMER_NAME), 0)",
+      "agg_ready": true
+    },
+    "Profit Ratio": {
+      "sql": "sum(PROFIT)/ NULLIF(sum(SALES), 0)",
+      "agg_ready": true
+    },
+    "Selected Measure Value": {
+      "sql": "CASE __PARAM_SELECTED_MEASURE__ WHEN 'Sales' THEN SUM(SALES) WHEN 'Profit' THEN SUM(PROFIT) WHEN 'Quantity' THEN SUM(QUANTITY) WHEN 'Discount' THEN AVG(DISCOUNT) WHEN 'Profit Ratio' THEN SUM(PROFIT) / NULLIF(SUM(SALES), 0) END",
+      "agg_ready": true
+    },
+    "Selected Region Match": {
+      "sql": "__PARAM_SELECTED_REGION__='All' OR REGION=__PARAM_SELECTED_REGION__",
+      "agg_ready": false
+    },
+    "Profit per Order": {
+      "sql": "Sum(PROFIT)/ NULLIF(COUNT(DISTINCT ORDER_ID), 0)",
+      "agg_ready": true
+    },
+    "Calculation_0831103151444568": {
+      "sql": "DATEDIFF('day',ORDER_DATE,SHIP_DATE)",
+      "agg_ready": false
+    },
+    "Calculation_6401103171259723": {
+      "sql": "CASE WHEN (DATEDIFF('day',ORDER_DATE,SHIP_DATE))> (CASE  SHIP_MODE\nWHEN 'Same Day' THEN 0\nWHEN 'First Class' THEN 1\nWHEN 'Second Class' THEN 3\nWHEN 'Standard Class' THEN 6\nEND) THEN 'Shipped Late' \nWHEN (DATEDIFF('day',ORDER_DATE,SHIP_DATE))= (CASE  SHIP_MODE\nWHEN 'Same Day' THEN 0\nWHEN 'First Class' THEN 1\nWHEN 'Second Class' THEN 3\nWHEN 'Standard Class' THEN 6\nEND) THEN 'Shipped On Time'\nELSE 'Shipped Early' END",
+      "agg_ready": false
+    },
+    "Calculation_6861103170623145": {
+      "sql": "CASE  SHIP_MODE\nWHEN 'Same Day' THEN 0\nWHEN 'First Class' THEN 1\nWHEN 'Second Class' THEN 3\nWHEN 'Standard Class' THEN 6\nEND",
+      "agg_ready": false
+    },
+    "Calculation_9060122104947471": {
+      "sql": "sum(PROFIT) OVER (PARTITION BY ORDER_ID)>0",
+      "agg_ready": false
+    },
+    "Calculation_9321103144526191": {
+      "sql": "Sum(SALES)/ NULLIF(COUNT(DISTINCT CUSTOMER_NAME), 0)",
+      "agg_ready": true
+    },
+    "Calculation_9921103144103743": {
+      "sql": "sum(PROFIT)/ NULLIF(sum(SALES), 0)",
+      "agg_ready": true
+    },
+    "Calculation_WBR_Selected_Measure": {
+      "sql": "CASE __PARAM_SELECTED_MEASURE__ WHEN 'Sales' THEN SUM(SALES) WHEN 'Profit' THEN SUM(PROFIT) WHEN 'Quantity' THEN SUM(QUANTITY) WHEN 'Discount' THEN AVG(DISCOUNT) WHEN 'Profit Ratio' THEN SUM(PROFIT) / NULLIF(SUM(SALES), 0) END",
+      "agg_ready": true
+    },
+    "Calculation_WBR_Selected_Region_Filter": {
+      "sql": "__PARAM_SELECTED_REGION__='All' OR REGION=__PARAM_SELECTED_REGION__",
+      "agg_ready": false
+    },
+    "Sales per Customer (copy)": {
+      "sql": "Sum(PROFIT)/ NULLIF(COUNT(DISTINCT ORDER_ID), 0)",
+      "agg_ready": true
+    }
+  },
+  "calc_drops": {},
+  "datasources": [
+    "Sample - Superstore"
+  ],
+  "params": {
+    "Selected Measure": "\"Sales\"",
+    "Selected Region": "\"All\"",
+    "Top N Customers": "12"
+  },
+  "param_domains": {
+    "Selected Measure": [
+      "\"Sales\"",
+      "\"Profit\"",
+      "\"Quantity\"",
+      "\"Discount\"",
+      "\"Profit Ratio\""
+    ],
+    "Selected Region": [
+      "\"All\"",
+      "\"Central\"",
+      "\"East\"",
+      "\"South\"",
+      "\"West\""
+    ]
+  },
+  "stories": [],
+  "datasource_notes": [],
+  "hierarchies": {
+    "Location": [
+      "Country/Region",
+      "Region",
+      "State/Province",
+      "City",
+      "Postal Code"
+    ],
+    "Product": [
+      "Category",
+      "Sub-Category",
+      "Product Name"
+    ]
+  },
+  "colmap": {
+    "Days to Ship Actual": "Calculation_0831103151444568",
+    "Ship Status": "Calculation_6401103171259723",
+    "Days to Ship Scheduled": "Calculation_6861103170623145",
+    "Order Profitable?": "Calculation_9060122104947471",
+    "Sales per Customer": "Calculation_9321103144526191",
+    "Profit Ratio": "Calculation_9921103144103743",
+    "Selected Measure Value": "Calculation_WBR_Selected_Measure",
+    "Selected Region Match": "Calculation_WBR_Selected_Region_Filter",
+    "Profit per Order": "Sales per Customer (copy)"
+  },
+  "color_maps": {
+    "Category": {
+      "Technology": "#4e79a7",
+      "Office Supplies": "#e15759",
+      "Furniture": "#f28e2b"
+    }
+  },
+  "palette_refs": {},
+  "aliases": {
+    "Order Profitable?": {
+      "false": "Unprofitable",
+      "true": "Profitable"
+    }
+  },
+  "dashboards": [
+    {
+      "name": "Sales KPI Parameter Dashboard",
+      "title": "Sales KPI Parameter Dashboard",
+      "filters": [
+        {
+          "caption": "Region",
+          "datepart": null,
+          "kind": "categorical"
+        }
+      ],
+      "sheet_filters": [
+        {
+          "caption": "Customer Name",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Region",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Selected Region Match",
+          "kind": "categorical"
+        }
+      ],
+      "params": [
+        "Top N Customers",
+        "Selected Region",
+        "Selected Measure"
+      ],
+      "sheets": [
+        {
+          "name": "Top N Customers by Sales",
+          "mark": "Bar",
+          "filters": [
+            {
+              "caption": "Customer Name",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Region",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "bar",
+          "orient": "h",
+          "y": {
+            "caption": "Customer Name"
+          },
+          "x": {
+            "caption": "Sales",
+            "agg": "sum",
+            "fmt": "cur0"
+          },
+          "color": {
+            "caption": "Profit Ratio",
+            "kind": "measure",
+            "agg": "usr"
+          },
+          "datasource": "Sample - Superstore",
+          "title": "Top N Customers by Sales - Region Context Filter",
+          "sort": {
+            "field": "Sales",
+            "agg": "sum",
+            "dir": "desc",
+            "on": "Customer Name"
+          },
+          "applied_filters": [
+            {
+              "caption": "Customer Name",
+              "kind": "top_n",
+              "dir": "top",
+              "order_expr": "SUM([Sales])",
+              "order_dir": "DESC",
+              "n_param": "Top N Customers"
+            }
+          ],
+          "tooltip_fields": [
+            "Profit"
+          ],
+          "geom": {
+            "x": 0,
+            "y": 31584,
+            "w": 48979,
+            "h": 34979,
+            "show_title": true
+          }
+        },
+        {
+          "name": "KPI Summary",
+          "mark": "Automatic",
+          "filters": [],
+          "kind": "kpi",
+          "measures": [
+            {
+              "caption": "Sales",
+              "agg": "sum",
+              "fmt": "cur0",
+              "label": "Sales"
+            },
+            {
+              "caption": "Profit",
+              "agg": "sum",
+              "fmt": "cur0",
+              "label": "Profit"
+            },
+            {
+              "caption": "Profit Ratio",
+              "agg": "usr",
+              "fmt": "pct",
+              "label": "Profit Ratio"
+            },
+            {
+              "caption": "Order ID",
+              "agg": "ctd",
+              "fmt": "num0",
+              "label": "Count of Order ID"
+            },
+            {
+              "caption": "Customer Name",
+              "agg": "ctd",
+              "fmt": "num0",
+              "label": "Count of Customers"
+            },
+            {
+              "caption": "Quantity",
+              "agg": "sum",
+              "fmt": "num0",
+              "label": "Quantity"
+            }
+          ],
+          "datasource": "Sample - Superstore",
+          "title": "KPI Summary",
+          "text_fields": [
+            "Multiple Values"
+          ],
+          "geom": {
+            "x": 0,
+            "y": 14609,
+            "w": 100000,
+            "h": 15432,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Region Parameter Measure Swap",
+          "mark": "Bar",
+          "filters": [
+            {
+              "caption": "Selected Region Match",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "bar",
+          "orient": "h",
+          "y": {
+            "caption": "Category"
+          },
+          "x": {
+            "caption": "Selected Measure Value",
+            "agg": "usr"
+          },
+          "color": {
+            "caption": "Category",
+            "kind": "dimension",
+            "agg": "none"
+          },
+          "grouped": true,
+          "datasource": "Sample - Superstore",
+          "title": "Selected Measure by Category - Region Parameter",
+          "sort": {
+            "field": "Selected Measure Value",
+            "agg": "usr",
+            "dir": "desc",
+            "on": "Category"
+          },
+          "applied_filters": [
+            {
+              "caption": "Selected Region Match",
+              "kind": "in",
+              "values": [
+                "true"
+              ]
+            }
+          ],
+          "geom": {
+            "x": 50000,
+            "y": 31584,
+            "w": 50000,
+            "h": 34979,
+            "show_title": true
+          },
+          "drill": {
+            "name": "Product",
+            "levels": [
+              "Category",
+              "Sub-Category",
+              "Product Name"
+            ],
+            "current": "Category",
+            "slot": "y",
+            "slot_idx": null
+          }
+        },
+        {
+          "name": "Selected Measure Trend",
+          "mark": "Line",
+          "filters": [
+            {
+              "caption": "Selected Region Match",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "line",
+          "x": {
+            "caption": "Order Date",
+            "datepart": "tmn"
+          },
+          "y": {
+            "caption": "Selected Measure Value",
+            "agg": "usr"
+          },
+          "panel": null,
+          "color": null,
+          "datasource": "Sample - Superstore",
+          "title": "Selected Measure Trend",
+          "applied_filters": [
+            {
+              "caption": "Selected Region Match",
+              "kind": "in",
+              "values": [
+                "true"
+              ]
+            }
+          ],
+          "tooltip_fields": [
+            "Selected Measure Value"
+          ],
+          "geom": {
+            "x": 0,
+            "y": 68106,
+            "w": 100000,
+            "h": 31894,
+            "show_title": true
+          }
+        }
+      ],
+      "device_layouts": [
+        "Phone"
+      ],
+      "layout": {
+        "dir": "vert",
+        "bg": null,
+        "w": 100000,
+        "h": 100000,
+        "children": [
+          {
+            "dir": "vert",
+            "bg": "#ffffff",
+            "w": 9656,
+            "children": [
+              {
+                "sheet": "Top N Customers by Sales",
+                "w": 9656,
+                "h": 6995
+              }
+            ]
+          },
+          {
+            "sheet": "KPI Summary",
+            "w": 100000,
+            "h": 15432
+          },
+          {
+            "sheet": "Region Parameter Measure Swap",
+            "w": 50000,
+            "h": 34979
+          },
+          {
+            "sheet": "Selected Measure Trend",
+            "w": 100000,
+            "h": 31894
+          }
+        ]
+      }
+    }
+  ]
+}

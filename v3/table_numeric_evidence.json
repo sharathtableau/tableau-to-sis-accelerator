@@ -1,0 +1,828 @@
+{
+  "status": "LOCAL_FIXTURE_EXECUTION",
+  "tableau_parity": "NOT_VERIFIED",
+  "snowflake_runtime": "NOT_VERIFIED",
+  "complete_migration": "NOT_VERIFIED",
+  "results": [
+    {
+      "shape": "single-dimension",
+      "datasource_id": "federated.source_0",
+      "plan": {
+        "version": "text-table/1",
+        "worksheet_id": "worksheet:d1c35f4d4e166324e1db7d90",
+        "datasource_id": "federated.source_0",
+        "status": "READY",
+        "reasons": [],
+        "columns": [
+          {
+            "occurrence_id": "b9f7fcfd5186bfc2138c1e40",
+            "field_id": "federated.source_0::Place0",
+            "alias": "O_B9F7FCFD5186BFC2138C1E40",
+            "role": "group",
+            "aggregation": "none",
+            "definition": {
+              "physical": "Place0",
+              "datatype": "string",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "a4a4ea755f565d46963bed84",
+            "field_id": "federated.source_0::Value",
+            "alias": "O_A4A4EA755F565D46963BED84",
+            "role": "aggregate",
+            "aggregation": "sum",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "266f683eb0100bccd55bf900",
+            "field_id": "federated.source_0::Value",
+            "alias": "O_266F683EB0100BCCD55BF900",
+            "role": "aggregate",
+            "aggregation": "avg",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "0b83cbb49fead337341e9cdf",
+            "field_id": "federated.source_0::Value",
+            "alias": "O_0B83CBB49FEAD337341E9CDF",
+            "role": "aggregate",
+            "aggregation": "cnt",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "8efdf6840ef4b5c2aa9f13d8",
+            "field_id": "federated.source_0::Value",
+            "alias": "O_8EFDF6840EF4B5C2AA9F13D8",
+            "role": "aggregate",
+            "aggregation": "ctd",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "c51bf02e7bd9d7cf41b2636e",
+            "field_id": "federated.source_0::Value",
+            "alias": "O_C51BF02E7BD9D7CF41B2636E",
+            "role": "aggregate",
+            "aggregation": "sum",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          }
+        ],
+        "roles": {
+          "b9f7fcfd5186bfc2138c1e40": "group",
+          "a4a4ea755f565d46963bed84": "aggregate",
+          "266f683eb0100bccd55bf900": "aggregate",
+          "0b83cbb49fead337341e9cdf": "aggregate",
+          "8efdf6840ef4b5c2aa9f13d8": "aggregate",
+          "c51bf02e7bd9d7cf41b2636e": "aggregate"
+        },
+        "ordering": [
+          {
+            "occurrence_id": "b9f7fcfd5186bfc2138c1e40",
+            "values": [
+              "B",
+              null,
+              "A"
+            ]
+          }
+        ],
+        "display_limit": 200
+      },
+      "sql": "WITH grouped AS (SELECT CAST(\"PLACE0\" AS VARCHAR) AS O_B9F7FCFD5186BFC2138C1E40, SUM(\"VALUE\") AS O_A4A4EA755F565D46963BED84, AVG(\"VALUE\") AS O_266F683EB0100BCCD55BF900, COUNT(\"VALUE\") AS O_0B83CBB49FEAD337341E9CDF, COUNT(DISTINCT \"VALUE\") AS O_8EFDF6840EF4B5C2AA9F13D8, SUM(\"VALUE\") AS O_C51BF02E7BD9D7CF41B2636E FROM V3_LOCAL.PREVIEW.UNSEEN_SOURCE_0 GROUP BY 1) SELECT *, COUNT(*) OVER () AS __TOTAL, MAX(CASE WHEN (O_B9F7FCFD5186BFC2138C1E40 = 'B' OR O_B9F7FCFD5186BFC2138C1E40 IS NULL OR O_B9F7FCFD5186BFC2138C1E40 = 'A') THEN 0 ELSE 1 END) OVER () AS __UNPLANNED FROM grouped ORDER BY CASE WHEN O_B9F7FCFD5186BFC2138C1E40 = 'B' THEN 0 WHEN O_B9F7FCFD5186BFC2138C1E40 IS NULL THEN 1 WHEN O_B9F7FCFD5186BFC2138C1E40 = 'A' THEN 2 END ASC LIMIT 200",
+      "display_labels": {
+        "O_B9F7FCFD5186BFC2138C1E40": "Shared caption (row, 1)",
+        "O_A4A4EA755F565D46963BED84": "Shared caption (SUM, 2)",
+        "O_266F683EB0100BCCD55BF900": "Shared caption (AVG, 3)",
+        "O_0B83CBB49FEAD337341E9CDF": "Shared caption (CNT, 4)",
+        "O_8EFDF6840EF4B5C2AA9F13D8": "Shared caption (CTD, 5)",
+        "O_C51BF02E7BD9D7CF41B2636E": "Shared caption (SUM, 6)"
+      },
+      "result": {
+        "columns": [
+          "O_B9F7FCFD5186BFC2138C1E40",
+          "O_A4A4EA755F565D46963BED84",
+          "O_266F683EB0100BCCD55BF900",
+          "O_0B83CBB49FEAD337341E9CDF",
+          "O_8EFDF6840EF4B5C2AA9F13D8",
+          "O_C51BF02E7BD9D7CF41B2636E"
+        ],
+        "index": [
+          0,
+          1,
+          2
+        ],
+        "data": [
+          [
+            "B",
+            -3.0,
+            -3.0,
+            1,
+            1,
+            -3.0
+          ],
+          [
+            null,
+            7.0,
+            7.0,
+            1,
+            1,
+            7.0
+          ],
+          [
+            "A",
+            18.0,
+            4.5,
+            4,
+            3,
+            18.0
+          ]
+        ]
+      },
+      "caption": [
+        "3 of 3 grouped rows displayed in authored manual order."
+      ]
+    },
+    {
+      "shape": "single-dimension",
+      "datasource_id": "federated.source_1",
+      "plan": {
+        "version": "text-table/1",
+        "worksheet_id": "worksheet:ef603a9905bb9b87c465e59f",
+        "datasource_id": "federated.source_1",
+        "status": "READY",
+        "reasons": [],
+        "columns": [
+          {
+            "occurrence_id": "79eee738be41e04279f3d7fb",
+            "field_id": "federated.source_1::Place1",
+            "alias": "O_79EEE738BE41E04279F3D7FB",
+            "role": "group",
+            "aggregation": "none",
+            "definition": {
+              "physical": "Place1",
+              "datatype": "string",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "5769bbc276cf094fbdd19927",
+            "field_id": "federated.source_1::Value",
+            "alias": "O_5769BBC276CF094FBDD19927",
+            "role": "aggregate",
+            "aggregation": "sum",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "119a5aa2d279a338ca296918",
+            "field_id": "federated.source_1::Value",
+            "alias": "O_119A5AA2D279A338CA296918",
+            "role": "aggregate",
+            "aggregation": "avg",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "f2d33f73ee80debd4e420d2a",
+            "field_id": "federated.source_1::Value",
+            "alias": "O_F2D33F73EE80DEBD4E420D2A",
+            "role": "aggregate",
+            "aggregation": "cnt",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "bc52a077062a72799cb346bf",
+            "field_id": "federated.source_1::Value",
+            "alias": "O_BC52A077062A72799CB346BF",
+            "role": "aggregate",
+            "aggregation": "ctd",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "31e0a68a97b766d2f0c90c8f",
+            "field_id": "federated.source_1::Value",
+            "alias": "O_31E0A68A97B766D2F0C90C8F",
+            "role": "aggregate",
+            "aggregation": "sum",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          }
+        ],
+        "roles": {
+          "79eee738be41e04279f3d7fb": "group",
+          "5769bbc276cf094fbdd19927": "aggregate",
+          "119a5aa2d279a338ca296918": "aggregate",
+          "f2d33f73ee80debd4e420d2a": "aggregate",
+          "bc52a077062a72799cb346bf": "aggregate",
+          "31e0a68a97b766d2f0c90c8f": "aggregate"
+        },
+        "ordering": [
+          {
+            "occurrence_id": "79eee738be41e04279f3d7fb",
+            "values": [
+              "B",
+              null,
+              "A"
+            ]
+          }
+        ],
+        "display_limit": 200
+      },
+      "sql": "WITH grouped AS (SELECT CAST(\"PLACE1\" AS VARCHAR) AS O_79EEE738BE41E04279F3D7FB, SUM(\"VALUE\") AS O_5769BBC276CF094FBDD19927, AVG(\"VALUE\") AS O_119A5AA2D279A338CA296918, COUNT(\"VALUE\") AS O_F2D33F73EE80DEBD4E420D2A, COUNT(DISTINCT \"VALUE\") AS O_BC52A077062A72799CB346BF, SUM(\"VALUE\") AS O_31E0A68A97B766D2F0C90C8F FROM V3_LOCAL.PREVIEW.UNSEEN_SOURCE_1 GROUP BY 1) SELECT *, COUNT(*) OVER () AS __TOTAL, MAX(CASE WHEN (O_79EEE738BE41E04279F3D7FB = 'B' OR O_79EEE738BE41E04279F3D7FB IS NULL OR O_79EEE738BE41E04279F3D7FB = 'A') THEN 0 ELSE 1 END) OVER () AS __UNPLANNED FROM grouped ORDER BY CASE WHEN O_79EEE738BE41E04279F3D7FB = 'B' THEN 0 WHEN O_79EEE738BE41E04279F3D7FB IS NULL THEN 1 WHEN O_79EEE738BE41E04279F3D7FB = 'A' THEN 2 END ASC LIMIT 200",
+      "display_labels": {
+        "O_79EEE738BE41E04279F3D7FB": "Shared caption (row, 1)",
+        "O_5769BBC276CF094FBDD19927": "Shared caption (SUM, 2)",
+        "O_119A5AA2D279A338CA296918": "Shared caption (AVG, 3)",
+        "O_F2D33F73EE80DEBD4E420D2A": "Shared caption (CNT, 4)",
+        "O_BC52A077062A72799CB346BF": "Shared caption (CTD, 5)",
+        "O_31E0A68A97B766D2F0C90C8F": "Shared caption (SUM, 6)"
+      },
+      "result": {
+        "columns": [
+          "O_79EEE738BE41E04279F3D7FB",
+          "O_5769BBC276CF094FBDD19927",
+          "O_119A5AA2D279A338CA296918",
+          "O_F2D33F73EE80DEBD4E420D2A",
+          "O_BC52A077062A72799CB346BF",
+          "O_31E0A68A97B766D2F0C90C8F"
+        ],
+        "index": [
+          0,
+          1,
+          2
+        ],
+        "data": [
+          [
+            "B",
+            -6.0,
+            -6.0,
+            1,
+            1,
+            -6.0
+          ],
+          [
+            null,
+            14.0,
+            14.0,
+            1,
+            1,
+            14.0
+          ],
+          [
+            "A",
+            36.0,
+            9.0,
+            4,
+            3,
+            36.0
+          ]
+        ]
+      },
+      "caption": [
+        "3 of 3 grouped rows displayed in authored manual order."
+      ]
+    },
+    {
+      "shape": "nested-repeated",
+      "datasource_id": "federated.source_0",
+      "plan": {
+        "version": "text-table/1",
+        "worksheet_id": "worksheet:f3fb6d4d8f99920a4ca2ff91",
+        "datasource_id": "federated.source_0",
+        "status": "READY",
+        "reasons": [],
+        "columns": [
+          {
+            "occurrence_id": "b9f7fcfd5186bfc2138c1e40",
+            "field_id": "federated.source_0::Place0",
+            "alias": "O_B9F7FCFD5186BFC2138C1E40",
+            "role": "group",
+            "aggregation": "none",
+            "definition": {
+              "physical": "Place0",
+              "datatype": "string",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "4da814f2c71f9da3be303720",
+            "field_id": "federated.source_0::Bucket",
+            "alias": "O_4DA814F2C71F9DA3BE303720",
+            "role": "group",
+            "aggregation": "none",
+            "definition": {
+              "physical": "Bucket",
+              "datatype": "integer",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "e760c665e7e836231f1888cb",
+            "field_id": "federated.source_0::Place0",
+            "alias": "O_E760C665E7E836231F1888CB",
+            "role": "group",
+            "aggregation": "none",
+            "definition": {
+              "physical": "Place0",
+              "datatype": "string",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "a7f080bef715c5f6bf83935b",
+            "field_id": "federated.source_0::Value",
+            "alias": "O_A7F080BEF715C5F6BF83935B",
+            "role": "aggregate",
+            "aggregation": "sum",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "519976818e84d3f5ee5bc1e9",
+            "field_id": "federated.source_0::Value",
+            "alias": "O_519976818E84D3F5EE5BC1E9",
+            "role": "aggregate",
+            "aggregation": "avg",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "bf7979a3043cb497a609fccd",
+            "field_id": "federated.source_0::Value",
+            "alias": "O_BF7979A3043CB497A609FCCD",
+            "role": "aggregate",
+            "aggregation": "cnt",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "eb37281258d5b2ec151a7f7b",
+            "field_id": "federated.source_0::Value",
+            "alias": "O_EB37281258D5B2EC151A7F7B",
+            "role": "aggregate",
+            "aggregation": "ctd",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "bb67af62d7c60246e30977b0",
+            "field_id": "federated.source_0::Value",
+            "alias": "O_BB67AF62D7C60246E30977B0",
+            "role": "aggregate",
+            "aggregation": "sum",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "2ccc9f8e95fbb89a61e103f2",
+            "field_id": "federated.source_0::Bucket",
+            "alias": "O_2CCC9F8E95FBB89A61E103F2",
+            "role": "aggregate",
+            "aggregation": "sum",
+            "definition": {
+              "physical": "Bucket",
+              "datatype": "integer",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          }
+        ],
+        "roles": {
+          "b9f7fcfd5186bfc2138c1e40": "group",
+          "4da814f2c71f9da3be303720": "group",
+          "e760c665e7e836231f1888cb": "group",
+          "a7f080bef715c5f6bf83935b": "aggregate",
+          "519976818e84d3f5ee5bc1e9": "aggregate",
+          "bf7979a3043cb497a609fccd": "aggregate",
+          "eb37281258d5b2ec151a7f7b": "aggregate",
+          "bb67af62d7c60246e30977b0": "aggregate",
+          "2ccc9f8e95fbb89a61e103f2": "aggregate"
+        },
+        "ordering": [
+          {
+            "occurrence_id": "b9f7fcfd5186bfc2138c1e40",
+            "values": [
+              "B",
+              null,
+              "A"
+            ]
+          },
+          {
+            "occurrence_id": "4da814f2c71f9da3be303720",
+            "values": [
+              2,
+              1
+            ]
+          },
+          {
+            "occurrence_id": "e760c665e7e836231f1888cb",
+            "values": [
+              "B",
+              null,
+              "A"
+            ]
+          }
+        ],
+        "display_limit": 200
+      },
+      "sql": "WITH grouped AS (SELECT CAST(\"PLACE0\" AS VARCHAR) AS O_B9F7FCFD5186BFC2138C1E40, \"BUCKET\" AS O_4DA814F2C71F9DA3BE303720, CAST(\"PLACE0\" AS VARCHAR) AS O_E760C665E7E836231F1888CB, SUM(\"VALUE\") AS O_A7F080BEF715C5F6BF83935B, AVG(\"VALUE\") AS O_519976818E84D3F5EE5BC1E9, COUNT(\"VALUE\") AS O_BF7979A3043CB497A609FCCD, COUNT(DISTINCT \"VALUE\") AS O_EB37281258D5B2EC151A7F7B, SUM(\"VALUE\") AS O_BB67AF62D7C60246E30977B0, SUM(\"BUCKET\") AS O_2CCC9F8E95FBB89A61E103F2 FROM V3_LOCAL.PREVIEW.UNSEEN_SOURCE_0 GROUP BY 1, 2, 3) SELECT *, COUNT(*) OVER () AS __TOTAL, MAX(CASE WHEN (O_B9F7FCFD5186BFC2138C1E40 = 'B' OR O_B9F7FCFD5186BFC2138C1E40 IS NULL OR O_B9F7FCFD5186BFC2138C1E40 = 'A') AND (O_4DA814F2C71F9DA3BE303720 = 2 OR O_4DA814F2C71F9DA3BE303720 = 1) AND (O_E760C665E7E836231F1888CB = 'B' OR O_E760C665E7E836231F1888CB IS NULL OR O_E760C665E7E836231F1888CB = 'A') THEN 0 ELSE 1 END) OVER () AS __UNPLANNED FROM grouped ORDER BY CASE WHEN O_B9F7FCFD5186BFC2138C1E40 = 'B' THEN 0 WHEN O_B9F7FCFD5186BFC2138C1E40 IS NULL THEN 1 WHEN O_B9F7FCFD5186BFC2138C1E40 = 'A' THEN 2 END ASC, CASE WHEN O_4DA814F2C71F9DA3BE303720 = 2 THEN 0 WHEN O_4DA814F2C71F9DA3BE303720 = 1 THEN 1 END ASC, CASE WHEN O_E760C665E7E836231F1888CB = 'B' THEN 0 WHEN O_E760C665E7E836231F1888CB IS NULL THEN 1 WHEN O_E760C665E7E836231F1888CB = 'A' THEN 2 END ASC LIMIT 200",
+      "display_labels": {
+        "O_B9F7FCFD5186BFC2138C1E40": "Shared caption (row, 1)",
+        "O_4DA814F2C71F9DA3BE303720": "Shared caption (row, 2)",
+        "O_E760C665E7E836231F1888CB": "Shared caption (row, 3)",
+        "O_A7F080BEF715C5F6BF83935B": "Shared caption (SUM, 4)",
+        "O_519976818E84D3F5EE5BC1E9": "Shared caption (AVG, 5)",
+        "O_BF7979A3043CB497A609FCCD": "Shared caption (CNT, 6)",
+        "O_EB37281258D5B2EC151A7F7B": "Shared caption (CTD, 7)",
+        "O_BB67AF62D7C60246E30977B0": "Shared caption (SUM, 8)",
+        "O_2CCC9F8E95FBB89A61E103F2": "Shared caption (SUM, 9)"
+      },
+      "result": {
+        "columns": [
+          "O_B9F7FCFD5186BFC2138C1E40",
+          "O_4DA814F2C71F9DA3BE303720",
+          "O_E760C665E7E836231F1888CB",
+          "O_A7F080BEF715C5F6BF83935B",
+          "O_519976818E84D3F5EE5BC1E9",
+          "O_BF7979A3043CB497A609FCCD",
+          "O_EB37281258D5B2EC151A7F7B",
+          "O_BB67AF62D7C60246E30977B0",
+          "O_2CCC9F8E95FBB89A61E103F2"
+        ],
+        "index": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "data": [
+          [
+            "B",
+            2,
+            "B",
+            -3.0,
+            -3.0,
+            1,
+            1,
+            -3.0,
+            4.0
+          ],
+          [
+            null,
+            1,
+            null,
+            7.0,
+            7.0,
+            1,
+            1,
+            7.0,
+            1.0
+          ],
+          [
+            "A",
+            2,
+            "A",
+            10.0,
+            10.0,
+            1,
+            1,
+            10.0,
+            2.0
+          ],
+          [
+            "A",
+            1,
+            "A",
+            8.0,
+            2.6666666667,
+            3,
+            2,
+            8.0,
+            3.0
+          ]
+        ]
+      },
+      "caption": [
+        "4 of 4 grouped rows displayed in authored manual order."
+      ]
+    },
+    {
+      "shape": "nested-repeated",
+      "datasource_id": "federated.source_1",
+      "plan": {
+        "version": "text-table/1",
+        "worksheet_id": "worksheet:170bb2cdf75a4a5291a99d9c",
+        "datasource_id": "federated.source_1",
+        "status": "READY",
+        "reasons": [],
+        "columns": [
+          {
+            "occurrence_id": "79eee738be41e04279f3d7fb",
+            "field_id": "federated.source_1::Place1",
+            "alias": "O_79EEE738BE41E04279F3D7FB",
+            "role": "group",
+            "aggregation": "none",
+            "definition": {
+              "physical": "Place1",
+              "datatype": "string",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "bda057f0a25a9ef817642145",
+            "field_id": "federated.source_1::Bucket",
+            "alias": "O_BDA057F0A25A9EF817642145",
+            "role": "group",
+            "aggregation": "none",
+            "definition": {
+              "physical": "Bucket",
+              "datatype": "integer",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "7d7baf7cb204280edbf954b6",
+            "field_id": "federated.source_1::Place1",
+            "alias": "O_7D7BAF7CB204280EDBF954B6",
+            "role": "group",
+            "aggregation": "none",
+            "definition": {
+              "physical": "Place1",
+              "datatype": "string",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "f1dfad9ce5f828a8a12f71b9",
+            "field_id": "federated.source_1::Value",
+            "alias": "O_F1DFAD9CE5F828A8A12F71B9",
+            "role": "aggregate",
+            "aggregation": "sum",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "4e34d548e973f5bcaf9ad874",
+            "field_id": "federated.source_1::Value",
+            "alias": "O_4E34D548E973F5BCAF9AD874",
+            "role": "aggregate",
+            "aggregation": "avg",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "19f6d24c0b6dd8568e625d75",
+            "field_id": "federated.source_1::Value",
+            "alias": "O_19F6D24C0B6DD8568E625D75",
+            "role": "aggregate",
+            "aggregation": "cnt",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "bea1de53b73cca3da8076a5b",
+            "field_id": "federated.source_1::Value",
+            "alias": "O_BEA1DE53B73CCA3DA8076A5B",
+            "role": "aggregate",
+            "aggregation": "ctd",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "e557804bd2eac05fb75a6025",
+            "field_id": "federated.source_1::Value",
+            "alias": "O_E557804BD2EAC05FB75A6025",
+            "role": "aggregate",
+            "aggregation": "sum",
+            "definition": {
+              "physical": "Value",
+              "datatype": "real",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          },
+          {
+            "occurrence_id": "d24a27f6e9f39af7de76ae43",
+            "field_id": "federated.source_1::Bucket",
+            "alias": "O_D24A27F6E9F39AF7DE76AE43",
+            "role": "aggregate",
+            "aggregation": "sum",
+            "definition": {
+              "physical": "Bucket",
+              "datatype": "integer",
+              "is_calculation": false
+            },
+            "caption": "Shared caption"
+          }
+        ],
+        "roles": {
+          "79eee738be41e04279f3d7fb": "group",
+          "bda057f0a25a9ef817642145": "group",
+          "7d7baf7cb204280edbf954b6": "group",
+          "f1dfad9ce5f828a8a12f71b9": "aggregate",
+          "4e34d548e973f5bcaf9ad874": "aggregate",
+          "19f6d24c0b6dd8568e625d75": "aggregate",
+          "bea1de53b73cca3da8076a5b": "aggregate",
+          "e557804bd2eac05fb75a6025": "aggregate",
+          "d24a27f6e9f39af7de76ae43": "aggregate"
+        },
+        "ordering": [
+          {
+            "occurrence_id": "79eee738be41e04279f3d7fb",
+            "values": [
+              "B",
+              null,
+              "A"
+            ]
+          },
+          {
+            "occurrence_id": "bda057f0a25a9ef817642145",
+            "values": [
+              2,
+              1
+            ]
+          },
+          {
+            "occurrence_id": "7d7baf7cb204280edbf954b6",
+            "values": [
+              "B",
+              null,
+              "A"
+            ]
+          }
+        ],
+        "display_limit": 200
+      },
+      "sql": "WITH grouped AS (SELECT CAST(\"PLACE1\" AS VARCHAR) AS O_79EEE738BE41E04279F3D7FB, \"BUCKET\" AS O_BDA057F0A25A9EF817642145, CAST(\"PLACE1\" AS VARCHAR) AS O_7D7BAF7CB204280EDBF954B6, SUM(\"VALUE\") AS O_F1DFAD9CE5F828A8A12F71B9, AVG(\"VALUE\") AS O_4E34D548E973F5BCAF9AD874, COUNT(\"VALUE\") AS O_19F6D24C0B6DD8568E625D75, COUNT(DISTINCT \"VALUE\") AS O_BEA1DE53B73CCA3DA8076A5B, SUM(\"VALUE\") AS O_E557804BD2EAC05FB75A6025, SUM(\"BUCKET\") AS O_D24A27F6E9F39AF7DE76AE43 FROM V3_LOCAL.PREVIEW.UNSEEN_SOURCE_1 GROUP BY 1, 2, 3) SELECT *, COUNT(*) OVER () AS __TOTAL, MAX(CASE WHEN (O_79EEE738BE41E04279F3D7FB = 'B' OR O_79EEE738BE41E04279F3D7FB IS NULL OR O_79EEE738BE41E04279F3D7FB = 'A') AND (O_BDA057F0A25A9EF817642145 = 2 OR O_BDA057F0A25A9EF817642145 = 1) AND (O_7D7BAF7CB204280EDBF954B6 = 'B' OR O_7D7BAF7CB204280EDBF954B6 IS NULL OR O_7D7BAF7CB204280EDBF954B6 = 'A') THEN 0 ELSE 1 END) OVER () AS __UNPLANNED FROM grouped ORDER BY CASE WHEN O_79EEE738BE41E04279F3D7FB = 'B' THEN 0 WHEN O_79EEE738BE41E04279F3D7FB IS NULL THEN 1 WHEN O_79EEE738BE41E04279F3D7FB = 'A' THEN 2 END ASC, CASE WHEN O_BDA057F0A25A9EF817642145 = 2 THEN 0 WHEN O_BDA057F0A25A9EF817642145 = 1 THEN 1 END ASC, CASE WHEN O_7D7BAF7CB204280EDBF954B6 = 'B' THEN 0 WHEN O_7D7BAF7CB204280EDBF954B6 IS NULL THEN 1 WHEN O_7D7BAF7CB204280EDBF954B6 = 'A' THEN 2 END ASC LIMIT 200",
+      "display_labels": {
+        "O_79EEE738BE41E04279F3D7FB": "Shared caption (row, 1)",
+        "O_BDA057F0A25A9EF817642145": "Shared caption (row, 2)",
+        "O_7D7BAF7CB204280EDBF954B6": "Shared caption (row, 3)",
+        "O_F1DFAD9CE5F828A8A12F71B9": "Shared caption (SUM, 4)",
+        "O_4E34D548E973F5BCAF9AD874": "Shared caption (AVG, 5)",
+        "O_19F6D24C0B6DD8568E625D75": "Shared caption (CNT, 6)",
+        "O_BEA1DE53B73CCA3DA8076A5B": "Shared caption (CTD, 7)",
+        "O_E557804BD2EAC05FB75A6025": "Shared caption (SUM, 8)",
+        "O_D24A27F6E9F39AF7DE76AE43": "Shared caption (SUM, 9)"
+      },
+      "result": {
+        "columns": [
+          "O_79EEE738BE41E04279F3D7FB",
+          "O_BDA057F0A25A9EF817642145",
+          "O_7D7BAF7CB204280EDBF954B6",
+          "O_F1DFAD9CE5F828A8A12F71B9",
+          "O_4E34D548E973F5BCAF9AD874",
+          "O_19F6D24C0B6DD8568E625D75",
+          "O_BEA1DE53B73CCA3DA8076A5B",
+          "O_E557804BD2EAC05FB75A6025",
+          "O_D24A27F6E9F39AF7DE76AE43"
+        ],
+        "index": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "data": [
+          [
+            "B",
+            2,
+            "B",
+            -6.0,
+            -6.0,
+            1,
+            1,
+            -6.0,
+            4.0
+          ],
+          [
+            null,
+            1,
+            null,
+            14.0,
+            14.0,
+            1,
+            1,
+            14.0,
+            1.0
+          ],
+          [
+            "A",
+            2,
+            "A",
+            20.0,
+            20.0,
+            1,
+            1,
+            20.0,
+            2.0
+          ],
+          [
+            "A",
+            1,
+            "A",
+            16.0,
+            5.3333333333,
+            3,
+            2,
+            16.0,
+            3.0
+          ]
+        ]
+      },
+      "caption": [
+        "4 of 4 grouped rows displayed in authored manual order."
+      ]
+    }
+  ]
+}
