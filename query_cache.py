@@ -8,7 +8,7 @@ cache key was the SQL text ALONE. st.cache_data is process-wide: every browser
 session served by the same Streamlit process shares it. On Snowflake's container
 runtime (the default for newly created Streamlit objects) one process serves
 many viewers, so viewer B could be handed the rows that were fetched for viewer
-A. Once a table has a row access policy (the Snowflake equivalent of Power BI
+A. Once a table has a row access policy (Snowflake's
 row-level security) that is a data leak.
 
 THE RULE

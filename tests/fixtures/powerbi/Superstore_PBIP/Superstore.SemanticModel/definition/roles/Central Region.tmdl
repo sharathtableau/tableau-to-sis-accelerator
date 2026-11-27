@@ -1,4 +1,0 @@
-role 'Central Region'
-	modelPermission: read
-
-	tablePermission Orders = Orders[Region] = "Central"
