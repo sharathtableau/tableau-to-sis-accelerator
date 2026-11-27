@@ -1,0 +1,3 @@
+relationship 091f5b75-2e62-533f-92f8-d11af03a9b6a
+	fromColumn: Orders.'Order Date'
+	toColumn: Date.Date
