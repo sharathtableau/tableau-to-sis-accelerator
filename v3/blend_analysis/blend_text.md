@@ -1,0 +1,999 @@
+<!-- Slide number: 1 -->
+# Blend Toolkit
+
+<!-- Slide number: 2 -->
+This template provides pre-built slides with differentlayouts, icons, and placeholder text boxes to helpyou adapt your content with ease.
+Use the Montserrat font to maintain a consistentand professional look throughout your presentation.
+Images can be replaced by clicking the button to adda new image, or by removing the transparent overlayto use the provided image as-is.
+When adapting templates, please familiarize yourselfwith the Brand Guidelines, where you’ll find informationon color and image standards.
+# Welcome toBlend’s (& your) Toolkit
+For example: Do not use vivid turquoise on a white background.
+If you have any questions, feel free to reachout to us at marketing@blend360.com.
+
+<!-- Slide number: 3 -->
+
+#
+
+<!-- Slide number: 4 -->
+
+#
+
+Blend360.com
+
+<!-- Slide number: 5 -->
+
+#
+
+<!-- Slide number: 6 -->
+#
+
+<!-- Slide number: 7 -->
+#
+
+<!-- Slide number: 8 -->
+#
+
+<!-- Slide number: 9 -->
+
+#
+
+<!-- Slide number: 10 -->
+
+#
+
+<!-- Slide number: 11 -->
+
+#
+
+<!-- Slide number: 12 -->
+#
+
+<!-- Slide number: 13 -->
+#
+
+<!-- Slide number: 14 -->
+#
+
+<!-- Slide number: 15 -->
+
+#
+
+![](Graphic13.jpg)
+
+<!-- Slide number: 16 -->
+#
+
+<!-- Slide number: 17 -->
+#
+
+<!-- Slide number: 18 -->
+#
+
+<!-- Slide number: 19 -->
+#
+
+<!-- Slide number: 20 -->
+#
+
+<!-- Slide number: 21 -->
+#
+
+<!-- Slide number: 22 -->
+#
+
+![](Graphic9.jpg)
+
+<!-- Slide number: 23 -->
+#
+
+![](Graphic2.jpg)
+
+<!-- Slide number: 24 -->
+#
+
+<!-- Slide number: 25 -->
+#
+
+<!-- Slide number: 26 -->
+#
+
+<!-- Slide number: 27 -->
+#
+
+<!-- Slide number: 28 -->
+#
+
+![](Graphic6.jpg)
+
+<!-- Slide number: 29 -->
+#
+
+![](Graphic6.jpg)
+
+<!-- Slide number: 30 -->
+
+<!-- Slide number: 31 -->
+
+![](Graphic5.jpg)
+
+<!-- Slide number: 32 -->
+
+![](Graphic13.jpg)
+
+<!-- Slide number: 33 -->
+
+<!-- Slide number: 34 -->
+
+![](Graphic6.jpg)
+
+34
+Private and Confidential
+
+<!-- Slide number: 35 -->
+
+![](Graphic1.jpg)
+
+<!-- Slide number: 36 -->
+#
+
+<!-- Slide number: 37 -->
+#
+
+<!-- Slide number: 38 -->
+#
+
+<!-- Slide number: 39 -->
+
+#
+
+![](Graphic24.jpg)
+Lorem Ipsum
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+![](Graphic32.jpg)
+Lorem Ipsum
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+![](Graphic28.jpg)
+Lorem Ipsum
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+<!-- Slide number: 40 -->
+
+#
+
+![](Graphic13.jpg)
+Lorem Ipsum
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+![](Graphic21.jpg)
+Lorem Ipsum
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+![](Graphic17.jpg)
+Lorem Ipsum
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+<!-- Slide number: 41 -->
+
+#
+
+![](Graphic10.jpg)
+Lorem Ipsum
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+![](Graphic30.jpg)
+Lorem Ipsum
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+![](Graphic14.jpg)
+Lorem Ipsum
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+<!-- Slide number: 42 -->
+#
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+
+<!-- Slide number: 43 -->
+#
+
+![](Graphic41.jpg)
+
+![](Graphic40.jpg)
+
+![](Graphic39.jpg)
+Lorem Ipsum
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+![](Graphic38.jpg)
+
+Lorem Ipsum
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+![](Graphic37.jpg)
+
+Lorem Ipsum
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Lorem Ipsum
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Lorem Ipsum
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+<!-- Slide number: 44 -->
+#
+
+Lorem Ipsum
+Lorem Ipsum
+Lorem Ipsum
+Lorem Ipsum
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+
+<!-- Slide number: 45 -->
+#
+
+Lorem Ipsum Dolor Sit Amet
+Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreet dolore magna aliqua.
+
+Lorem Ipsum Dolor Sit Amet
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Lorem Ipsum Dolor Sit Amet
+
+Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreet dolore magna aliqua.
+
+Lorem Ipsum Dolor Sit Amet
+
+Lorem Ipsum Dolor Sit Amet
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreet dolore magna aliqua.
+
+### Notes:
+
+<!-- Slide number: 46 -->
+#
+
+Click to add description
+
+![](Graphic17.jpg)
+
+![](Graphic33.jpg)
+
+![](Graphic29.jpg)
+
+Lorem Ipsum Dolor Sit Amet
+Lorem Ipsum Dolor Sit Amet
+Lorem Ipsum Dolor Sit Amet
+Lorem ipsum dolor sitamet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+Lorem ipsum dolor sitamet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+Lorem ipsum dolor sitamet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+
+### Notes:
+
+<!-- Slide number: 47 -->
+#
+
+![](Graphic1.jpg)
+
+![](Graphic43.jpg)
+
+Lorem Ipsum Dolor Sit Amet
+Lorem Ipsum Dolor Sit Amet
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua.
+
+![](Graphic6.jpg)
+
+![](Graphic14.jpg)
+
+![](Graphic17.jpg)
+
+![](Graphic31.jpg)
+47
+
+![](Graphic22.jpg)
+Private and Confidential
+
+<!-- Slide number: 48 -->
+#
+
+![](Graphic3.jpg)
+
+![](Graphic6.jpg)
+
+![](Graphic24.jpg)
+
+![](Graphic26.jpg)
+| Lorem IpsumDolor Sit Amet | Lorem IpsumDolor Sit Amet | Lorem IpsumDolor Sit Amet | Lorem IpsumDolor Sit Amet |
+| --- | --- | --- | --- |
+| Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam. Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam. Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam. | Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam. Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam. Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam. | Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam. Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam. Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam. | Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam. Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam. Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam. |
+|  |  |  |  |
+
+<!-- Slide number: 49 -->
+
+#
+Lorem Ipsum
+Lorem Ipsum
+Lorem Ipsum
+Lorem Ipsum
+Lorem Ipsum
+Lorem Ipsum
+Lorem Ipsum
+Lorem Ipsum
+
+![](Graphic91.jpg)
+
+Lorem Ipsum
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+![](Graphic92.jpg)
+
+![](Graphic82.jpg)
+
+![](Graphic81.jpg)
+Lorem Ipsum
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+![](Graphic85.jpg)
+Lorem Ipsum
+Lorem Ipsum
+
+Lorem Ipsum
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Lorem Ipsum
+Lorem Ipsum
+
+### Notes:
+
+<!-- Slide number: 50 -->
+#
+
+![](Graphic45.jpg)
+
+![](Graphic42.jpg)
+
+![](Graphic48.jpg)
+
+![](Graphic51.jpg)
+
+Lorem IpsumDolor Sit Amet
+Lorem IpsumDolor Sit Amet
+Lorem IpsumDolor Sit Amet
+Lorem IpsumDolor Sit Amet
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam
+50
+
+![](Graphic26.jpg)
+Private and Confidential
+
+<!-- Slide number: 51 -->
+#
+
+![](Graphic40.jpg)
+
+![](Graphic42.jpg)
+
+![](Graphic47.jpg)
+
+![](Graphic44.jpg)
+Lorem IpsumDolor Sit Amet
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem IpsumDolor Sit Amet
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem IpsumDolor Sit Amet
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem IpsumDolor Sit Amet
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+
+<!-- Slide number: 52 -->
+
+#
+Lorem Ipsum Dolor Sit Amet
+Lorem Ipsum Dolor Sit Amet
+Lorem Ipsum Dolor Sit Amet
+Lorem Ipsum Dolor Sit Amet
+
+<!-- Slide number: 53 -->
+#
+Lorem Ipsum Dolor Sit Amet
+Lorem Ipsum Dolor Sit Amet
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Lorem Ipsum Dolor Sit Amet
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Lorem Ipsum Dolor Sit Amet
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Lorem Ipsum
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+<!-- Slide number: 54 -->
+#
+
+![](Graphic7.jpg)
+
+![](Graphic10.jpg)
+XX
+Lorem ipsum
+XX
+Lorem ipsum
+
+![](Graphic8.jpg)
+
+![](Graphic11.jpg)
+XX
+Lorem ipsum
+XX
+Lorem ipsum
+
+![](Graphic9.jpg)
+
+![](Graphic12.jpg)
+XX
+Lorem ipsum
+XX
+Lorem ipsum
+
+<!-- Slide number: 55 -->
+#
+
+![](Graphic7.jpg)
+
+![](Graphic10.jpg)
+XX
+Lorem ipsum
+XX
+Lorem ipsum
+
+![](Graphic8.jpg)
+
+![](Graphic11.jpg)
+XX
+Lorem ipsum
+XX
+Lorem ipsum
+
+![](Graphic9.jpg)
+
+![](Graphic12.jpg)
+XX
+Lorem ipsum
+XX
+Lorem ipsum
+
+<!-- Slide number: 56 -->
+#
+
+![](Graphic7.jpg)
+
+![](Graphic10.jpg)
+XX
+Lorem ipsum
+XX
+Lorem ipsum
+
+![](Graphic8.jpg)
+
+![](Graphic11.jpg)
+XX
+Lorem ipsum
+XX
+Lorem ipsum
+
+![](Graphic9.jpg)
+
+![](Graphic12.jpg)
+XX
+Lorem ipsum
+XX
+Lorem ipsum
+
+<!-- Slide number: 57 -->
+#
+| Lorem Ipsum | Lorem ipsum | Lorem ipsum | Lorem ipsum |
+| --- | --- | --- | --- |
+|  | Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo. Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo. Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo. Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo. | Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo. Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo. Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo. Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo. | Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo. Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo. Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo. Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo. |
+
+<!-- Slide number: 58 -->
+#
+Lorem Ipsum
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+
+![](Graphic9.jpg)
+Lorem Ipsum
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+
+![](Graphic38.jpg)
+Lorem Ipsum
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+
+![](Graphic41.jpg)
+Lorem Ipsum
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+
+![](Graphic44.jpg)
+Lorem Ipsum
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+
+<!-- Slide number: 59 -->
+#
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+
+![](Graphic20.jpg)
+
+![](Graphic6.jpg)
+
+![](Graphic21.jpg)
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil minus qui explicabo veniam.
+
+<!-- Slide number: 60 -->
+#
+Lorem ipsum
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorum ipsum
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+
+<!-- Slide number: 61 -->
+#
+Lorem ipsum
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorum ipsum
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+
+<!-- Slide number: 62 -->
+#
+Lorem ipsum
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorum ipsum
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+Lorem ipsum dolor sit amet. Est incidunt rerum sed nihil.
+
+<!-- Slide number: 63 -->
+# Title of Use Case Application here
+Proposed Solution
+Lorem ipsum
+Lorem ipsum
+
+![](Graphic9.jpg)
+Framework/Context
+Lorem ipsum
+Lorem ipsum
+
+![](Graphic14.jpg)
+Potential Impact/Value Drivers
+Lorem ipsum
+Lorem ipsum
+
+![](Graphic17.jpg)
+Challenge/Opportunity
+Lorem ipsum
+Lorem ipsum
+
+![](Graphic15.jpg)
+Key Stakeholders
+Lorem ipsum
+Lorem ipsum
+
+![](Graphic10.jpg)
+
+Call to Action
+Lorem ipsum dolor sit amet, consectetur adipiscing elit
+Lorem ipsum dolor sit amet, consectetur adipiscing elit
+
+<!-- Slide number: 64 -->
+Icons
+Customer Centric
+ROI & Growth
+ROI & Growth
+Artificial Intelligence
+Innovation
+|  |
+| --- |
+|  |
+|  |
+|  |
+| --- |
+|  |
+|  |
+|  |
+| --- |
+|  |
+|  |
+|  |
+| --- |
+|  |
+|  |
+|  |
+| --- |
+|  |
+|  |
+
+![](Graphic119.jpg)
+
+![](Graphic93.jpg)
+
+![](Graphic96.jpg)
+
+![](Graphic91.jpg)
+
+![](Graphic95.jpg)
+
+![](Graphic94.jpg)
+
+![](Graphic89.jpg)
+
+![](Graphic92.jpg)
+
+![](Graphic87.jpg)
+
+![](Graphic88.jpg)
+
+![](Graphic90.jpg)
+
+### Notes:
+
+<!-- Slide number: 65 -->
+Icons
+Target
+Path Line
+Research
+Analysis
+Strategy
+|  |
+| --- |
+|  |
+|  |
+|  |
+| --- |
+|  |
+|  |
+|  |
+| --- |
+|  |
+|  |
+|  |
+| --- |
+|  |
+|  |
+|  |
+| --- |
+|  |
+|  |
+
+![](Graphic51.jpg)
+
+![](Graphic55.jpg)
+
+![](Graphic49.jpg)
+
+![](Graphic11.jpg)
+
+![](Graphic45.jpg)
+
+![](Graphic50.jpg)
+
+![](Graphic14.jpg)
+
+![](Graphic56.jpg)
+
+![](Graphic15.jpg)
+
+![](Graphic52.jpg)
+
+![](Graphic26.jpg)
+
+![](Graphic48.jpg)
+
+### Notes:
+
+<!-- Slide number: 66 -->
+Icons
+Operations
+Data Unification
+Global
+Phishing & Threats
+Security
+|  |
+| --- |
+|  |
+|  |
+|  |
+| --- |
+|  |
+|  |
+|  |
+| --- |
+|  |
+|  |
+|  |
+| --- |
+|  |
+|  |
+|  |
+| --- |
+|  |
+|  |
+|  |
+| --- |
+|  |
+|  |
+
+![](Graphic23.jpg)
+
+![](Graphic16.jpg)
+
+![](Graphic20.jpg)
+
+![](Graphic24.jpg)
+
+![](Graphic21.jpg)
+
+![](Graphic17.jpg)
+
+![](Graphic22.jpg)
+
+![](Graphic18.jpg)
+
+### Notes:
+
+<!-- Slide number: 67 -->
+# Icons
+Calendar
+Files
+Conversation
+General
+|  |
+| --- |
+|  |
+|  |
+|  |
+| --- |
+|  |
+|  |
+|  |
+| --- |
+|  |
+|  |
+|  |
+| --- |
+|  |
+|  |
+
+![](Graphic26.jpg)
+
+![](Graphic15.jpg)
+
+![](Graphic27.jpg)
+
+![](Graphic41.jpg)
+
+![](Graphic19.jpg)
+
+![](Graphic28.jpg)
+
+![](Graphic42.jpg)
+
+![](Graphic11.jpg)
+
+### Notes:
+
+<!-- Slide number: 68 -->
+# Blend360
+
+![](Graphic20.jpg)
+
+![](Graphic21.jpg)
+
+![](Graphic18.jpg)
+
+![](Graphic19.jpg)
+Logo
+
+![](Graphic30.jpg)
+
+![](Graphic24.jpg)
+
+![](Graphic27.jpg)
+
+![](Graphic33.jpg)
+Symbol
+
+### Notes:
+
+<!-- Slide number: 69 -->
+# BlendX
+
+`
+
+Logo
+
+Symbol
+Blend Academy
+
+![](Graphic41.jpg)
+
+![](Graphic42.jpg)
+
+![](Graphic43.jpg)
+
+![](Graphic44.jpg)
+
+Logo
+
+### Notes:
+
+<!-- Slide number: 70 -->
+# Employee Recognition
+
+![](Graphic25.jpg)
+
+![](Graphic26.jpg)
+
+![](Graphic27.jpg)
+
+![](Graphic28.jpg)
+
+`
+
+Logo
+Woman’s Network
+
+![](Graphic16.jpg)
+
+![](Graphic18.jpg)
+
+![](Graphic20.jpg)
+
+![](Graphic22.jpg)
+Logo
+Blend Woman’sNetwork
+Blend Woman’sNetwork
+Blend Woman’sNetwork
+Blend Woman’sNetwork
+
+### Notes:
+
+<!-- Slide number: 71 -->
+
+<!-- Slide number: 72 -->
+
+<!-- Slide number: 73 -->
+
+<!-- Slide number: 74 -->
+
+<!-- Slide number: 75 -->
+
+<!-- Slide number: 76 -->
+
+<!-- Slide number: 77 -->
+
+<!-- Slide number: 78 -->
+
+<!-- Slide number: 79 -->
+
+<!-- Slide number: 80 -->
+
+<!-- Slide number: 81 -->
+
+<!-- Slide number: 82 -->
+
+<!-- Slide number: 83 -->
+
+<!-- Slide number: 84 -->
+
+<!-- Slide number: 85 -->

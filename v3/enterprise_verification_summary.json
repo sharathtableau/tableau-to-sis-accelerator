@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-23",
+  "baseline_v3_tests": 76,
+  "final_v3_tests": 84,
+  "baseline_regression_exit": 0,
+  "final_regression_exit": 0,
+  "parent_hashes_checked": 148,
+  "parent_drift": [],
+  "states": {
+    "UNSUPPORTED": 333,
+    "UNVERIFIED": 55,
+    "INVALID": 6
+  },
+  "structural_issues": 0,
+  "cloud_transport": "MOCKED_IN_TESTS",
+  "local_cloud_workflow_chart_render": "VERIFIED_FIXTURE",
+  "live_cloud": "NOT_VERIFIED",
+  "snowflake_runtime": "NOT_VERIFIED",
+  "tableau_parity": "NOT_VERIFIED",
+  "complete_migration": "NOT_VERIFIED",
+  "partner_readiness": "NOT_ESTABLISHED",
+  "deployed": false
+}

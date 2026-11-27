@@ -16,6 +16,7 @@ entities:
     artifacts:
       - app_ecommerce.py
       - engine.py
+      - query_cache.py
       - backend.py
       - config.py
       - calc_translator.py
@@ -42,6 +43,7 @@ entities:
     artifacts:
       - app_superstore.py
       - engine.py
+      - query_cache.py
       - backend.py
       - config.py
       - calc_translator.py
@@ -92,6 +94,7 @@ entities:
       - calc_translator.py
       - codegen.py
       - engine.py
+      - query_cache.py
       - backend.py
       - config.py
       - findings.py

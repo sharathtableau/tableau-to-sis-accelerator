@@ -1,0 +1,266 @@
+{
+  "version": "coverage-diagnostics/1",
+  "assessment_records": 25,
+  "assessment_sha256": "82a085533338f30993a2c2af137aaef63695e5f50cb19509f8394495a9cc7ef1",
+  "sheet_occurrences": 394,
+  "states": {
+    "INVALID": 6,
+    "UNSUPPORTED": 339,
+    "UNVERIFIED": 49
+  },
+  "blocked_or_partial_records": 24,
+  "intake_failures": 0,
+  "structural_issue_count": 0,
+  "families": [
+    {
+      "family": "unconsumed_encoding",
+      "sheet_occurrences": 321,
+      "only_reported_family": 2,
+      "examples": [
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "info",
+          "reason": "Authored mark does not satisfy the selected renderer contract; Occurrence adapter for 'table' is not implemented; Unconsumed lod occurrence 6e764644c9c596e670570cfb"
+        },
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Revenue %",
+          "reason": "Authored mark does not satisfy the selected renderer contract; Every KPI measure must have an explicit text occurrence; Unconsumed text occurrence 497dc047f637ba14fd118b87; Unconsumed text occurrence af5b2d82a550269920fb0495; Unconsumed text occurrence c9b5da341102b198901f7ea0; Unconsumed text occurrence cdab321c6256c6bd9cc97a7c; Unresolved, generated, or table-calculation occurrences require a query plan"
+        },
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Revenue",
+          "reason": "Authored mark does not satisfy the selected renderer contract; Date-grain occurrences require a date-aware adapter; Occurrence adapter for 'dtbar' is not implemented; Unconsumed color occurrence 6a945f506aff1a3b6d7fec9a; Unconsumed cols occurrence 2769640068f6bbf1eb52dda4; Unconsumed rows occurrence 1624c6c31fa449a9a118bc66; Unresolved, generated, or table-calculation occurrences require a query plan"
+        }
+      ],
+      "file_count": 24
+    },
+    {
+      "family": "renderer_contract",
+      "sheet_occurrences": 309,
+      "only_reported_family": 16,
+      "examples": [
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "info",
+          "reason": "Authored mark does not satisfy the selected renderer contract; Occurrence adapter for 'table' is not implemented; Unconsumed lod occurrence 6e764644c9c596e670570cfb"
+        },
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Revenue %",
+          "reason": "Authored mark does not satisfy the selected renderer contract; Every KPI measure must have an explicit text occurrence; Unconsumed text occurrence 497dc047f637ba14fd118b87; Unconsumed text occurrence af5b2d82a550269920fb0495; Unconsumed text occurrence c9b5da341102b198901f7ea0; Unconsumed text occurrence cdab321c6256c6bd9cc97a7c; Unresolved, generated, or table-calculation occurrences require a query plan"
+        },
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Revenue",
+          "reason": "Authored mark does not satisfy the selected renderer contract; Date-grain occurrences require a date-aware adapter; Occurrence adapter for 'dtbar' is not implemented; Unconsumed color occurrence 6a945f506aff1a3b6d7fec9a; Unconsumed cols occurrence 2769640068f6bbf1eb52dda4; Unconsumed rows occurrence 1624c6c31fa449a9a118bc66; Unresolved, generated, or table-calculation occurrences require a query plan"
+        }
+      ],
+      "file_count": 24
+    },
+    {
+      "family": "unresolved_query_semantics",
+      "sheet_occurrences": 268,
+      "only_reported_family": 0,
+      "examples": [
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Revenue %",
+          "reason": "Authored mark does not satisfy the selected renderer contract; Every KPI measure must have an explicit text occurrence; Unconsumed text occurrence 497dc047f637ba14fd118b87; Unconsumed text occurrence af5b2d82a550269920fb0495; Unconsumed text occurrence c9b5da341102b198901f7ea0; Unconsumed text occurrence cdab321c6256c6bd9cc97a7c; Unresolved, generated, or table-calculation occurrences require a query plan"
+        },
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Revenue",
+          "reason": "Authored mark does not satisfy the selected renderer contract; Date-grain occurrences require a date-aware adapter; Occurrence adapter for 'dtbar' is not implemented; Unconsumed color occurrence 6a945f506aff1a3b6d7fec9a; Unconsumed cols occurrence 2769640068f6bbf1eb52dda4; Unconsumed rows occurrence 1624c6c31fa449a9a118bc66; Unresolved, generated, or table-calculation occurrences require a query plan"
+        },
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Quantity %",
+          "reason": "Authored mark does not satisfy the selected renderer contract; Every KPI measure must have an explicit text occurrence; Unconsumed text occurrence 24c7c65d206b80942cd03619; Unconsumed text occurrence 5e43e0c93f181df74d68a605; Unconsumed text occurrence 7e6e9d2e2d154a8184845391; Unconsumed text occurrence d29e91853c178fec5594b3fe; Unresolved, generated, or table-calculation occurrences require a query plan"
+        }
+      ],
+      "file_count": 17
+    },
+    {
+      "family": "filter_sort_style_or_view_settings",
+      "sheet_occurrences": 155,
+      "only_reported_family": 0,
+      "examples": [
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Revenue by Channels",
+          "reason": "Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Occurrence 0af7ac51f5982780ef951215 requires field/calculation/date planning; Occurrence 5afe6ec8763b11165849f485 requires field/calculation/date planning; Occurrence 8b92e7ebaf2b15784b69a21e requires field/calculation/date planning; Occurrence ed0520fb9cd70de0c9f79d1f requires field/calculation/date planning; Pane mark requires another renderer contract; Pane requires exactly one discrete grouping field and one continuous aggregate; Unplanned cols occurrence 0af7ac51f5982780ef951215"
+        },
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Revenue by Pay. method",
+          "reason": "Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Occurrence 0af7ac51f5982780ef951215 requires field/calculation/date planning; Occurrence 5afe6ec8763b11165849f485 requires field/calculation/date planning; Occurrence 8b92e7ebaf2b15784b69a21e requires field/calculation/date planning; Occurrence ed0520fb9cd70de0c9f79d1f requires field/calculation/date planning; Pane mark requires another renderer contract; Pane requires exactly one discrete grouping field and one continuous aggregate; Unplanned cols occurrence 0af7ac51f5982780ef951215"
+        },
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Revenue by Country",
+          "reason": "Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Occurrence 0af7ac51f5982780ef951215 requires field/calculation/date planning; Occurrence 5afe6ec8763b11165849f485 requires field/calculation/date planning; Occurrence 8b92e7ebaf2b15784b69a21e requires field/calculation/date planning; Occurrence ed0520fb9cd70de0c9f79d1f requires field/calculation/date planning; Pane mark requires another renderer contract; Pane requires exactly one discrete grouping field and one continuous aggregate; Unplanned cols occurrence 0af7ac51f5982780ef951215"
+        }
+      ],
+      "file_count": 16
+    },
+    {
+      "family": "pane_and_shelf_plan",
+      "sheet_occurrences": 138,
+      "only_reported_family": 0,
+      "examples": [
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Revenue by Channels",
+          "reason": "Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Occurrence 0af7ac51f5982780ef951215 requires field/calculation/date planning; Occurrence 5afe6ec8763b11165849f485 requires field/calculation/date planning; Occurrence 8b92e7ebaf2b15784b69a21e requires field/calculation/date planning; Occurrence ed0520fb9cd70de0c9f79d1f requires field/calculation/date planning; Pane mark requires another renderer contract; Pane requires exactly one discrete grouping field and one continuous aggregate; Unplanned cols occurrence 0af7ac51f5982780ef951215"
+        },
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Revenue by Pay. method",
+          "reason": "Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Occurrence 0af7ac51f5982780ef951215 requires field/calculation/date planning; Occurrence 5afe6ec8763b11165849f485 requires field/calculation/date planning; Occurrence 8b92e7ebaf2b15784b69a21e requires field/calculation/date planning; Occurrence ed0520fb9cd70de0c9f79d1f requires field/calculation/date planning; Pane mark requires another renderer contract; Pane requires exactly one discrete grouping field and one continuous aggregate; Unplanned cols occurrence 0af7ac51f5982780ef951215"
+        },
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Revenue by Country",
+          "reason": "Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Occurrence 0af7ac51f5982780ef951215 requires field/calculation/date planning; Occurrence 5afe6ec8763b11165849f485 requires field/calculation/date planning; Occurrence 8b92e7ebaf2b15784b69a21e requires field/calculation/date planning; Occurrence ed0520fb9cd70de0c9f79d1f requires field/calculation/date planning; Pane mark requires another renderer contract; Pane requires exactly one discrete grouping field and one continuous aggregate; Unplanned cols occurrence 0af7ac51f5982780ef951215"
+        }
+      ],
+      "file_count": 14
+    },
+    {
+      "family": "relationships_and_sources",
+      "sheet_occurrences": 121,
+      "only_reported_family": 0,
+      "examples": [
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Revenue by Channels",
+          "reason": "Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Occurrence 0af7ac51f5982780ef951215 requires field/calculation/date planning; Occurrence 5afe6ec8763b11165849f485 requires field/calculation/date planning; Occurrence 8b92e7ebaf2b15784b69a21e requires field/calculation/date planning; Occurrence ed0520fb9cd70de0c9f79d1f requires field/calculation/date planning; Pane mark requires another renderer contract; Pane requires exactly one discrete grouping field and one continuous aggregate; Unplanned cols occurrence 0af7ac51f5982780ef951215"
+        },
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Revenue by Pay. method",
+          "reason": "Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Occurrence 0af7ac51f5982780ef951215 requires field/calculation/date planning; Occurrence 5afe6ec8763b11165849f485 requires field/calculation/date planning; Occurrence 8b92e7ebaf2b15784b69a21e requires field/calculation/date planning; Occurrence ed0520fb9cd70de0c9f79d1f requires field/calculation/date planning; Pane mark requires another renderer contract; Pane requires exactly one discrete grouping field and one continuous aggregate; Unplanned cols occurrence 0af7ac51f5982780ef951215"
+        },
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Revenue by Country",
+          "reason": "Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Occurrence 0af7ac51f5982780ef951215 requires field/calculation/date planning; Occurrence 5afe6ec8763b11165849f485 requires field/calculation/date planning; Occurrence 8b92e7ebaf2b15784b69a21e requires field/calculation/date planning; Occurrence ed0520fb9cd70de0c9f79d1f requires field/calculation/date planning; Pane mark requires another renderer contract; Pane requires exactly one discrete grouping field and one continuous aggregate; Unplanned cols occurrence 0af7ac51f5982780ef951215"
+        }
+      ],
+      "file_count": 6
+    },
+    {
+      "family": "unclassified",
+      "sheet_occurrences": 67,
+      "only_reported_family": 0,
+      "examples": [
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Gross vs. Net",
+          "reason": "Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Every independent column axis must have exactly one pane; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Pane axes must select a unique independent column; indexed/overlaid axes are unsupported; Authored filters/sorts/fiscal or style/axis semantics require a plan; Datasource relationships or filters need a query planner; Every independent column axis must have exactly one pane; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Occurrence 1045a61bd64222dda026af74 requires field/calculation/date planning; Occurrence 2769640068f6bbf1eb52dda4 requires field/calculation/date planning; Occurrence 4defb9459b3215305635b88a requires field/calculation/date planning; Occurrence 5902a396c8ccc08ffab3d9b3 requires fie"
+        },
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Revenue vs. Customers",
+          "reason": "Authored filters/sorts/fiscal or style/axis semantics require a plan; Axis selector on pane:1 is missing or ambiguous; Axis selector on pane:2 is missing or ambiguous; Datasource relationships or filters need a query planner; Every independent column axis must have exactly one pane; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Inheritance for 'lod' requires a channel policy; Pane axes must select a unique independent column; indexed/overlaid axes are unsupported; Authored filters/sorts/fiscal or style/axis semantics require a plan; Axis selector on pane:1 is missing or ambiguous; Axis selector on pane:2 is missing or ambiguous; Datasource relationships or filters need a query planner; Every independent column axis must have exactly one pane; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Inheritance for 'lod' requires a chan"
+        },
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Order vs. Invoice",
+          "reason": "Authored filters/sorts/fiscal or style/axis semantics require a plan; Axis selector on pane:1 is missing or ambiguous; Axis selector on pane:2 is missing or ambiguous; Datasource relationships or filters need a query planner; Every independent column axis must have exactly one pane; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Pane axes must select a unique independent column; indexed/overlaid axes are unsupported; Authored filters/sorts/fiscal or style/axis semantics require a plan; Axis selector on pane:1 is missing or ambiguous; Axis selector on pane:2 is missing or ambiguous; Datasource relationships or filters need a query planner; Every independent column axis must have exactly one pane; Exactly one physical table relation is required; no relationship/join inference; Explicit view aggregation settings require a query contract; Independent axes require distinct slash-separated column pills and one row dimension; Occurrence 2ed044d8713b5d551912fa9b requires field/calculation/date planning; Occurren"
+        }
+      ],
+      "file_count": 8
+    },
+    {
+      "family": "date_grain",
+      "sheet_occurrences": 58,
+      "only_reported_family": 0,
+      "examples": [
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Revenue",
+          "reason": "Authored mark does not satisfy the selected renderer contract; Date-grain occurrences require a date-aware adapter; Occurrence adapter for 'dtbar' is not implemented; Unconsumed color occurrence 6a945f506aff1a3b6d7fec9a; Unconsumed cols occurrence 2769640068f6bbf1eb52dda4; Unconsumed rows occurrence 1624c6c31fa449a9a118bc66; Unresolved, generated, or table-calculation occurrences require a query plan"
+        },
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "Quantity",
+          "reason": "Authored mark does not satisfy the selected renderer contract; Date-grain occurrences require a date-aware adapter; Occurrence adapter for 'dtbar' is not implemented; Unconsumed color occurrence b3c0f76daac0d8072ed238f6; Unconsumed cols occurrence 2769640068f6bbf1eb52dda4; Unconsumed rows occurrence 4b9a4c7012177173dcedfeee; Unresolved, generated, or table-calculation occurrences require a query plan"
+        },
+        {
+          "file": "_ecom.twb",
+          "dashboard": "Dashboard",
+          "sheet": "AOV",
+          "reason": "Authored mark does not satisfy the selected renderer contract; Date-grain occurrences require a date-aware adapter; Occurrence adapter for 'dtbar' is not implemented; Unconsumed color occurrence 3f1b8743fdc84fa300147844; Unconsumed cols occurrence 2769640068f6bbf1eb52dda4; Unconsumed rows occurrence bbc40f27ee63a73927a24a53; Unresolved, generated, or table-calculation occurrences require a query plan"
+        }
+      ],
+      "file_count": 19
+    },
+    {
+      "family": "field_or_calculation_failure",
+      "sheet_occurrences": 6,
+      "only_reported_family": 6,
+      "examples": [
+        {
+          "file": "_ss2024.twb",
+          "dashboard": "Performance",
+          "sheet": "Performance",
+          "reason": "Untranslated field dependencies: Sales above Target?"
+        },
+        {
+          "file": "Superstore.twb",
+          "dashboard": "Performance",
+          "sheet": "Performance",
+          "reason": "Untranslated field dependencies: Sales above Target?"
+        },
+        {
+          "file": "Workbooks\\Globalsalesdashboard.twbx",
+          "dashboard": "View2",
+          "sheet": "Details Standard Class",
+          "reason": "Untranslated field dependencies: AVG_SALES_REGION"
+        }
+      ],
+      "file_count": 6
+    }
+  ],
+  "release_readiness": "NOT_ESTABLISHED",
+  "verification": {
+    "numeric": "NOT_EVALUATED",
+    "visual": "NOT_EVALUATED",
+    "interaction": "NOT_EVALUATED",
+    "snowflake_runtime": "NOT_EVALUATED",
+    "held_out_workbooks": "NOT_EVALUATED"
+  },
+  "limitations": [
+    "Counts are dashboard sheet occurrences, not unique independent workbook constructs.",
+    "Related/versioned files and sheets repeated across dashboards remain in the counts.",
+    "Families overlap; their counts must not be summed as distinct sheets.",
+    "Combined refusal messages cannot establish which single construct caused the failure.",
+    "Only-reported-family counts are not a prediction of sheets unlocked by a fix.",
+    "Assessment snapshots do not establish execution, parity or partner-demo readiness."
+  ]
+}

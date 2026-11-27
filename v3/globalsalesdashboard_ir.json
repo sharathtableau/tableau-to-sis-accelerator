@@ -1,0 +1,1636 @@
+{
+  "source_file": "C:\\Users\\SHARAT~1\\AppData\\Local\\Temp\\twbconv_8n9_b3ki\\Globalsalesdashboard.twbx",
+  "calcs": {
+    "MTD_Sales": {
+      "sql": "'MTD_Sales'",
+      "agg_ready": false
+    },
+    "MTD Sales": {
+      "sql": "SUM(\nCASE WHEN DATE_TRUNC('month', ORDER_DATE) = DATE_TRUNC('month', ((SELECT max(ORDER_DATE) FROM __TBL__)))\nAND ORDER_DATE <= ((SELECT max(ORDER_DATE) FROM __TBL__))\nTHEN SALES\nEND\n)",
+      "agg_ready": true
+    },
+    "SUM_OF_SALES": {
+      "sql": "sum(SALES)",
+      "agg_ready": true
+    },
+    "Category is Furniture": {
+      "sql": "CASE CATEGORY \nwhen 'Furniture'\nTHEN 'true'\nELSE 'false'\nEND",
+      "agg_ready": false
+    },
+    "YTD SALES": {
+      "sql": "SUM(\nCASE WHEN YEAR(ORDER_DATE) = YEAR(((SELECT max(ORDER_DATE) FROM __TBL__)))\nAND ORDER_DATE <= ((SELECT max(ORDER_DATE) FROM __TBL__))\nTHEN SALES\nEND\n)",
+      "agg_ready": true
+    },
+    "Max Order Date": {
+      "sql": "(SELECT max(ORDER_DATE) FROM __TBL__)",
+      "agg_ready": false
+    },
+    "% Diff": {
+      "sql": "(SUM(SALES)-SUM(NULL))/ NULLIF(SUM(NULL), 0)",
+      "agg_ready": true
+    },
+    "Profit_Ratio": {
+      "sql": "SUM(PROFIT)/ NULLIF(SUM(SALES), 0)",
+      "agg_ready": true
+    },
+    "Calculation_1127588760251781120": {
+      "sql": "'MTD_Sales'",
+      "agg_ready": false
+    },
+    "Calculation_1976235879244517376": {
+      "sql": "SUM(\nCASE WHEN DATE_TRUNC('month', ORDER_DATE) = DATE_TRUNC('month', ((SELECT max(ORDER_DATE) FROM __TBL__)))\nAND ORDER_DATE <= ((SELECT max(ORDER_DATE) FROM __TBL__))\nTHEN SALES\nEND\n)",
+      "agg_ready": true
+    },
+    "Calculation_2048574920288067584": {
+      "sql": "sum(SALES)",
+      "agg_ready": true
+    },
+    "Calculation_3033455863480356865": {
+      "sql": "CASE CATEGORY \nwhen 'Furniture'\nTHEN 'true'\nELSE 'false'\nEND",
+      "agg_ready": false
+    },
+    "Calculation_455708047526150144": {
+      "sql": "SUM(\nCASE WHEN YEAR(ORDER_DATE) = YEAR(((SELECT max(ORDER_DATE) FROM __TBL__)))\nAND ORDER_DATE <= ((SELECT max(ORDER_DATE) FROM __TBL__))\nTHEN SALES\nEND\n)",
+      "agg_ready": true
+    },
+    "Calculation_455708047526719489": {
+      "sql": "(SELECT max(ORDER_DATE) FROM __TBL__)",
+      "agg_ready": false
+    },
+    "Calculation_455708047529676803": {
+      "sql": "(SUM(SALES)-SUM(NULL))/ NULLIF(SUM(NULL), 0)",
+      "agg_ready": true
+    },
+    "Calculation_455708047531032580": {
+      "sql": "SUM(PROFIT)/ NULLIF(SUM(SALES), 0)",
+      "agg_ready": true
+    },
+    "STATE_GRP": {
+      "sql": "CASE WHEN STATE IN ('Illinois', 'Indiana') THEN 'Illinois & Indiana' ELSE STATE END",
+      "agg_ready": false
+    },
+    "STATE_SET": {
+      "sql": "CASE WHEN sum(SALES) OVER (PARTITION BY STATE)>50000 THEN 'In' ELSE 'Out' END",
+      "agg_ready": false,
+      "set_level": "STATE"
+    },
+    "State Set": {
+      "sql": "CASE WHEN sum(SALES) OVER (PARTITION BY STATE)>50000 THEN 'In' ELSE 'Out' END",
+      "agg_ready": false,
+      "set_level": "STATE"
+    }
+  },
+  "calc_drops": {
+    "AVG_SALES_REGION": "{ FIXED [REGION]:AVG(({ FIXED [REGION],[SUB_CATEGORY]: SUM([SALES])}))}"
+  },
+  "datasources": [
+    "CALLS",
+    "SALES",
+    "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)"
+  ],
+  "params": {},
+  "param_domains": {},
+  "stories": [],
+  "datasource_notes": [],
+  "hierarchies": {
+    "COUNTRY, STATE, CITY": [
+      "Country",
+      "STATE",
+      "City"
+    ]
+  },
+  "colmap": {
+    "Category": "CATEGORY",
+    "City": "CITY",
+    "Country": "COUNTRY",
+    "Customer Id": "CUSTOMER_ID",
+    "Customer Name": "CUSTOMER_NAME",
+    "MTD_Sales": "Calculation_1127588760251781120",
+    "MTD Sales": "Calculation_1976235879244517376",
+    "SUM_OF_SALES": "Calculation_2048574920288067584",
+    "Category is Furniture": "Calculation_3033455863480356865",
+    "YTD SALES": "Calculation_455708047526150144",
+    "Max Order Date": "Calculation_455708047526719489",
+    "AVG_SALES_REGION": "Calculation_455708047527854082",
+    "% Diff": "Calculation_455708047529676803",
+    "Profit_Ratio": "Calculation_455708047531032580",
+    "Discount": "DISCOUNT",
+    "Order Date": "ORDER_DATE",
+    "Order Id (Sample Super Store Returns)": "ORDER_ID (SAMPLE_SUPER_STORE_RETURNS)",
+    "Order Id": "ORDER_ID",
+    "Postal Code": "POSTAL_CODE",
+    "Product Id": "PRODUCT_ID",
+    "Product Name": "PRODUCT_NAME",
+    "Region (Sample Super Store People)": "REGION (SAMPLE_SUPER_STORE_PEOPLE)",
+    "Regional Manager": "REGIONAL_MANAGER",
+    "Returned": "RETURNED",
+    "Row Id": "ROW_ID",
+    "Segment": "SEGMENT",
+    "Ship Date": "SHIP_DATE",
+    "Ship Mode": "SHIP_MODE",
+    "Sub Category": "SUB_CATEGORY",
+    "STATE_GRP": "State (group)",
+    "CALLS ": "Calls",
+    "Customer Type": "CustomerType",
+    "Delivery Date": "DeliveryDate",
+    "Order ID": "OrderID",
+    "Payment Method": "PaymentMethod",
+    "Region Manager": "RegionManager",
+    "REGION": "Region",
+    "SALES ": "Sales",
+    "Shipping Cost": "ShippingCost",
+    "Store Location": "StoreLocation",
+    "Total Price": "TotalPrice",
+    "Unit Price": "UnitPrice"
+  },
+  "color_maps": {
+    "REGION": {
+      "Central": "#118dff",
+      "East": "#12239e",
+      "West": "#6b007b",
+      "South": "#e66c37"
+    },
+    "Segment": {
+      "Corporate": "#00007f",
+      "Consumer": "#00aaff",
+      "Home Office": "#f28e2b"
+    }
+  },
+  "palette_refs": {},
+  "aliases": {},
+  "dashboards": [
+    {
+      "name": "View1",
+      "title": "View1",
+      "filters": [
+        {
+          "caption": "Segment",
+          "datepart": null,
+          "kind": "categorical"
+        },
+        {
+          "caption": "Category",
+          "datepart": null,
+          "kind": "categorical"
+        },
+        {
+          "caption": "Sub Category",
+          "datepart": null,
+          "kind": "categorical"
+        }
+      ],
+      "sheet_filters": [
+        {
+          "caption": "Category",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Segment",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Sub Category",
+          "kind": "categorical"
+        }
+      ],
+      "params": [],
+      "sheets": [
+        {
+          "name": "Sales by Category",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "bar",
+          "orient": "h",
+          "y": {
+            "caption": "Category"
+          },
+          "x": {
+            "caption": "SALES",
+            "agg": "sum"
+          },
+          "color": null,
+          "labels": true,
+          "mark_color": "#118dff",
+          "datasource": "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)",
+          "sort": {
+            "field": "SALES",
+            "agg": "sum",
+            "dir": "desc",
+            "on": "Category",
+            "shelf": "rows"
+          },
+          "applied_filters": [
+            {
+              "caption": "Category",
+              "kind": "in",
+              "values": [
+                "Furniture",
+                "Office Supplies",
+                "Technology"
+              ]
+            },
+            {
+              "caption": "Segment",
+              "kind": "in",
+              "values": [
+                "Consumer",
+                "Corporate",
+                "Home Office"
+              ]
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "in",
+              "values": [
+                "Accessories",
+                "Appliances",
+                "Art",
+                "Binders",
+                "Bookcases",
+                "Chairs",
+                "Copiers",
+                "Envelopes",
+                "Fasteners",
+                "Furnishings",
+                "Labels",
+                "Machines",
+                "Paper",
+                "Phones",
+                "Storage",
+                "Supplies",
+                "Tables"
+              ]
+            }
+          ],
+          "text_fields": [
+            "SALES"
+          ],
+          "geom": {
+            "x": 23060,
+            "y": 22396,
+            "w": 37775,
+            "h": 36588,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Sum of SALES",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "kpi",
+          "measures": [
+            {
+              "caption": "SALES",
+              "agg": "sum",
+              "fmt": "num2",
+              "label": "SALES"
+            }
+          ],
+          "datasource": "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)",
+          "applied_filters": [
+            {
+              "caption": "Category",
+              "kind": "in",
+              "values": [
+                "Furniture",
+                "Office Supplies",
+                "Technology"
+              ]
+            },
+            {
+              "caption": "Segment",
+              "kind": "in",
+              "values": [
+                "Consumer",
+                "Corporate",
+                "Home Office"
+              ]
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "in",
+              "values": [
+                "Accessories",
+                "Appliances",
+                "Art",
+                "Binders",
+                "Bookcases",
+                "Chairs",
+                "Copiers",
+                "Envelopes",
+                "Fasteners",
+                "Furnishings",
+                "Labels",
+                "Machines",
+                "Paper",
+                "Phones",
+                "Storage",
+                "Supplies",
+                "Tables"
+              ]
+            }
+          ],
+          "text_fields": [
+            "SALES"
+          ],
+          "geom": {
+            "x": 1245,
+            "y": 22005,
+            "w": 20863,
+            "h": 25261,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Sum of PROFIT",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "kpi",
+          "measures": [
+            {
+              "caption": "PROFIT",
+              "agg": "sum",
+              "fmt": "num2",
+              "label": "PROFIT"
+            }
+          ],
+          "datasource": "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)",
+          "applied_filters": [
+            {
+              "caption": "Category",
+              "kind": "in",
+              "values": [
+                "Furniture",
+                "Office Supplies",
+                "Technology"
+              ]
+            },
+            {
+              "caption": "Segment",
+              "kind": "in",
+              "values": [
+                "Consumer",
+                "Corporate",
+                "Home Office"
+              ]
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "in",
+              "values": [
+                "Accessories",
+                "Appliances",
+                "Art",
+                "Binders",
+                "Bookcases",
+                "Chairs",
+                "Copiers",
+                "Envelopes",
+                "Fasteners",
+                "Furnishings",
+                "Labels",
+                "Machines",
+                "Paper",
+                "Phones",
+                "Storage",
+                "Supplies",
+                "Tables"
+              ]
+            }
+          ],
+          "text_fields": [
+            "PROFIT"
+          ],
+          "geom": {
+            "x": 1245,
+            "y": 47266,
+            "w": 20863,
+            "h": 25260,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Sum of QUANTITY",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "kpi",
+          "measures": [
+            {
+              "caption": "QUANTITY",
+              "agg": "sum",
+              "fmt": "num0",
+              "label": "QUANTITY"
+            }
+          ],
+          "datasource": "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)",
+          "applied_filters": [
+            {
+              "caption": "Category",
+              "kind": "in",
+              "values": [
+                "Furniture",
+                "Office Supplies",
+                "Technology"
+              ]
+            },
+            {
+              "caption": "Segment",
+              "kind": "in",
+              "values": [
+                "Consumer",
+                "Corporate",
+                "Home Office"
+              ]
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "in",
+              "values": [
+                "Accessories",
+                "Appliances",
+                "Art",
+                "Binders",
+                "Bookcases",
+                "Chairs",
+                "Copiers",
+                "Envelopes",
+                "Fasteners",
+                "Furnishings",
+                "Labels",
+                "Machines",
+                "Paper",
+                "Phones",
+                "Storage",
+                "Supplies",
+                "Tables"
+              ]
+            }
+          ],
+          "text_fields": [
+            "QUANTITY"
+          ],
+          "geom": {
+            "x": 1245,
+            "y": 72526,
+            "w": 20863,
+            "h": 25260,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Profit Ratio by Segment",
+          "mark": "Bar",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "bar",
+          "orient": "h",
+          "y": {
+            "caption": "Segment"
+          },
+          "x": {
+            "caption": "Profit_Ratio",
+            "agg": "usr"
+          },
+          "color": null,
+          "labels": true,
+          "mark_color": "#a27095",
+          "datasource": "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)",
+          "applied_filters": [
+            {
+              "caption": "Category",
+              "kind": "in",
+              "values": [
+                "Furniture",
+                "Office Supplies",
+                "Technology"
+              ]
+            },
+            {
+              "caption": "Segment",
+              "kind": "in",
+              "values": [
+                "Consumer",
+                "Corporate",
+                "Home Office"
+              ]
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "in",
+              "values": [
+                "Accessories",
+                "Appliances",
+                "Art",
+                "Binders",
+                "Bookcases",
+                "Chairs",
+                "Copiers",
+                "Envelopes",
+                "Fasteners",
+                "Furnishings",
+                "Labels",
+                "Machines",
+                "Paper",
+                "Phones",
+                "Storage",
+                "Supplies",
+                "Tables"
+              ]
+            }
+          ],
+          "text_fields": [
+            "Profit_Ratio"
+          ],
+          "geom": {
+            "x": 60835,
+            "y": 22396,
+            "w": 37701,
+            "h": 36588,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Sales by Region",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "bar",
+          "orient": "v",
+          "x": {
+            "caption": "REGION"
+          },
+          "y": {
+            "caption": "SALES",
+            "agg": "sum"
+          },
+          "color": null,
+          "labels": true,
+          "mark_color": "#f28e2b",
+          "datasource": "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)",
+          "sort": {
+            "field": "SALES",
+            "agg": "sum",
+            "dir": "desc",
+            "on": "REGION",
+            "shelf": "columns"
+          },
+          "applied_filters": [
+            {
+              "caption": "Category",
+              "kind": "in",
+              "values": [
+                "Furniture",
+                "Office Supplies",
+                "Technology"
+              ]
+            },
+            {
+              "caption": "Segment",
+              "kind": "in",
+              "values": [
+                "Consumer",
+                "Corporate",
+                "Home Office"
+              ]
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "in",
+              "values": [
+                "Accessories",
+                "Appliances",
+                "Art",
+                "Binders",
+                "Bookcases",
+                "Chairs",
+                "Copiers",
+                "Envelopes",
+                "Fasteners",
+                "Furnishings",
+                "Labels",
+                "Machines",
+                "Paper",
+                "Phones",
+                "Storage",
+                "Supplies",
+                "Tables"
+              ]
+            }
+          ],
+          "text_fields": [
+            "SALES"
+          ],
+          "geom": {
+            "x": 22768,
+            "y": 59507,
+            "w": 76058,
+            "h": 38409,
+            "show_title": true
+          }
+        }
+      ],
+      "device_layouts": [
+        "Phone"
+      ],
+      "layout": {
+        "dir": "horz",
+        "bg": null,
+        "w": 98828,
+        "h": 78124,
+        "children": [
+          {
+            "dir": "vert",
+            "bg": null,
+            "w": 20864,
+            "h": 75780,
+            "children": [
+              {
+                "sheet": "Sum of SALES",
+                "w": 20863,
+                "h": 25261
+              },
+              {
+                "sheet": "Sum of PROFIT",
+                "w": 20863,
+                "h": 25260
+              },
+              {
+                "sheet": "Sum of QUANTITY",
+                "w": 20863,
+                "h": 25260
+              }
+            ]
+          },
+          {
+            "dir": "vert",
+            "bg": null,
+            "w": 76644,
+            "h": 77082,
+            "children": [
+              {
+                "dir": "horz",
+                "bg": null,
+                "w": 76058,
+                "h": 37631,
+                "children": [
+                  {
+                    "sheet": "Sales by Category",
+                    "w": 37775,
+                    "h": 36588
+                  },
+                  {
+                    "sheet": "Profit Ratio by Segment",
+                    "w": 37701,
+                    "h": 36588
+                  }
+                ]
+              },
+              {
+                "sheet": "Sales by Region",
+                "w": 76058,
+                "h": 38409
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "View2",
+      "title": "View2",
+      "filters": [
+        {
+          "caption": "Segment",
+          "datepart": null,
+          "kind": "categorical"
+        },
+        {
+          "caption": "Category",
+          "datepart": null,
+          "kind": "categorical"
+        },
+        {
+          "caption": "Sub Category",
+          "datepart": null,
+          "kind": "categorical"
+        }
+      ],
+      "sheet_filters": [
+        {
+          "caption": "Category",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Segment",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Sub Category",
+          "kind": "categorical"
+        },
+        {
+          "caption": "Ship Mode",
+          "kind": "categorical"
+        }
+      ],
+      "params": [],
+      "sheets": [
+        {
+          "name": "Sum of SALES",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "kpi",
+          "measures": [
+            {
+              "caption": "SALES",
+              "agg": "sum",
+              "fmt": "num2",
+              "label": "SALES"
+            }
+          ],
+          "datasource": "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)",
+          "applied_filters": [
+            {
+              "caption": "Category",
+              "kind": "in",
+              "values": [
+                "Furniture",
+                "Office Supplies",
+                "Technology"
+              ]
+            },
+            {
+              "caption": "Segment",
+              "kind": "in",
+              "values": [
+                "Consumer",
+                "Corporate",
+                "Home Office"
+              ]
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "in",
+              "values": [
+                "Accessories",
+                "Appliances",
+                "Art",
+                "Binders",
+                "Bookcases",
+                "Chairs",
+                "Copiers",
+                "Envelopes",
+                "Fasteners",
+                "Furnishings",
+                "Labels",
+                "Machines",
+                "Paper",
+                "Phones",
+                "Storage",
+                "Supplies",
+                "Tables"
+              ]
+            }
+          ],
+          "text_fields": [
+            "SALES"
+          ],
+          "geom": {
+            "x": 40264,
+            "y": 21354,
+            "w": 19619,
+            "h": 11979,
+            "show_title": true
+          }
+        },
+        {
+          "name": "MTD Sales",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "kpi",
+          "measures": [
+            {
+              "caption": "MTD Sales",
+              "agg": "usr",
+              "fmt": "num2",
+              "label": "MTD Sales"
+            }
+          ],
+          "datasource": "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)",
+          "applied_filters": [
+            {
+              "caption": "Category",
+              "kind": "in",
+              "values": [
+                "Furniture",
+                "Office Supplies",
+                "Technology"
+              ]
+            },
+            {
+              "caption": "Segment",
+              "kind": "in",
+              "values": [
+                "Consumer",
+                "Corporate",
+                "Home Office"
+              ]
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "in",
+              "values": [
+                "Accessories",
+                "Appliances",
+                "Art",
+                "Binders",
+                "Bookcases",
+                "Chairs",
+                "Copiers",
+                "Envelopes",
+                "Fasteners",
+                "Furnishings",
+                "Labels",
+                "Machines",
+                "Paper",
+                "Phones",
+                "Storage",
+                "Supplies",
+                "Tables"
+              ]
+            }
+          ],
+          "text_fields": [
+            "MTD Sales"
+          ],
+          "geom": {
+            "x": 878,
+            "y": 21354,
+            "w": 19693,
+            "h": 11979,
+            "show_title": true
+          }
+        },
+        {
+          "name": "YTD SALES",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "kpi",
+          "measures": [
+            {
+              "caption": "YTD SALES",
+              "agg": "usr",
+              "fmt": "num2",
+              "label": "YTD SALES"
+            }
+          ],
+          "datasource": "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)",
+          "applied_filters": [
+            {
+              "caption": "Category",
+              "kind": "in",
+              "values": [
+                "Furniture",
+                "Office Supplies",
+                "Technology"
+              ]
+            },
+            {
+              "caption": "Segment",
+              "kind": "in",
+              "values": [
+                "Consumer",
+                "Corporate",
+                "Home Office"
+              ]
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "in",
+              "values": [
+                "Accessories",
+                "Appliances",
+                "Art",
+                "Binders",
+                "Bookcases",
+                "Chairs",
+                "Copiers",
+                "Envelopes",
+                "Fasteners",
+                "Furnishings",
+                "Labels",
+                "Machines",
+                "Paper",
+                "Phones",
+                "Storage",
+                "Supplies",
+                "Tables"
+              ]
+            }
+          ],
+          "text_fields": [
+            "YTD SALES"
+          ],
+          "geom": {
+            "x": 20571,
+            "y": 21354,
+            "w": 19693,
+            "h": 11979,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Sum of PROFIT",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "kpi",
+          "measures": [
+            {
+              "caption": "PROFIT",
+              "agg": "sum",
+              "fmt": "num2",
+              "label": "PROFIT"
+            }
+          ],
+          "datasource": "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)",
+          "applied_filters": [
+            {
+              "caption": "Category",
+              "kind": "in",
+              "values": [
+                "Furniture",
+                "Office Supplies",
+                "Technology"
+              ]
+            },
+            {
+              "caption": "Segment",
+              "kind": "in",
+              "values": [
+                "Consumer",
+                "Corporate",
+                "Home Office"
+              ]
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "in",
+              "values": [
+                "Accessories",
+                "Appliances",
+                "Art",
+                "Binders",
+                "Bookcases",
+                "Chairs",
+                "Copiers",
+                "Envelopes",
+                "Fasteners",
+                "Furnishings",
+                "Labels",
+                "Machines",
+                "Paper",
+                "Phones",
+                "Storage",
+                "Supplies",
+                "Tables"
+              ]
+            }
+          ],
+          "text_fields": [
+            "PROFIT"
+          ],
+          "geom": {
+            "x": 59883,
+            "y": 21354,
+            "w": 19619,
+            "h": 11979,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Sum of QUANTITY",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "kpi",
+          "measures": [
+            {
+              "caption": "QUANTITY",
+              "agg": "sum",
+              "fmt": "num0",
+              "label": "QUANTITY"
+            }
+          ],
+          "datasource": "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)",
+          "applied_filters": [
+            {
+              "caption": "Category",
+              "kind": "in",
+              "values": [
+                "Furniture",
+                "Office Supplies",
+                "Technology"
+              ]
+            },
+            {
+              "caption": "Segment",
+              "kind": "in",
+              "values": [
+                "Consumer",
+                "Corporate",
+                "Home Office"
+              ]
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "in",
+              "values": [
+                "Accessories",
+                "Appliances",
+                "Art",
+                "Binders",
+                "Bookcases",
+                "Chairs",
+                "Copiers",
+                "Envelopes",
+                "Fasteners",
+                "Furnishings",
+                "Labels",
+                "Machines",
+                "Paper",
+                "Phones",
+                "Storage",
+                "Supplies",
+                "Tables"
+              ]
+            }
+          ],
+          "text_fields": [
+            "QUANTITY"
+          ],
+          "geom": {
+            "x": 79502,
+            "y": 21354,
+            "w": 19620,
+            "h": 11979,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Sales by Category Region Split",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "bar",
+          "orient": "h",
+          "y": {
+            "caption": "Category"
+          },
+          "x": {
+            "caption": "SALES",
+            "agg": "sum"
+          },
+          "color": {
+            "caption": "REGION",
+            "kind": "dimension",
+            "agg": "none"
+          },
+          "labels": true,
+          "datasource": "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)",
+          "applied_filters": [
+            {
+              "caption": "Category",
+              "kind": "in",
+              "values": [
+                "Furniture",
+                "Office Supplies",
+                "Technology"
+              ]
+            },
+            {
+              "caption": "Segment",
+              "kind": "in",
+              "values": [
+                "Consumer",
+                "Corporate",
+                "Home Office"
+              ]
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "in",
+              "values": [
+                "Accessories",
+                "Appliances",
+                "Art",
+                "Binders",
+                "Bookcases",
+                "Chairs",
+                "Copiers",
+                "Envelopes",
+                "Fasteners",
+                "Furnishings",
+                "Labels",
+                "Machines",
+                "Paper",
+                "Phones",
+                "Storage",
+                "Supplies",
+                "Tables"
+              ]
+            }
+          ],
+          "manual_sort": {
+            "on": "Category",
+            "order": [
+              "Technology",
+              "Furniture",
+              "Office Supplies"
+            ]
+          },
+          "text_fields": [
+            "SALES"
+          ],
+          "geom": {
+            "x": 878,
+            "y": 34375,
+            "w": 49122,
+            "h": 29948,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Profit by Segment",
+          "mark": "Pie",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "pie",
+          "measure": {
+            "caption": "PROFIT",
+            "agg": "sum"
+          },
+          "segment": "Segment",
+          "labels": true,
+          "datasource": "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)",
+          "applied_filters": [
+            {
+              "caption": "Category",
+              "kind": "in",
+              "values": [
+                "Furniture",
+                "Office Supplies",
+                "Technology"
+              ]
+            },
+            {
+              "caption": "Segment",
+              "kind": "in",
+              "values": [
+                "Consumer",
+                "Corporate",
+                "Home Office"
+              ]
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "in",
+              "values": [
+                "Accessories",
+                "Appliances",
+                "Art",
+                "Binders",
+                "Bookcases",
+                "Chairs",
+                "Copiers",
+                "Envelopes",
+                "Fasteners",
+                "Furnishings",
+                "Labels",
+                "Machines",
+                "Paper",
+                "Phones",
+                "Storage",
+                "Supplies",
+                "Tables"
+              ]
+            }
+          ],
+          "text_fields": [
+            "PROFIT",
+            "Segment"
+          ],
+          "geom": {
+            "x": 50000,
+            "y": 34375,
+            "w": 49122,
+            "h": 29948,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Details Standard Class",
+          "mark": "Automatic",
+          "filters": [
+            {
+              "caption": "Category",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Segment",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Ship Mode",
+              "kind": "categorical"
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "categorical"
+            }
+          ],
+          "kind": "table",
+          "dims": [
+            "REGION",
+            "STATE",
+            "State Set",
+            "STATE_GRP",
+            "SUM_OF_SALES",
+            "AVG_SALES_REGION",
+            "SALES ",
+            "CALLS "
+          ],
+          "measures": [
+            {
+              "caption": "AVG_SALES_REGION",
+              "agg": "sum",
+              "fmt": "num2",
+              "label": "AVG_SALES_REGION"
+            },
+            {
+              "caption": "SUM_OF_SALES",
+              "agg": "usr",
+              "fmt": "num2",
+              "label": "SUM_OF_SALES"
+            },
+            {
+              "caption": "CALLS ",
+              "agg": "sum",
+              "fmt": "num0",
+              "label": "CALLS "
+            },
+            {
+              "caption": "SALES ",
+              "agg": "sum",
+              "fmt": "num0",
+              "label": "SALES "
+            }
+          ],
+          "mark_color": "#118dff",
+          "datasource": "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)",
+          "blend": [
+            "CALLS",
+            "SALES",
+            "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)"
+          ],
+          "applied_filters": [
+            {
+              "caption": "Category",
+              "kind": "in",
+              "values": [
+                "Furniture",
+                "Office Supplies",
+                "Technology"
+              ]
+            },
+            {
+              "caption": "Segment",
+              "kind": "in",
+              "values": [
+                "Consumer",
+                "Corporate",
+                "Home Office"
+              ]
+            },
+            {
+              "caption": "Ship Mode",
+              "kind": "in",
+              "values": [
+                "Standard Class"
+              ]
+            },
+            {
+              "caption": "Sub Category",
+              "kind": "in",
+              "values": [
+                "Accessories",
+                "Appliances",
+                "Art",
+                "Binders",
+                "Bookcases",
+                "Chairs",
+                "Copiers",
+                "Envelopes",
+                "Fasteners",
+                "Furnishings",
+                "Labels",
+                "Machines",
+                "Paper",
+                "Phones",
+                "Storage",
+                "Supplies",
+                "Tables"
+              ]
+            }
+          ],
+          "geom": {
+            "x": 878,
+            "y": 64323,
+            "w": 49122,
+            "h": 34115,
+            "show_title": true
+          }
+        },
+        {
+          "name": "Profit Trend",
+          "mark": "Line",
+          "filters": [],
+          "kind": "line",
+          "x": {
+            "caption": "Order Date",
+            "datepart": "tmn"
+          },
+          "y": {
+            "caption": "PROFIT",
+            "agg": "sum"
+          },
+          "panel": null,
+          "color": null,
+          "labels": true,
+          "datasource": "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)",
+          "text_fields": [
+            "PROFIT"
+          ],
+          "geom": {
+            "x": 50000,
+            "y": 64323,
+            "w": 49122,
+            "h": 34115,
+            "show_title": true
+          }
+        }
+      ],
+      "device_layouts": [
+        "Phone"
+      ],
+      "layout": {
+        "dir": "vert",
+        "bg": "#ffffff",
+        "w": 98828,
+        "h": 97916,
+        "children": [
+          {
+            "dir": "horz",
+            "bg": null,
+            "w": 98828,
+            "h": 13021,
+            "children": [
+              {
+                "sheet": "MTD Sales",
+                "w": 19693,
+                "h": 11979
+              },
+              {
+                "sheet": "YTD SALES",
+                "w": 19693,
+                "h": 11979
+              },
+              {
+                "sheet": "Sum of SALES",
+                "w": 19619,
+                "h": 11979
+              },
+              {
+                "sheet": "Sum of PROFIT",
+                "w": 19619,
+                "h": 11979
+              },
+              {
+                "sheet": "Sum of QUANTITY",
+                "w": 19620,
+                "h": 11979
+              }
+            ]
+          },
+          {
+            "dir": "vert",
+            "bg": null,
+            "w": 98242,
+            "h": 64061,
+            "children": [
+              {
+                "dir": "horz",
+                "bg": null,
+                "w": 98242,
+                "h": 29948,
+                "children": [
+                  {
+                    "sheet": "Sales by Category Region Split",
+                    "w": 49122,
+                    "h": 29948
+                  },
+                  {
+                    "sheet": "Profit by Segment",
+                    "w": 49122,
+                    "h": 29948
+                  }
+                ]
+              },
+              {
+                "dir": "horz",
+                "bg": null,
+                "w": 98242,
+                "h": 34113,
+                "children": [
+                  {
+                    "sheet": "Details Standard Class",
+                    "w": 49122,
+                    "h": 34115
+                  },
+                  {
+                    "sheet": "Profit Trend",
+                    "w": 49122,
+                    "h": 34115
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

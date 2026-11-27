@@ -1,0 +1,674 @@
+# Snowflake CLI project definition -- deploys the generated app to
+
+# Streamlit in Snowflake.   Usage:  snow streamlit deploy --replace
+
+#
+
+# datasources.deploy.json (WBR_DB targets, written by load_snowflake.py
+
+# --database) is staged AS datasources.json so config.py picks up the
+
+# Snowflake table locations; the local dev mapping stays untouched.
+
+definition_version: 2
+
+entities:
+
+  tableau_migration_app:
+
+    type: streamlit
+
+    identifier: TABLEAU_TO_SIS_ECOMMERCE
+
+    stage: STREAMLIT_STAGE
+
+    query_warehouse: POWERHOUSE
+
+    main_file: app_ecommerce.py
+
+    title: "Tableau -> Streamlit (E-Commerce)"
+
+    artifacts:
+
+      - app_ecommerce.py
+
+      - engine.py
+      - dashboard_actions.py
+      - migration_review.py
+
+      - worksheet_semantics.py
+
+      - table_plan.py
+
+      - scatter_plan.py
+
+      - dual_plan.py
+      - axis_xml.py
+      - tableau_format.py
+      - cx2_visual_review.py
+      - cx2_safety.py
+      - cx2_panel.py
+      - cx3_calc.py
+      - cx6_review.py
+      - cx4_agent.py
+      - cx5_repair.py
+      - cx8_documents.py
+      - v3_filter_states.py
+      - v3_acceptance.py
+      - v3_actions_proof.py
+
+      - crosstab_plan.py
+
+      - visual_plan_common.py
+
+      - filter_plan.py
+
+      - include_lod_plan.py
+      - typed_include_expression.py
+      - cortex_assist.py
+
+      - ir_contract.py
+
+      - composed_pie.py
+      - percent_summary.py
+      - bounded_overlay.py
+      - member_card_plan.py
+      - parameter_actions.py
+      - detail_record_plan.py
+      - decoration_plan.py
+      - logical_scatter.py
+      - rank_card_plan.py
+      - kpi_fixed_plan.py
+      - v3_model_binding.py
+      - v3_physical_binding.py
+      - v3_relationship_query.py
+      - v3_semantic.py
+      - v3_sv_shared.py          # release 20a: shared Semantic Views
+      - v3_cortex_model.py
+      - v3_data_load.py          # release 21a: workbook data loads
+      - v3_data_entities.py      # release 21b: one table per logical table
+      - v3_cortex_mapping.py     # release 21b: Cortex table mapping
+      - v3_catalog.py            # release 20b: estate catalogue
+      - v3_catalog_ui.py         # release 20b: Estate catalogue page
+      - v3_rationalise.py        # release 22a: rationalisation report
+      - v3_rationalise_ui.py     # release 22a: Rationalisation tab
+      - v3_fallback.py           # release 25a: no blank sheet (original engine, approximated)
+      - v3_sheet_plan.py         # release 26: exact plans from the workbook shelves
+      - v3_exact_loop.py         # release 26: proof against Tableau's values
+      - v3_reflines.py          # release 37: visuals / E11
+      - v3_geocode.py
+      - v3_crosstab.py
+      - v3_tooltips.py
+      - v3_security.py
+      - v3_scorecard.py         # release 38: Cortex roadmap (CF01/TM01/CF02/CF07)
+      - v3_memory.py
+      - v3_verified_queries.py
+      - v3_plan_proposals.py
+      - v3_accuracy.py
+      - v3_agent_tools.py
+      - v3_analyst_eval.py
+      - v3_recheck.py
+      - v3_user_filters.py
+      - v3_portal.py
+      - v3_spend.py
+      - v3_intake.py
+      - v3_roles.py
+      - v3_alt_visual.py
+      - v3_forecast.py           # release 35: approximated Tableau forecasts
+      - v3_first_translator.py   # release 35: CF05 Cortex first translator
+      - v3_layout_check.py       # release 26c: every zone vs Tableau's rectangle
+      - v3_basemaps.py           # release 26g: bundled background maps (US states, countries)
+      - tableau_reference_bundles.py   # release 26: shipped Tableau captures (lab)
+      - v3_usage.py
+      - v3_ai.py
+      - v3_source_binding.py
+
+      - backend.py
+
+      - config.py
+
+      - calc_translator.py
+
+      - findings.py
+
+      - profile_superstore.py
+
+      - profile_default.py
+
+      - environment.yml
+
+      - src: datasources.deploy.json
+
+        dest: datasources.json
+
+
+
+  # A STANDALONE CONVERTED DASHBOARD, deployed as its own app tile (like the
+
+  # E-Commerce one) -- the migrated Superstore workbook. datasources.deploy.json
+
+  # is staged AS datasources.json; config.py now lets that WIN in Snowflake, so
+
+  # Superstore's captions ('Sample - Superstore' etc., which collide with the
+
+  # dev built-ins) route to WBR_DB.PUBLIC.* instead of the phantom local
+
+  # SUPERSTORE db. app_superstore.py embeds the IR + calls engine.run(IR).
+
+  superstore_app:
+
+    type: streamlit
+
+    identifier: TABLEAU_TO_SIS_SUPERSTORE
+
+    stage: STREAMLIT_STAGE
+
+    query_warehouse: POWERHOUSE
+
+    main_file: app_superstore.py
+
+    title: "Tableau -> Streamlit (Superstore)"
+
+    artifacts:
+
+      - app_superstore.py
+
+      - engine.py
+      - dashboard_actions.py
+      - migration_review.py
+
+      - worksheet_semantics.py
+
+      - table_plan.py
+
+      - scatter_plan.py
+
+      - dual_plan.py
+      - axis_xml.py
+      - tableau_format.py
+      - cx2_visual_review.py
+      - cx2_safety.py
+      - cx2_panel.py
+      - cx3_calc.py
+      - cx6_review.py
+      - cx4_agent.py
+      - cx5_repair.py
+      - cx8_documents.py
+      - v3_filter_states.py
+      - v3_acceptance.py
+      - v3_actions_proof.py
+
+      - crosstab_plan.py
+
+      - visual_plan_common.py
+
+      - filter_plan.py
+
+      - include_lod_plan.py
+      - typed_include_expression.py
+      - cortex_assist.py
+
+      - ir_contract.py
+
+      - composed_pie.py
+      - percent_summary.py
+      - bounded_overlay.py
+      - member_card_plan.py
+      - parameter_actions.py
+      - detail_record_plan.py
+      - decoration_plan.py
+      - logical_scatter.py
+      - rank_card_plan.py
+      - kpi_fixed_plan.py
+      - v3_model_binding.py
+      - v3_physical_binding.py
+      - v3_relationship_query.py
+      - v3_semantic.py
+      - v3_sv_shared.py          # release 20a: shared Semantic Views
+      - v3_cortex_model.py
+      - v3_data_load.py          # release 21a: workbook data loads
+      - v3_data_entities.py      # release 21b: one table per logical table
+      - v3_cortex_mapping.py     # release 21b: Cortex table mapping
+      - v3_catalog.py            # release 20b: estate catalogue
+      - v3_catalog_ui.py         # release 20b: Estate catalogue page
+      - v3_rationalise.py        # release 22a: rationalisation report
+      - v3_rationalise_ui.py     # release 22a: Rationalisation tab
+      - v3_fallback.py           # release 25a: no blank sheet (original engine, approximated)
+      - v3_sheet_plan.py         # release 26: exact plans from the workbook shelves
+      - v3_exact_loop.py         # release 26: proof against Tableau's values
+      - v3_reflines.py          # release 37: visuals / E11
+      - v3_geocode.py
+      - v3_crosstab.py
+      - v3_tooltips.py
+      - v3_security.py
+      - v3_scorecard.py         # release 38: Cortex roadmap (CF01/TM01/CF02/CF07)
+      - v3_memory.py
+      - v3_verified_queries.py
+      - v3_plan_proposals.py
+      - v3_accuracy.py
+      - v3_agent_tools.py
+      - v3_analyst_eval.py
+      - v3_recheck.py
+      - v3_user_filters.py
+      - v3_portal.py
+      - v3_spend.py
+      - v3_intake.py
+      - v3_roles.py
+      - v3_alt_visual.py
+      - v3_forecast.py           # release 35: approximated Tableau forecasts
+      - v3_first_translator.py   # release 35: CF05 Cortex first translator
+      - v3_layout_check.py       # release 26c: every zone vs Tableau's rectangle
+      - v3_basemaps.py           # release 26g: bundled background maps (US states, countries)
+      - tableau_reference_bundles.py   # release 26: shipped Tableau captures (lab)
+      - v3_usage.py
+      - v3_ai.py
+      - v3_source_binding.py
+
+      - backend.py
+
+      - config.py
+
+      - calc_translator.py
+
+      - findings.py
+
+      - profile_superstore.py
+
+      - profile_default.py
+
+      - environment.yml
+
+      - src: datasources.deploy.json
+
+        dest: datasources.json
+
+
+
+  # Standalone conversion of Sales Dashboard Ver 01.  Its datasource manifest
+
+  # deliberately points to the workbook-declared live table rather than the
+
+  # shared demo mapping, so visual verification exercises the real Sales data.
+
+  sales_dashboard_app:
+
+    type: streamlit
+
+    identifier: TABLEAU_TO_SIS_SALES_DASHBOARD
+
+    stage: STREAMLIT_STAGE
+
+    query_warehouse: POWERHOUSE
+
+    main_file: app_sales_dashboard_debug.py
+
+    title: "Tableau -> Streamlit (Sales Dashboard)"
+
+    artifacts:
+
+      - app_sales_dashboard_debug.py
+
+      - engine.py
+      - dashboard_actions.py
+      - migration_review.py
+
+      - worksheet_semantics.py
+
+      - table_plan.py
+
+      - scatter_plan.py
+
+      - dual_plan.py
+      - axis_xml.py
+      - tableau_format.py
+      - cx2_visual_review.py
+      - cx2_safety.py
+      - cx2_panel.py
+      - cx3_calc.py
+      - cx6_review.py
+      - cx4_agent.py
+      - cx5_repair.py
+      - cx8_documents.py
+      - v3_filter_states.py
+      - v3_acceptance.py
+      - v3_actions_proof.py
+
+      - crosstab_plan.py
+
+      - visual_plan_common.py
+
+      - filter_plan.py
+
+      - include_lod_plan.py
+      - typed_include_expression.py
+      - cortex_assist.py
+
+      - ir_contract.py
+
+      - composed_pie.py
+      - percent_summary.py
+      - bounded_overlay.py
+      - member_card_plan.py
+      - parameter_actions.py
+      - detail_record_plan.py
+      - decoration_plan.py
+      - logical_scatter.py
+      - rank_card_plan.py
+      - kpi_fixed_plan.py
+      - v3_model_binding.py
+      - v3_physical_binding.py
+      - v3_relationship_query.py
+      - v3_semantic.py
+      - v3_sv_shared.py          # release 20a: shared Semantic Views
+      - v3_cortex_model.py
+      - v3_data_load.py          # release 21a: workbook data loads
+      - v3_data_entities.py      # release 21b: one table per logical table
+      - v3_cortex_mapping.py     # release 21b: Cortex table mapping
+      - v3_catalog.py            # release 20b: estate catalogue
+      - v3_catalog_ui.py         # release 20b: Estate catalogue page
+      - v3_rationalise.py        # release 22a: rationalisation report
+      - v3_rationalise_ui.py     # release 22a: Rationalisation tab
+      - v3_fallback.py           # release 25a: no blank sheet (original engine, approximated)
+      - v3_sheet_plan.py         # release 26: exact plans from the workbook shelves
+      - v3_exact_loop.py         # release 26: proof against Tableau's values
+      - v3_reflines.py          # release 37: visuals / E11
+      - v3_geocode.py
+      - v3_crosstab.py
+      - v3_tooltips.py
+      - v3_security.py
+      - v3_scorecard.py         # release 38: Cortex roadmap (CF01/TM01/CF02/CF07)
+      - v3_memory.py
+      - v3_verified_queries.py
+      - v3_plan_proposals.py
+      - v3_accuracy.py
+      - v3_agent_tools.py
+      - v3_analyst_eval.py
+      - v3_recheck.py
+      - v3_user_filters.py
+      - v3_portal.py
+      - v3_spend.py
+      - v3_intake.py
+      - v3_roles.py
+      - v3_alt_visual.py
+      - v3_forecast.py           # release 35: approximated Tableau forecasts
+      - v3_first_translator.py   # release 35: CF05 Cortex first translator
+      - v3_layout_check.py       # release 26c: every zone vs Tableau's rectangle
+      - v3_basemaps.py           # release 26g: bundled background maps (US states, countries)
+      - tableau_reference_bundles.py   # release 26: shipped Tableau captures (lab)
+      - v3_usage.py
+      - v3_ai.py
+      - v3_source_binding.py
+
+      - backend.py
+
+      - config.py
+
+      - calc_translator.py
+
+      - findings.py
+
+      - profile_superstore.py
+
+      - profile_default.py
+
+      - environment.yml
+
+      - src: datasources.sales.deploy.json
+
+        dest: datasources.json
+
+
+
+  # THE STAGED DEMO -- upload any .twb/.twbx, watch Discovery -> Parsing ->
+
+  # Semantic Model (Cortex) -> App Creation -> Validation run live, in Snowflake.
+
+  # No pre-seeded datasources.json: config.py's DATASOURCES starts at the
+
+  # Superstore dev built-ins and pipeline.configure_datasources() repoints it
+
+  # per upload, so this app is workbook-agnostic (deploy once, demo any book).
+
+  # .hyper extracts need a one-time local `python init_workbook.py Book.twbx`
+
+  # first (tableauhyperapi is not on Snowflake's Anaconda channel); CSV/Excel
+
+  # extracts and live-Snowflake-connected workbooks convert fully in-platform.
+
+  pipeline_demo:
+
+    type: streamlit
+
+    identifier: TABLEAU_TO_SIS_PIPELINE_DEMO
+
+    stage: STREAMLIT_STAGE
+
+    query_warehouse: POWERHOUSE
+
+    # Keep Tableau Cloud access declarative. A DROP + deploy otherwise creates
+
+    # a working app with empty EAI/secret bindings even though both account
+
+    # objects still exist.
+
+    external_access_integrations:
+
+      - TABLEAU_ACCESS_INTEGRATION
+
+    secrets:
+
+      tableau_pat: WBR_DB.PUBLIC.TABLEAU_PAT_SECRET
+
+    main_file: pipeline_app.py
+
+    title: "Tableau -> SiS Accelerator (staged demo)"
+
+    artifacts:
+
+      - pipeline_app.py
+
+      - query_fixes.py
+
+      - deep_validation.py       # V2: Cortex section/vision validation, dashboard
+
+                                 # validation report, R12 pack, migration report PDF
+
+      - pipeline.py
+
+      - parity.py
+
+      - validation_report.py    # R12: proof-first comparison engine (vendored, dependency-free)
+
+      - validation_adapter.py   # R12: Tableau/Streamlit/backend adapters for it
+
+      - validation_evidence_bridge.py  # R12: real screenshot/crosstab evidence + explicit
+
+                                 # per-chart REGISTRY (map/treemap/table/rank-table capture)
+
+      - validation_report_dashboard.py # client-facing per-dashboard report renderer
+
+                                 # (A/B/C/D chapters, chart data contract, sign-off)
+
+      - cortex_semantic.py
+
+      - semantic_layer.py        # Stage 3a data-model view (pipeline.data_model_report)
+
+      - gen_platform_architecture.py  # Overview tab's inlined system-architecture board
+
+      - tableau_parser.py
+
+      - field_identity.py
+
+      - worksheet_semantics.py
+
+      - table_plan.py
+
+      - scatter_plan.py
+
+      - dual_plan.py
+      - axis_xml.py
+      - tableau_format.py
+      - cx2_visual_review.py
+      - cx2_safety.py
+      - cx2_panel.py
+      - cx3_calc.py
+      - cx6_review.py
+      - cx4_agent.py
+      - cx5_repair.py
+      - cx8_documents.py
+      - v3_filter_states.py
+      - v3_acceptance.py
+      - v3_actions_proof.py
+
+      - crosstab_plan.py
+
+      - visual_plan_common.py
+
+      - filter_plan.py
+
+      - include_lod_plan.py
+      - typed_include_expression.py
+      - cortex_assist.py
+
+      - tableau_server.py        # R1: pull a workbook from Tableau Server/Cloud by link
+
+      - headless_render.py       # R8: render the app's own charts to PNG (no browser/SSO)
+
+      - notebook_capture.py      # runs the generated app + Chromium INSIDE Snowflake
+
+                                 # (container-runtime notebook on a compute pool). Still
+
+                                 # the WORKSTATION path; NOT reachable from the deployed
+
+                                 # app, which cannot call EXECUTE NOTEBOOK at all
+
+      - task_capture.py          # the DEPLOYED app's capture path: enqueue a job and let
+
+                                 # a Snowflake TASK run the notebook in its own execution
+
+                                 # context (SiS sessions are blocked from EXECUTE NOTEBOOK
+
+                                 # -- 0/8 vs 8/8 from a workstation, error 300002)
+
+      - validation_jobs.py       # the shared queue contract both sides use
+
+      - tableau_crosstab_jobs.py # R18: an isolated queue for the crosstab-fetch fallback
+
+                                 # below -- its own table/stage subdir, never sharing
+
+                                 # R15's own so iterating on this newer path can't risk
+
+                                 # the already-working screenshot capture
+
+      - tableau_crosstab_worker.py # R18: deploys/resumes the crosstab worker notebook
+
+                                 # deep_validation.py calls when Tiers 1-5 (the REST
+
+                                 # crosstab matcher) still leave a nested sheet
+
+                                 # unresolved -- a genuine Tableau REST platform ceiling,
+
+                                 # not a matching-logic gap (ARCHITECTURE.md S28)
+
+      - tableau_zone_crosstab.py # R18: the actual browser-automation fetch (token-cookie
+
+                                 # injection past SSO/MFA, real Download->Crosstab
+
+                                 # dialog) -- not called directly by the SiS app, but
+
+                                 # staged onto the worker notebook by
+
+                                 # tableau_crosstab_worker.deploy_worker(), so it must
+
+                                 # ship in this bundle to be available to stage from
+
+      - capture_validation.py    # structural screenshot validation -- ONE implementation,
+
+                                 # imported by the worker AND the tests (never copied)
+
+      - app_screenshot.py        # real screenshot of the generated app (playwright import is
+
+                                  # lazy -- available() reports unavailable in the SSO-gated
+
+                                  # SiS sandbox at runtime, never at import time)
+
+      - init_workbook.py
+
+      - calc_translator.py
+
+      - codegen.py
+
+      - engine.py
+      - dashboard_actions.py
+      - migration_review.py
+
+      - ir_contract.py
+
+      - composed_pie.py
+      - percent_summary.py
+      - bounded_overlay.py
+      - member_card_plan.py
+      - parameter_actions.py
+      - detail_record_plan.py
+      - decoration_plan.py
+      - logical_scatter.py
+      - rank_card_plan.py
+      - kpi_fixed_plan.py
+      - v3_model_binding.py
+      - v3_physical_binding.py
+      - v3_relationship_query.py
+      - v3_semantic.py
+      - v3_sv_shared.py          # release 20a: shared Semantic Views
+      - v3_cortex_model.py
+      - v3_data_load.py          # release 21a: workbook data loads
+      - v3_data_entities.py      # release 21b: one table per logical table
+      - v3_cortex_mapping.py     # release 21b: Cortex table mapping
+      - v3_catalog.py            # release 20b: estate catalogue
+      - v3_catalog_ui.py         # release 20b: Estate catalogue page
+      - v3_rationalise.py        # release 22a: rationalisation report
+      - v3_rationalise_ui.py     # release 22a: Rationalisation tab
+      - v3_fallback.py           # release 25a: no blank sheet (original engine, approximated)
+      - v3_sheet_plan.py         # release 26: exact plans from the workbook shelves
+      - v3_exact_loop.py         # release 26: proof against Tableau's values
+      - v3_reflines.py          # release 37: visuals / E11
+      - v3_geocode.py
+      - v3_crosstab.py
+      - v3_tooltips.py
+      - v3_security.py
+      - v3_scorecard.py         # release 38: Cortex roadmap (CF01/TM01/CF02/CF07)
+      - v3_memory.py
+      - v3_verified_queries.py
+      - v3_plan_proposals.py
+      - v3_accuracy.py
+      - v3_agent_tools.py
+      - v3_analyst_eval.py
+      - v3_recheck.py
+      - v3_user_filters.py
+      - v3_portal.py
+      - v3_spend.py
+      - v3_intake.py
+      - v3_roles.py
+      - v3_alt_visual.py
+      - v3_forecast.py           # release 35: approximated Tableau forecasts
+      - v3_first_translator.py   # release 35: CF05 Cortex first translator
+      - v3_layout_check.py       # release 26c: every zone vs Tableau's rectangle
+      - v3_basemaps.py           # release 26g: bundled background maps (US states, countries)
+      - tableau_reference_bundles.py   # release 26: shipped Tableau captures (lab)
+      - v3_usage.py
+      - v3_ai.py
+      - v3_source_binding.py
+
+      - backend.py
+
+      - config.py
+
+      - findings.py
+
+      - profile_superstore.py
+
+      - profile_default.py
+
+      - environment.yml
+
+
+

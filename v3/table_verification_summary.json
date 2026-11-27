@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-23",
+  "v3_tests": 76,
+  "v3_exit": 0,
+  "regression_exit": 0,
+  "sheet_counts": {
+    "UNSUPPORTED": 333,
+    "UNVERIFIED": 55,
+    "INVALID": 6
+  },
+  "file_counts": {
+    "BLOCKED": 23,
+    "NEEDS_REVIEW": 2
+  },
+  "structural_issues": 0,
+  "parent_source_hashes_checked": 148,
+  "parent_drift": [],
+  "v3_installed_files_match": {
+    "V3_GAP_LEDGER.md": true,
+    "engine.py": true,
+    "V3_NEXT_IMPLEMENTATION.md": true,
+    "NEW_SESSION_PROMPT_TABLEAU_ACCELERATOR.md": true,
+    "PARTNER_DEMO_READINESS.md": true,
+    "worksheet_semantics.py": true,
+    "ENTERPRISE_GENERALIZATION_HANDOFF.md": true,
+    "field_identity.py": true,
+    "V3_STATUS.md": true,
+    "table_plan.py": true,
+    "tests/test_v3_tables.py": true,
+    "snowflake.yml": true,
+    "pipeline.py": true,
+    "tests/capture_v3_table_evidence.py": true
+  },
+  "tableau_parity": "NOT_VERIFIED",
+  "snowflake_execution": "NOT_VERIFIED",
+  "complete_migration": "NOT_VERIFIED",
+  "partner_readiness": "NOT_ESTABLISHED",
+  "deployed": false
+}

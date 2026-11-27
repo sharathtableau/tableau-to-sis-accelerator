@@ -34,6 +34,14 @@ python codegen.py workbook_ir.json -o app.py
 streamlit run app.py
 ```
 
+## V3 Cortex accelerator (`v3/`)
+
+`v3/` holds the V3 Cortex lab: the later Tableau accelerator with Cortex
+proposals, source binding, validation and the portal. It is self-contained and
+runs from its own folder (`cd v3`, then see `v3/V3_START_HERE.md` and
+`v3/AGENTS.md`). The original accelerator at the repo root does not import
+from `v3/`.
+
 ## Files
 
 | File | Role |

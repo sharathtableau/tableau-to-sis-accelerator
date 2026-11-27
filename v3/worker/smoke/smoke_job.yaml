@@ -1,0 +1,33 @@
+# SPCS job-service spec for the Phase 1 smoke test.
+#
+# Submitted asynchronously so the CLI/SQL call returns immediately rather than
+# holding a session open for the length of a browser run:
+#
+#   EXECUTE JOB SERVICE
+#     IN COMPUTE POOL SYSTEM_COMPUTE_POOL_CPU
+#     NAME = WBR_DB.DBX.VALIDATION_SMOKE_TEST
+#     ASYNC = TRUE
+#     QUERY_WAREHOUSE = POWERHOUSE
+#     FROM SPECIFICATION_FILE = '@WBR_DB.DBX.VALIDATION_CAPTURE_STAGE/smoke-test/smoke_job.yaml';
+#
+# A JOB service (not a long-running one) so the node is released the moment the
+# check finishes and the pool can suspend.
+spec:
+  containers:
+    - name: smoke
+      image: /wbr_db/dbx/validation_capture_repo/validation-smoke:1
+      env:
+        SNOWFLAKE_DATABASE: WBR_DB
+        SNOWFLAKE_SCHEMA: DBX
+        SNOWFLAKE_WAREHOUSE: POWERHOUSE
+        SMOKE_STAGE: "@WBR_DB.DBX.VALIDATION_CAPTURE_STAGE/smoke-test"
+        SMOKE_IMAGE_TAG: "validation-smoke:1"
+      resources:
+        requests:
+          cpu: "1"
+          memory: 2Gi
+        limits:
+          # Chromium is memory-hungry and dies with an opaque crash rather than
+          # a clean OOM message when squeezed, so the ceiling is explicit.
+          cpu: "2"
+          memory: 4Gi

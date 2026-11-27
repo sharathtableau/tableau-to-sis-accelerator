@@ -1,0 +1,528 @@
+{
+ "Workbooks\\E-Commerce (Software) Sales Dashboard VOTD.twbx::Dashboard": {
+  "children": [
+   "info",
+   {
+    "children": [
+     {
+      "children": [
+       "Revenue %",
+       "Revenue"
+      ],
+      "dir": "vert"
+     },
+     {
+      "children": [
+       "Quantity %",
+       "Quantity"
+      ],
+      "dir": "vert"
+     },
+     {
+      "children": [
+       "AOV%",
+       "AOV"
+      ],
+      "dir": "vert"
+     },
+     {
+      "children": [
+       "Avg. Days to 2nd Purch.%",
+       "Avg. Days to 2nd Purchase"
+      ],
+      "dir": "vert"
+     }
+    ],
+    "dir": "horz"
+   },
+   {
+    "children": [
+     {
+      "children": [
+       "Revenue by Channels",
+       "Revenue by Pay. method",
+       "Revenue by Country"
+      ],
+      "dir": "vert"
+     },
+     {
+      "children": [
+       "Quantity by Channels",
+       "Quantity by Pay. Method",
+       "Quantity by Country"
+      ],
+      "dir": "vert"
+     },
+     {
+      "children": [
+       "AOV by Channels",
+       "AOV by Payment Method",
+       "AOV by Country"
+      ],
+      "dir": "vert"
+     },
+     {
+      "children": [
+       "Avg. Days to 2nd by Channel",
+       "Avg. Days to 2nd by Payment",
+       "Avg. Days to 2nd by Country"
+      ],
+      "dir": "vert"
+     }
+    ],
+    "dir": "horz"
+   },
+   {
+    "children": [
+     {
+      "children": [
+       {
+        "children": [
+         "Gross%",
+         "Net%"
+        ],
+        "dir": "horz"
+       },
+       "Gross vs. Net"
+      ],
+      "dir": "vert"
+     },
+     {
+      "children": [
+       "Revenue vs. Customers"
+      ],
+      "dir": "vert"
+     },
+     {
+      "children": [
+       "Order vs. Invoice",
+       "Order vs. Invoice (2)"
+      ],
+      "dir": "horz"
+     }
+    ],
+    "dir": "horz"
+   }
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\E-Commerce (Software) Sales Dashboard VOTD.twbx::Details": {
+  "children": [
+   "info",
+   {
+    "children": [
+     "Detail"
+    ],
+    "dir": "vert"
+   }
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\E-Commerce (Software) Sales Dashboard VOTD.twbx::Product": {
+  "children": [
+   {
+    "children": [
+     "info",
+     {
+      "children": [
+       "Select Products",
+       {
+        "children": [
+         {
+          "children": [
+           "Metric Selector",
+           "Show",
+           "Prod. Customer%",
+           "Prod. Refund Rate",
+           "Repeat Purchase Rate"
+          ],
+          "dir": "horz"
+         },
+         {
+          "children": [
+           {
+            "children": [
+             "Prod.Qty %",
+             "Prod. Qty"
+            ],
+            "dir": "vert"
+           },
+           {
+            "children": [
+             "Prod. Revenue%",
+             "Prod. Revenue"
+            ],
+            "dir": "vert"
+           },
+           {
+            "children": [
+             "CLV%",
+             "CLV"
+            ],
+            "dir": "vert"
+           }
+          ],
+          "dir": "horz"
+         },
+         {
+          "children": [
+           {
+            "children": [
+             "Country"
+            ],
+            "dir": "vert"
+           },
+           {
+            "children": [
+             {
+              "children": [
+               {
+                "children": [
+                 "Age Band"
+                ],
+                "dir": "vert"
+               },
+               {
+                "children": [
+                 "Channel"
+                ],
+                "dir": "vert"
+               }
+              ],
+              "dir": "horz"
+             },
+             {
+              "children": [
+               {
+                "children": [
+                 "Segment"
+                ],
+                "dir": "vert"
+               },
+               {
+                "children": [
+                 "Payment Method"
+                ],
+                "dir": "vert"
+               }
+              ],
+              "dir": "horz"
+             }
+            ],
+            "dir": "vert"
+           }
+          ],
+          "dir": "horz"
+         }
+        ],
+        "dir": "vert"
+       }
+      ],
+      "dir": "horz"
+     }
+    ],
+    "dir": "vert"
+   },
+   {
+    "children": [
+     {
+      "children": [
+       "Hide"
+      ],
+      "dir": "vert"
+     },
+     "Product img",
+     {
+      "children": [
+       "Customer Details"
+      ],
+      "dir": "vert"
+     }
+    ],
+    "dir": "vert"
+   }
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\Globalsalesdashboard.twbx::View1": {
+  "children": [
+   {
+    "children": [
+     "Sum of SALES",
+     "Sum of PROFIT",
+     "Sum of QUANTITY"
+    ],
+    "dir": "vert"
+   },
+   {
+    "children": [
+     {
+      "children": [
+       "Sales by Category",
+       "Profit Ratio by Segment"
+      ],
+      "dir": "horz"
+     },
+     "Sales by Region"
+    ],
+    "dir": "vert"
+   }
+  ],
+  "dir": "horz"
+ },
+ "Workbooks\\Globalsalesdashboard.twbx::View2": {
+  "children": [
+   {
+    "children": [
+     "MTD Sales",
+     "YTD SALES",
+     "Sum of SALES",
+     "Sum of PROFIT",
+     "Sum of QUANTITY"
+    ],
+    "dir": "horz"
+   },
+   {
+    "children": [
+     {
+      "children": [
+       "Sales by Category Region Split",
+       "Profit by Segment"
+      ],
+      "dir": "horz"
+     },
+     {
+      "children": [
+       "Details Standard Class",
+       "Profit Trend"
+      ],
+      "dir": "horz"
+     }
+    ],
+    "dir": "vert"
+   }
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\Regional Analysis.twbx::View1": {
+  "children": [
+   {
+    "children": [
+     "Category wise Sales by Region",
+     "Segment wise Profit by Region"
+    ],
+    "dir": "horz"
+   },
+   "Quantity by Ship Mode Region Split"
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\Regional Analysis.twbx::View2": {
+  "children": [
+   "Sales Trend by Month",
+   {
+    "children": [
+     "Region level Sales",
+     "Profit by Category"
+    ],
+    "dir": "horz"
+   }
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\Superstore.twbx::Commission Model": {
+  "children": [
+   {
+    "children": [
+     "QuotaAttainment",
+     "CommissionProjection"
+    ],
+    "dir": "horz"
+   },
+   {
+    "children": [
+     "Sales",
+     "OTE"
+    ],
+    "dir": "horz"
+   }
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\Superstore.twbx::Customers": {
+  "children": [
+   "CustomerOverview",
+   {
+    "children": [
+     "CustomerScatter",
+     "CustomerRank"
+    ],
+    "dir": "horz"
+   }
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\Superstore.twbx::Forecast": null,
+ "Workbooks\\Superstore.twbx::Order Details": "Product Detail Sheet",
+ "Workbooks\\Superstore.twbx::Overview": {
+  "children": [
+   "Total Sales",
+   "Sale Map",
+   {
+    "children": [
+     "Sales by Segment",
+     "Sales by Product"
+    ],
+    "dir": "horz"
+   }
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\Superstore.twbx::Performance": null,
+ "Workbooks\\Superstore.twbx::Product": {
+  "children": [
+   "ProductView",
+   "ProductDetails"
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\Superstore.twbx::Sheet 22": null,
+ "Workbooks\\Superstore.twbx::Shipping": {
+  "children": [
+   "ShipSummary",
+   "ShippingTrend",
+   "DaystoShip"
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\Superstore.twbx::What If Forecast": null,
+ "Workbooks\\Superstore_KPI_Parameter_Dashboard.twbx::Sales KPI Parameter Dashboard": {
+  "children": [
+   "KPI Summary",
+   {
+    "children": [
+     "Top N Customers by Sales",
+     "Region Parameter Measure Swap"
+    ],
+    "dir": "horz"
+   },
+   "Selected Measure Trend"
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\Superstore_Tableau2024_3.twbx::Commission Model": {
+  "children": [
+   {
+    "children": [
+     "QuotaAttainment",
+     "CommissionProjection"
+    ],
+    "dir": "horz"
+   },
+   {
+    "children": [
+     "Sales",
+     "OTE"
+    ],
+    "dir": "horz"
+   }
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\Superstore_Tableau2024_3.twbx::Customers": {
+  "children": [
+   "CustomerOverview",
+   {
+    "children": [
+     "CustomerScatter",
+     "CustomerRank"
+    ],
+    "dir": "horz"
+   }
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\Superstore_Tableau2024_3.twbx::Forecast": null,
+ "Workbooks\\Superstore_Tableau2024_3.twbx::Order Details": "Product Detail Sheet",
+ "Workbooks\\Superstore_Tableau2024_3.twbx::Overview": {
+  "children": [
+   "Total Sales",
+   "Sale Map",
+   {
+    "children": [
+     "Sales by Segment",
+     "Sales by Product"
+    ],
+    "dir": "horz"
+   }
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\Superstore_Tableau2024_3.twbx::Performance": null,
+ "Workbooks\\Superstore_Tableau2024_3.twbx::Product": {
+  "children": [
+   "ProductView",
+   "ProductDetails"
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\Superstore_Tableau2024_3.twbx::Shipping": {
+  "children": [
+   "ShipSummary",
+   "ShippingTrend",
+   "DaystoShip"
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\Superstore_Tableau2024_3.twbx::What If Forecast": null,
+ "Workbooks\\World Indicators.twbx::Business": {
+  "children": [
+   {
+    "children": [
+     "Ease of Biz Correlation Sheet",
+     "Ease of Biz Index"
+    ],
+    "dir": "horz"
+   },
+   "Ease of Biz Factors Sheet"
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\World Indicators.twbx::Economy": null,
+ "Workbooks\\World Indicators.twbx::Health": null,
+ "Workbooks\\World Indicators.twbx::Population": null,
+ "Workbooks\\World Indicators.twbx::Technology": null,
+ "Workbooks\\World Indicators.twbx::Tourism": {
+  "children": [
+   "TourismOverTime",
+   "TourismByCountry"
+  ],
+  "dir": "vert"
+ },
+ "Workbooks\\World_Indicators_Tableau2024_3.twbx::Business": {
+  "children": [
+   "Ease of Biz Correlation Sheet",
+   {
+    "children": [
+     "Biz Tax rate",
+     "Days to Start Biz",
+     "Hours to do Taxes"
+    ],
+    "dir": "horz"
+   }
+  ],
+  "dir": "horz"
+ },
+ "Workbooks\\World_Indicators_Tableau2024_3.twbx::Care Spend": null,
+ "Workbooks\\World_Indicators_Tableau2024_3.twbx::Economy": null,
+ "Workbooks\\World_Indicators_Tableau2024_3.twbx::Health Indicators": null,
+ "Workbooks\\World_Indicators_Tableau2024_3.twbx::Population": null,
+ "Workbooks\\World_Indicators_Tableau2024_3.twbx::Technology": null,
+ "Workbooks\\World_Indicators_Tableau2024_3.twbx::Tourism": {
+  "children": [
+   "Tourism Over Time",
+   "Tourism By Country/Region"
+  ],
+  "dir": "vert"
+ }
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+<rect width="960" height="540" fill="#f2f4f7"/>
+<text x="36" y="38" font-family="Segoe UI" font-size="22" font-weight="700">Customer Analysis - Tableau</text>
+<rect x="36" y="58" width="888" height="42" fill="#ffffff" stroke="#d8dde5"/>
+<rect x="36" y="118" width="205" height="90" fill="#ffffff" stroke="#d8dde5"/>
+<rect x="263" y="118" width="205" height="90" fill="#ffffff" stroke="#d8dde5"/>
+<rect x="490" y="118" width="205" height="90" fill="#ffffff" stroke="#d8dde5"/>
+<rect x="717" y="118" width="207" height="90" fill="#ffffff" stroke="#d8dde5"/>
+<text x="54" y="155" font-family="Segoe UI" font-size="16">$2.30M Sales</text>
+<text x="281" y="155" font-family="Segoe UI" font-size="16">$286K Profit</text>
+<text x="508" y="155" font-family="Segoe UI" font-size="16">12.5% Ratio</text>
+<text x="735" y="155" font-family="Segoe UI" font-size="16">793 Customers</text>
+<rect x="36" y="224" width="432" height="210" fill="#ffffff" stroke="#d8dde5"/>
+<rect x="490" y="224" width="434" height="210" fill="#ffffff" stroke="#d8dde5"/>
+<text x="48" y="244" font-family="Segoe UI" font-size="13">Sales by Region</text>
+<rect x="48" y="250" width="85" height="105" fill="#4a7fba"/><rect x="145" y="210" width="85" height="145" fill="#4a7fba"/><rect x="242" y="230" width="85" height="125" fill="#4a7fba"/><rect x="339" y="185" width="85" height="170" fill="#4a7fba"/>
+<polyline points="520,380 585,340 650,350 715,285 780,305 855,255" fill="none" stroke="#4a7fba" stroke-width="4"/>
+<text x="502" y="244" font-family="Segoe UI" font-size="13">Monthly Sales</text>
+</svg>

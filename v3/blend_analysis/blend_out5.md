@@ -1,0 +1,372 @@
+<!-- Slide number: 1 -->
+BLEND360
+Data & Analytics · Snowflake Modernization Demo
+TABLEAU TO STREAMLIT-IN-SNOWFLAKE
+Modernizing BI
+on Snowflake
+
+SIMPLIFY
+TRUST
+EVOLVE
+Unified BI operating model
+Automated migration validation
+AI-assisted applications
+OBJECTIVE  —  Modernize suitable Tableau workloads into governed, AI-ready Streamlit applications in Snowflake while reducing platform duplication and preserving trusted business outcomes.
+Sharath Kumar  |  Snowflake modernization demo
+
+### Notes:
+Timing: 1 minute. Open with modernization, not tool replacement. The goal is to move suitable BI workloads onto a governed, extensible Snowflake application foundation.
+
+<!-- Slide number: 2 -->
+BLEND360
+BI MODERNIZATION · 02
+The data platform modernized, but BI still operates separately
+Snowflake is the governed system of record; Tableau remains a second platform, control plane and cost base.
+
+CURRENT OPERATING MODEL
+THE RESULT
+
+Separate cost
+$
+
+Snowflake
+Tableau
+Tableau licenses, infrastructure or cloud subscription
++
+Data + governance
+BI consumption
+Duplicated operations
+?
+
+Administration, access, monitoring and deployment
+Two platforms to license, secure, administer, monitor and release.
+Data movement
+?
+
+Extract creation, refresh schedules and failure handling
+Logic duplication
+?
+
+Business calculations repeated across ELT and dashboards
+
+This is the situation the modernization program is designed to change.
+Limited extensibility
+?
+
+Additional applications needed beyond dashboard interaction
+02 / 12
+
+### Notes:
+Timing: 3 minutes. Explain the situation before mentioning the accelerator. Do not attack Tableau; describe the operational duplication created when the data platform and BI platform evolve separately. Replace generic cost language with client figures when available.
+
+<!-- Slide number: 3 -->
+BLEND360
+BI MODERNIZATION · 03
+Why Streamlit in Snowflake — not a standalone Streamlit app
+Same open-source framework. The platform underneath it is what changes the answer.
+
+?
+?
+?
+?
+
+No egress, no copies
+Governance inherited
+Zero infrastructure
+Cortex is a local call
+Compute runs next to the data. A standalone app pulls governed data out of the boundary on every query.
+Runs as a Snowflake role. RBAC, row-access, masking and audit apply automatically — nothing rebuilt in a second environment.
+Serverless inside Snowflake. No VM, container, patching or scaling for anyone to own.
+COMPLETE, Analyst and semantic views execute in-account. Outside Snowflake, using Cortex means calling back into the platform you just left.
+
+THE HONEST BOUNDARY
+If the data weren't already in Snowflake, and there were no governance or AI requirement, a standalone Streamlit app would be the simpler choice. The case rests on data-in-Snowflake + governance + Cortex — exactly this situation.
+03 / 12
+
+### Notes:
+Timing: 2 minutes. This slide exists to pre-empt the question every technical Snowflake audience asks: why not just Streamlit on its own? Lead with the honest boundary — it builds credibility precisely because it isn't a universal claim. The case is data-in-Snowflake + governance + Cortex, not 'Streamlit is better in Snowflake' as a blanket statement.
+
+<!-- Slide number: 4 -->
+BLEND360
+BI MODERNIZATION · 04
+Modernization creates value beyond visualization
+The opportunity is larger than replacing a visualization tool.
+
+?
+?
+?
+?
+
+Platform economics
+Delivery speed
+Governance
+AI-ready experiences
+LOWER DUPLICATE COST
+SHORTER CHANGE CYCLES
+FEWER CONTROL GAPS
+NEW CLIENT EXPERIENCES
+Potentially reduce Tableau licenses and duplicated platform support for migrated users.
+Build on governed Snowflake data using reusable Python and Streamlit components.
+Reuse Snowflake RBAC, masking policies, semantic assets and controlled deployment.
+Extend migrated apps with CoCo and add natural-language analytics through Cortex Analyst.
+
+Measure the business case  —  baseline licenses, platform support, extract operations and dashboard change lead time before the pilot.
+04 / 12
+
+### Notes:
+Timing: 3 minutes. Leadership should hear business outcomes; Snowflake should hear platform consolidation; BI developers should hear faster iteration and extensibility. License savings are potential until client-specific TCO is calculated.
+
+<!-- Slide number: 5 -->
+BLEND360
+AI-ASSISTED BI LIFECYCLE · 05
+
+VISION · SNOWFLAKE COCO
+The migrated application becomes an AI-assisted product, not a static replica
+Natural-language enhancement changes the economics of maintaining and extending BI applications.
+1
+2
+3
+4
+5
+
+Migrate
+Validate
+Deploy
+Enhance
+Revalidate
+Tableau to
+Streamlit
+Visual, data,
+formulas
+Governed
+SiS app
+CoCo
+instructions
+Controlled
+release
+
+COCO / CORTEX CODE
+CORTEX ANALYST
+Generates reviewable application changes from natural-language requirements.
+Adds governed natural-language questions over semantic views.
+
+“Add a region filter to every chart, preserve existing calculations, and create a customer-detail view on selection.”
+Every AI-assisted change returns through regression and validation before release — CoCo lowers dependence on specialized coding skills, but production changes are never unreviewed.
+05 / 12
+
+### Notes:
+Timing: 3 minutes. This is a primary modernization advantage, but say clearly this is where the roadmap is headed next, not a capability wired into the accelerator's current five stages. Say that CoCo lowers dependence on specialized coding skills; do not promise that production applications can be changed without engineering review. Every AI-assisted change returns through regression and validation.
+
+<!-- Slide number: 6 -->
+BLEND360
+ACCELERATOR DEMO · 06
+One workbook moves through five controlled stages
+Each stage leaves an inspectable artifact before the next stage proceeds.
+
+01
+02
+03
+04
+05
+Discovery
+Parsing
+Data model
+App creation
+Validation
+?
+?
+?
+?
+Sources, extracts
+and tables
+Workbook to
+migration IR
+Relations and optional
+semantic view
+Generated Streamlit
+application
+Visual, data and
+formula evidence
+
+?  Human deployment gate
+The application is deployed only after findings and validation are visible.
+06 / 12
+
+### Notes:
+Timing: 3 minutes. This slide replaces the conflicting three-stage and seven-stage descriptions in earlier material. During the live demo, narrate the same five labels shown here.
+
+<!-- Slide number: 7 -->
+BLEND360
+ACCELERATOR DEMO · 07
+Platform architecture
+One engine runs once per workbook across the estate; Cortex sits inside the account; three independent validations before anything is approved.
+
+![architecture.png](Image0.jpg)
+07 / 12
+
+### Notes:
+Timing: 2 minutes. Walk left to right: ingestion/discovery, conversion into an IR, Cortex called from inside the account (proposes only, never final say), semantic and serving layer, then the three-lane QA gate (data / calc / visual) before anything ships. This is the detailed technical backing for the five-stage story just shown.
+
+<!-- Slide number: 8 -->
+BLEND360
+ACCELERATOR DEMO · 08
+Visual parity is reviewed at dashboard level
+The first check is immediate: does the migrated tab preserve the same analytical composition?
+
+TABLEAU
+STREAMLIT IN SNOWFLAKE
+=
+
+[ Insert dashboard screenshot ]
+[ Insert dashboard screenshot ]
+
+layout hierarchy
+
+KPI presence
+
+chart type
+
+filters
+
+labels
+
+visible grain
+Review evidence  —  visual similarity alone is not a pass; it is the first evidence layer.
+08 / 12
+
+### Notes:
+Timing: 2 minutes. Visual similarity alone is not a pass. It is the first evidence layer. Point out that the chart colors can differ while data, hierarchy and interaction behavior still require independent checks. Replace the placeholder panes with the real Tableau vs Streamlit comparison screenshot before presenting.
+
+<!-- Slide number: 9 -->
+BLEND360
+ACCELERATOR DEMO · 09
+A PASS is earned with chart-grain numbers and formulas
+The displayed visual grain determines the evidence: product rows for a ranked product table, not a dashboard total.
+DATA PROOF
+FORMULA PROOF
+| Product | Tableau | Streamlit | Backend | Diff | Result |
+| --- | --- | --- | --- | --- | --- |
+| Canon imageCLASS 2200 | $61,600.00 | $61,599.82 | $61,599.82 | $0.18 | PASS |
+| Fellowes PB500 | $27,454.00 | $27,453.78 | $27,453.78 | $0.22 | PASS |
+| Cisco TelePresence | $22,638.00 | $22,638.28 | $22,638.28 | $0.28 | PASS |
+
+Profit Ratio
+TABLEAU
+SUM([Profit]) / SUM([Sales])
+SNOWFLAKE SQL
+SUM(PROFIT) / NULLIF(SUM(SALES), 0)
+
+Semantically equivalent + null-safe
+The three displayed rows are representative slide evidence; the downloadable report retains the complete result set and every mismatch.
+
+Absolute and relative tolerance are recorded in the downloadable report. Currency tolerance is expressed in currency, not points.
+09 / 12
+
+### Notes:
+Timing: 4 minutes. The three displayed rows are representative slide evidence; the downloadable report retains the complete result set and every mismatch. Explain absolute and relative tolerance in the report and that currency tolerance must be expressed in currency, not points.
+
+<!-- Slide number: 10 -->
+BLEND360
+NEXT STEPS · 10  ·  CORE PRESENTATION ENDS HERE
+Let's find the right proof point together
+A proposed path from this demo to a joint customer win on Snowflake.
+
+01
+02
+03
+
+?
+?
+Identify a workload
+Run it live
+Review together
+A Snowflake account team nominates one Tableau-on-Snowflake workload as the proof point.
+The migration executes inside that account, stage by stage, with the account team watching.
+Visual, data and formula evidence reviewed jointly before anyone calls it a win.
+
+WHAT WE'RE ASKING OF SNOWFLAKE
+Help us identify one workload and one account team ready to run this live.
+10 / 12
+
+### Notes:
+Timing: 2 minutes. Close on a concrete ask to the Snowflake partner audience, not a generic next-step list. This is a co-sell motion: we need Snowflake to nominate the account and workload.
+
+<!-- Slide number: 11 -->
+BLEND360
+
+APPENDIX
+
+Appendix: Cortex assists only where its output can be governed
+
+DETERMINISTIC CORE
+OPTIONAL CORTEX ASSISTANCE
+1
+?
+
+Workbook parser
+Semantic view generation
+2
+?
+
+Intermediate representation
+Guarded calculation proposal
++
+3
+?
+
+Calculation rules
+Narrative validation summary
+4
+
+Code generation
+
+Execution-gated
+
+Human-reviewed
+5
+
+Numeric validation
+Cortex cannot convert a deterministic mismatch into a PASS.
+No model decision is needed for the standard path.
+11 / 12
+
+### Notes:
+Use when Snowflake asks where Cortex adds value. The concise answer: Cortex enriches the governed semantic experience and can propose translations for unsupported calculations, but deterministic checks retain authority.
+
+<!-- Slide number: 12 -->
+BLEND360
+
+APPENDIX
+
+Appendix: every dashboard tab receives the same evidence contract
+
+1
+2
+3
+
+Summary
+
+Visual
+
+Chart data
+Dashboard and sheet verdicts with reasons
+Tableau and Streamlit tab comparison when source capture is available
+Every displayed key compared across Tableau, Streamlit and backend
+
+4
+5
+6
+
+Formulas
+
+Interactions
+
+Artifacts
+Tableau calculation mapped to generated Snowflake SQL
+Filters, parameters, sorting and tooltip behavior checked
+Full rows, mismatches, queries and notebook retained for audit
+The HTML report is the readable entry point; the notebook and row-level artifacts provide the complete proof set.
+12 / 12
+
+### Notes:
+Use when the audience asks what is inside the generated report. Stress that the HTML is the readable entry point while the notebook and row-level artifacts provide the complete proof set.

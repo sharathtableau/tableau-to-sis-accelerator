@@ -1,0 +1,59 @@
+Country/Region,State/Province,Profit Ratio,Latitude (generated),Longitude (generated)
+Canada,Alberta,19.5%,53.41,-114.42
+Canada,British Columbia,4.2%,54.9464,-125.1024
+Canada,Manitoba,8.2%,55.0085,-97.1771
+Canada,Newfoundland and Labrador,36.2%,53.63,-61.37
+Canada,Nova Scotia,-13.8%,45,-63.58
+Canada,Ontario,26.8%,50.94,-84.75
+Canada,Prince Edward Island,30.3%,46.32,-63.19
+Canada,Quebec,28.5%,53.02,-72.58
+Canada,Saskatchewan,21.6%,54.49,-105.68
+United States,Alabama,29.7%,32.75,-86.75
+United States,Arizona,-9.7%,34.5,-111.5
+United States,Arkansas,34.3%,34.75,-92.5
+United States,California,16.7%,37.25,-119.75
+United States,Colorado,-20.3%,39,-105.5
+United States,Connecticut,26.2%,41.6227,-72.7028
+United States,Delaware,36.3%,38.6716,-75.4165
+United States,District of Columbia,37.0%,38.91,-77
+United States,Florida,-3.8%,28.42,-81.55
+United States,Georgia,33.1%,32.1598,-83.4715
+United States,Idaho,18.9%,44.0739,-114.542
+United States,Illinois,-15.7%,40,-89.25
+United States,Indiana,34.3%,40,-86.25
+United States,Iowa,25.8%,42,-93.5
+United States,Kansas,28.7%,38.5,-98.5
+United States,Kentucky,30.6%,37.79,-84.87
+United States,Louisiana,23.8%,30.6935,-92.241
+United States,Maine,35.8%,45.5,-69.24
+United States,Maryland,29.7%,39.4444,-77.0834
+United States,Massachusetts,23.7%,42.3616,-72.1839
+United States,Michigan,32.1%,43.1045,-84.6165
+United States,Minnesota,36.2%,46.25,-94.25
+United States,Mississippi,29.5%,33.503,-89.8071
+United States,Missouri,29.0%,38.25,-92.5
+United States,Montana,32.8%,47,-109.75
+United States,Nebraska,27.3%,41.5,-99.75
+United States,Nevada,19.8%,39.25,-116.75
+United States,New Hampshire,23.4%,43.66,-71.49
+United States,New Jersey,27.3%,40.16,-74.49
+United States,New Mexico,24.2%,34.5,-106
+United States,New York,23.8%,43,-75.49
+United States,North Carolina,-13.5%,35.5,-80
+United States,North Dakota,25.0%,47.5,-100
+United States,Ohio,-21.7%,40.25,-83
+United States,Oklahoma,24.7%,35.5,-97.5
+United States,Oregon,-6.8%,44,-120.5
+United States,Pennsylvania,-13.4%,40.86,-77.9
+United States,Rhode Island,32.2%,41.4966,-71.4757
+United States,South Carolina,20.9%,34,-81
+United States,South Dakota,30.0%,44.5,-100.25
+United States,Tennessee,-17.4%,35.75,-86.25
+United States,Texas,-15.1%,31.25,-99.25
+United States,Utah,22.7%,39.25,-111.75
+United States,Vermont,25.1%,44.1584,-72.7678
+United States,Virginia,26.3%,37.77,-78.24
+United States,Washington,24.1%,47.5,-120.5
+United States,West Virginia,15.4%,38.63,-80.73
+United States,Wisconsin,26.2%,44.5,-90
+United States,Wyoming,6.3%,43,-107.5

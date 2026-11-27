@@ -1,0 +1,339 @@
+{
+  "deployed": true,
+  "date": "2026-10-02",
+  "target": "WBR_DB.TABLEAU_ACCELERATOR_V3.TABLEAU_TO_SIS_V3_CANDIDATE",
+  "url": "https://app.snowflake.com/WB19670/c2gpartners/#/streamlit-apps/WBR_DB.TABLEAU_ACCELERATOR_V3.TABLEAU_TO_SIS_V3_CANDIDATE",
+  "build_sha256": "5fb9bb1a599814f452034421a14a704f627ac9caac309f0a078d9b5c43b1039f",
+  "archive_sha256": "6e246c58bf98e7cf01d596b4f7fcd607657eb06bcf1bf501afc390f5b9996c2b",
+  "deployed_archive": "reports/original_presentation_20261002/binding_final/deployment/candidate.zip",
+  "runtime": "SYSTEM$WAREHOUSE_RUNTIME",
+  "warehouse": "POWERHOUSE",
+  "browser_startup": "PASS: Active",
+  "live_cortex": "PASS: one actual structural review call per exact demo intake; not autonomous repair",
+  "grants_unchanged": true,
+  "tableau_bindings_verified": "SALES explicit binding and 72 states; ECommerce authored read-only relationship binding with fact grain verified",
+  "tableau_parity": "NOT_VERIFIED",
+  "cloud_workbook_acceptance": "NOT_VERIFIED",
+  "evidence": "reports/original_presentation_20261002/binding_final/checkpoint.md",
+  "previous_evidence": "reports\\ai03_2_20261001\\records_before\\V3_DEPLOYMENT_EVIDENCE.json",
+  "rollback": "reports/original_presentation_20261002/binding_final/deployment/rollback_live",
+  "authorization": "Explicit user approval in current chat for existing V3 target after checks",
+  "implemented_checkpoint": "Original deployed KPI/rank presentation reuse, percent directions, clean dashboard navigation and reset defaults",
+  "verification": "reports/original_presentation_20261002/binding_final/deployment/verification.json",
+  "hosted_interaction_adaptation": "Layered charts retain all visual layers and use explicit multi-value controls; mark-click parity is not claimed.",
+  "hosted_sales_intake": "PASS: Tableau Cloud fetch, one Cortex review call, verified binding, default/USA/reset/January result counts; whole-workbook acceptance unverified",
+  "latest_recovery_deployment": {
+    "build_sha256": "fafb8e8aefcc593e8365f9f6a05692773b29fc522681831939f973c1fd2d0f34",
+    "verified_files": 44,
+    "mismatches": [],
+    "config_unchanged": true,
+    "grants_unchanged": true
+  },
+  "latest_recovery_evidence": "reports/demo_ecommerce_20261002/deployment_recovery",
+  "whole_workbook_acceptance": "NOT_VERIFIED",
+  "latest_composed_deployment": {
+    "build_sha256": "04eb2263abeceff5c5fd528ef511cc8efca40fc61c2254b37cfb169b60a66424",
+    "verified_files": 48,
+    "mismatches": [],
+    "config_unchanged": true,
+    "grants_unchanged": true
+  },
+  "latest_composed_evidence": "reports/demo_ecommerce_20261002/logical_grain/checkpoint.md",
+  "verified_files": 52,
+  "latest_hosted_corrections_deployment": {
+    "build_sha256": "4b79cc07704f021caea44a6be64f85d8ffe41633d7282dd70acf89d4ea74e3d1",
+    "verified_files": 48,
+    "mismatches": [],
+    "config_unchanged": true,
+    "grants_unchanged": true
+  },
+  "latest_hosted_corrections_evidence": "reports\\demo_ecommerce_20261002\\hosted_corrections",
+  "latest_hosted_corrections_ui": {
+    "build_sha256": "4b79cc07704f021caea44a6be64f85d8ffe41633d7282dd70acf89d4ea74e3d1",
+    "startup": "ACTIVE",
+    "intake": "Tableau Cloud ECommerce PowerBI workbook",
+    "cortex_calls": 1,
+    "authored_model_binding": "PASS",
+    "information_popover": "OPENS_WITH_AUTHORED_TEXT",
+    "main_controls_visible": 6,
+    "scatter": {
+      "customer_axis": [
+        0,
+        30
+      ],
+      "reference_x": 11899.4654455,
+      "reference_y": 17.7524752475
+    },
+    "rounded_revenue_states": {
+      "default": 1201846,
+      "day_single": 68678,
+      "day_multi": 123956,
+      "day_clear": 1201846,
+      "product_single": 16844,
+      "product_multi": 18470,
+      "product_clear": 1201846
+    },
+    "screenshots": "Desktop workspace/demo_monday_20261005/output/hosted_ecommerce_*_20261002.png",
+    "remaining": [
+      "15 Product/Details unsupported occurrences",
+      "full numeric and Tableau visual/action acceptance",
+      "narrow viewport KPI/chart overflow",
+      "donut label contrast/clipping at desktop breakpoint",
+      "source-authored Avg Days/AOV mismatch",
+      "source-authored tooltip U+00C6 before line breaks"
+    ],
+    "whole_workbook_acceptance": "NOT_VERIFIED"
+  },
+  "mismatches": [],
+  "config_unchanged": true,
+  "latest_product_details_deployment": {
+    "build_sha256": "8ed7f706264ce6673165f7b96a490caf8661321fdc4c6e157baa392636b38e71",
+    "verified_files": 52,
+    "mismatches": [],
+    "config_unchanged": true,
+    "grants_unchanged": true
+  },
+  "latest_reset_deployment": {
+    "build_sha256": "3b0aa6241da27841e1e70e6a2d42beaefa23ac215d4cbb62d16ccf434bb14411",
+    "verified_files": 52,
+    "mismatches": [],
+    "config_unchanged": true,
+    "grants_unchanged": true
+  },
+  "hosted_sales_reset": "PASS 1000 -> USA 880 -> reset 1000 (chip clear) -> January 601",
+  "pending_local_followup": null,
+  "preceding_deployment_checkpoint": {
+    "build_sha256": "3b0aa6241da27841e1e70e6a2d42beaefa23ac215d4cbb62d16ccf434bb14411",
+    "archive_sha256": "38a8fa35d62e68d49cba1112340318109d09646893469a1616c65f076e7dc4f6",
+    "verification": "reports/product_details_20261002/reset/deployment/verification.json",
+    "evidence": "reports/product_details_20261002/reset/checkpoint.md"
+  },
+  "hosted_demo_acceptance": "VERIFIED_SCOPED",
+  "hosted_ui": "reports/original_presentation_20261002/binding_final/hosted_ui.json",
+  "preceding_layout_checkpoint": {
+    "deployed": true,
+    "date": "2026-10-02",
+    "target": "WBR_DB.TABLEAU_ACCELERATOR_V3.TABLEAU_TO_SIS_V3_CANDIDATE",
+    "url": "https://app.snowflake.com/WB19670/c2gpartners/#/streamlit-apps/WBR_DB.TABLEAU_ACCELERATOR_V3.TABLEAU_TO_SIS_V3_CANDIDATE",
+    "build_sha256": "cced4899775afb6177271db18f28234a50b6373478ddc5c2ffb2d22846d9e8fc",
+    "archive_sha256": "2f71571d4b3c7bf98ad866a177b6eb3e9e13a3b2ed0fb7826975e78740dcc74e",
+    "deployed_archive": "reports/layout_fidelity_20261002/final/deployment/candidate.zip",
+    "runtime": "SYSTEM$WAREHOUSE_RUNTIME",
+    "warehouse": "POWERHOUSE",
+    "browser_startup": "PASS: Active",
+    "live_cortex": "PASS: one actual structural review call per exact demo intake; not autonomous repair",
+    "grants_unchanged": true,
+    "tableau_bindings_verified": "SALES explicit binding and 72 states; ECommerce authored read-only relationship binding with fact grain verified",
+    "tableau_parity": "NOT_VERIFIED",
+    "cloud_workbook_acceptance": "NOT_VERIFIED",
+    "evidence": "reports/layout_fidelity_20261002/final/checkpoint.md",
+    "previous_evidence": "reports\\ai03_2_20261001\\records_before\\V3_DEPLOYMENT_EVIDENCE.json",
+    "rollback": "reports/layout_fidelity_20261002/final/deployment/rollback_live",
+    "authorization": "Explicit user approval in current chat for existing V3 target after checks",
+    "implemented_checkpoint": "Generic authored geometry, temporal chart height/axes/legends, KPI spacing and compact action filters",
+    "verification": "reports/layout_fidelity_20261002/final/deployment/verification.json",
+    "hosted_interaction_adaptation": "Layered charts retain all visual layers and use explicit multi-value controls; mark-click parity is not claimed.",
+    "hosted_sales_intake": "PASS: Tableau Cloud fetch, one Cortex review call, verified binding, default/USA/reset/January result counts; whole-workbook acceptance unverified",
+    "latest_recovery_deployment": {
+      "build_sha256": "fafb8e8aefcc593e8365f9f6a05692773b29fc522681831939f973c1fd2d0f34",
+      "verified_files": 44,
+      "mismatches": [],
+      "config_unchanged": true,
+      "grants_unchanged": true
+    },
+    "latest_recovery_evidence": "reports/demo_ecommerce_20261002/deployment_recovery",
+    "whole_workbook_acceptance": "NOT_VERIFIED",
+    "latest_composed_deployment": {
+      "build_sha256": "04eb2263abeceff5c5fd528ef511cc8efca40fc61c2254b37cfb169b60a66424",
+      "verified_files": 48,
+      "mismatches": [],
+      "config_unchanged": true,
+      "grants_unchanged": true
+    },
+    "latest_composed_evidence": "reports/demo_ecommerce_20261002/logical_grain/checkpoint.md",
+    "verified_files": 52,
+    "latest_hosted_corrections_deployment": {
+      "build_sha256": "4b79cc07704f021caea44a6be64f85d8ffe41633d7282dd70acf89d4ea74e3d1",
+      "verified_files": 48,
+      "mismatches": [],
+      "config_unchanged": true,
+      "grants_unchanged": true
+    },
+    "latest_hosted_corrections_evidence": "reports\\demo_ecommerce_20261002\\hosted_corrections",
+    "latest_hosted_corrections_ui": {
+      "build_sha256": "4b79cc07704f021caea44a6be64f85d8ffe41633d7282dd70acf89d4ea74e3d1",
+      "startup": "ACTIVE",
+      "intake": "Tableau Cloud ECommerce PowerBI workbook",
+      "cortex_calls": 1,
+      "authored_model_binding": "PASS",
+      "information_popover": "OPENS_WITH_AUTHORED_TEXT",
+      "main_controls_visible": 6,
+      "scatter": {
+        "customer_axis": [
+          0,
+          30
+        ],
+        "reference_x": 11899.4654455,
+        "reference_y": 17.7524752475
+      },
+      "rounded_revenue_states": {
+        "default": 1201846,
+        "day_single": 68678,
+        "day_multi": 123956,
+        "day_clear": 1201846,
+        "product_single": 16844,
+        "product_multi": 18470,
+        "product_clear": 1201846
+      },
+      "screenshots": "Desktop workspace/demo_monday_20261005/output/hosted_ecommerce_*_20261002.png",
+      "remaining": [
+        "15 Product/Details unsupported occurrences",
+        "full numeric and Tableau visual/action acceptance",
+        "narrow viewport KPI/chart overflow",
+        "donut label contrast/clipping at desktop breakpoint",
+        "source-authored Avg Days/AOV mismatch",
+        "source-authored tooltip U+00C6 before line breaks"
+      ],
+      "whole_workbook_acceptance": "NOT_VERIFIED"
+    },
+    "mismatches": [],
+    "config_unchanged": true,
+    "latest_product_details_deployment": {
+      "build_sha256": "8ed7f706264ce6673165f7b96a490caf8661321fdc4c6e157baa392636b38e71",
+      "verified_files": 52,
+      "mismatches": [],
+      "config_unchanged": true,
+      "grants_unchanged": true
+    },
+    "latest_reset_deployment": {
+      "build_sha256": "3b0aa6241da27841e1e70e6a2d42beaefa23ac215d4cbb62d16ccf434bb14411",
+      "verified_files": 52,
+      "mismatches": [],
+      "config_unchanged": true,
+      "grants_unchanged": true
+    },
+    "hosted_sales_reset": "PASS 1000 -> USA 880 -> reset 1000 (chip clear) -> January 601",
+    "pending_local_followup": null,
+    "preceding_deployment_checkpoint": {
+      "build_sha256": "3b0aa6241da27841e1e70e6a2d42beaefa23ac215d4cbb62d16ccf434bb14411",
+      "archive_sha256": "38a8fa35d62e68d49cba1112340318109d09646893469a1616c65f076e7dc4f6",
+      "verification": "reports/product_details_20261002/reset/deployment/verification.json",
+      "evidence": "reports/product_details_20261002/reset/checkpoint.md"
+    },
+    "hosted_demo_acceptance": "VERIFIED_SCOPED",
+    "hosted_ui": "reports/layout_fidelity_20261002/final/hosted_ui.json",
+    "preceding_layout_checkpoint": {
+      "deployed": true,
+      "date": "2026-10-02",
+      "target": "WBR_DB.TABLEAU_ACCELERATOR_V3.TABLEAU_TO_SIS_V3_CANDIDATE",
+      "url": "https://app.snowflake.com/WB19670/c2gpartners/#/streamlit-apps/WBR_DB.TABLEAU_ACCELERATOR_V3.TABLEAU_TO_SIS_V3_CANDIDATE",
+      "build_sha256": "eabcd1c8cf341f698c24b250fe8c192990230af39fbd20a489f3d884ac38fdcd",
+      "archive_sha256": "0cda6b6c861c9034cb4f3f2fc9e59b16de043739eb3182a9e2c68d0bed008a14",
+      "deployed_archive": "reports/product_details_20261002/layout_final/deployment/candidate.zip",
+      "runtime": "SYSTEM$WAREHOUSE_RUNTIME",
+      "warehouse": "POWERHOUSE",
+      "browser_startup": "PASS: Active",
+      "live_cortex": "PASS: one actual structural review call per exact demo intake; not autonomous repair",
+      "grants_unchanged": true,
+      "tableau_bindings_verified": "SALES explicit binding and 72 states; ECommerce authored read-only relationship binding with fact grain verified",
+      "tableau_parity": "NOT_VERIFIED",
+      "cloud_workbook_acceptance": "NOT_VERIFIED",
+      "evidence": "reports/product_details_20261002/layout_final/checkpoint.md",
+      "previous_evidence": "reports\\ai03_2_20261001\\records_before\\V3_DEPLOYMENT_EVIDENCE.json",
+      "rollback": "reports/product_details_20261002/layout_final/deployment/rollback_live",
+      "authorization": "Explicit user approval in current chat for existing V3 target after checks",
+      "implemented_checkpoint": "Generic Product/Details restoration; hosted navigation/reset/shared parameters/layout; real Cortex review",
+      "verification": "reports/product_details_20261002/layout_final/deployment/verification.json",
+      "hosted_interaction_adaptation": "Layered charts retain all visual layers and use explicit multi-value controls; mark-click parity is not claimed.",
+      "hosted_sales_intake": "PASS: Tableau Cloud fetch, one Cortex review call, verified binding, default/USA/reset/January result counts; whole-workbook acceptance unverified",
+      "latest_recovery_deployment": {
+        "build_sha256": "fafb8e8aefcc593e8365f9f6a05692773b29fc522681831939f973c1fd2d0f34",
+        "verified_files": 44,
+        "mismatches": [],
+        "config_unchanged": true,
+        "grants_unchanged": true
+      },
+      "latest_recovery_evidence": "reports/demo_ecommerce_20261002/deployment_recovery",
+      "whole_workbook_acceptance": "NOT_VERIFIED",
+      "latest_composed_deployment": {
+        "build_sha256": "04eb2263abeceff5c5fd528ef511cc8efca40fc61c2254b37cfb169b60a66424",
+        "verified_files": 48,
+        "mismatches": [],
+        "config_unchanged": true,
+        "grants_unchanged": true
+      },
+      "latest_composed_evidence": "reports/demo_ecommerce_20261002/logical_grain/checkpoint.md",
+      "verified_files": 52,
+      "latest_hosted_corrections_deployment": {
+        "build_sha256": "4b79cc07704f021caea44a6be64f85d8ffe41633d7282dd70acf89d4ea74e3d1",
+        "verified_files": 48,
+        "mismatches": [],
+        "config_unchanged": true,
+        "grants_unchanged": true
+      },
+      "latest_hosted_corrections_evidence": "reports\\demo_ecommerce_20261002\\hosted_corrections",
+      "latest_hosted_corrections_ui": {
+        "build_sha256": "4b79cc07704f021caea44a6be64f85d8ffe41633d7282dd70acf89d4ea74e3d1",
+        "startup": "ACTIVE",
+        "intake": "Tableau Cloud ECommerce PowerBI workbook",
+        "cortex_calls": 1,
+        "authored_model_binding": "PASS",
+        "information_popover": "OPENS_WITH_AUTHORED_TEXT",
+        "main_controls_visible": 6,
+        "scatter": {
+          "customer_axis": [
+            0,
+            30
+          ],
+          "reference_x": 11899.4654455,
+          "reference_y": 17.7524752475
+        },
+        "rounded_revenue_states": {
+          "default": 1201846,
+          "day_single": 68678,
+          "day_multi": 123956,
+          "day_clear": 1201846,
+          "product_single": 16844,
+          "product_multi": 18470,
+          "product_clear": 1201846
+        },
+        "screenshots": "Desktop workspace/demo_monday_20261005/output/hosted_ecommerce_*_20261002.png",
+        "remaining": [
+          "15 Product/Details unsupported occurrences",
+          "full numeric and Tableau visual/action acceptance",
+          "narrow viewport KPI/chart overflow",
+          "donut label contrast/clipping at desktop breakpoint",
+          "source-authored Avg Days/AOV mismatch",
+          "source-authored tooltip U+00C6 before line breaks"
+        ],
+        "whole_workbook_acceptance": "NOT_VERIFIED"
+      },
+      "mismatches": [],
+      "config_unchanged": true,
+      "latest_product_details_deployment": {
+        "build_sha256": "8ed7f706264ce6673165f7b96a490caf8661321fdc4c6e157baa392636b38e71",
+        "verified_files": 52,
+        "mismatches": [],
+        "config_unchanged": true,
+        "grants_unchanged": true
+      },
+      "latest_reset_deployment": {
+        "build_sha256": "3b0aa6241da27841e1e70e6a2d42beaefa23ac215d4cbb62d16ccf434bb14411",
+        "verified_files": 52,
+        "mismatches": [],
+        "config_unchanged": true,
+        "grants_unchanged": true
+      },
+      "hosted_sales_reset": "PASS 1000 -> USA 880 -> reset 1000 (chip clear) -> January 601",
+      "pending_local_followup": null,
+      "preceding_deployment_checkpoint": {
+        "build_sha256": "3b0aa6241da27841e1e70e6a2d42beaefa23ac215d4cbb62d16ccf434bb14411",
+        "archive_sha256": "38a8fa35d62e68d49cba1112340318109d09646893469a1616c65f076e7dc4f6",
+        "verification": "reports/product_details_20261002/reset/deployment/verification.json",
+        "evidence": "reports/product_details_20261002/reset/checkpoint.md"
+      },
+      "hosted_demo_acceptance": "VERIFIED_SCOPED",
+      "hosted_ui": "reports/product_details_20261002/layout_final/hosted_ui.json"
+    }
+  }
+}

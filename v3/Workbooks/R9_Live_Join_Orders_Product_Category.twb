@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<workbook source-build='2024.3' source-platform='win' version='18.1'>
+  <datasources>
+    <datasource caption='R9 Live Join Model' inline='true' name='federated.r9live' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection name='snowflake.r9live' caption='snowflake'>
+            <connection class='snowflake' dbname='WBR_DB' schema='PIPELINE_DEMO' server='wb19670-c2gpartners.snowflakecomputing.com' warehouse='POWERHOUSE' />
+          </named-connection>
+        </named-connections>
+        <relation name='R10_ORDERS' table='[WBR_DB].[PIPELINE_DEMO].[R10_ORDERS]' type='table' connection='snowflake.r9live' />
+        <relation name='R10_PRODUCT' table='[WBR_DB].[PIPELINE_DEMO].[R10_PRODUCT]' type='table' connection='snowflake.r9live' />
+        <relation name='R10_CATEGORY' table='[WBR_DB].[PIPELINE_DEMO].[R10_CATEGORY]' type='table' connection='snowflake.r9live' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>ORDER_ID</remote-name>
+            <parent-name>[Orders]</parent-name>
+            <local-name>[ORDER_ID]</local-name>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORDER_DATE</remote-name>
+            <parent-name>[Orders]</parent-name>
+            <local-name>[ORDER_DATE]</local-name>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PRODUCT_ID</remote-name>
+            <parent-name>[Orders]</parent-name>
+            <local-name>[PRODUCT_ID]</local-name>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>REGION</remote-name>
+            <parent-name>[Orders]</parent-name>
+            <local-name>[REGION]</local-name>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SALES</remote-name>
+            <parent-name>[Orders]</parent-name>
+            <local-name>[SALES]</local-name>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>QUANTITY</remote-name>
+            <parent-name>[Orders]</parent-name>
+            <local-name>[QUANTITY]</local-name>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PROFIT</remote-name>
+            <parent-name>[Orders]</parent-name>
+            <local-name>[PROFIT]</local-name>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PRODUCT_ID</remote-name>
+            <parent-name>[Product]</parent-name>
+            <local-name>[PRODUCT_ID]</local-name>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CATEGORY_ID</remote-name>
+            <parent-name>[Product]</parent-name>
+            <local-name>[CATEGORY_ID]</local-name>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PRODUCT_NAME</remote-name>
+            <parent-name>[Product]</parent-name>
+            <local-name>[PRODUCT_NAME]</local-name>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SUB_CATEGORY</remote-name>
+            <parent-name>[Product]</parent-name>
+            <local-name>[SUB_CATEGORY]</local-name>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CATEGORY_ID</remote-name>
+            <parent-name>[Category]</parent-name>
+            <local-name>[CATEGORY_ID]</local-name>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CATEGORY_NAME</remote-name>
+            <parent-name>[Category]</parent-name>
+            <local-name>[CATEGORY_NAME]</local-name>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[ORDER_ID]' role='dimension' type='nominal' />
+      <column datatype='date' name='[ORDER_DATE]' role='dimension' type='nominal' />
+      <column datatype='string' name='[PRODUCT_ID]' role='dimension' type='nominal' />
+      <column datatype='string' name='[REGION]' role='dimension' type='nominal' />
+      <column datatype='real' name='[SALES]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[QUANTITY]' role='measure' type='quantitative' />
+      <column datatype='real' name='[PROFIT]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[CATEGORY_ID]' role='dimension' type='nominal' />
+      <column datatype='string' name='[PRODUCT_NAME]' role='dimension' type='nominal' />
+      <column datatype='string' name='[SUB_CATEGORY]' role='dimension' type='nominal' />
+      <column datatype='string' name='[CATEGORY_NAME]' role='dimension' type='nominal' />
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Orders' id='Orders_50C062620A0A4EE591ECB2AF6AE78CD5'>
+            <properties context=''>
+              <relation connection='snowflake.r9live' name='R10_ORDERS' table='[WBR_DB].[PIPELINE_DEMO].[R10_ORDERS]' type='table'>
+                <columns header='yes'>
+              <column datatype='string' name='ORDER_ID' ordinal='0' />
+              <column datatype='date' name='ORDER_DATE' ordinal='0' />
+              <column datatype='string' name='PRODUCT_ID' ordinal='0' />
+              <column datatype='string' name='REGION' ordinal='0' />
+              <column datatype='real' name='SALES' ordinal='0' />
+              <column datatype='integer' name='QUANTITY' ordinal='0' />
+              <column datatype='real' name='PROFIT' ordinal='0' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='Product' id='Product_1BBC1AB0F3334F5D8E836CEB3A30A5AF'>
+            <properties context=''>
+              <relation connection='snowflake.r9live' name='R10_PRODUCT' table='[WBR_DB].[PIPELINE_DEMO].[R10_PRODUCT]' type='table'>
+                <columns header='yes'>
+              <column datatype='string' name='PRODUCT_ID' ordinal='0' />
+              <column datatype='integer' name='CATEGORY_ID' ordinal='0' />
+              <column datatype='string' name='PRODUCT_NAME' ordinal='0' />
+              <column datatype='string' name='SUB_CATEGORY' ordinal='0' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='Category' id='Category_8B8412415373470F853DE2AADE9C13F2'>
+            <properties context=''>
+              <relation connection='snowflake.r9live' name='R10_CATEGORY' table='[WBR_DB].[PIPELINE_DEMO].[R10_CATEGORY]' type='table'>
+                <columns header='yes'>
+              <column datatype='integer' name='CATEGORY_ID' ordinal='0' />
+              <column datatype='string' name='CATEGORY_NAME' ordinal='0' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[PRODUCT_ID]' />
+              <expression op='[PRODUCT_ID (Product)]' />
+            </expression>
+            <first-end-point object-id='Orders_50C062620A0A4EE591ECB2AF6AE78CD5' />
+            <second-end-point object-id='Product_1BBC1AB0F3334F5D8E836CEB3A30A5AF' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[CATEGORY_ID]' />
+              <expression op='[CATEGORY_ID (Category)]' />
+            </expression>
+            <first-end-point object-id='Product_1BBC1AB0F3334F5D8E836CEB3A30A5AF' />
+            <second-end-point object-id='Category_8B8412415373470F853DE2AADE9C13F2' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sales by Category'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='R9 Live Join Model' name='federated.r9live' />
+          </datasources>
+          <datasource-dependencies datasource='federated.r9live'>
+            <column datatype='string' name='[CATEGORY_NAME]' role='dimension' type='nominal' />
+            <column datatype='real' name='[SALES]' role='measure' type='quantitative' />
+            <column-instance column='[CATEGORY_NAME]' derivation='None' name='[none:CATEGORY_NAME:nk]' pivot='key' type='nominal' />
+            <column-instance column='[SALES]' derivation='Sum' name='[sum:SALES:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view><breakdown value='auto' /></view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.r9live].[none:CATEGORY_NAME:nk]</rows>
+        <cols>[federated.r9live].[sum:SALES:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sales by Sub-Category'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='R9 Live Join Model' name='federated.r9live' />
+          </datasources>
+          <datasource-dependencies datasource='federated.r9live'>
+            <column datatype='string' name='[SUB_CATEGORY]' role='dimension' type='nominal' />
+            <column datatype='real' name='[SALES]' role='measure' type='quantitative' />
+            <column-instance column='[SUB_CATEGORY]' derivation='None' name='[none:SUB_CATEGORY:nk]' pivot='key' type='nominal' />
+            <column-instance column='[SALES]' derivation='Sum' name='[sum:SALES:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view><breakdown value='auto' /></view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.r9live].[none:SUB_CATEGORY:nk]</rows>
+        <cols>[federated.r9live].[sum:SALES:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Product Detail'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='R9 Live Join Model' name='federated.r9live' />
+          </datasources>
+          <datasource-dependencies datasource='federated.r9live'>
+            <column datatype='string' name='[PRODUCT_NAME]' role='dimension' type='nominal' />
+            <column datatype='string' name='[SUB_CATEGORY]' role='dimension' type='nominal' />
+            <column datatype='string' name='[CATEGORY_NAME]' role='dimension' type='nominal' />
+            <column datatype='real' name='[SALES]' role='measure' type='quantitative' />
+            <column-instance column='[PRODUCT_NAME]' derivation='None' name='[none:PRODUCT_NAME:nk]' pivot='key' type='nominal' />
+            <column-instance column='[SUB_CATEGORY]' derivation='None' name='[none:SUB_CATEGORY:nk]' pivot='key' type='nominal' />
+            <column-instance column='[CATEGORY_NAME]' derivation='None' name='[none:CATEGORY_NAME:nk]' pivot='key' type='nominal' />
+            <column-instance column='[SALES]' derivation='Sum' name='[sum:SALES:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view><breakdown value='auto' /></view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.r9live].[none:CATEGORY_NAME:nk]+[federated.r9live].[none:SUB_CATEGORY:nk]+[federated.r9live].[none:PRODUCT_NAME:nk]+[federated.r9live].[sum:SALES:qk]</rows>
+        <cols></cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='R9 Dashboard'>
+      <style />
+      <size maxheight='1400' maxwidth='1000' minheight='1400' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='1' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='25000' id='2' name='Sales by Category' w='100000' x='0' y='0' />
+          <zone h='25000' id='3' name='Sales by Sub-Category' w='100000' x='0' y='25000' />
+          <zone h='50000' id='4' name='Product Detail' w='100000' x='0' y='50000' />
+        </zone>
+      </zones>
+    </dashboard>
+  </dashboards>
+</workbook>

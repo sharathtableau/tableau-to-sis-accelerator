@@ -1,0 +1,250 @@
+{
+  "source_file": "Superstore.twb",
+  "dashboard": "Overview",
+  "title": "Executive Overview - Profitability",
+  "dashboard_filters": [
+    "Order Date",
+    "Region",
+    "Order Profitable?",
+    "Profit Ratio"
+  ],
+  "calculations": {
+    "Base Salary": {
+      "caption": "Base Salary",
+      "internal_name": "[Base Salary]",
+      "role": "measure",
+      "formula": "50000"
+    },
+    "Commission Rate": {
+      "caption": "Commission Rate",
+      "internal_name": "[Commission Rate]",
+      "role": "measure",
+      "formula": "18.399999999999999"
+    },
+    "New Quota": {
+      "caption": "New Quota",
+      "internal_name": "[New Quota]",
+      "role": "measure",
+      "formula": "500000"
+    },
+    "Sort by": {
+      "caption": "Sort by",
+      "internal_name": "[Parameter 1 1]",
+      "role": "measure",
+      "formula": "\"Names\""
+    },
+    "New Business Growth": {
+      "caption": "New Business Growth",
+      "internal_name": "[Parameter 1]",
+      "role": "measure",
+      "formula": "0.59999999999999998"
+    },
+    "Churn Rate": {
+      "caption": "Churn Rate",
+      "internal_name": "[Parameter 2]",
+      "role": "measure",
+      "formula": "0.064000000000000001"
+    },
+    "Achievement (estimated)": {
+      "caption": "Achievement (estimated)",
+      "internal_name": "[Achievement (copy)]",
+      "role": "measure",
+      "formula": "[Sales]"
+    },
+    "Achieved Quota": {
+      "caption": "Achieved Quota",
+      "internal_name": "[Achievement (variable) (copy)]",
+      "role": "measure",
+      "formula": "if SUM([Achievement (copy)]) >= [Parameters].[New Quota] then \"100% +\"\nelseif SUM([Achievement (copy)]) >= 0.75 * [Parameters].[New Quota] then \"75-100%\"\nelseif SUM([Achievement (copy)]) >= 0.5 * [Parameters].[New Quota] then \"50-75%\"\nelse \"Below 50%\" end"
+    },
+    "[Base (Variable)]": {
+      "caption": "[Base (Variable)]",
+      "internal_name": "[Base (Variable)]",
+      "role": "measure",
+      "formula": "[Parameters].[Base Salary]"
+    },
+    "% of quota achieved": {
+      "caption": "% of quota achieved",
+      "internal_name": "[Calculation_0440925131659539]",
+      "role": "measure",
+      "formula": "AVG([Achievement (copy)])/[Parameters].[New Quota]"
+    },
+    "Rank over 3": {
+      "caption": "Rank over 3",
+      "internal_name": "[Calculation_4120925132203686]",
+      "role": "measure",
+      "formula": "ROUND(INDEX() / 3 - 0.6,0) + 1"
+    },
+    "Sort by field": {
+      "caption": "Sort by field",
+      "internal_name": "[Calculation_8140925133029303]",
+      "role": "measure",
+      "formula": "if [Parameters].[Parameter 1 1]=\"Names\" then 0\nelseif [Parameters].[Parameter 1 1]=\"% quota descending\" then -[Calculation_0440925131659539]\nelse [Calculation_0440925131659539] end"
+    },
+    "[Commission (Variable)]": {
+      "caption": "[Commission (Variable)]",
+      "internal_name": "[Commission (Variable)]",
+      "role": "measure",
+      "formula": "([Parameters].[Commission Rate]*[Sales])/100"
+    },
+    "[Estimate Compensation label]": {
+      "caption": "[Estimate Compensation label]",
+      "internal_name": "[Estimate Compensation label]",
+      "role": "dimension",
+      "formula": "\"Estimated Compensation:\""
+    },
+    "[OTE (Variable)]": {
+      "caption": "[OTE (Variable)]",
+      "internal_name": "[OTE (Variable)]",
+      "role": "measure",
+      "formula": "[Parameters].[Base Salary] + ([Parameters].[Commission Rate]*[Parameters].[New Quota])/100"
+    },
+    "[Total Compensation]": {
+      "caption": "[Total Compensation]",
+      "internal_name": "[Total Compensation]",
+      "role": "measure",
+      "formula": "MIN([Base (Variable)]) + SUM([Commission (Variable)])"
+    },
+    "[Total Sales label]": {
+      "caption": "[Total Sales label]",
+      "internal_name": "[Total Sales label]",
+      "role": "dimension",
+      "formula": "\"Total Sales:\""
+    },
+    "Days to Ship Actual": {
+      "caption": "Days to Ship Actual",
+      "internal_name": "[Calculation_0831103151444568]",
+      "role": "measure",
+      "formula": "DATEDIFF('day',[Order Date],[Ship Date])"
+    },
+    "Sales Forecast": {
+      "caption": "Sales Forecast",
+      "internal_name": "[Calculation_5421109230915137]",
+      "role": "measure",
+      "formula": "[Sales]*(1-[Parameters].[Parameter 2])*(1+[Parameters].[Parameter 1])"
+    },
+    "Ship Status": {
+      "caption": "Ship Status",
+      "internal_name": "[Calculation_6401103171259723]",
+      "role": "dimension",
+      "formula": "if [Calculation_0831103151444568]> [Calculation_6861103170623145] then \"Shipped Late\" \nelseIF [Calculation_0831103151444568]= [Calculation_6861103170623145] then \"Shipped On Time\"\nElse \"Shipped Early\" end"
+    },
+    "Days to Ship Scheduled": {
+      "caption": "Days to Ship Scheduled",
+      "internal_name": "[Calculation_6861103170623145]",
+      "role": "measure",
+      "formula": "CASE  [Ship Mode]\nWHEN \"Same Day\" THEN 0\nWHEN \"First Class\" THEN 1\nWHEN \"Second Class\" THEN 3\nWHEN \"Standard Class\" THEN 6\nEND"
+    },
+    "Order Profitable?": {
+      "caption": "Order Profitable?",
+      "internal_name": "[Calculation_9060122104947471]",
+      "role": "dimension",
+      "formula": "{fixed [Order ID]:sum([Profit])}>0"
+    },
+    "Sales per Customer": {
+      "caption": "Sales per Customer",
+      "internal_name": "[Calculation_9321103144526191]",
+      "role": "measure",
+      "formula": "Sum([Sales])/countD([Customer Name])"
+    },
+    "Profit Ratio": {
+      "caption": "Profit Ratio",
+      "internal_name": "[Calculation_9921103144103743]",
+      "role": "measure",
+      "formula": "sum([Profit])/sum([Sales])"
+    },
+    "Sales above Target?": {
+      "caption": "Sales above Target?",
+      "internal_name": "[Calculation_9951107165644870]",
+      "role": "measure",
+      "formula": "If Sum([Sales])>SUM([federated.0hgpf0j1fdpvv316shikk0mmdlec].[Sales Target]) then \"Above Target\" else \"Below Target\" end"
+    },
+    "Units estimate": {
+      "caption": "Units estimate",
+      "internal_name": "[Sales est (copy)]",
+      "role": "measure",
+      "formula": "ROUND([Quantity]*(1-[Parameters].[Parameter 2])*(1+[Parameters].[Parameter 1]),0)"
+    },
+    "Profit per Order": {
+      "caption": "Profit per Order",
+      "internal_name": "[Sales per Customer (copy)]",
+      "role": "measure",
+      "formula": "Sum([Profit])/countD([Order ID])"
+    },
+    "SUM([Sales])-SUM([Sales Target].[Sales Target])": {
+      "caption": "SUM([Sales])-SUM([Sales Target].[Sales Target])",
+      "internal_name": "[Calculation_5144658905056067585]",
+      "role": "measure",
+      "formula": "SUM([Sales])-SUM([federated.0hgpf0j1fdpvv316shikk0mmdlec].[Sales Target])"
+    },
+    "SUM([Sales])-SUM([Sales Forecast])": {
+      "caption": "SUM([Sales])-SUM([Sales Forecast])",
+      "internal_name": "[Calculation_9330126204734562]",
+      "role": "measure",
+      "formula": "SUM([Sales])-SUM([Calculation_5421109230915137])"
+    }
+  },
+  "sheets": [
+    {
+      "name": "Total Sales",
+      "mark": "Automatic",
+      "measures": [
+        "Discount",
+        "Sales Forecast",
+        "Profit",
+        "Quantity",
+        "Units estimate",
+        "Sales",
+        "Sales per Customer",
+        "Profit Ratio",
+        "Profit per Order"
+      ],
+      "filters": [
+        "Order Date",
+        "Region"
+      ],
+      "archetype": "kpi_strip"
+    },
+    {
+      "name": "Sale Map",
+      "mark": "Multipolygon",
+      "geo": "State",
+      "color_measure": "Profit Ratio",
+      "filters": [
+        "Order Profitable?",
+        "Order Date",
+        "Region",
+        "Profit Ratio"
+      ],
+      "archetype": "filled_map"
+    },
+    {
+      "name": "Sales by Segment",
+      "mark": "Area",
+      "panel": "Segment",
+      "x": "Order Date",
+      "y": "Sales",
+      "color": "Order Profitable?",
+      "filters": [
+        "Order Profitable?",
+        "Order Date",
+        "Region"
+      ],
+      "archetype": "faceted_area"
+    },
+    {
+      "name": "Sales by Product",
+      "mark": "Area",
+      "panel": "Category",
+      "x": "Order Date",
+      "y": "Sales",
+      "color": "Order Profitable?",
+      "filters": [
+        "Order Profitable?",
+        "Order Date",
+        "Region"
+      ],
+      "archetype": "faceted_area"
+    }
+  ]
+}

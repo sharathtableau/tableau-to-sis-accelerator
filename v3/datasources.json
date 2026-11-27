@@ -1,0 +1,50 @@
+{
+  "Orders (Sample - Superstore)": {
+    "table": "SUPERSTORE.PUBLIC.ORDERS_SAMPLE_SUPERSTORE",
+    "local_file": "data\\Sample - Superstore.csv"
+  },
+  "Sales Target": {
+    "table": "SUPERSTORE.PUBLIC.SALES_TARGET",
+    "local_file": "data\\Sales Target.xlsx"
+  },
+  "Sales Commission": {
+    "table": "SUPERSTORE.PUBLIC.SALES_COMMISSION",
+    "local_file": "data\\Sales Commission.csv"
+  },
+  "Sample - Superstore": {
+    "table": "SUPERSTORE.PUBLIC.SAMPLE_SUPERSTORE",
+    "local_file": "data\\Sample - Superstore.csv"
+  },
+  "World Indicators": {
+    "table": "SUPERSTORE.PUBLIC.WORLD_INDICATORS",
+    "local_file": "data\\dataengine_42017_561401273146lea.csv"
+  },
+  "Data using Relationships": {
+    "table": "SUPERSTORE.PUBLIC.DATA_USING_RELATIONSHIPS",
+    "local_file": "data\\federated_1lsa9am0kpav9f15uz9dc1.csv"
+  },
+  "Data Using Custom-SQL": {
+    "table": "SUPERSTORE.PUBLIC.DATA_USING_CUSTOM_SQL",
+    "local_file": "data\\federated_0u108uq03n2oke1eelv4a1.csv"
+  },
+  "SAMPLE_SUPER_STORE_ORDERS (SANDBOX.SAMPLE_SUPER_STORE_ORDERS)+ (DS)": {
+    "table": "SUPERSTORE.PUBLIC.SAMPLE_SUPER_STORE_ORDERS_SANDBOX_SAMPLE_SUPER_STORE_ORDERS_DS",
+    "local_file": "data\\federated_0u108uq03n2oke1eelv4a1.csv"
+  },
+  "CALLS": {
+    "table": "SUPERSTORE.PUBLIC.CALLS",
+    "local_file": "data\\Calls Data.xlsx"
+  },
+  "SALES": {
+    "table": "SUPERSTORE.PUBLIC.SALES",
+    "local_file": "data\\Sales Data.xlsx"
+  },
+  "Customers (DataDNA Dataset Challenge - E-commerce Dataset - November 2025)": {
+    "table": "SUPERSTORE.PUBLIC.CUSTOMERS_DATADNA_DATASET_CHALLENGE_E_COMMERCE_DATASET_NOVEMBER_2025",
+    "local_file": "data\\TEMP_0xfnzak033ztnc13wohgv0xghqq0.csv"
+  },
+  "Sample - Superstore (2)": {
+    "table": "SUPERSTORE.PUBLIC.SAMPLE_SUPERSTORE_2",
+    "local_file": "data\\Sample - Superstore (2).csv"
+  }
+}
