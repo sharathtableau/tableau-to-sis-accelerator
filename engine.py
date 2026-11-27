@@ -15,6 +15,8 @@ import altair as alt
 import pandas as pd
 
 import findings
+import query_cache
+import backend as backend_mod
 from backend import run_sql
 import config
 from config import ORDERS, table_for
@@ -338,9 +340,16 @@ STATE_ABBR = {
 }
 
 
-@st.cache_data(ttl=600)
 def _q_exec(sql):
-    return run_sql(sql)
+    # Viewer-scoped cache (query_cache.py): the key includes WHO is viewing,
+    # so one viewer can never be served another viewer's rows under
+    # Snowflake row access policies. Was @st.cache_data keyed on SQL alone.
+    return query_cache.cached_query(
+        sql, lambda s: run_sql(s), runner_id="engine",
+        in_snowflake=backend_mod._running_in_snowflake())
+
+
+_q_exec.clear = query_cache.clear
 
 
 import re as _re2
